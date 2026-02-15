@@ -128,40 +128,52 @@
     });
   }
 
-  async function selectStory(storyId) {
-    showScreen('game');
-    els.overlayLoading.classList.remove('hidden');
+  let _selectingStory = false; // guard against re-entrant calls
 
-    storyEngine = new StoryEngine();
-    const loaded = await storyEngine.loadStory(storyId);
+  async function selectStory(storyId, fromRemote = false) {
+    // Prevent infinite loop: if already selecting, bail out
+    if (_selectingStory) return;
+    _selectingStory = true;
 
-    if (!loaded) {
-      alert('Error loading story');
-      showScreen('menu');
+    try {
+      showScreen('game');
+      els.overlayLoading.classList.remove('hidden');
+
+      storyEngine = new StoryEngine();
+      const loaded = await storyEngine.loadStory(storyId);
+
+      if (!loaded) {
+        alert('Error loading story');
+        showScreen('menu');
+        els.overlayLoading.classList.add('hidden');
+        return;
+      }
+
+      // Setup sync
+      if (syncManager) syncManager.destroy();
+      syncManager = new SyncManager(connectionManager, storyEngine);
+      syncManager.onMenuRequested = () => {
+        showScreen('menu');
+        renderStoryMenu();
+      };
+      syncManager.onStorySelected = (id) => selectStory(id, true);
+
+      // Only broadcast to remote if WE initiated the selection (not if remote told us)
+      if (!fromRemote) {
+        syncManager.broadcastStorySelect(storyId);
+        setTimeout(() => syncManager.sendFullState(), 500);
+      }
+
+      // Setup video in game
+      if (connectionManager.localStream) {
+        els.localVideo.srcObject = connectionManager.localStream;
+      }
+
+      els.gameRoomBadge.textContent = connectionManager.roomCode || '';
       els.overlayLoading.classList.add('hidden');
-      return;
+    } finally {
+      _selectingStory = false;
     }
-
-    // Setup sync
-    if (syncManager) syncManager.destroy();
-    syncManager = new SyncManager(connectionManager, storyEngine);
-    syncManager.onMenuRequested = () => {
-      showScreen('menu');
-      renderStoryMenu();
-    };
-    syncManager.onStorySelected = (id) => selectStory(id);
-
-    // Broadcast story selection and initial state to the other player
-    syncManager.broadcastStorySelect(storyId);
-    setTimeout(() => syncManager.sendFullState(), 500);
-
-    // Setup video in game
-    if (connectionManager.localStream) {
-      els.localVideo.srcObject = connectionManager.localStream;
-    }
-
-    els.gameRoomBadge.textContent = connectionManager.roomCode || '';
-    els.overlayLoading.classList.add('hidden');
   }
 
   // ---- Connection Events ----
