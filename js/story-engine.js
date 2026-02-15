@@ -28,9 +28,26 @@ class StoryEngine {
       endingOverlay: document.getElementById('ending-overlay'),
       endingContent: document.getElementById('ending-content'),
       storyTitle: document.getElementById('game-story-title'),
+      scrollArrow: document.getElementById('scroll-arrow'),
+      scrollArrowBtn: document.getElementById('scroll-arrow-btn'),
+      storyPanel: document.querySelector('.story-panel'),
     };
 
     this.illustrationRenderer = new IllustrationRenderer(this.els.illustrationContainer);
+
+    // Scroll arrow: click to scroll down
+    if (this.els.scrollArrowBtn) {
+      this.els.scrollArrowBtn.addEventListener('click', () => {
+        if (this.els.storyPanel) {
+          this.els.storyPanel.scrollBy({ top: 200, behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Detect scroll position to show/hide arrow
+    if (this.els.storyPanel) {
+      this.els.storyPanel.addEventListener('scroll', () => this._updateScrollArrow());
+    }
 
     // Callbacks
     this.onNavigate = null; // Called when user makes a choice (for sync)
@@ -70,10 +87,19 @@ class StoryEngine {
     }
 
     const page = this.story.pages[pageId];
+
+    // Scroll story panel to top before rendering new page
+    if (this.els.storyPanel) {
+      this.els.storyPanel.scrollTop = 0;
+    }
+
     this._renderPage(page);
 
     // Play page turn sound
     window.audioManager?.pageTurn();
+
+    // Check if scroll arrow needed after DOM settles
+    setTimeout(() => this._updateScrollArrow(), 100);
   }
 
   _renderPage(page) {
@@ -312,6 +338,14 @@ class StoryEngine {
       this.goToPage(target);
     });
     this.els.puzzleContainer.appendChild(continueBtn);
+
+    // Scroll to show the continue button and update arrow
+    setTimeout(() => {
+      if (this.els.storyPanel) {
+        this.els.storyPanel.scrollTo({ top: this.els.storyPanel.scrollHeight, behavior: 'smooth' });
+      }
+      this._updateScrollArrow();
+    }, 150);
   }
 
   _renderEnding(page) {
@@ -363,6 +397,19 @@ class StoryEngine {
         window.audioManager?.sparkle();
       }
     }, 500);
+  }
+
+  _updateScrollArrow() {
+    if (!this.els.scrollArrow || !this.els.storyPanel) return;
+    const panel = this.els.storyPanel;
+    const hasOverflow = panel.scrollHeight > panel.clientHeight + 20;
+    const nearBottom = panel.scrollTop + panel.clientHeight >= panel.scrollHeight - 30;
+
+    if (hasOverflow && !nearBottom) {
+      this.els.scrollArrow.classList.remove('hidden');
+    } else {
+      this.els.scrollArrow.classList.add('hidden');
+    }
   }
 
   // State serialization for sync
