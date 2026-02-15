@@ -1,0 +1,12 @@
+{
+  "stories": [
+    {
+      "id": "princesa-luna",
+      "title": "La Princesa Luna y el Reino de los Números Perdidos",
+      "description": "Ayuda a la Princesa Luna a salvar su reino resolviendo desafíos mágicos, haciendo amigos y descubriendo el poder de compartir.",
+      "coverEmoji": "👸🌙✨",
+      "ageRange": "5-8",
+      "tags": ["matemáticas", "valores", "aventura", "princesa"]
+    }
+  ]
+}

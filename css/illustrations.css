@@ -1,0 +1,346 @@
+/* =============================================
+   ILLUSTRATIONS - CSS Art & Scene Styles
+   ============================================= */
+
+/* --- Base scene container --- */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background var(--transition-slow);
+}
+
+.scene-element {
+  position: absolute;
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal) both;
+}
+
+.scene-element:nth-child(1) { animation-delay: 0s; }
+.scene-element:nth-child(2) { animation-delay: 0.1s; }
+.scene-element:nth-child(3) { animation-delay: 0.15s; }
+.scene-element:nth-child(4) { animation-delay: 0.2s; }
+.scene-element:nth-child(5) { animation-delay: 0.25s; }
+.scene-element:nth-child(6) { animation-delay: 0.3s; }
+.scene-element:nth-child(7) { animation-delay: 0.35s; }
+.scene-element:nth-child(8) { animation-delay: 0.4s; }
+
+/* --- Emoji elements --- */
+.emoji-element {
+  font-size: 3rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.emoji-element.small { font-size: 1.8rem; }
+.emoji-element.medium { font-size: 3rem; }
+.emoji-element.large { font-size: 4.5rem; }
+.emoji-element.xlarge { font-size: 6rem; }
+
+/* --- Floating animation --- */
+.float-anim {
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-anim:nth-child(even) {
+  animation-delay: -1.5s;
+}
+
+/* --- Sparkle animation --- */
+.sparkle-anim {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-anim:nth-child(2n) { animation-delay: -0.7s; }
+.sparkle-anim:nth-child(3n) { animation-delay: -1.4s; }
+
+/* --- Scene Backgrounds --- */
+
+/* Night sky with stars */
+.bg-night-sky {
+  background: linear-gradient(180deg, #0a0a2e 0%, #16213e 50%, #1a1a40 100%);
+}
+
+/* Forest */
+.bg-forest {
+  background: linear-gradient(180deg, #0a2a1a 0%, #134e2a 60%, #1a5e35 100%);
+}
+
+/* Crystal mountain */
+.bg-crystal {
+  background: linear-gradient(180deg, #1a1a3e 0%, #2d3e6e 50%, #4a5e8e 100%);
+}
+
+/* Dark castle */
+.bg-dark-castle {
+  background: linear-gradient(180deg, #0a0a15 0%, #1a1a2a 60%, #2a2030 100%);
+}
+
+/* Celebration / golden */
+.bg-celebration {
+  background: linear-gradient(180deg, #3a2a10 0%, #5a4a20 40%, #7a6a30 100%);
+}
+
+/* Dawn */
+.bg-dawn {
+  background: linear-gradient(180deg, #1a1040 0%, #4a2060 30%, #a05060 60%, #e0a050 100%);
+}
+
+/* Bridge / river */
+.bg-bridge {
+  background: linear-gradient(180deg, #0a1a2a 0%, #1a3a4a 60%, #2a5a6a 100%);
+}
+
+/* Bedroom */
+.bg-bedroom {
+  background: linear-gradient(180deg, #1a1530 0%, #2a2548 80%, #352d5a 100%);
+}
+
+/* Cave */
+.bg-cave {
+  background: linear-gradient(180deg, #0a0a12 0%, #1a1a25 50%, #252535 100%);
+}
+
+/* Flying / clouds */
+.bg-flying {
+  background: linear-gradient(180deg, #2a4a8a 0%, #5a8aba 40%, #8abaea 80%, #a0d0f0 100%);
+}
+
+/* --- CSS Art Components --- */
+
+/* Stars */
+.css-star {
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.4);
+}
+
+.css-star.bright {
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 10px 3px rgba(255, 215, 0, 0.5);
+  background: var(--color-gold);
+}
+
+.css-star.dim {
+  opacity: 0.3;
+  animation: sparkle 4s ease-in-out infinite;
+}
+
+/* Castle silhouette */
+.css-castle {
+  position: relative;
+  width: 120px;
+  height: 90px;
+}
+
+.css-castle .tower {
+  position: absolute;
+  bottom: 0;
+  background: #1a1030;
+  border-radius: 4px 4px 0 0;
+}
+
+.css-castle .tower-left {
+  left: 0;
+  width: 25px;
+  height: 70px;
+}
+
+.css-castle .tower-right {
+  right: 0;
+  width: 25px;
+  height: 70px;
+}
+
+.css-castle .tower-center {
+  left: 35px;
+  width: 50px;
+  height: 55px;
+}
+
+.css-castle .spire {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #2a1a40;
+}
+
+.css-castle .spire-left {
+  left: -2px;
+  top: -22px;
+}
+
+.css-castle .spire-right {
+  right: -2px;
+  top: -22px;
+}
+
+.css-castle .spire-center {
+  left: 10px;
+  top: -20px;
+  border-left-width: 25px;
+  border-right-width: 25px;
+  border-bottom-width: 30px;
+}
+
+.css-castle .window {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Bridge */
+.css-bridge {
+  position: relative;
+  width: 200px;
+  height: 40px;
+}
+
+.css-bridge .bridge-deck {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #5a3a1a, #8a6a3a, #5a3a1a);
+  border-radius: 4px;
+}
+
+.css-bridge .bridge-rail {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  height: 20px;
+  border: 2px solid #8a6a3a;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Water / river effect */
+.css-river {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(90deg,
+    rgba(52, 152, 219, 0.3),
+    rgba(52, 152, 219, 0.5),
+    rgba(52, 152, 219, 0.3));
+  border-radius: 50%;
+  animation: waterFlow 3s ease-in-out infinite;
+}
+
+@keyframes waterFlow {
+  0%, 100% { transform: scaleX(1); opacity: 0.6; }
+  50% { transform: scaleX(1.05); opacity: 0.8; }
+}
+
+/* Floating numbers for puzzle scenes */
+.floating-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.floating-number:nth-child(odd) {
+  animation-delay: -1.2s;
+  color: var(--color-primary-light);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Crystal elements */
+.css-crystal {
+  width: 20px;
+  height: 35px;
+  background: linear-gradient(135deg, rgba(100, 200, 255, 0.6), rgba(180, 120, 255, 0.4));
+  clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 15% 100%, 0% 35%);
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.css-crystal:nth-child(even) {
+  background: linear-gradient(135deg, rgba(255, 150, 200, 0.5), rgba(255, 200, 100, 0.4));
+  animation-delay: -1.5s;
+}
+
+/* Glow orb for magical effects */
+.glow-orb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.8) 0%, rgba(255,215,0,0) 70%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Tree silhouettes */
+.css-tree {
+  position: relative;
+}
+
+.css-tree .trunk {
+  width: 8px;
+  height: 20px;
+  background: #3a2a15;
+  margin: 0 auto;
+}
+
+.css-tree .foliage {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #1a5e2a;
+}
+
+.css-tree.pine .foliage {
+  border-bottom-color: #0a4a1a;
+}
+
+/* --- Confetti burst for correct answers --- */
+.confetti-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti-particle {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: confettiExplode 1s ease-out forwards;
+}
+
+@keyframes confettiExplode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.5) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx, 50px), var(--ty, -80px)) scale(1) rotate(var(--tr, 360deg));
+  }
+}
+
+/* --- Scene transition --- */
+.scene-enter {
+  animation: sceneEnter var(--transition-slow) ease-out;
+}
+
+@keyframes sceneEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

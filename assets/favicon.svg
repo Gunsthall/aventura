@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="15" fill="#1a1a2e"/>
+  <!-- Castle -->
+  <rect x="25" y="40" width="12" height="30" fill="#8e44ad" rx="1"/>
+  <polygon points="25,40 31,28 37,40" fill="#a855f7"/>
+  <rect x="63" y="40" width="12" height="30" fill="#8e44ad" rx="1"/>
+  <polygon points="63,40 69,28 75,40" fill="#a855f7"/>
+  <rect x="37" y="48" width="26" height="22" fill="#8e44ad" rx="1"/>
+  <polygon points="40,48 50,32 60,48" fill="#a855f7"/>
+  <rect x="45" y="55" width="10" height="15" rx="5" fill="#1a1a2e"/>
+  <!-- Moon -->
+  <circle cx="78" cy="22" r="10" fill="#ffd700"/>
+  <circle cx="82" cy="19" r="8" fill="#1a1a2e"/>
+  <!-- Stars -->
+  <circle cx="20" cy="18" r="2" fill="#fff"/>
+  <circle cx="45" cy="12" r="1.5" fill="#ffd700"/>
+  <circle cx="60" cy="20" r="1.5" fill="#fff"/>
+  <circle cx="15" cy="35" r="1" fill="#ffd700"/>
+</svg>

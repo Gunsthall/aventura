@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura - Elige Tu Propia Aventura</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/illustrations.css">
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- SCREEN 1: CONNECTION                         -->
+  <!-- ============================================ -->
+  <div id="screen-connect" class="screen active">
+    <div class="connect-container">
+      <div class="connect-header">
+        <h1 class="app-title">
+          <span class="title-icon">🏰</span>
+          AVENTURA
+          <span class="title-icon">🏰</span>
+        </h1>
+        <p class="app-subtitle">Interactive Stories to Play Together</p>
+      </div>
+
+      <!-- Camera preview -->
+      <div class="camera-preview-wrapper">
+        <video id="local-preview" autoplay muted playsinline></video>
+        <div id="camera-placeholder" class="camera-placeholder">
+          <span>📷</span>
+          <p>Camera preview</p>
+        </div>
+      </div>
+
+      <!-- Connection options -->
+      <div class="connect-options">
+        <div id="connect-choice" class="connect-choice">
+          <button id="btn-create-room" class="btn btn-primary btn-large">
+            <span class="btn-icon">👑</span>
+            Create Room
+          </button>
+          <div class="connect-divider">
+            <span>or</span>
+          </div>
+          <button id="btn-join-room" class="btn btn-secondary btn-large">
+            <span class="btn-icon">🔗</span>
+            Join Room
+          </button>
+        </div>
+
+        <!-- Create room panel -->
+        <div id="panel-create" class="connect-panel hidden">
+          <h2>Your room code:</h2>
+          <div class="room-code-display">
+            <span id="room-code-text">------</span>
+            <button id="btn-copy-code" class="btn btn-small" title="Copy code">📋</button>
+          </div>
+          <p class="room-code-hint">Share this code with the other player</p>
+          <div id="create-waiting" class="waiting-indicator">
+            <div class="spinner"></div>
+            <span>Waiting for player to join...</span>
+          </div>
+          <button id="btn-back-create" class="btn btn-text">← Back</button>
+        </div>
+
+        <!-- Join room panel -->
+        <div id="panel-join" class="connect-panel hidden">
+          <h2>Enter room code:</h2>
+          <div class="room-code-input-wrapper">
+            <input id="input-room-code" type="text" maxlength="6" placeholder="ABCD12"
+                   class="room-code-input" autocomplete="off" spellcheck="false">
+            <button id="btn-connect" class="btn btn-primary">Connect</button>
+          </div>
+          <div id="join-status" class="join-status hidden"></div>
+          <button id="btn-back-join" class="btn btn-text">← Back</button>
+        </div>
+      </div>
+
+      <!-- Connection error -->
+      <div id="connect-error" class="connect-error hidden">
+        <p id="error-message"></p>
+        <button id="btn-retry" class="btn btn-secondary">Try Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SCREEN 2: STORY MENU                         -->
+  <!-- ============================================ -->
+  <div id="screen-menu" class="screen">
+    <div class="menu-container">
+      <div class="menu-header">
+        <h1>
+          <span>📚</span>
+          Choose an Adventure
+          <span>📚</span>
+        </h1>
+        <div class="menu-connection-info">
+          <span class="connection-badge connected">🟢 Connected</span>
+          <span id="menu-room-code" class="room-badge"></span>
+        </div>
+      </div>
+      <div id="story-grid" class="story-grid">
+        <!-- Story cards populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SCREEN 3: GAME (Split Screen)                -->
+  <!-- ============================================ -->
+  <div id="screen-game" class="screen">
+    <!-- Header bar -->
+    <div class="game-header">
+      <div class="game-header-left">
+        <button id="btn-back-menu" class="btn btn-icon" title="Back to menu">📚</button>
+        <span id="game-story-title" class="game-title"></span>
+      </div>
+      <div class="game-header-center">
+        <span id="game-room-badge" class="room-badge"></span>
+      </div>
+      <div class="game-header-right">
+        <button id="btn-toggle-mic" class="btn btn-icon" title="Toggle microphone">🎤</button>
+        <button id="btn-toggle-cam" class="btn btn-icon" title="Toggle camera">📷</button>
+        <button id="btn-toggle-sound" class="btn btn-icon" title="Toggle sound effects">🔊</button>
+      </div>
+    </div>
+
+    <!-- Split screen container -->
+    <div class="game-split">
+      <!-- LEFT: Video panel -->
+      <div class="video-panel">
+        <div class="video-remote-wrapper">
+          <video id="remote-video" autoplay playsinline></video>
+          <div id="remote-placeholder" class="video-placeholder">
+            <span>📡</span>
+            <p>Connecting video...</p>
+          </div>
+        </div>
+        <div class="video-local-wrapper">
+          <video id="local-video" autoplay muted playsinline></video>
+        </div>
+        <div id="connection-status" class="connection-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Connected</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Story panel -->
+      <div class="story-panel">
+        <!-- Story title bar -->
+        <div id="story-page-header" class="story-page-header">
+          <h2 id="page-title"></h2>
+          <div id="page-progress" class="page-progress"></div>
+        </div>
+
+        <!-- Illustration area -->
+        <div id="illustration-container" class="illustration-container">
+          <!-- Populated by illustrations.js -->
+        </div>
+
+        <!-- Text area -->
+        <div id="story-text-container" class="story-text-container">
+          <div id="story-text" class="story-text"></div>
+          <div id="speaker-badge" class="speaker-badge hidden">
+            <span id="speaker-emoji" class="speaker-emoji"></span>
+            <span id="speaker-name" class="speaker-name"></span>
+          </div>
+        </div>
+
+        <!-- Choices area -->
+        <div id="choices-container" class="choices-container">
+          <!-- Choice buttons populated by story-engine.js -->
+        </div>
+
+        <!-- Puzzle area (shown instead of choices for puzzle pages) -->
+        <div id="puzzle-container" class="puzzle-container hidden">
+          <div id="puzzle-question" class="puzzle-question"></div>
+          <div id="puzzle-options" class="puzzle-options"></div>
+          <div id="puzzle-feedback" class="puzzle-feedback hidden"></div>
+        </div>
+
+        <!-- Ending overlay -->
+        <div id="ending-overlay" class="ending-overlay hidden">
+          <div id="ending-content" class="ending-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- GLOBAL OVERLAYS                              -->
+  <!-- ============================================ -->
+  <div id="overlay-reconnecting" class="overlay hidden">
+    <div class="overlay-content">
+      <div class="spinner large"></div>
+      <p>Reconnecting...</p>
+    </div>
+  </div>
+
+  <div id="overlay-loading" class="overlay hidden">
+    <div class="overlay-content">
+      <div class="spinner large"></div>
+      <p>Loading adventure...</p>
+    </div>
+  </div>
+
+  <!-- Confetti container for celebrations -->
+  <div id="confetti-container" class="confetti-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/illustrations.js"></script>
+  <script src="js/connection.js"></script>
+  <script src="js/story-engine.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

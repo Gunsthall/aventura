@@ -1,0 +1,818 @@
+{
+  "meta": {
+    "id": "princesa-luna",
+    "title": "La Princesa Luna y el Reino de los Números Perdidos",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "luna": { "name": "Princesa Luna", "emoji": "👸", "color": "#a855f7" },
+    "buho": { "name": "Búho Sabio", "emoji": "🦉", "color": "#f39c12" },
+    "dragon": { "name": "Draco el Dragón", "emoji": "🐉", "color": "#e74c3c" },
+    "hada": { "name": "Hada Estrella", "emoji": "🧚", "color": "#3498db" },
+    "sombra": { "name": "La Sombra del Olvido", "emoji": "👤", "color": "#636e72" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "narrative",
+      "title": "El Reino de los Números Mágicos",
+      "text": "En un reino muy, muy lejano, más allá de las nubes y más arriba que el arcoíris, existía un lugar mágico llamado el Reino de los Números.\n\nEn este reino, cada estrella del cielo tenía un número especial que mantenía todo en armonía. Los ríos fluían al ritmo del número 3, las flores crecían con la fuerza del 7, y el sol brillaba con la energía del 10.\n\nPero una noche, algo terrible estaba a punto de ocurrir... ⭐🌙",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          { "type": "castle", "x": 50, "bottom": 5, "scale": 1.2 },
+          { "type": "stars", "count": 20, "dim": false },
+          "🌙:xlarge:82:15:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Conocer a la Princesa Luna",
+          "target": "wake-up",
+          "emoji": "👸"
+        }
+      ]
+    },
+
+    "wake-up": {
+      "type": "narrative",
+      "title": "La Princesa Luna Despierta",
+      "text": "La Princesa Luna 👸 abrió sus grandes ojos violetas. Algo no estaba bien.\n\nDesde su cama con dosel de terciopelo morado, podía ver la ventana de su torre. El brillo de las estrellas que siempre la acompañaba por las noches... ¡estaba desapareciendo!\n\nLuna se levantó de un salto y corrió hacia la ventana con su camisón de estrellas plateadas.",
+      "illustration": {
+        "background": "bg-bedroom",
+        "elements": [
+          "👸:xlarge:50:55",
+          "🛏️:large:25:65",
+          "🪟:large:75:30",
+          "🌙:medium:78:20:float",
+          "✨:small:70:25:sparkle",
+          "✨:small:82:35:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Mirar por la ventana",
+          "target": "discover-problem",
+          "emoji": "🪟"
+        }
+      ]
+    },
+
+    "discover-problem": {
+      "type": "narrative",
+      "title": "¡Las Estrellas Sin Números!",
+      "text": "¡Oh, no! Luna vio algo terrible: las estrellas estaban perdiendo sus números mágicos. ⭐❌\n\nUno a uno, los números se desprendían de las estrellas y caían como lágrimas de luz. El cielo se iba oscureciendo.\n\n«Sin los números», pensó Luna asustada, «los ríos dejarán de fluir, las flores se marchitarán y el sol no sabrá cuándo salir.»\n\nTenía que hacer algo. ¡Y rápido! 💪",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          { "type": "stars", "count": 15, "dim": true },
+          { "type": "numbers", "values": ["3", "7", "5", "2", "9", "1"] },
+          "👸:large:50:70",
+          "😰:medium:55:62"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Buscar ayuda!",
+          "target": "owl-meeting",
+          "emoji": "🆘"
+        }
+      ]
+    },
+
+    "owl-meeting": {
+      "type": "narrative",
+      "title": "El Búho Sabio Aparece",
+      "speaker": "buho",
+      "text": "«¡Princesa Luna!» dijo una voz grave y sabia desde la rama del gran roble del jardín.\n\nEra el Búho Sabio 🦉, el consejero más antiguo del reino. Sus enormes ojos dorados brillaban en la oscuridad.\n\n«La Sombra del Olvido ha robado los números de las estrellas. Es una criatura que se alimenta del caos y la confusión. Solo alguien con un corazón valiente y una mente lista puede recuperarlos.»\n\n«Tendrás que viajar por tres regiones del reino: el Bosque Encantado, las Montañas de Cristal y el Castillo de la Sombra. ¿Estás preparada?»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🦉:xlarge:50:40:float",
+          "🌳:large:25:70",
+          "🌳:large:75:70",
+          "📚:medium:55:55",
+          "✨:small:40:30:sparkle",
+          "✨:small:60:25:sparkle",
+          "👸:large:50:80"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Acepto el desafío!",
+          "target": "forest-entrance",
+          "emoji": "⚔️"
+        }
+      ]
+    },
+
+    "forest-entrance": {
+      "type": "narrative",
+      "title": "La Entrada al Bosque Encantado",
+      "text": "El Bosque Encantado se abría ante Luna como una puerta a otro mundo. 🌲✨\n\nLos árboles enormes susurraban números olvidados entre sus hojas. Las setas brillaban con una luz tenue, y las mariposas nocturnas dejaban estelas de polvo dorado.\n\nUn camino de piedras luminosas llevaba hasta un antiguo puente que cruzaba un río de estrellas líquidas.\n\nPero el puente tenía una cerradura mágica... 🔒",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          { "type": "trees", "positions": [{"x": 5, "scale": 1.2}, {"x": 15, "scale": 0.9}, {"x": 85, "scale": 1.1}, {"x": 95, "scale": 0.8}] },
+          "🍄:medium:20:75:sparkle",
+          "🍄:small:75:80:sparkle",
+          "🦋:medium:60:30:float",
+          "✨:small:40:40:sparkle",
+          "✨:small:65:45:sparkle",
+          "👸:large:50:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Acercarse al puente mágico",
+          "target": "math-puzzle-1",
+          "emoji": "🌉"
+        }
+      ]
+    },
+
+    "math-puzzle-1": {
+      "type": "puzzle",
+      "title": "El Puente de los Números",
+      "text": "El puente mágico brilla con una luz dorada. En el centro hay una cerradura con forma de estrella y un cartel que dice:\n\n🌟 «Solo quien sepa contar podrá cruzar» 🌟",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          { "type": "bridge", "x": 50, "bottom": 25 },
+          { "type": "river", "bottom": 15 },
+          { "type": "numbers", "values": ["5", "3", "?"] },
+          "🔒:large:50:40:sparkle",
+          "⭐:medium:30:25:float",
+          "⭐:medium:70:20:float"
+        ]
+      },
+      "puzzle": {
+        "question": "La cerradura del puente te pregunta:\n\n«La Princesa Luna tiene 5 estrellas ⭐⭐⭐⭐⭐ y encuentra 3 más ⭐⭐⭐ en el camino.\n\n¿Cuántas estrellas tiene en total?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "7", "label": "7 estrellas ⭐", "emoji": "7️⃣" },
+          { "value": "8", "label": "8 estrellas ⭐", "emoji": "8️⃣" },
+          { "value": "9", "label": "9 estrellas ⭐", "emoji": "9️⃣" }
+        ],
+        "correctAnswer": "8",
+        "successTarget": "bridge-crossed",
+        "failTarget": "bridge-hint",
+        "successText": "¡¡Correcto!! 🎉 ¡5 + 3 = 8! El puente se ilumina con 8 estrellas brillantes y la cerradura se abre con un clic mágico. ✨",
+        "failText": "Hmm, esa no es la respuesta... ¡Pero no pasa nada! Piénsalo otra vez. Puedes contar con los dedos si quieres. 🤔"
+      }
+    },
+
+    "bridge-hint": {
+      "type": "narrative",
+      "title": "Pista del Búho",
+      "speaker": "buho",
+      "text": "«No te preocupes, Luna», dijo el Búho Sabio apareciendo entre las ramas. 🦉\n\n«Vamos a pensarlo juntos. Mira:\n\nPrimero tienes 5 estrellas: ⭐⭐⭐⭐⭐\nLuego encuentras 3 más: ⭐⭐⭐\n\nAhora cuenta todas juntas con los dedos:\nUno... dos... tres... cuatro... cinco... seis... siete... ¿y el siguiente?»\n\n¡Tú puedes! 💪",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🦉:xlarge:50:35:float",
+          "⭐:medium:15:60",
+          "⭐:medium:27:60",
+          "⭐:medium:39:60",
+          "⭐:medium:51:60",
+          "⭐:medium:63:60",
+          "⭐:medium:20:78",
+          "⭐:medium:35:78",
+          "⭐:medium:50:78"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Intentar otra vez!",
+          "target": "math-puzzle-1",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "bridge-crossed": {
+      "type": "narrative",
+      "title": "¡Al Otro Lado del Puente!",
+      "text": "¡Luna cruzó el puente mágico! 🎉\n\nLas estrellas del puente bailaron de alegría, y una lluvia de chispas doradas cayó a su alrededor. Los números 5 y 3 se unieron en el cielo formando un hermoso 8 brillante.\n\nPero al llegar al otro lado, Luna escuchó algo extraño...\n\nAlguien estaba... ¿llorando? 😢\n\nUn sonido triste venía de entre los árboles.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          { "type": "bridge", "x": 30, "bottom": 25 },
+          "👸:large:65:60",
+          "8️⃣:xlarge:50:20:sparkle",
+          "✨:medium:35:30:sparkle",
+          "✨:medium:65:25:sparkle",
+          "✨:small:45:40:sparkle",
+          "😢:medium:90:55"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Investigar el sonido triste",
+          "target": "moral-choice-1",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "moral-choice-1": {
+      "type": "moral",
+      "title": "El Dragón Triste",
+      "speaker": "dragon",
+      "text": "Entre los arbustos, Luna encontró a un pequeño dragón 🐉 que lloraba desconsoladamente. Era Draco, y sus lágrimas eran pequeñas llamitas azules.\n\n«Mis... mis números favoritos... el 7 y el 3...» sollozó Draco. «La Sombra del Olvido me los quitó. Sin ellos no puedo encender mi fuego mágico. Solo me salen estas llamitas tristes... 🔵»\n\nDraco miró a Luna con sus grandes ojos amarillos llenos de lágrimas.\n\n¿Qué debería hacer Luna?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐉:xlarge:40:45",
+          "😢:medium:48:35",
+          "🔵:small:35:60:sparkle",
+          "🔵:small:45:58:sparkle",
+          "7️⃣:medium:20:25:float",
+          "3️⃣:medium:75:30:float",
+          "👸:large:70:60"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ayudar a Draco a buscar sus números",
+          "target": "help-dragon",
+          "emoji": "🤝",
+          "moralValue": "generosity",
+          "points": 2
+        },
+        {
+          "text": "Lo siento Draco, tengo mucha prisa...",
+          "target": "ignore-dragon",
+          "emoji": "🏃",
+          "moralValue": "selfishness",
+          "points": 0
+        },
+        {
+          "text": "Te ayudo si después tú me ayudas a mí",
+          "target": "negotiate-dragon",
+          "emoji": "🤔",
+          "moralValue": "negotiation",
+          "points": 1
+        }
+      ]
+    },
+
+    "help-dragon": {
+      "type": "narrative",
+      "title": "Ayudando a Draco",
+      "text": "Luna se arrodilló junto a Draco y le dijo con una sonrisa: «No llores, amigo. Te ayudaré a encontrar tus números. ¡Juntos somos más fuertes!» 🤝\n\nBuscaron entre las hojas y las piedras del bosque. Luna encontró el 7️⃣ escondido detrás de una seta gigante, y Draco descubrió el 3️⃣ dentro de una flor azul.\n\n«¡¡GRACIAS!!» rugió Draco con alegría. Sus llamas volvieron, pero ahora eran de todos los colores del arcoíris. 🌈🔥\n\n«¡Eres la mejor amiga del mundo! ¡Nunca te olvidaré!»",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:large:35:55",
+          "🐉:large:65:55",
+          "🤝:xlarge:50:40",
+          "7️⃣:large:20:30:sparkle",
+          "3️⃣:large:80:30:sparkle",
+          "🌈:large:50:15",
+          "🔥:medium:70:70:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir juntos la aventura!",
+          "target": "dragon-joins",
+          "emoji": "🐉"
+        }
+      ]
+    },
+
+    "ignore-dragon": {
+      "type": "narrative",
+      "title": "Siguiendo Sola",
+      "text": "«Lo siento mucho, Draco, pero tengo que salvar el reino...» dijo Luna mientras se alejaba. 🏃\n\nDetrás de ella, los sollozos de Draco se fueron apagando poco a poco.\n\nLuna siguió caminando por el bosque. El camino era largo y oscuro sin compañía. Cada vez que el viento soplaba, Luna sentía algo pesado en el corazón.\n\n«Espero que Draco esté bien...» pensó. 💭\n\nPero la misión era importante. Tenía que seguir adelante, sola.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          { "type": "trees", "positions": [{"x": 10, "scale": 1.3}, {"x": 30, "scale": 1.0}, {"x": 70, "scale": 1.2}, {"x": 90, "scale": 0.9}] },
+          "👸:large:50:65",
+          "🐉:small:15:70",
+          "😢:small:18:63",
+          "💭:medium:55:45:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Continuar hacia las montañas",
+          "target": "mountain-alone",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+
+    "negotiate-dragon": {
+      "type": "narrative",
+      "title": "Un Trato con Draco",
+      "text": "«Mmm... te propongo un trato», dijo Luna. «Yo te ayudo a encontrar tus números, y después tú me ayudas con mi misión. ¿De acuerdo?» 🤝\n\n«De... de acuerdo», dijo Draco secándose las lágrimas.\n\nLuna encontró los números rápidamente: el 7️⃣ y el 3️⃣ estaban escondidos cerca. Draco recuperó sus llamas, aunque no brillaban tanto como antes.\n\n«Un trato es un trato», dijo Draco. «Te llevaré a las montañas.»\n\nPero algo faltaba... la chispa de una amistad verdadera necesita más que un trato. 🤔",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:large:35:55",
+          "🐉:large:65:55",
+          "🤝:large:50:40",
+          "7️⃣:medium:25:30",
+          "3️⃣:medium:75:30",
+          "🔥:small:68:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ir a las montañas con Draco",
+          "target": "dragon-joins-reluctant",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+
+    "dragon-joins": {
+      "type": "narrative",
+      "title": "¡Draco se Une a la Aventura!",
+      "text": "«¡Sube a mi espalda!» dijo Draco emocionado, extendiendo sus alas brillantes. 🐉✨\n\n¡Luna se subió al lomo del dragón y volaron juntos por encima de los árboles! El viento acariciaba su pelo mientras las estrellas (las que aún tenían números) les guiñaban desde arriba.\n\n«¡Esto es increíble!» gritó Luna riendo.\n\n«¡Soy tu amigo para siempre!» rugió Draco con alegría, lanzando chispas arcoíris al cielo. 🌈",
+      "illustration": {
+        "background": "bg-flying",
+        "elements": [
+          "🐉:xlarge:50:45:float",
+          "👸:large:50:35",
+          "☁️:large:20:30:float",
+          "☁️:medium:80:20:float",
+          "☁️:small:60:60:float",
+          "🌈:large:50:75",
+          "✨:medium:30:50:sparkle",
+          "✨:medium:70:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Volar hacia las Montañas de Cristal!",
+          "target": "mountain-entrance",
+          "emoji": "✈️"
+        }
+      ]
+    },
+
+    "dragon-joins-reluctant": {
+      "type": "narrative",
+      "title": "Draco Acepta... Más o Menos",
+      "text": "Draco llevó a Luna volando hasta las montañas. No hablaron mucho durante el viaje. ☁️\n\nEl dragón cumplía su parte del trato, pero sus alas se movían sin alegría y sus llamas eran pequeñas.\n\nLuna miraba el paisaje desde arriba y pensaba: «Un trato es un trato... pero la amistad verdadera necesita algo más que tratos. Necesita generosidad.»\n\nOjalá hubiera ayudado a Draco solo porque sí... 💭",
+      "illustration": {
+        "background": "bg-flying",
+        "elements": [
+          "🐉:xlarge:50:50",
+          "👸:large:50:40",
+          "☁️:medium:25:35:float",
+          "☁️:medium:75:25:float",
+          "💭:medium:60:30:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Llegar a las Montañas de Cristal",
+          "target": "mountain-entrance",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+
+    "mountain-alone": {
+      "type": "narrative",
+      "title": "La Montaña Solitaria",
+      "text": "Sin la ayuda de un dragón, Luna tuvo que caminar durante horas hasta las Montañas de Cristal. 🏔️\n\nEl camino fue largo y empinado. Las piedras resbalaban bajo sus pies y el viento frío le hacía tiritar.\n\n«Ojalá tuviera un amigo aquí conmigo...» pensó Luna mientras escalaba, recordando al pequeño dragón triste que había dejado atrás.\n\nFinalmente, agotada pero decidida, llegó a la entrada de una cueva brillante. 💪",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          "🏔️:xlarge:50:25",
+          "👸:large:45:70",
+          "😤:medium:50:62",
+          "💨:medium:65:55:float",
+          "🪨:medium:30:75",
+          "🪨:small:70:80"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Entrar en la cueva de cristal",
+          "target": "math-puzzle-2",
+          "emoji": "💎"
+        }
+      ]
+    },
+
+    "mountain-entrance": {
+      "type": "narrative",
+      "title": "Las Montañas de Cristal",
+      "text": "¡Las Montañas de Cristal eran aún más hermosas de lo que Luna había imaginado! 💎✨\n\nCada roca brillaba con mil colores, como un arcoíris atrapado en piedra. El suelo reflejaba la luz creando patrones mágicos que cambiaban con cada paso.\n\nEn el corazón de la montaña, Luna encontró una gran puerta de cristal cerrada con un patrón misterioso...\n\n«Para abrir esta puerta, necesitarás descubrir el secreto de los números», susurró el viento entre los cristales. 🔮",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          { "type": "crystals", "count": 12 },
+          "💎:large:25:30:sparkle",
+          "💎:medium:75:25:sparkle",
+          "🔮:large:50:40:sparkle",
+          "👸:large:50:70",
+          "✨:medium:35:50:sparkle",
+          "✨:medium:65:45:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Examinar el patrón de la puerta",
+          "target": "math-puzzle-2",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "math-puzzle-2": {
+      "type": "puzzle",
+      "title": "La Puerta de Cristal",
+      "text": "La puerta de cristal muestra un patrón mágico que brilla con intensidad. Unos números flotan dentro de los cristales, formando una secuencia... 💎🔢",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          { "type": "crystals", "count": 8 },
+          "2️⃣:large:20:35:sparkle",
+          "4️⃣:large:40:30:sparkle",
+          "6️⃣:large:60:35:sparkle",
+          "❓:large:80:30:float",
+          { "type": "glow", "x": 80, "y": 30, "color": "#ffd700", "size": 50 }
+        ]
+      },
+      "puzzle": {
+        "question": "Los cristales muestran un patrón mágico:\n\n💎 2 ... 💎💎 4 ... 💎💎💎 6 ... 💎💎💎💎 ❓\n\nLos números van creciendo. ¿Puedes ver el patrón?\n¿Cuál es el siguiente número?",
+        "inputType": "choices",
+        "options": [
+          { "value": "7", "label": "7", "emoji": "7️⃣" },
+          { "value": "8", "label": "8", "emoji": "8️⃣" },
+          { "value": "10", "label": "10", "emoji": "🔟" }
+        ],
+        "correctAnswer": "8",
+        "successTarget": "fairy-meeting",
+        "failTarget": "crystal-hint",
+        "successText": "¡¡Genial!! 🎉 ¡El patrón es sumar 2 cada vez! 2, 4, 6, 8... ¡Los cristales cantan de alegría y la puerta se abre! 💎✨",
+        "failText": "Hmm, no es esa... Fíjate bien: de 2 a 4, ¿cuánto subimos? ¿Y de 4 a 6? 🤔"
+      }
+    },
+
+    "crystal-hint": {
+      "type": "narrative",
+      "title": "Los Cristales Susurran",
+      "speaker": "buho",
+      "text": "«Escucha, Luna», dijo el Búho Sabio, apareciendo reflejado en un cristal. 🦉\n\n«Vamos a verlo paso a paso:\n\nDe 2 a 4... subimos 2 ✌️\nDe 4 a 6... subimos 2 ✌️\nEntonces, de 6 al siguiente... ¡subimos 2 otra vez!\n\n6 + 2 = ❓»\n\n¡Los cristales brillan esperando tu respuesta! 💎",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          "🦉:xlarge:50:35:float",
+          { "type": "crystals", "count": 6 },
+          "2️⃣:large:20:70",
+          "➡️:medium:33:70",
+          "4️⃣:large:45:70",
+          "➡️:medium:58:70",
+          "6️⃣:large:70:70",
+          "➡️:medium:83:70",
+          "❓:large:93:70:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Intentar otra vez!",
+          "target": "math-puzzle-2",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "fairy-meeting": {
+      "type": "narrative",
+      "title": "El Hada Estrella",
+      "speaker": "hada",
+      "text": "Al abrirse la puerta de cristal, una luz deslumbrante llenó la cueva. ✨\n\nY de esa luz apareció... ¡el Hada Estrella! 🧚 Era hermosa, con alas que brillaban como diamantes y un vestido hecho de luz de luna.\n\n«Bien hecho, joven princesa», dijo el Hada con una voz que sonaba como campanitas. «Has demostrado que tu mente es tan fuerte como tu corazón.»\n\n«Tengo un regalo para ti: la Varita de los Números 🪄. Con ella podrás recuperar los números robados de las estrellas.»\n\n«Pero recuerda: su magia solo funciona al máximo cuando se comparte con los demás.»",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          "🧚:xlarge:50:35:float",
+          "✨:large:30:25:sparkle",
+          "✨:large:70:25:sparkle",
+          "✨:medium:40:50:sparkle",
+          "✨:medium:60:50:sparkle",
+          "🪄:large:50:60:sparkle",
+          { "type": "glow", "x": 50, "y": 35, "color": "#3498db", "size": 80 },
+          "👸:large:50:80"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Tomar la varita mágica",
+          "target": "moral-choice-2",
+          "emoji": "🪄"
+        }
+      ]
+    },
+
+    "moral-choice-2": {
+      "type": "moral",
+      "title": "El Poder de la Varita",
+      "text": "Luna sostiene la Varita de los Números. Siente su poder mágico recorrer sus dedos. ¡Es increíble! 🪄✨\n\nEl Hada Estrella le recuerda: «La magia es más fuerte cuando se comparte. Pero... también podrías guardar todo el poder para ti sola.»\n\nLuna piensa... Si comparte la magia con sus amigos, todos serán más fuertes juntos. Pero si se la queda ella, tendrá más poder individual.\n\n¿Qué debería hacer Luna? 🤔",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          "👸:xlarge:50:50",
+          "🪄:large:50:30:sparkle",
+          { "type": "glow", "x": 50, "y": 35, "color": "#ffd700", "size": 60 },
+          "🧚:medium:80:30:float",
+          "✨:medium:30:40:sparkle",
+          "✨:medium:70:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Compartir la magia con mis amigos!",
+          "target": "share-magic",
+          "emoji": "💝",
+          "moralValue": "sharing",
+          "points": 2
+        },
+        {
+          "text": "Guardar todo el poder para mí, es más seguro",
+          "target": "keep-magic",
+          "emoji": "🔒",
+          "moralValue": "hoarding",
+          "points": 0
+        }
+      ]
+    },
+
+    "share-magic": {
+      "type": "narrative",
+      "title": "¡La Magia Compartida Crece!",
+      "text": "Luna levantó la varita hacia el cielo y gritó con toda su fuerza:\n\n«¡LA MAGIA ES DE TODOS!» ✨💫🌟\n\nUna luz hermosa y cálida envolvió a Luna, a Draco, al Búho y al Hada. Cada uno recibió un poquito de poder mágico de la varita.\n\nPero algo increíble ocurrió: ¡la magia no se dividió, sino que se MULTIPLICÓ! La varita brillaba ahora diez veces más que antes.\n\n«¿Veis?», sonrió el Hada. «Cuando compartes de verdad, la magia crece.» 🌈\n\nJuntos, el equipo era invencible. ¡Era hora de enfrentarse a la Sombra! 💪",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👸:large:30:55",
+          "🐉:large:55:55",
+          "🦉:large:75:40:float",
+          "🧚:large:20:35:float",
+          "🪄:xlarge:50:25:sparkle",
+          { "type": "glow", "x": 50, "y": 30, "color": "#ffd700", "size": 100 },
+          "✨:medium:20:55:sparkle",
+          "✨:medium:80:50:sparkle",
+          "🌟:medium:50:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ir al Castillo de la Sombra!",
+          "target": "math-puzzle-3",
+          "emoji": "🏰"
+        }
+      ]
+    },
+
+    "keep-magic": {
+      "type": "narrative",
+      "title": "La Magia Guardada se Debilita",
+      "text": "Luna agarró la varita con fuerza y la acercó a su pecho.\n\n«Mejor me quedo con todo el poder. Así estaré más segura», pensó. 🔒\n\nPero algo raro pasó... La luz de la varita empezó a parpadear. Poco a poco, fue perdiendo brillo.\n\nEl Hada Estrella suspiró tristemente: «La magia que no se comparte... se apaga como una vela sin oxígeno.» 😔\n\nLa varita aún tenía algo de poder, pero mucho menos que antes. Luna siguió adelante, pero se sentía un poco sola con su varita medio apagada.\n\nEl camino hacia el castillo de la Sombra iba a ser más difícil...",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "👸:large:50:55",
+          "🪄:large:50:35",
+          "💨:medium:55:30:float",
+          "🧚:medium:80:40",
+          "😔:medium:83:48"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ir al Castillo de la Sombra",
+          "target": "math-puzzle-3-hard",
+          "emoji": "🏰"
+        }
+      ]
+    },
+
+    "math-puzzle-3": {
+      "type": "puzzle",
+      "title": "La Puerta del Castillo Oscuro",
+      "text": "El Castillo de la Sombra se alza ante Luna y sus amigos. Es grande, oscuro y un poco aterrador... pero Luna no tiene miedo porque tiene a su equipo. 💪\n\nLa puerta del castillo tiene una última cerradura mágica de números.",
+      "illustration": {
+        "background": "bg-dark-castle",
+        "elements": [
+          { "type": "castle", "x": 50, "bottom": 10, "scale": 1.5 },
+          "👸:medium:30:75",
+          "🐉:medium:45:75",
+          "🦉:medium:60:60:float",
+          "🧚:medium:70:55:float",
+          "🔒:large:50:45:sparkle",
+          "👤:large:50:25"
+        ]
+      },
+      "puzzle": {
+        "question": "La cerradura del castillo oscuro pregunta:\n\n«Luna tiene 10 llaves mágicas 🔑🔑🔑🔑🔑🔑🔑🔑🔑🔑\npero pierde 4 en el camino 💨💨💨💨\n\n¿Cuántas llaves le quedan?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "5", "label": "5 llaves", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 llaves", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 llaves", "emoji": "7️⃣" }
+        ],
+        "correctAnswer": "6",
+        "successTarget": "final-battle",
+        "failTarget": null,
+        "successText": "¡¡SÍ!! 🎉 10 - 4 = 6. ¡La puerta se abre con un estruendo! ¡Es hora de enfrentarse a la Sombra! ⚔️",
+        "failText": "Casi... Piensa: si tienes 10 y quitas 4, ¿cuántas te quedan? Cuenta hacia atrás desde 10: nueve, ocho, siete... 🤔"
+      }
+    },
+
+    "math-puzzle-3-hard": {
+      "type": "puzzle",
+      "title": "La Puerta Oscura",
+      "text": "El Castillo de la Sombra es aún más aterrador cuando estás sola. La puerta tiene una cerradura más difícil que las anteriores... 😨\n\nLa varita apenas brilla, pero Luna aprieta los dientes. ¡No se rendirá!",
+      "illustration": {
+        "background": "bg-dark-castle",
+        "elements": [
+          { "type": "castle", "x": 50, "bottom": 10, "scale": 1.5 },
+          "👸:medium:50:75",
+          "🔒:large:50:45:sparkle",
+          "👤:xlarge:50:20",
+          "😨:medium:55:68"
+        ]
+      },
+      "puzzle": {
+        "question": "La puerta oscura es más difícil:\n\n«Luna tenía 12 llaves mágicas 🔑\npero la oscuridad le quitó 5 💨\n\n¿Cuántas llaves le quedan?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "6", "label": "6 llaves", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 llaves", "emoji": "7️⃣" },
+          { "value": "8", "label": "8 llaves", "emoji": "8️⃣" }
+        ],
+        "correctAnswer": "7",
+        "successTarget": "final-battle-alone",
+        "failTarget": null,
+        "successText": "¡Correcto! 12 - 5 = 7. ¡Luna lo consiguió sola! La puerta se abre lentamente... 💪",
+        "failText": "No es esa... Cuenta hacia atrás desde 12, quitando 5: doce, once, diez, nueve, ocho... ¿y uno más? 🤔"
+      }
+    },
+
+    "final-battle": {
+      "type": "narrative",
+      "title": "¡Enfrentando a la Sombra!",
+      "text": "Dentro del castillo, la oscuridad era total. Pero de pronto, una figura apareció: ¡La Sombra del Olvido! 👤🌑\n\nEra enorme, oscura, y su voz retumbaba por todo el castillo:\n\n«¡Nunca recuperaréis los números! ¡Sin números, todo será caos y confusión! ¡JAJAJA!»\n\nPero Luna no tenía miedo. Miró a su derecha: Draco rugía con llamas arcoíris 🐉🌈. Miró arriba: el Búho Sabio la animaba 🦉. A su lado: el Hada brillaba 🧚.\n\n¡Levantó la varita compartida y gritó con todas sus fuerzas!\n\n«¡¡NÚMEROS, REGRESEN A CASA!!» 🪄✨\n\nLa luz fue tan increíblemente fuerte que la Sombra empezó a encogerse...",
+      "illustration": {
+        "background": "bg-dark-castle",
+        "elements": [
+          "👤:xlarge:50:20",
+          "🌑:large:50:15",
+          "👸:large:35:70",
+          "🐉:large:55:70",
+          "🦉:medium:20:40:float",
+          "🧚:medium:80:45:float",
+          "🪄:large:40:55:sparkle",
+          { "type": "glow", "x": 40, "y": 55, "color": "#ffd700", "size": 80 }
+        ]
+      },
+      "choices": [
+        {
+          "text": "Perdonar a la Sombra y ayudarla a encontrar su luz",
+          "target": "ending-best",
+          "emoji": "💛",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 3
+        },
+        {
+          "text": "Desterrar a la Sombra para siempre",
+          "target": "ending-good",
+          "emoji": "⚔️",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 4
+        }
+      ]
+    },
+
+    "final-battle-alone": {
+      "type": "narrative",
+      "title": "Enfrentando a la Sombra... Sola",
+      "text": "Dentro del castillo, Luna se encontró cara a cara con la Sombra del Olvido. 👤\n\nSola, con una varita que apenas brillaba, enfrentó a la criatura más oscura del reino.\n\n«Sin amigos, no tienes nada», se burló la Sombra.\n\nPero Luna apretó la varita y pensó en todas las cosas buenas que había aprendido en su viaje. Con toda su fuerza gritó:\n\n«¡NÚMEROS, REGRESEN!»\n\nLa varita lanzó un destello... no fue tan brillante como podría haber sido, pero fue suficiente. La Sombra se debilitó, y ALGUNOS números regresaron a las estrellas.\n\nPero no todos... 😔",
+      "illustration": {
+        "background": "bg-dark-castle",
+        "elements": [
+          "👤:xlarge:50:20",
+          "🌑:large:50:15",
+          "👸:large:50:70",
+          "🪄:medium:45:55",
+          { "type": "glow", "x": 45, "y": 55, "color": "#ffd700", "size": 40 }
+        ]
+      },
+      "choices": [
+        {
+          "text": "Aceptar la victoria parcial",
+          "target": "ending-neutral",
+          "emoji": "🌅"
+        }
+      ]
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡La Gran Celebración!",
+      "text": "Luna no solo venció a la Sombra... ¡la ayudó a encontrar su propia luz! 💛\n\nResultó que la Sombra era una estrella que había perdido su número hace mucho tiempo y se sentía sola y olvidada. Luna le dio el número más especial de todos: el número 1, porque todos somos importantes.\n\n¡Los números regresaron a TODAS las estrellas! El reino brilló más que nunca. 🌟⭐✨\n\nDraco lanzó fuegos artificiales arcoíris 🎆, el Búho recitó poemas de números 📖, y el Hada hizo bailar las estrellas 💃.\n\nLuna aprendió la lección más importante de todas:\n\n🌟 «Cuando compartes, ayudas a los demás y trabajas en equipo, la magia se MULTIPLICA. Y hasta la oscuridad más grande tiene una luz dentro esperando ser encontrada.» 🌟\n\n¡FIN! 👸🐉🦉🧚⭐",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👸:large:25:55",
+          "🐉:large:45:55",
+          "🦉:medium:65:40:float",
+          "🧚:medium:75:45:float",
+          "🎆:large:30:15",
+          "🎇:large:70:15",
+          "🌟:large:50:10:sparkle",
+          "⭐:medium:20:20:sparkle",
+          "⭐:medium:80:25:sparkle",
+          "🎊:medium:40:25",
+          "🎉:medium:60:25"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez desde el principio!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "¡La Victoria!",
+      "text": "¡Luna y sus amigos derrotaron a la Sombra! La criatura oscura se desvaneció con un aullido. 💫\n\nLa mayoría de los números regresaron a las estrellas. El reino se recuperó, y la gente celebró con alegría.\n\nPero algunas estrellas aún estaban un poco apagadas... Les faltaba algo.\n\nLuna miró al cielo y pensó: «La próxima vez, compartiré más y ayudaré a todos los que encuentre en mi camino. Cada pequeño acto de bondad cuenta.» 💭\n\n¡Fue una gran aventura! 🎉\n\n¡FIN! 👸⭐",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👸:large:40:55",
+          "🐉:large:60:60",
+          "🎉:large:30:25",
+          "⭐:medium:50:15:sparkle",
+          "⭐:medium:30:20:sparkle",
+          "⭐:small:70:20",
+          "🌙:medium:80:15"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez! (¿Podrás conseguir el final perfecto?)",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-neutral": {
+      "type": "ending",
+      "endingRank": "neutral",
+      "title": "Un Nuevo Amanecer",
+      "text": "Luna logró debilitar a la Sombra y salvar parte del reino. Los números más importantes regresaron, y poco a poco la vida volvió a la normalidad. 🌅\n\nPero sentada en su torre, mirando el amanecer, Luna se dio cuenta de algo:\n\n«Hacerlo sola fue mucho más difícil de lo que tenía que ser. El dragón que dejé llorando, la magia que no compartí... Todo habría sido diferente si hubiera sido más generosa.»\n\nLuna se prometió a sí misma: «La próxima aventura, buscaré amigos y compartiré todo lo que tenga. Porque juntos, todo es mejor.» 🤝\n\nFIN 🌅\n\n(¿Quieres intentarlo otra vez y tomar decisiones diferentes? ¡Quizás puedas conseguir un final mejor!)",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👸:large:50:60",
+          "🌅:xlarge:50:30",
+          "⭐:small:30:15:sparkle",
+          "⭐:small:70:20",
+          "💭:medium:55:45:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Intentarlo de nuevo con diferentes decisiones!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    }
+  }
+}
