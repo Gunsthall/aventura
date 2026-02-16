@@ -329,10 +329,68 @@
       "choices": [
         {
           "text": "¡Seguir juntos la aventura!",
-          "target": "dragon-joins",
+          "target": "forest-mural",
           "emoji": "🐉"
         }
       ]
+    },
+
+    "forest-mural": {
+      "type": "narrative",
+      "title": "El Mural Mágico del Bosque",
+      "text": "Mientras caminaban juntos, Luna y Draco descubrieron un antiguo mural mágico en la pared de una roca. 🪨✨\n\nEl mural mostraba dos escenas del bosque encantado, pero... ¡algo no encajaba!\n\n«¡Mira, Luna!» exclamó Draco. «Las dos imágenes son casi iguales, pero hay diferencias. Dicen que quien las encuentre descubrirá un atajo secreto.»\n\nLuna se acercó y observó con atención... 🔍",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:large:35:65",
+          "🐉:large:65:65",
+          "🪨:xlarge:50:35",
+          "🔍:medium:50:25:sparkle",
+          "✨:small:35:20:sparkle",
+          "✨:small:65:20:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Buscar las diferencias!",
+          "target": "forest-diferencias",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "forest-diferencias": {
+      "type": "puzzle",
+      "title": "El Mural de las Diferencias",
+      "text": "El mural muestra dos escenas del bosque encantado. ¡Encuentra las diferencias en la imagen de la derecha! 🔍✨",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:medium:30:80",
+          "🐉:medium:70:80",
+          "✨:small:50:20:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Toca las 4 diferencias en la imagen de la derecha! 👀",
+        "columns": 4,
+        "original": [
+          "🌳", "🌸", "🦋", "⭐",
+          "🐦", "🍄", "🌻", "🐝",
+          "🌺", "🐛", "🌿", "🌼",
+          "🐞", "🍀", "🌙", "🐌"
+        ],
+        "modified": [
+          "🌳", "🌸", "🦋", "🌟",
+          "🐦", "🎄", "🌻", "🐝",
+          "🌺", "🐛", "🌿", "🌼",
+          "🐞", "🍀", "☀️", "🦎"
+        ],
+        "differences": [3, 5, 14, 15],
+        "successTarget": "dragon-joins",
+        "successText": "¡¡Increíble!! 🎉 ¡Has encontrado todas las diferencias! El mural revela un atajo secreto. ✨"
+      }
     },
 
     "ignore-dragon": {

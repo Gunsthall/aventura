@@ -240,6 +240,9 @@ class StoryEngine {
       case 'contarObjetos':
         window.puzzleContarObjetos?.render(this, page, alreadySolved);
         break;
+      case 'diferencias':
+        window.puzzleDiferencias?.render(this, page, alreadySolved);
+        break;
       default:
         this._renderChoicesPuzzle(page, alreadySolved);
         break;

@@ -396,11 +396,47 @@
       },
       "choices": [
         {
-          "text": "¡Ir a rescatar a las tortugas!",
-          "target": "rescue-turtles",
-          "emoji": "🐢"
+          "text": "Observar el arrecife de cerca",
+          "target": "reef-diferencias",
+          "emoji": "🔍"
         }
       ]
+    },
+
+    "reef-diferencias": {
+      "type": "puzzle",
+      "title": "El Arrecife Contaminado",
+      "speaker": "sofia",
+      "text": "«¡Esperad!» dijo Sofía señalando un cartel submarino de los científicos marinos. Muestra cómo ERA el arrecife antes y cómo está AHORA. 🪸\n\n«Si encontramos qué ha cambiado, sabremos exactamente dónde limpiar primero.»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👩:medium:50:80",
+          "🪸:large:25:40:sparkle",
+          "🪸:medium:75:45:sparkle",
+          "🔍:medium:50:30:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Encuentra las 5 diferencias! ¿Qué ha cambiado en el arrecife? 🔍🌊",
+        "columns": 4,
+        "original": [
+          "🪸", "🐠", "🐙", "🪸",
+          "🐟", "🐚", "🦀", "🐡",
+          "🌿", "⭐", "🐠", "🪸",
+          "🐚", "🦐", "🌊", "🐟"
+        ],
+        "modified": [
+          "🪸", "🐠", "🛍️", "🪸",
+          "🐟", "🥤", "🦀", "🐡",
+          "🌿", "⭐", "🐠", "🧴",
+          "🐚", "🦐", "🥡", "🔋"
+        ],
+        "differences": [2, 5, 11, 14, 15],
+        "successTarget": "rescue-turtles",
+        "successText": "¡¡Muy bien!! 🎉 ¡Has encontrado todos los plásticos que contaminan el arrecife! Ahora sabemos dónde limpiar. 🧹🌊"
+      }
     },
 
     "rescue-turtles": {

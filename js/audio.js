@@ -138,6 +138,13 @@ class AudioManager {
     this._playTone(freq, 0.1, 'sine', 0.12);
   }
 
+  differenceFound() {
+    if (!this.enabled) return;
+    this._ensureContext();
+    this._playTone(587, 0.15, 'sine');
+    setTimeout(() => this._playTone(784, 0.2, 'sine'), 80);
+  }
+
   // Connection sound
   connected() {
     if (!this.enabled) return;
