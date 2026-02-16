@@ -140,7 +140,7 @@ class ConnectionManager {
           this._setupDataConnection(conn);
           resolve(this.roomCode);
         } else {
-          reject(new Error('Failed to establish data connection'));
+          reject(new Error('Error al establecer conexión de datos'));
         }
       });
 

@@ -107,7 +107,7 @@
     els.menuRoomCode.textContent = connectionManager.roomCode || '';
 
     if (!storyCatalog || storyCatalog.stories.length === 0) {
-      els.storyGrid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center">No adventures available yet.</p>';
+      els.storyGrid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center">No hay aventuras disponibles todavía.</p>';
       return;
     }
 
@@ -143,7 +143,7 @@
       const loaded = await storyEngine.loadStory(storyId);
 
       if (!loaded) {
-        alert('Error loading story');
+        alert('Error al cargar la historia');
         showScreen('menu');
         els.overlayLoading.classList.add('hidden');
         return;
@@ -203,10 +203,10 @@
         };
 
         connectionManager.onError = (err) => {
-          showConnectError(err.message || 'Connection error');
+          showConnectError(err.message || 'Error de conexión');
         };
       } catch (err) {
-        showConnectError(err.message || 'Failed to create room');
+        showConnectError(err.message || 'Error al crear la sala');
       }
     });
 
@@ -240,11 +240,11 @@
     async function doJoinRoom() {
       const code = els.inputRoomCode.value.trim();
       if (code.length < 4) {
-        showJoinStatus('Enter a valid room code', 'error');
+        showJoinStatus('Introduce un código de sala válido', 'error');
         return;
       }
 
-      showJoinStatus('Connecting...', 'success');
+      showJoinStatus('Conectando...', 'success');
       els.btnConnect.disabled = true;
 
       connectionManager.onRemoteStream = (stream) => {
@@ -263,15 +263,15 @@
       };
 
       connectionManager.onError = (err) => {
-        showJoinStatus(err.message || 'Connection failed', 'error');
+        showJoinStatus(err.message || 'Error de conexión', 'error');
         els.btnConnect.disabled = false;
       };
 
       try {
         await connectionManager.joinRoom(code);
-        showJoinStatus('Connected! Waiting for data channel...', 'success');
+        showJoinStatus('¡Conectado! Estableciendo canal de datos...', 'success');
       } catch (err) {
-        showJoinStatus(err.message || 'Failed to connect', 'error');
+        showJoinStatus(err.message || 'Error al conectar', 'error');
         els.btnConnect.disabled = false;
       }
     }

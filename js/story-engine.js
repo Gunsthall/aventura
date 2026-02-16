@@ -57,7 +57,7 @@ class StoryEngine {
   async loadStory(storyId) {
     try {
       const response = await fetch(`stories/${storyId}.json`);
-      if (!response.ok) throw new Error('Story not found');
+      if (!response.ok) throw new Error('Historia no encontrada');
       this.story = await response.json();
       this.currentPageId = this.story.meta.startPage;
       this.moralPoints = 0;
@@ -280,7 +280,7 @@ class StoryEngine {
       // Show hint
       this.els.puzzleFeedback.classList.remove('hidden');
       this.els.puzzleFeedback.className = 'puzzle-feedback fail';
-      this.els.puzzleFeedback.textContent = page.puzzle.failText || 'Hmm, try again...';
+      this.els.puzzleFeedback.textContent = page.puzzle.failText || 'Hmm, inténtalo de nuevo...';
 
       // Re-enable after a moment (except the wrong one)
       setTimeout(() => {
@@ -369,7 +369,7 @@ class StoryEngine {
         <div class="ending-title">${page.title}</div>
         <div class="ending-text">${this._formatText(page.text)}</div>
         <div style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:20px">
-          Moral points: ${'⭐'.repeat(this.moralPoints)}${'☆'.repeat(Math.max(0, 4 - this.moralPoints))} (${this.moralPoints}/4)
+          Puntos morales: ${'⭐'.repeat(this.moralPoints)}${'☆'.repeat(Math.max(0, 4 - this.moralPoints))} (${this.moralPoints}/4)
         </div>
         <div class="ending-actions">
           ${(page.choices || []).map((c, i) => `

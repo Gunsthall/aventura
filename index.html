@@ -22,7 +22,7 @@
           AVENTURA
           <span class="title-icon">🏰</span>
         </h1>
-        <p class="app-subtitle">Interactive Stories to Play Together</p>
+        <p class="app-subtitle">Historias interactivas para jugar juntos</p>
       </div>
 
       <!-- Camera preview -->
@@ -30,7 +30,7 @@
         <video id="local-preview" autoplay muted playsinline></video>
         <div id="camera-placeholder" class="camera-placeholder">
           <span>📷</span>
-          <p>Camera preview</p>
+          <p>Vista previa</p>
         </div>
       </div>
 
@@ -39,49 +39,49 @@
         <div id="connect-choice" class="connect-choice">
           <button id="btn-create-room" class="btn btn-primary btn-large">
             <span class="btn-icon">👑</span>
-            Create Room
+            Crear Sala
           </button>
           <div class="connect-divider">
-            <span>or</span>
+            <span>o</span>
           </div>
           <button id="btn-join-room" class="btn btn-secondary btn-large">
             <span class="btn-icon">🔗</span>
-            Join Room
+            Unirse a Sala
           </button>
         </div>
 
         <!-- Create room panel -->
         <div id="panel-create" class="connect-panel hidden">
-          <h2>Your room code:</h2>
+          <h2>Tu código de sala:</h2>
           <div class="room-code-display">
             <span id="room-code-text">------</span>
-            <button id="btn-copy-code" class="btn btn-small" title="Copy code">📋</button>
+            <button id="btn-copy-code" class="btn btn-small" title="Copiar código">📋</button>
           </div>
-          <p class="room-code-hint">Share this code with the other player</p>
+          <p class="room-code-hint">Comparte este código con el otro jugador</p>
           <div id="create-waiting" class="waiting-indicator">
             <div class="spinner"></div>
-            <span>Waiting for player to join...</span>
+            <span>Esperando a que se una el otro jugador...</span>
           </div>
-          <button id="btn-back-create" class="btn btn-text">← Back</button>
+          <button id="btn-back-create" class="btn btn-text">← Volver</button>
         </div>
 
         <!-- Join room panel -->
         <div id="panel-join" class="connect-panel hidden">
-          <h2>Enter room code:</h2>
+          <h2>Introduce el código de sala:</h2>
           <div class="room-code-input-wrapper">
             <input id="input-room-code" type="text" maxlength="6" placeholder="ABCD12"
                    class="room-code-input" autocomplete="off" spellcheck="false">
-            <button id="btn-connect" class="btn btn-primary">Connect</button>
+            <button id="btn-connect" class="btn btn-primary">Conectar</button>
           </div>
           <div id="join-status" class="join-status hidden"></div>
-          <button id="btn-back-join" class="btn btn-text">← Back</button>
+          <button id="btn-back-join" class="btn btn-text">← Volver</button>
         </div>
       </div>
 
       <!-- Connection error -->
       <div id="connect-error" class="connect-error hidden">
         <p id="error-message"></p>
-        <button id="btn-retry" class="btn btn-secondary">Try Again</button>
+        <button id="btn-retry" class="btn btn-secondary">Reintentar</button>
       </div>
     </div>
   </div>
@@ -94,11 +94,11 @@
       <div class="menu-header">
         <h1>
           <span>📚</span>
-          Choose an Adventure
+          Elige una Aventura
           <span>📚</span>
         </h1>
         <div class="menu-connection-info">
-          <span class="connection-badge connected">🟢 Connected</span>
+          <span class="connection-badge connected">🟢 Conectado</span>
           <span id="menu-room-code" class="room-badge"></span>
         </div>
       </div>
@@ -115,16 +115,16 @@
     <!-- Header bar -->
     <div class="game-header">
       <div class="game-header-left">
-        <button id="btn-back-menu" class="btn btn-icon" title="Back to menu">📚</button>
+        <button id="btn-back-menu" class="btn btn-icon" title="Volver al menú">📚</button>
         <span id="game-story-title" class="game-title"></span>
       </div>
       <div class="game-header-center">
         <span id="game-room-badge" class="room-badge"></span>
       </div>
       <div class="game-header-right">
-        <button id="btn-toggle-mic" class="btn btn-icon" title="Toggle microphone">🎤</button>
-        <button id="btn-toggle-cam" class="btn btn-icon" title="Toggle camera">📷</button>
-        <button id="btn-toggle-sound" class="btn btn-icon" title="Toggle sound effects">🔊</button>
+        <button id="btn-toggle-mic" class="btn btn-icon" title="Activar/desactivar micrófono">🎤</button>
+        <button id="btn-toggle-cam" class="btn btn-icon" title="Activar/desactivar cámara">📷</button>
+        <button id="btn-toggle-sound" class="btn btn-icon" title="Activar/desactivar sonido">🔊</button>
       </div>
     </div>
 
@@ -136,7 +136,7 @@
           <video id="remote-video" autoplay playsinline></video>
           <div id="remote-placeholder" class="video-placeholder">
             <span>📡</span>
-            <p>Connecting video...</p>
+            <p>Conectando vídeo...</p>
           </div>
         </div>
         <div class="video-local-wrapper">
@@ -144,7 +144,7 @@
         </div>
         <div id="connection-status" class="connection-status">
           <span class="status-dot"></span>
-          <span class="status-text">Connected</span>
+          <span class="status-text">Conectado</span>
         </div>
       </div>
 
@@ -189,7 +189,7 @@
 
         <!-- Scroll down arrow (visible when content overflows) -->
         <div id="scroll-arrow" class="scroll-arrow hidden">
-          <button id="scroll-arrow-btn" class="scroll-arrow-btn" aria-label="Scroll down">⬇️</button>
+          <button id="scroll-arrow-btn" class="scroll-arrow-btn" aria-label="Desplazar hacia abajo">⬇️</button>
         </div>
       </div>
     </div>
@@ -201,14 +201,14 @@
   <div id="overlay-reconnecting" class="overlay hidden">
     <div class="overlay-content">
       <div class="spinner large"></div>
-      <p>Reconnecting...</p>
+      <p>Reconectando...</p>
     </div>
   </div>
 
   <div id="overlay-loading" class="overlay hidden">
     <div class="overlay-content">
       <div class="spinner large"></div>
-      <p>Loading adventure...</p>
+      <p>Cargando aventura...</p>
     </div>
   </div>
 
