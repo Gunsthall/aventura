@@ -109,6 +109,35 @@ class AudioManager {
     }
   }
 
+  // Simon: one tone per color (4 colors)
+  simonTone(colorIndex) {
+    if (!this.enabled) return;
+    const freqs = [329.63, 440, 554.37, 659.25]; // E4, A4, C#5, E5
+    this._playTone(freqs[colorIndex % 4], 0.4, 'sine');
+  }
+
+  // Memory card flip
+  cardFlip() {
+    if (!this.enabled) return;
+    this._playTone(500, 0.08, 'sine', 0.15);
+  }
+
+  // Memory card match found
+  cardMatch() {
+    if (!this.enabled) return;
+    this._ensureContext();
+    this._playTone(523, 0.2, 'sine');
+    setTimeout(() => this._playTone(659, 0.2, 'sine'), 100);
+    setTimeout(() => this._playTone(784, 0.3, 'sine'), 200);
+  }
+
+  // Object bounce/appear sound for counting puzzle
+  objectBounce() {
+    if (!this.enabled) return;
+    const freq = 300 + Math.random() * 200;
+    this._playTone(freq, 0.1, 'sine', 0.12);
+  }
+
   // Connection sound
   connected() {
     if (!this.enabled) return;

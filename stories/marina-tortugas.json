@@ -424,11 +424,52 @@
       },
       "choices": [
         {
-          "text": "¿Quién aparece?",
-          "target": "meet-octopus",
-          "emoji": "❓"
+          "text": "¡Contar las tortugas libres!",
+          "target": "count-turtles",
+          "emoji": "🐢"
         }
       ]
+    },
+
+    "count-turtles": {
+      "type": "puzzle",
+      "title": "¿Cuántas Tortugas Nadan Libres?",
+      "text": "¡Las tortugas liberadas nadan de un lado a otro celebrando su libertad! Pero con tantos peces y burbujas, ¡es difícil contarlas! 🐢🐠🫧\n\nSofía dice: «Necesitamos saber cuántas tortugas hay libres para el informe de rescate.»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐢:medium:20:40:float",
+          "🐢:medium:50:55:float",
+          "🐢:medium:75:35:float",
+          "🐢:small:35:70:float",
+          "🐢:small:60:65:float",
+          "🐠:small:15:60:float",
+          "🐟:small:85:50:float",
+          "🫧:small:40:25:float",
+          "🫧:small:70:20:float",
+          "👧:medium:30:80",
+          "👩:medium:70:80"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¡Cuenta las tortugas 🐢 que nadan! Ignora los peces, ¡solo las tortugas!",
+        "targetEmoji": "🐢",
+        "targetCount": 5,
+        "distractorEmoji": "🐠",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "4", "label": "4 tortugas", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 tortugas", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 tortugas", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 tortugas", "emoji": "7️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "meet-octopus",
+        "successText": "¡¡Correcto!! 🎉 ¡Hay 5 tortugas nadando libres! ¡Buen ojo! 🐢🐢🐢🐢🐢",
+        "failText": "Hmm, cuenta otra vez con cuidado... ¡Solo las tortugas 🐢, no los peces! 🤔"
+      }
     },
 
     "meet-octopus": {
@@ -581,10 +622,40 @@
       "choices": [
         {
           "text": "¡Seguir hacia el Gran Remolino!",
-          "target": "math-puzzle-3",
+          "target": "simon-pulpo",
           "emoji": "🌀"
         }
       ]
+    },
+
+    "simon-pulpo": {
+      "type": "puzzle",
+      "title": "La Señal de Don Pulpo",
+      "speaker": "pulpo",
+      "text": "Cuando los amigos están a punto de llegar al Gran Remolino, Don Pulpo aparece y les detiene.\n\n«¡Esperad! El Remolino tiene una barrera de protección. Para desactivarla, debéis repetir mi señal de tentáculos.» 🐙\n\nDon Pulpo ilumina sus tentáculos en un orden especial...",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐙:xlarge:50:35:float",
+          "✨:medium:30:25:sparkle",
+          "✨:medium:70:25:sparkle",
+          "👧:medium:25:75",
+          "👦:medium:50:78",
+          "👩:medium:75:75",
+          "🌀:medium:50:10:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Repite la secuencia de colores de Don Pulpo! Escucha y observa con atención. 🐙🎵",
+        "sequence": [2, 0, 3, 1],
+        "colors": ["#e74c3c", "#3498db", "#27ae60", "#f1c40f"],
+        "labels": ["🔴 Rojo", "🔵 Azul", "🟢 Verde", "🟡 Amarillo"],
+        "playbackSpeed": 700,
+        "successTarget": "math-puzzle-3",
+        "successText": "¡¡Perfecto!! 🎉 ¡La barrera del Remolino se desactiva! ¡Podéis pasar!",
+        "failText": "¡Ups! Esa no era la secuencia. ¡Escucha otra vez! 🐙🎵"
+      }
     },
 
     "dark-cave": {

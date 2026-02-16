@@ -226,6 +226,27 @@ class StoryEngine {
 
     const alreadySolved = this.puzzleResults[this.currentPageId] === true;
 
+    // Route to the correct puzzle handler based on inputType
+    switch (page.puzzle.inputType) {
+      case 'simon':
+        window.puzzleSimon?.render(this, page, alreadySolved);
+        break;
+      case 'ordenarLetras':
+        window.puzzleOrdenarLetras?.render(this, page, alreadySolved);
+        break;
+      case 'memory':
+        window.puzzleMemory?.render(this, page, alreadySolved);
+        break;
+      case 'contarObjetos':
+        window.puzzleContarObjetos?.render(this, page, alreadySolved);
+        break;
+      default:
+        this._renderChoicesPuzzle(page, alreadySolved);
+        break;
+    }
+  }
+
+  _renderChoicesPuzzle(page, alreadySolved) {
     page.puzzle.options.forEach((option, index) => {
       const btn = document.createElement('button');
       btn.className = 'puzzle-option';
@@ -251,6 +272,13 @@ class StoryEngine {
     if (alreadySolved) {
       this._showPuzzleContinue(page.puzzle.successTarget, page.puzzle.successText);
     }
+  }
+
+  // Called by external puzzle handlers when puzzle is solved
+  completePuzzle(pageId, answer) {
+    this.puzzleResults[pageId] = true;
+    window.audioManager?.correct();
+    this.onPuzzleAttempt?.(pageId, answer, true);
   }
 
   _handlePuzzleAnswer(page, option, btnEl) {

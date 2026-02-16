@@ -197,7 +197,7 @@
     "bridge-crossed": {
       "type": "narrative",
       "title": "¡Al Otro Lado del Puente!",
-      "text": "¡Luna cruzó el puente mágico! 🎉\n\nLas estrellas del puente bailaron de alegría, y una lluvia de chispas doradas cayó a su alrededor. Los números 5 y 3 se unieron en el cielo formando un hermoso 8 brillante.\n\nPero al llegar al otro lado, Luna escuchó algo extraño...\n\nAlguien estaba... ¿llorando? 😢\n\nUn sonido triste venía de entre los árboles.",
+      "text": "¡Luna cruzó el puente mágico! 🎉\n\nLas estrellas del puente bailaron de alegría, y una lluvia de chispas doradas cayó a su alrededor. Los números 5 y 3 se unieron en el cielo formando un hermoso 8 brillante.\n\nPero al llegar al otro lado, Luna encontró un viejo cofre mágico entre las raíces de un árbol gigante. Tenía grabado: «Solo quien tenga buena memoria podrá abrirme.» 🧠✨",
       "illustration": {
         "background": "bg-forest",
         "elements": [
@@ -207,6 +207,55 @@
           "✨:medium:35:30:sparkle",
           "✨:medium:65:25:sparkle",
           "✨:small:45:40:sparkle",
+          "🧰:large:85:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Abrir el cofre mágico",
+          "target": "memory-puzzle",
+          "emoji": "🧠"
+        }
+      ]
+    },
+
+    "memory-puzzle": {
+      "type": "puzzle",
+      "title": "El Cofre de la Memoria",
+      "text": "El cofre se abre mostrando cartas mágicas que flotan en el aire. Cada carta tiene un símbolo brillante en su reverso. ¡Encuentra todas las parejas para desbloquear su contenido! 🃏✨",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:large:50:75",
+          "🃏:medium:25:30:float",
+          "🃏:medium:45:25:float",
+          "🃏:medium:65:30:float",
+          "✨:small:35:40:sparkle",
+          "✨:small:55:35:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Encuentra las parejas mágicas! Toca dos cartas para darles la vuelta. Si son iguales, ¡se quedan! 🧠",
+        "pairs": ["⭐", "🌙", "🔮", "🦋", "🌸", "💎"],
+        "columns": 4,
+        "successTarget": "memory-reward",
+        "successText": "¡Increíble memoria! 🎉 ¡Has encontrado todas las parejas!"
+      }
+    },
+
+    "memory-reward": {
+      "type": "narrative",
+      "title": "¡El Tesoro del Cofre!",
+      "text": "¡Las cartas brillan con fuerza y el cofre se abre del todo! 🎉✨\n\nDentro hay un mapa mágico que muestra el camino a través del bosque. Y también una nota:\n\n«Quien tiene buena memoria, nunca pierde el camino.»\n\nPero de pronto, Luna escuchó algo extraño...\n\nAlguien estaba... ¿llorando? 😢\n\nUn sonido triste venía de entre los árboles.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👸:large:50:65",
+          "🗺️:large:50:35:sparkle",
+          "✨:medium:35:25:sparkle",
+          "✨:medium:65:25:sparkle",
+          "✨:small:45:45:sparkle",
           "😢:medium:90:55"
         ]
       },
@@ -455,7 +504,7 @@
           { "value": "10", "label": "10", "emoji": "🔟" }
         ],
         "correctAnswer": "8",
-        "successTarget": "fairy-meeting",
+        "successTarget": "spell-puzzle",
         "failTarget": "crystal-hint",
         "successText": "¡¡Genial!! 🎉 ¡El patrón es sumar 2 cada vez! 2, 4, 6, 8... ¡Los cristales cantan de alegría y la puerta se abre! 💎✨",
         "failText": "Hmm, no es esa... Fíjate bien: de 2 a 4, ¿cuánto subimos? ¿Y de 4 a 6? 🤔"
@@ -490,11 +539,36 @@
       ]
     },
 
+    "spell-puzzle": {
+      "type": "puzzle",
+      "title": "La Palabra Mágica",
+      "text": "Al abrirse la puerta de cristal, una voz misteriosa resuena en la cueva:\n\n«Para recibir el don de la magia, deletrea la palabra secreta. Solo las mentes despiertas pueden descifrarla.» 🔮✨",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          { "type": "crystals", "count": 8 },
+          "🔮:large:50:30:sparkle",
+          "✨:medium:30:40:sparkle",
+          "✨:medium:70:40:sparkle",
+          "👸:large:50:75"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras para formar la palabra mágica! Puedes tocar una letra y luego tocar la casilla donde quieras ponerla. 🔤✨",
+        "word": "ESTRELLA",
+        "hint": "Brilla en el cielo por la noche ⭐",
+        "successTarget": "fairy-meeting",
+        "successText": "¡¡ESTRELLA!! ✨ ¡La palabra mágica ilumina toda la cueva!",
+        "failText": "Hmm, ese no es el orden correcto... ¡Piensa en algo que brilla en el cielo! 🌙"
+      }
+    },
+
     "fairy-meeting": {
       "type": "narrative",
       "title": "El Hada Estrella",
       "speaker": "hada",
-      "text": "Al abrirse la puerta de cristal, una luz deslumbrante llenó la cueva. ✨\n\nY de esa luz apareció... ¡el Hada Estrella! 🧚 Era hermosa, con alas que brillaban como diamantes y un vestido hecho de luz de luna.\n\n«Bien hecho, joven princesa», dijo el Hada con una voz que sonaba como campanitas. «Has demostrado que tu mente es tan fuerte como tu corazón.»\n\n«Tengo un regalo para ti: la Varita de los Números 🪄. Con ella podrás recuperar los números robados de las estrellas.»\n\n«Pero recuerda: su magia solo funciona al máximo cuando se comparte con los demás.»",
+      "text": "Al deletrear la palabra «ESTRELLA», una luz deslumbrante llenó la cueva. ✨\n\nY de esa luz apareció... ¡el Hada Estrella! 🧚 Era hermosa, con alas que brillaban como diamantes y un vestido hecho de luz de luna.\n\n«Bien hecho, joven princesa», dijo el Hada con una voz que sonaba como campanitas. «Has demostrado que tu mente es tan fuerte como tu corazón.»\n\n«Tengo un regalo para ti: la Varita de los Números 🪄. Con ella podrás recuperar los números robados de las estrellas.»\n\n«Pero recuerda: su magia solo funciona al máximo cuando se comparte con los demás.»",
       "illustration": {
         "background": "bg-crystal",
         "elements": [

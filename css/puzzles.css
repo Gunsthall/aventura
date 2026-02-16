@@ -1,0 +1,331 @@
+/* =============================================
+   PUZZLE TYPES - Styles for interactive puzzles
+   ============================================= */
+
+/* === SIMON === */
+.simon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 300px;
+  margin: 0 auto 16px;
+}
+
+.simon-btn {
+  aspect-ratio: 1;
+  border: 3px solid var(--simon-color, #888);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simon-btn.simon-active {
+  background: var(--simon-color, #888);
+  box-shadow: 0 0 30px var(--simon-color, #888);
+  transform: scale(1.05);
+}
+
+.simon-btn.simon-wrong {
+  animation: shake 0.4s ease;
+  border-color: var(--color-error);
+}
+
+.simon-btn:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.simon-btn:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-width: 4px;
+}
+
+.simon-btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+.simon-status {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  padding: 8px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.simon-label {
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.simon-solved .simon-btn {
+  opacity: 0.8;
+}
+
+/* === ORDENAR LETRAS === */
+.letras-slots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.letras-slot {
+  width: 48px;
+  height: 56px;
+  border: 2px dashed var(--color-surface-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  background: rgba(0,0,0,0.15);
+}
+
+.letras-slot.drag-hover {
+  border-color: var(--color-accent);
+  background: rgba(243, 156, 18, 0.15);
+  transform: scale(1.1);
+}
+
+.letras-slot.letras-filled {
+  border-style: solid;
+  border-color: var(--color-secondary);
+  background: var(--color-surface);
+}
+
+.letras-slot.letras-correct {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.15);
+  animation: pulse 0.5s ease;
+}
+
+.letras-slot.letras-shake {
+  animation: shake 0.4s ease;
+}
+
+.letras-tiles {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.letras-tile {
+  width: 48px;
+  height: 56px;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: all 0.2s ease;
+}
+
+.letras-tile.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px var(--color-accent);
+  transform: scale(1.1);
+}
+
+.letras-tile.letras-used {
+  opacity: 0.25;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+.letras-tile.dragging {
+  opacity: 0.85;
+  transform: scale(1.15) rotate(5deg);
+  cursor: grabbing;
+  z-index: 100;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.letras-hint {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 6px 0;
+}
+
+/* === MEMORY / PAREJAS === */
+.memory-counter {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--memory-columns, 4), 1fr);
+  gap: 8px;
+  max-width: 380px;
+  margin: 0 auto 16px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.memory-card.memory-flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.memory-card-front {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary-light);
+  color: var(--color-primary-light);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.memory-card-back {
+  background: var(--color-surface);
+  border: 2px solid var(--color-surface-light);
+  transform: rotateY(180deg);
+  font-size: 2rem;
+}
+
+.memory-card.memory-matched .memory-card-back {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.15);
+  animation: pulse 0.5s ease;
+}
+
+.memory-card.memory-matched {
+  pointer-events: none;
+}
+
+/* === CONTAR OBJETOS ANIMADOS === */
+.contar-arena {
+  position: relative;
+  width: 100%;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-surface-light);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.contar-object {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: contarDrift 6s ease-in-out infinite alternate;
+  animation-play-state: paused;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contar-object.contar-visible {
+  opacity: 1;
+  transform: scale(1);
+  animation-play-state: running;
+}
+
+.contar-distractor.contar-visible {
+  opacity: 0.5;
+}
+
+@keyframes contarDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(var(--drift-x, 20px), calc(var(--drift-y, 10px) * -1)) scale(1.05); }
+  50% { transform: translate(calc(var(--drift-x, 20px) * -0.5), var(--drift-y, 10px)) scale(0.95); }
+  75% { transform: translate(calc(var(--drift-x, 20px) * 0.3), calc(var(--drift-y, 10px) * -0.5)) scale(1.02); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.contar-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.contar-option {
+  min-width: 80px;
+  justify-content: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .simon-grid {
+    max-width: 240px;
+    gap: 8px;
+  }
+
+  .simon-btn {
+    min-height: 65px;
+    font-size: 0.9rem;
+  }
+
+  .letras-slot, .letras-tile {
+    width: 38px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+
+  .memory-grid {
+    max-width: 300px;
+    gap: 6px;
+  }
+
+  .memory-card-back {
+    font-size: 1.5rem;
+  }
+
+  .memory-card-front {
+    font-size: 1.2rem;
+  }
+
+  .contar-object {
+    font-size: 1.6rem;
+  }
+}
