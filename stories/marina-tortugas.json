@@ -1,0 +1,838 @@
+{
+  "meta": {
+    "id": "marina-tortugas",
+    "title": "Marina y las Tortugas del Mar de Plástico",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "marina": { "name": "Marina", "emoji": "👧", "color": "#3498db" },
+    "leo": { "name": "Leo", "emoji": "👦", "color": "#27ae60" },
+    "sofia": { "name": "Sofía", "emoji": "👩", "color": "#e74c3c" },
+    "tiko": { "name": "Tiko la Tortuga", "emoji": "🐢", "color": "#2ecc71" },
+    "abuela": { "name": "Abuela Rosa", "emoji": "👵", "color": "#f39c12" },
+    "pulpo": { "name": "Don Pulpo", "emoji": "🐙", "color": "#9b59b6" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "narrative",
+      "title": "La Playa de las Estrellas",
+      "text": "En un pueblecito junto al mar vivía Marina 👧, una niña de pelo rizado y ojos del color del océano.\n\nMarina amaba el mar más que a nada en el mundo. Cada mañana corría a la playa a ver las olas, escuchar las gaviotas y buscar conchas bonitas.\n\nPero últimamente, algo estaba cambiando. En vez de conchas, Marina encontraba botellas de plástico, bolsas y tapones entre la arena. 😟\n\nUna mañana, mientras paseaba por la orilla, escuchó un sonido que le rompió el corazón...",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🌊:xlarge:50:70:float",
+          "🏖️:large:20:80",
+          "👧:large:45:60",
+          "🐚:medium:65:78",
+          "🧴:medium:30:82",
+          "🥤:small:70:85",
+          "☀️:xlarge:80:12:sparkle",
+          "🌅:large:50:20"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Investigar el sonido!",
+          "target": "find-turtle",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "find-turtle": {
+      "type": "narrative",
+      "title": "¡Una Tortuga en Peligro!",
+      "text": "Entre las rocas, Marina encontró algo terrible: ¡una pequeña tortuga marina atrapada en una red de plástico! 🐢😢\n\nLa tortuga se retorcía intentando liberarse, pero cuanto más se movía, más se enredaba. Sus ojitos brillaban pidiendo ayuda.\n\n«¡Tranquila, pequeña!» susurró Marina arrodillándose junto a ella. Con mucho cuidado, empezó a quitar los hilos de plástico.\n\nCuando por fin la liberó, la tortuga la miró fijamente y... ¡habló!\n\n«Gracias, niña valiente. Me llamo Tiko. Pero mi familia sigue atrapada... Hay cientos de plásticos en el fondo del mar. Necesitamos ayuda.» 🐢💬",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐢:xlarge:45:45",
+          "😢:medium:52:37",
+          "👧:large:65:55",
+          "🪨:large:20:70",
+          "🪨:medium:80:65",
+          "🥅:large:40:50",
+          "🌊:medium:50:80:float"
+        ]
+      },
+      "speaker": "tiko",
+      "choices": [
+        {
+          "text": "¡Te prometo que os ayudaré!",
+          "target": "promise",
+          "emoji": "🤝"
+        }
+      ]
+    },
+
+    "promise": {
+      "type": "narrative",
+      "title": "Una Misión Importante",
+      "speaker": "tiko",
+      "text": "«Para salvar a mi familia necesitamos hacer tres cosas», explicó Tiko:\n\n🥇 «Primero: limpiar la playa para que no llegue más plástico al mar.»\n\n🥈 «Segundo: bajar al fondo del mar a liberar a las tortugas atrapadas.»\n\n🥉 «Tercero: encontrar al Gran Remolino de Plástico y destruirlo para siempre.»\n\n«Pero es demasiado trabajo para una sola persona... ¿Conoces a alguien que pueda ayudarnos?»\n\nMarina pensó en sus amigos del pueblo. ¡Claro que sí! 💪",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐢:large:30:50:float",
+          "👧:large:60:55",
+          "🥇:medium:20:20:sparkle",
+          "🥈:medium:50:15:sparkle",
+          "🥉:medium:80:20:sparkle",
+          "🌊:large:50:80:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ir a buscar a mis amigos",
+          "target": "find-friends",
+          "emoji": "🏃"
+        }
+      ]
+    },
+
+    "find-friends": {
+      "type": "narrative",
+      "title": "El Equipo de Rescate",
+      "text": "Marina corrió al pueblo y encontró a sus dos mejores amigos:\n\n👦 Leo, que era el más fuerte y siempre cargaba las cajas de su padre pescador.\n\n👩 Sofía, que era la más lista de la clase y sabía todo sobre los animales marinos.\n\n«¡Chicos, las tortugas necesitan nuestra ayuda!» les gritó Marina sin aliento.\n\nLeo y Sofía se miraron.",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:30:55",
+          "👦:large:50:55",
+          "👩:large:70:55",
+          "🏘️:large:50:20",
+          "🐢:medium:25:75:float",
+          "💪:medium:50:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Nos ayudáis? ¡Es muy urgente!",
+          "target": "moral-choice-1",
+          "emoji": "🙏"
+        }
+      ]
+    },
+
+    "moral-choice-1": {
+      "type": "moral",
+      "title": "¿Quién se Apunta?",
+      "text": "Leo frunció el ceño: «Iba a jugar al fútbol con los chicos...»\n\nSofía dudó: «Tengo deberes de mates para mañana...»\n\nMarina les miró. Necesitaba convencerles. ¿Cómo debería hacerlo?",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:50:50",
+          "👦:large:25:55",
+          "⚽:medium:20:40",
+          "👩:large:75:55",
+          "📚:medium:80:40",
+          "🤔:medium:35:45",
+          "🤔:medium:65:45"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Explicarles lo importante que es salvar a las tortugas",
+          "target": "convince-explain",
+          "emoji": "💚",
+          "moralValue": "empathy",
+          "points": 2
+        },
+        {
+          "text": "Decirles que después pueden jugar y hacer deberes",
+          "target": "convince-bargain",
+          "emoji": "🤝",
+          "moralValue": "negotiation",
+          "points": 1
+        },
+        {
+          "text": "Intentar hacerlo sola, no quiero molestarles",
+          "target": "go-alone",
+          "emoji": "🚶",
+          "moralValue": "independence",
+          "points": 0
+        }
+      ]
+    },
+
+    "convince-explain": {
+      "type": "narrative",
+      "title": "El Poder de la Empatía",
+      "text": "Marina tomó aire y habló desde el corazón:\n\n«Imaginad que alguien tirase basura en vuestra casa y no pudierais salir. Eso es lo que les pasa a las tortugas. El mar es su hogar, y nosotros lo estamos llenando de plástico.»\n\n«Si no hacemos algo, Tiko y su familia podrían...» A Marina se le quebró la voz.\n\nLeo apretó los puños: «¡El fútbol puede esperar! ¡Vamos a salvar esas tortugas!» ⚡\n\nSofía cerró el libro: «Olvida los deberes. ¡Esto es más importante!» 📖\n\n¡El equipo estaba listo! Los tres chocaron las manos. 🙌",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:35:50",
+          "👦:large:50:50",
+          "👩:large:65:50",
+          "🙌:xlarge:50:30:sparkle",
+          "💚:medium:30:25:sparkle",
+          "💚:medium:70:25:sparkle",
+          "🐢:medium:50:75:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡A limpiar la playa!",
+          "target": "beach-cleanup",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+
+    "convince-bargain": {
+      "type": "narrative",
+      "title": "Un Trato Justo",
+      "text": "«Os propongo un trato», dijo Marina. «Me ayudáis un par de horas y después vamos todos a jugar al fútbol y hacemos los deberes juntos.»\n\nLeo se rascó la cabeza: «Bueno... supongo que puede estar bien.»\n\nSofía asintió: «Vale, pero solo un rato.»\n\nNo estaban muy entusiasmados, pero al menos venían. Marina esperaba que cuando vieran a las tortugas, les importase tanto como a ella... 🤞",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:35:55",
+          "👦:large:50:55",
+          "👩:large:65:55",
+          "🤝:large:50:35",
+          "😐:small:45:48",
+          "😐:small:68:48"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ir a la playa juntos",
+          "target": "beach-cleanup",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+
+    "go-alone": {
+      "type": "narrative",
+      "title": "Sola Ante el Mar",
+      "text": "«No os preocupéis, ya lo hago yo sola», dijo Marina bajando la mirada.\n\nMarina volvió a la playa cargando una bolsa grande. Tiko la esperaba en la orilla.\n\n«¿Vienes sola?» preguntó la tortuga con tristeza.\n\n«Sí, pero... ¡puedo hacerlo!» dijo Marina, aunque por dentro sentía que el trabajo era enorme para una sola persona.\n\nEmpezó a recoger plásticos, pero había tantos... Por cada uno que recogía, el mar traía dos más. 😰",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👧:large:50:55",
+          "🐢:medium:30:65:float",
+          "😰:medium:55:47",
+          "🧴:small:20:75",
+          "🥤:small:35:80",
+          "🛍️:small:65:78",
+          "🥡:small:75:82",
+          "🌊:large:50:85:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Seguir intentándolo...",
+          "target": "alone-struggle",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "alone-struggle": {
+      "type": "narrative",
+      "title": "Una Lección Difícil",
+      "text": "Después de una hora, Marina estaba agotada. Solo había llenado media bolsa, y la playa seguía llena de basura.\n\n«No puedo sola...» admitió Marina sentándose en la arena.\n\nEn ese momento, Leo y Sofía aparecieron corriendo por la playa.\n\n«¡Marina! Nos sentimos mal por no ayudarte», dijo Leo. «¡Estamos aquí!»\n\nSofía añadió: «El fútbol y los deberes pueden esperar. Esto importa más.»\n\nMarina sonrió con lágrimas en los ojos. «¡Gracias, amigos! He aprendido que pedir ayuda no es de débiles. ¡Es de valientes!» 💪🤝",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👧:large:40:55",
+          "👦:large:60:50",
+          "👩:large:75:50",
+          "🏃:medium:55:42",
+          "🏃:medium:70:42",
+          "😊:medium:45:47",
+          "🤝:large:55:65:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ahora sí, a limpiar la playa juntos!",
+          "target": "beach-cleanup",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+
+    "beach-cleanup": {
+      "type": "narrative",
+      "title": "¡Operación Playa Limpia!",
+      "text": "Los tres amigos se pusieron manos a la obra. Cada uno llevaba una bolsa grande. 🗑️\n\nMarina recogía los plásticos de la orilla.\nLeo, con su fuerza, sacaba las redes atrapadas entre las rocas.\nSofía separaba todo por tipos: plástico, cristal y metal.\n\n«¡Así podemos reciclarlo después!» explicó Sofía. ♻️\n\nTrabajaron durante una hora y... ¡llenaron 6 bolsas enormes! Pero antes de llevarlas al punto de reciclaje, la Abuela Rosa apareció con una pregunta...",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👧:medium:25:55",
+          "👦:medium:50:50",
+          "👩:medium:75:55",
+          "🗑️:medium:20:70",
+          "🗑️:medium:50:68",
+          "🗑️:medium:80:70",
+          "♻️:large:50:25:sparkle",
+          "🌊:medium:50:85:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Escuchar a la Abuela Rosa",
+          "target": "math-puzzle-1",
+          "emoji": "👵"
+        }
+      ]
+    },
+
+    "math-puzzle-1": {
+      "type": "puzzle",
+      "title": "Las Bolsas de Reciclaje",
+      "speaker": "abuela",
+      "text": "La Abuela Rosa llegó con su carrito de reciclaje. 👵♻️\n\n«¡Qué buen trabajo, niños! Pero necesito saber cuántas bolsas habéis llenado para apuntarlo en el registro del pueblo.»",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👵:large:50:35",
+          "♻️:medium:60:28:sparkle",
+          "🗑️:medium:15:65",
+          "🗑️:medium:30:65",
+          "🗑️:medium:45:65",
+          "🗑️:medium:60:65",
+          "🗑️:medium:75:65",
+          "🗑️:medium:88:65"
+        ]
+      },
+      "puzzle": {
+        "question": "La Abuela Rosa pregunta:\n\n«Marina llenó 2 bolsas 🗑️🗑️\nLeo llenó 3 bolsas 🗑️🗑️🗑️\nSofía llenó 1 bolsa 🗑️\n\n¿Cuántas bolsas han llenado entre los tres?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "5", "label": "5 bolsas", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 bolsas", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 bolsas", "emoji": "7️⃣" }
+        ],
+        "correctAnswer": "6",
+        "successTarget": "abuela-reward",
+        "failTarget": "abuela-hint",
+        "successText": "¡¡Correcto!! 🎉 2 + 3 + 1 = 6 bolsas. ¡La Abuela Rosa lo apunta orgullosa en su registro! ♻️",
+        "failText": "Hmm, piénsalo otra vez. Cuenta las bolsas de cada uno: 2 de Marina, más 3 de Leo, más 1 de Sofía... 🤔"
+      }
+    },
+
+    "abuela-hint": {
+      "type": "narrative",
+      "title": "La Abuela Ayuda",
+      "speaker": "abuela",
+      "text": "«Vamos a contarlo juntos con los dedos, cariño» 👵\n\n«Marina llenó 2... ✌️\nLe sumamos las 3 de Leo: 2 + 3 = 5 ✋\nY ahora la de Sofía: 5 + 1 = ...\n\n¡Un dedito más! ¿Cuántos dedos tienes levantados?» 🖐️☝️",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👵:xlarge:50:40:float",
+          "✌️:large:25:65",
+          "➕:medium:40:65",
+          "🤟:large:55:65",
+          "➕:medium:70:65",
+          "☝️:large:85:65"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Intentar otra vez!",
+          "target": "math-puzzle-1",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "abuela-reward": {
+      "type": "narrative",
+      "title": "El Regalo de la Abuela",
+      "speaker": "abuela",
+      "text": "«¡6 bolsas! ¡Sois unos campeones!» exclamó la Abuela Rosa. 👵🎉\n\n«Como recompensa por cuidar el medio ambiente, os voy a dar algo especial.»\n\nDe su bolsillo sacó tres pulseras hechas con cuerda de colores del mar.\n\n«Estas pulseras están hechas con redes de pesca recicladas. Mientras las llevéis, podréis respirar bajo el agua. Las hizo mi abuela, que era una sirena.» 😉✨\n\n¡Los tres amigos se miraron con los ojos como platos!",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👵:large:50:35",
+          "👧:medium:25:65",
+          "👦:medium:50:65",
+          "👩:medium:75:65",
+          "📿:medium:35:45:sparkle",
+          "📿:medium:50:50:sparkle",
+          "📿:medium:65:45:sparkle",
+          "✨:small:40:30:sparkle",
+          "✨:small:60:30:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ponerse las pulseras y saltar al mar!",
+          "target": "dive-in",
+          "emoji": "🌊"
+        }
+      ]
+    },
+
+    "dive-in": {
+      "type": "narrative",
+      "title": "¡Bajo el Mar!",
+      "text": "Los tres amigos corrieron al agua y... ¡las pulseras funcionaban! 🌊✨\n\nPodían respirar bajo el mar como si fueran peces. Todo era increíble: peces de colores nadaban a su alrededor, corales brillantes crecían en las rocas, y medusas transparentes flotaban como lámparas.\n\nPero también había cosas horribles: bolsas de plástico que parecían medusas falsas, botellas hundidas en la arena, y redes enredadas por todas partes.\n\nY entonces lo vieron: un grupo de tortugas atrapadas entre una montaña de plásticos... 😢🐢",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👧:medium:25:40",
+          "👦:medium:50:35",
+          "👩:medium:75:40",
+          "🐠:medium:15:55:float",
+          "🐟:medium:85:50:float",
+          "🪸:large:30:80",
+          "🪸:medium:70:78",
+          "🐢:medium:45:65",
+          "🐢:small:55:70",
+          "🐢:small:60:62",
+          "🥤:small:40:72",
+          "🛍️:small:52:75"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ir a rescatar a las tortugas!",
+          "target": "rescue-turtles",
+          "emoji": "🐢"
+        }
+      ]
+    },
+
+    "rescue-turtles": {
+      "type": "narrative",
+      "title": "El Rescate Submarino",
+      "text": "Los tres amigos nadaron hasta las tortugas atrapadas. Había cinco tortugas envueltas en plásticos. 🐢🐢🐢🐢🐢\n\n«¡Trabajemos en equipo!» dijo Marina.\n\nCada uno liberó tortugas con cuidado:\n- Marina desenredó las redes con paciencia 👧\n- Leo usó su fuerza para romper los plásticos duros 👦\n- Sofía indicaba cómo hacerlo sin hacer daño a las tortugas 👩\n\nUna a una, las tortugas fueron quedando libres. ¡Cada vez que liberaban una, la tortuga daba una vueltecita de alegría! 🐢💃\n\nPero entonces apareció alguien...",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👧:medium:20:45",
+          "👦:medium:50:40",
+          "👩:medium:80:45",
+          "🐢:medium:30:60:float",
+          "🐢:medium:50:65:float",
+          "🐢:medium:70:58:float",
+          "🐢:small:40:70:float",
+          "🐢:small:60:72:float",
+          "✨:small:35:55:sparkle",
+          "✨:small:65:52:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Quién aparece?",
+          "target": "meet-octopus",
+          "emoji": "❓"
+        }
+      ]
+    },
+
+    "meet-octopus": {
+      "type": "narrative",
+      "title": "Don Pulpo, el Sabio del Mar",
+      "speaker": "pulpo",
+      "text": "De detrás de un coral gigante salió Don Pulpo 🐙, el habitante más viejo y sabio del mar.\n\nTenía ocho tentáculos de color violeta y unas gafas redondas hechas con cristales de botellas recicladas.\n\n«¡Vaya, vaya! Humanos que limpian en vez de ensuciar. ¡Hace años que no veía eso!» dijo con voz profunda.\n\n«Habéis liberado a las tortugas, pero el problema de verdad está más abajo: el Gran Remolino de Plástico. Es una espiral enorme de basura que atrapa todo lo que se acerca.»\n\n«Para destruirlo, necesitaréis resolver su acertijo. ¿Estáis listos?»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐙:xlarge:50:40:float",
+          "👓:medium:52:33",
+          "🪸:large:15:75",
+          "🪸:large:85:75",
+          "👧:medium:25:70",
+          "👦:medium:50:72",
+          "👩:medium:75:70",
+          "✨:small:40:25:sparkle",
+          "✨:small:60:28:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Estamos listos!",
+          "target": "math-puzzle-2",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "math-puzzle-2": {
+      "type": "puzzle",
+      "title": "El Acertijo de Don Pulpo",
+      "speaker": "pulpo",
+      "text": "Don Pulpo extiende sus tentáculos y dibuja números en la arena del fondo del mar. 🐙✍️\n\n«Para encontrar el camino al Gran Remolino, debéis resolver esto...»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐙:large:50:30:float",
+          "🔢:medium:30:55:sparkle",
+          "🔢:medium:50:60:sparkle",
+          "🔢:medium:70:55:sparkle",
+          { "type": "glow", "x": 50, "y": 55, "color": "#9b59b6", "size": 80 }
+        ]
+      },
+      "puzzle": {
+        "question": "Don Pulpo pregunta:\n\n«Había 10 tortugas en el mar. 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢\nEl plástico atrapó a 5 de ellas. 😢\nVosotros habéis liberado a 5. 🎉\n\n¿Cuántas tortugas están libres ahora?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "5", "label": "5 tortugas", "emoji": "5️⃣" },
+          { "value": "10", "label": "10 tortugas", "emoji": "🔟" },
+          { "value": "15", "label": "15 tortugas", "emoji": "🔢" }
+        ],
+        "correctAnswer": "10",
+        "successTarget": "moral-choice-2",
+        "failTarget": "pulpo-hint",
+        "successText": "¡¡Exacto!! 🎉 ¡Las 10 tortugas están libres! 5 ya estaban libres + 5 que habéis liberado = ¡todas! 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢",
+        "failText": "Piénsalo bien: las 5 que NO fueron atrapadas siguen libres, y las 5 atrapadas ahora también lo están. ¿Cuántas son en total? 🤔"
+      }
+    },
+
+    "pulpo-hint": {
+      "type": "narrative",
+      "title": "Don Pulpo Da una Pista",
+      "speaker": "pulpo",
+      "text": "«Vamos a verlo paso a paso con mis tentáculos» dijo Don Pulpo 🐙\n\n«Había 10 tortugas en total: 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢\n\nDe esas 10, el plástico atrapó a 5.\nEso significa que 5 seguían libres: 🐢🐢🐢🐢🐢 ✅\n\nVosotros liberasteis a las 5 atrapadas: 🐢🐢🐢🐢🐢 ✅\n\nEntonces... ¿cuántas están libres ahora? ¡Sumad las dos mitades!»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐙:xlarge:50:30:float",
+          "🐢:medium:10:65",
+          "🐢:medium:22:65",
+          "🐢:medium:34:65",
+          "🐢:medium:46:65",
+          "🐢:medium:58:65",
+          "✅:small:34:55",
+          "🐢:medium:10:80",
+          "🐢:medium:22:80",
+          "🐢:medium:34:80",
+          "🐢:medium:46:80",
+          "🐢:medium:58:80",
+          "✅:small:34:73"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Intentar otra vez!",
+          "target": "math-puzzle-2",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "moral-choice-2": {
+      "type": "moral",
+      "title": "El Camino al Gran Remolino",
+      "speaker": "pulpo",
+      "text": "«¡Bien hecho!» dijo Don Pulpo. «El Gran Remolino está en las profundidades. Puedo mostraros dos caminos para llegar.» 🐙\n\n«El camino rápido pasa por la Cueva Oscura. Es más peligroso, pero ahorraríais tiempo.»\n\n«El camino largo rodea por el Jardín de Corales. Es más seguro, y de paso podríais limpiar los plásticos que hay por el camino.»\n\n¿Qué prefieren hacer?",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🐙:large:50:25:float",
+          "🕳️:large:25:60",
+          "💀:small:22:50",
+          "🪸:large:75:60",
+          "🌿:medium:78:50:float",
+          "👧:medium:40:75",
+          "👦:medium:50:78",
+          "👩:medium:60:75"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ir por el Jardín de Corales limpiando el camino",
+          "target": "coral-garden",
+          "emoji": "🪸",
+          "moralValue": "responsibility",
+          "points": 2
+        },
+        {
+          "text": "Ir por la Cueva Oscura, más rápido",
+          "target": "dark-cave",
+          "emoji": "🕳️",
+          "moralValue": "haste",
+          "points": 0
+        }
+      ]
+    },
+
+    "coral-garden": {
+      "type": "narrative",
+      "title": "El Jardín de Corales",
+      "text": "Los tres amigos nadaron por el Jardín de Corales. Era un lugar mágico, lleno de colores y vida. 🪸🐠🦈\n\nMientras avanzaban, iban recogiendo cada plástico que encontraban. Una botella aquí, una bolsa allá.\n\n«¡Mira!» exclamó Sofía. «Cada vez que quitamos un plástico, los corales brillan más.» ✨\n\n¡Era verdad! Los corales agradecían que les quitasen la basura de encima. Peces que estaban escondidos empezaron a salir. Una familia de caballitos de mar les saludó.\n\nCuando llegaron al otro lado, llevaban 2 bolsas más de plásticos recogidos. El mar se veía más limpio. 💙",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🪸:large:15:60:sparkle",
+          "🪸:large:40:70:sparkle",
+          "🪸:medium:70:65:sparkle",
+          "🐠:medium:25:40:float",
+          "🐟:medium:60:35:float",
+          "🐡:small:80:45:float",
+          "👧:medium:30:55",
+          "👦:medium:50:50",
+          "👩:medium:70:55",
+          "✨:small:45:30:sparkle",
+          "✨:small:65:25:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir hacia el Gran Remolino!",
+          "target": "math-puzzle-3",
+          "emoji": "🌀"
+        }
+      ]
+    },
+
+    "dark-cave": {
+      "type": "narrative",
+      "title": "La Cueva Oscura",
+      "text": "Los tres amigos entraron en la Cueva Oscura. Estaba muy oscuro y daba un poco de miedo. 😨\n\nLas paredes estaban cubiertas de bolsas de plástico que se movían con la corriente como fantasmas.\n\n«No me gusta esto...» susurró Leo.\n\n«Ni a mí», dijo Sofía agarrándose al brazo de Marina.\n\nPasaron por la cueva sin limpiar nada. Tenían demasiada prisa y demasiado miedo.\n\nAl salir, vieron que habían dejado atrás un montón de basura. Marina sintió una punzada de culpa... pero el Gran Remolino estaba cerca. 😔",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "👧:medium:30:55",
+          "👦:medium:50:50",
+          "👩:medium:70:55",
+          "😨:small:35:47",
+          "😨:small:55:42",
+          "😨:small:75:47",
+          "🛍️:small:20:40:float",
+          "🛍️:small:80:35:float",
+          "🛍️:small:45:30:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Llegar al Gran Remolino",
+          "target": "math-puzzle-3-hard",
+          "emoji": "🌀"
+        }
+      ]
+    },
+
+    "math-puzzle-3": {
+      "type": "puzzle",
+      "title": "El Código del Remolino",
+      "text": "¡Ahí está! El Gran Remolino de Plástico es una espiral gigante de basura que gira sin parar. 🌀\n\nPara destruirlo hay que introducir un código numérico en su centro. Don Pulpo les dejó una nota...",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🌀:xlarge:50:35:sparkle",
+          "🗑️:small:30:30:float",
+          "🛍️:small:65:25:float",
+          "🥤:small:40:45:float",
+          "🧴:small:60:42:float",
+          "👧:medium:25:75",
+          "👦:medium:50:78",
+          "👩:medium:75:75",
+          { "type": "glow", "x": 50, "y": 35, "color": "#e74c3c", "size": 90 }
+        ]
+      },
+      "puzzle": {
+        "question": "La nota de Don Pulpo dice:\n\n«En la playa recogisteis 6 bolsas de plástico. 🗑️\nEn el Jardín de Corales recogisteis 2 más. 🗑️\nEn el rescate de tortugas sacásteis 2 redes. 🥅\n\n¿Cuántos residuos habéis recogido en total?\n¡Ese es el código para destruir el Remolino!»",
+        "inputType": "choices",
+        "options": [
+          { "value": "8", "label": "8", "emoji": "8️⃣" },
+          { "value": "10", "label": "10", "emoji": "🔟" },
+          { "value": "12", "label": "12", "emoji": "🔢" }
+        ],
+        "correctAnswer": "10",
+        "successTarget": "destroy-whirlpool",
+        "failTarget": null,
+        "successText": "¡¡SÍ!! 🎉 6 + 2 + 2 = 10. ¡El código es 10! ¡El Remolino empieza a desintegrarse! 🌀💥",
+        "failText": "Casi... Recuerda: 6 bolsas de la playa + 2 del jardín + 2 redes del rescate. Súmalos todos. 🤔"
+      }
+    },
+
+    "math-puzzle-3-hard": {
+      "type": "puzzle",
+      "title": "El Código del Remolino",
+      "text": "¡Ahí está! El Gran Remolino de Plástico es enorme y aterrador. 🌀😨\n\nPara destruirlo hay que introducir un código. Pero como no limpiaron el Jardín de Corales, el acertijo es más difícil...",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🌀:xlarge:50:35:sparkle",
+          "🗑️:small:30:25:float",
+          "🛍️:small:65:20:float",
+          "🥤:small:40:42:float",
+          "👧:medium:35:75",
+          "👦:medium:50:78",
+          "👩:medium:65:75",
+          { "type": "glow", "x": 50, "y": 35, "color": "#e74c3c", "size": 90 }
+        ]
+      },
+      "puzzle": {
+        "question": "Para destruir el Remolino necesitáis el código:\n\n«Empezasteis con 6 bolsas de plástico de la playa. 🗑️\nEn el rescate de tortugas sacásteis 2 redes. 🥅\nPero por la Cueva Oscura se os cayeron 3 plásticos de vuelta al mar. 😢\n\n¿Cuántos residuos os quedan? ¡Ese es el código!»",
+        "inputType": "choices",
+        "options": [
+          { "value": "5", "label": "5", "emoji": "5️⃣" },
+          { "value": "6", "label": "6", "emoji": "6️⃣" },
+          { "value": "8", "label": "8", "emoji": "8️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "destroy-whirlpool-weak",
+        "failTarget": null,
+        "successText": "¡Correcto! 6 + 2 - 3 = 5. Pero es un código débil... El Remolino no se destruirá del todo. 😟",
+        "failText": "Piensa: 6 de la playa + 2 redes = 8, pero se cayeron 3... 8 - 3 = ? 🤔"
+      }
+    },
+
+    "destroy-whirlpool": {
+      "type": "narrative",
+      "title": "¡El Remolino se Destruye!",
+      "text": "Marina, Leo y Sofía gritaron juntos: «¡DIEZ!» 🗣️\n\nEl número 10 brilló con una luz cegadora y entró en el centro del Remolino. 💥\n\n¡BOOOOM! 🌊✨\n\nEl Gran Remolino de Plástico se deshizo en mil pedazos. Pero en lugar de caer al fondo del mar, los plásticos se convirtieron en burbujas de arcoíris que subieron a la superficie.\n\n¡Los corales volvieron a brillar! ¡Los peces cantaron! ¡Las tortugas nadaron libres!\n\nTiko apareció con toda su familia: «¡Lo habéis conseguido! ¡El mar está limpio!» 🐢🎉",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "💥:xlarge:50:30:sparkle",
+          "🫧:medium:30:20:float",
+          "🫧:medium:50:15:float",
+          "🫧:medium:70:20:float",
+          "🌈:large:50:10",
+          "🐢:medium:20:65:float",
+          "🐢:medium:40:60:float",
+          "🐢:medium:60:65:float",
+          "🐢:medium:80:60:float",
+          "👧:medium:30:80",
+          "👦:medium:50:78",
+          "👩:medium:70:80"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Celebrar con las tortugas!",
+          "target": "ending-best",
+          "emoji": "🎉",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 3
+        }
+      ]
+    },
+
+    "destroy-whirlpool-weak": {
+      "type": "narrative",
+      "title": "El Remolino se Debilita",
+      "text": "Marina, Leo y Sofía gritaron: «¡CINCO!» 🗣️\n\nEl número 5 entró en el Remolino... pero no fue suficiente para destruirlo del todo. 😟\n\nEl Remolino se hizo más pequeño y soltó a las tortugas que tenía atrapadas, pero siguió girando débilmente en el fondo del mar.\n\n«No hemos podido destruirlo del todo», dijo Marina con tristeza. «Si hubiéramos recogido más plásticos por el camino...»\n\nTiko se acercó: «Habéis hecho mucho, pero el Remolino volverá a crecer si la gente sigue tirando plásticos al mar. El trabajo no termina aquí.» 🐢",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🌀:large:50:30",
+          "🐢:medium:25:60:float",
+          "🐢:medium:50:55:float",
+          "🐢:medium:75:60:float",
+          "👧:medium:30:80",
+          "👦:medium:50:78",
+          "👩:medium:70:80",
+          "😟:medium:45:73"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver a la superficie",
+          "target": "ending-neutral",
+          "emoji": "🌅"
+        }
+      ]
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡Héroes del Mar!",
+      "text": "Los tres amigos salieron del agua y toda la gente del pueblo les esperaba aplaudiendo. 👏🎉\n\nLa noticia se había extendido: ¡tres niños habían salvado a las tortugas y limpiado el mar!\n\nEl alcalde les dio medallas hechas con plástico reciclado. 🏅\n\nTiko sacó la cabeza del agua y les guiñó un ojo: «Gracias, amigos. Recordad siempre: cada pequeño gesto cuenta. Si cada persona recoge un solo plástico al día, el mar estará limpio en un año.» 🐢💙\n\nMarina, Leo y Sofía crearon el «Club de los Guardianes del Mar» y cada sábado organizaban limpiezas de playa. Pronto todo el pueblo se apuntó.\n\n🌟 Moraleja: El trabajo en equipo, la empatía con los animales, y el esfuerzo de cada día pueden cambiar el mundo. Nunca eres demasiado pequeño para hacer algo grande. 🌟\n\n¡FIN! 👧👦👩🐢🌊💙",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:55",
+          "👦:large:50:55",
+          "👩:large:75:55",
+          "🏅:medium:25:40:sparkle",
+          "🏅:medium:50:40:sparkle",
+          "🏅:medium:75:40:sparkle",
+          "🐢:medium:50:78:float",
+          "🎉:large:15:20",
+          "🎊:large:85:20",
+          "👏:medium:40:15",
+          "👏:medium:60:15",
+          "💙:medium:50:10:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "Un Buen Día en el Mar",
+      "text": "Los tres amigos salieron del agua cansados pero contentos. Habían salvado a las tortugas y debilitado el Gran Remolino. 🌊\n\nTiko les agradeció: «Habéis hecho mucho hoy. El mar está más limpio gracias a vosotros.» 🐢\n\nPero Marina pensó: «Podríamos haber hecho más si hubiéramos sido más generosos desde el principio... La próxima vez, ayudaré de corazón, no por un trato.»\n\nAun así, fue un gran día. Los tres amigos prometieron volver cada semana a limpiar la playa. 💪\n\n¡FIN! 👧👦👩🐢",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:30:55",
+          "👦:large:50:55",
+          "👩:large:70:55",
+          "🐢:medium:50:78:float",
+          "🌅:large:50:15",
+          "⭐:medium:30:20:sparkle",
+          "⭐:medium:70:20:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez con diferentes decisiones!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-neutral": {
+      "type": "ending",
+      "endingRank": "neutral",
+      "title": "El Mar Sigue Esperando",
+      "text": "Los tres amigos volvieron a la playa. Habían salvado a las tortugas, pero el Gran Remolino seguía ahí, en el fondo, esperando crecer de nuevo. 🌀\n\nMarina se sentó en la arena y pensó en todo lo que habría sido diferente:\n\n«Si hubiera pedido ayuda con más ganas desde el principio... Si hubiéramos limpiado el camino en vez de tomar atajos... Cada pequeña decisión importó.» 💭\n\nTiko se acercó: «No te preocupes, Marina. Mañana es un nuevo día. Y cada día es una nueva oportunidad para cuidar el mar.» 🐢\n\nFIN 🌅\n\n(¿Quieres intentarlo de nuevo? ¡Toma decisiones diferentes y podrás conseguir el final perfecto!)",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:40:55",
+          "🐢:medium:60:60:float",
+          "🌅:xlarge:50:25",
+          "🌀:small:30:75",
+          "💭:medium:45:40:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Intentarlo de nuevo!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    }
+  }
+}

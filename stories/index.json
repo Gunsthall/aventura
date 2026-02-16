@@ -7,6 +7,14 @@
       "coverEmoji": "👸🌙✨",
       "ageRange": "5-8",
       "tags": ["matemáticas", "valores", "aventura", "princesa"]
+    },
+    {
+      "id": "marina-tortugas",
+      "title": "Marina y las Tortugas del Mar de Plástico",
+      "description": "Únete a Marina y sus amigos para limpiar el océano, rescatar tortugas atrapadas en plásticos y aprender a cuidar nuestro planeta.",
+      "coverEmoji": "🐢🌊♻️",
+      "ageRange": "5-8",
+      "tags": ["medio ambiente", "trabajo en equipo", "matemáticas", "animales"]
     }
   ]
 }
