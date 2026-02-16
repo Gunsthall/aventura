@@ -153,8 +153,7 @@
       if (syncManager) syncManager.destroy();
       syncManager = new SyncManager(connectionManager, storyEngine);
       syncManager.onMenuRequested = () => {
-        showScreen('menu');
-        renderStoryMenu();
+        goToMenu();
       };
       syncManager.onStorySelected = (id) => selectStory(id, true);
 
@@ -324,14 +323,21 @@
     els.overlayReconnecting.classList.add('hidden');
     showScreen('menu');
     renderStoryMenu();
+
+    // Listen for STORY_SELECT from remote while on the menu screen
+    // (syncManager doesn't exist yet at this point)
+    connectionManager.onDataReceived = (msg) => {
+      if (msg?.type === 'STORY_SELECT' && msg.payload?.storyId) {
+        selectStory(msg.payload.storyId, true);
+      }
+    };
   }
 
   // ---- Game Events ----
   function setupGameEvents() {
     // Back to menu
     els.btnBackMenu.addEventListener('click', () => {
-      showScreen('menu');
-      renderStoryMenu();
+      goToMenu();
     });
 
     // Toggle mic
