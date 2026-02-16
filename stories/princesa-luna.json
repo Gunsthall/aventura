@@ -238,7 +238,7 @@
         "inputType": "memory",
         "question": "¡Encuentra las parejas mágicas! Toca dos cartas para darles la vuelta. Si son iguales, ¡se quedan! 🧠",
         "pairs": ["⭐", "🌙", "🔮", "🦋", "🌸", "💎"],
-        "columns": 4,
+        "columns": 3,
         "successTarget": "memory-reward",
         "successText": "¡Increíble memoria! 🎉 ¡Has encontrado todas las parejas!"
       }

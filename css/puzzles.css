@@ -180,9 +180,9 @@
 
 .memory-grid {
   display: grid;
-  grid-template-columns: repeat(var(--memory-columns, 4), 1fr);
-  gap: 8px;
-  max-width: 380px;
+  grid-template-columns: repeat(var(--memory-columns, 3), 1fr);
+  gap: 12px;
+  max-width: 420px;
   margin: 0 auto 16px;
 }
 
@@ -190,6 +190,8 @@
   aspect-ratio: 1;
   perspective: 600px;
   cursor: pointer;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .memory-card-inner {
@@ -220,7 +222,7 @@
   background: var(--color-primary);
   border: 2px solid var(--color-primary-light);
   color: var(--color-primary-light);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
@@ -228,7 +230,7 @@
   background: var(--color-surface);
   border: 2px solid var(--color-surface-light);
   transform: rotateY(180deg);
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .memory-card.memory-matched .memory-card-back {
@@ -386,8 +388,8 @@
   }
 
   .memory-grid {
-    max-width: 300px;
-    gap: 6px;
+    max-width: 320px;
+    gap: 10px;
   }
 
   .memory-card-back {
