@@ -890,20 +890,22 @@ body {
 
 /* Ending overlay */
 .ending-overlay {
-  position: absolute;
-  inset: 0;
+  flex: 1;
   background: rgba(15, 10, 30, 0.95);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   z-index: 20;
   animation: fadeIn var(--transition-slow);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ending-content {
   text-align: center;
-  padding: 40px;
+  padding: 40px 20px 60px;
   max-width: 500px;
+  margin: auto;
 }
 
 .ending-content .ending-rank {

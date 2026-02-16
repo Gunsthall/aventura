@@ -103,8 +103,10 @@ class StoryEngine {
   }
 
   _renderPage(page) {
-    // Hide ending overlay
+    // Hide ending overlay, restore hidden sections
     this.els.endingOverlay.classList.add('hidden');
+    this.els.illustrationContainer.classList.remove('hidden');
+    document.getElementById('story-text-container').classList.remove('hidden');
 
     // Title
     this.els.pageTitle.textContent = page.title || '';
@@ -382,6 +384,9 @@ class StoryEngine {
   _renderEnding(page) {
     this.els.choicesContainer.classList.add('hidden');
     this.els.puzzleContainer.classList.add('hidden');
+    // Hide illustration and text so they don't cause scroll issues behind the overlay
+    this.els.illustrationContainer.classList.add('hidden');
+    document.getElementById('story-text-container').classList.add('hidden');
 
     // Determine ending rank visuals
     const rankVisuals = {
