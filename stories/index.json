@@ -15,6 +15,14 @@
       "coverEmoji": "🐢🌊♻️",
       "ageRange": "5-8",
       "tags": ["medio ambiente", "trabajo en equipo", "matemáticas", "animales"]
+    },
+    {
+      "id": "jungla-se-mueve",
+      "title": "La Jungla se Mueve",
+      "description": "Un incendio amenaza la jungla. Ayuda a Roco el gorila, Celdi el cerdito y muchos animales a trabajar juntos para salvarla. ¡Cada uno tiene un talento especial!",
+      "coverEmoji": "🦍🔥🌿",
+      "ageRange": "5-8",
+      "tags": ["trabajo en equipo", "animales", "naturaleza", "valores"]
     }
   ]
 }

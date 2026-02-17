@@ -1,0 +1,1014 @@
+{
+  "meta": {
+    "id": "jungla-se-mueve",
+    "title": "La Jungla se Mueve",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "roco": { "name": "Roco el Gorila", "emoji": "🦍", "color": "#2d3436" },
+    "nora": { "name": "Nora la Guacamaya", "emoji": "🦜", "color": "#e74c3c" },
+    "koolena": { "name": "Koolena la Pitón", "emoji": "🐍", "color": "#27ae60" },
+    "bangue": { "name": "Bangüe el Jaguar", "emoji": "🐆", "color": "#f39c12" },
+    "manu": { "name": "Manu el Mono", "emoji": "🐒", "color": "#e67e22" },
+    "celdi": { "name": "Celdi el Cerdito", "emoji": "🐷", "color": "#fd79a8" },
+    "elia": { "name": "Elia la Elefanta", "emoji": "🐘", "color": "#636e72" },
+    "cocodrilo": { "name": "Jefe Cocodrilo", "emoji": "🐊", "color": "#00b894" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "narrative",
+      "title": "Amanece en la Jungla",
+      "text": "Amanecía en la jungla. 🌿☀️\n\nRepleta de plantas, árboles gigantes, insectos, animales grandes y pequeños, pájaros de intensos colores y grandes aves de inmensas alas... ¡La sinfonía de colores y sonidos era maravillosa!\n\nAunque todos los animales vivían allí y eran vecinos, rara vez hablaban entre ellos. Algunos incluso se alimentaban de otros, como el oso hormiguero, que metía su laaaaaargo hocico en los hormigueros. ¡¡Puagggg, qué asco!! 🐜\n\nPero en los últimos años, cada vez llovía menos y hacía más calor. Muchas plantas y árboles se habían secado, lo que entristecía a todos. 😢",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          { "type": "trees", "positions": [{"x": 5, "scale": 1.3}, {"x": 15, "scale": 1.0}, {"x": 85, "scale": 1.2}, {"x": 95, "scale": 0.9}] },
+          "☀️:xlarge:80:10:sparkle",
+          "🦜:medium:25:25:float",
+          "🐒:medium:70:30:float",
+          "🦋:small:45:20:float",
+          "🌺:medium:35:75",
+          "🌿:medium:60:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Un día de tormenta...",
+          "target": "storm",
+          "emoji": "⛈️"
+        }
+      ]
+    },
+
+    "storm": {
+      "type": "narrative",
+      "title": "¡Tormenta de Rayos!",
+      "text": "Un día de verano amaneció muy oscuro y nublado. ⛈️\n\nMuchos animales pensaron aliviados que llovería. ¡Pero para su sorpresa, empezó una gran tormenta de rayos! ¡Ni una gota de agua! Solo grandes y luminosos rayos surcando el cielo. ⚡⚡\n\nDe repente, uno de los rayos bajó rasgando el cielo y golpeó con un tremendo estruendo un gran árbol seco.\n\n¡El árbol se incendió! Y como todo estaba muy seco, las llamas comenzaron a extenderse rápidamente. 🔥🔥🔥\n\nLos insectos, pájaros, conejos, monos y ardillas empezaron a huir aterrorizados...",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "⚡:xlarge:40:10:sparkle",
+          "⚡:large:65:15:sparkle",
+          "🔥:xlarge:50:50:sparkle",
+          "🔥:large:35:55:sparkle",
+          "🔥:large:65:55:sparkle",
+          "🌳:large:50:65",
+          "🐒:small:15:60:float",
+          "🐦:small:80:30:float",
+          "🐇:small:20:80"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Quién puede salvar la jungla?",
+          "target": "roco-speaks",
+          "emoji": "🦍"
+        }
+      ]
+    },
+
+    "roco-speaks": {
+      "type": "narrative",
+      "title": "¡La Voz de Roco!",
+      "speaker": "roco",
+      "text": "De repente, entre las expresiones de miedo, se oyó una fuerte voz:\n\n«¡DETENÉOS, NO HUYÁIS!» 🦍💪\n\nEra Roco, el gran gorila negro, un animal enorme y hermoso que raramente hablaba. Su voz y presencia eran tan impresionantes que todos los animales se detuvieron a escucharle.\n\n«¡El fuego va a destruir la jungla si no hacemos algo! ¡Hay que detenerlo!»\n\nNora, la preciosa guacamaya de casi 50 años, supo que Roco tenía razón. ¡Algo había que hacer!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🦍:xlarge:50:45",
+          "💪:medium:60:38",
+          "🦜:large:25:30:float",
+          "🔥:medium:85:50:sparkle",
+          "🔥:medium:10:55:sparkle",
+          "🐇:small:30:75",
+          "🐒:small:70:70",
+          "🦋:small:40:20:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Escuchar el plan",
+          "target": "plan",
+          "emoji": "🗣️"
+        }
+      ]
+    },
+
+    "plan": {
+      "type": "narrative",
+      "title": "¡Un Plan para Salvar la Jungla!",
+      "speaker": "koolena",
+      "text": "«¿Cómo podemos pararlo?» preguntó Nora 🦜. «He visto apagarse fuegos por la lluvia, pero ¿cómo podemos hacer lluvia nosotros?»\n\n«Creo que sssshhséee quién podría ayudarnosssss» siseó Koolena, la larguísima serpiente pitón 🐍. «Vi hace años una mamá elefante bañando a su bebé. ¡Llenaba la trompa con agua y la usaba como una manguera!»\n\n«¡Claro, los elefantes!» dijo Roco. «Pero hace mucho que no he visto ninguno. ¿Dónde podrían estar?» 🤔\n\nEntonces Lula, una inteligente águila de casi 2 metros de envergadura, golpeó a su compañero Lulo con el ala...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🦍:large:20:55",
+          "🦜:large:40:25:float",
+          "🐍:large:65:65",
+          "🦅:large:80:30:float",
+          "🐘:medium:50:15:sparkle",
+          "❓:medium:55:10:sparkle",
+          "🔥:medium:5:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Escuchar a las águilas",
+          "target": "eagles-offer",
+          "emoji": "🦅"
+        }
+      ]
+    },
+
+    "eagles-offer": {
+      "type": "narrative",
+      "title": "El Plan de Búsqueda",
+      "text": "Lulo, el águila, se elevó para que todos le vieran y dijo: 🦅\n\n«Las águilas podemos volar grandes distancias y ver fenomenal desde lo alto. ¡Nos dirigiremos hacia el sur de la jungla a buscar a los elefantes! Pero NO nos acercaremos a ellos...» añadió enfadado. «¡La última vez tuvimos una gran pelea!»\n\n«¡Yo os seguiré!» anunció Bangüe, el precioso jaguar negro 🐆. «Soy el animal más rápido de la jungla.»\n\n«¡Y nosotros saltaremos por las copas de los árboles!» intervino Manu el mono 🐒. «Así podremos ver a las águilas y guiar al jaguar.»\n\n«¡En marcha!» ordenó Roco 🦍.\n\nPero entonces se oyó un agudo gritito desde el suelo...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🦅:xlarge:50:15:float",
+          "🦅:large:70:20:float",
+          "🐆:large:30:65",
+          "🐒:medium:60:40:float",
+          "🐒:small:72:45:float",
+          "🦍:large:15:55",
+          "🔥:small:90:50:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Quién ha gritado?",
+          "target": "celdi-speaks",
+          "emoji": "❓"
+        }
+      ]
+    },
+
+    "celdi-speaks": {
+      "type": "narrative",
+      "title": "¡Un Momento!",
+      "speaker": "celdi",
+      "text": "«¡Un momento!» Era Celdi, el cerdito vietnamita 🐷. Un diminuto puerco, dicharachero y bonachón.\n\n«¿Alguno sabéis hablar elefanto, el idioma de los elefantes? ¡Porque ellos no entienden nuestro idioma de la jungla!»\n\nTodos se quedaron anonadados. ¡Nadie había caído en eso! 😲\n\n«Veo que no...» continuó Celdi. «Pues tendré que ir con vosotros. ¡Yo me crié de pequeñito con una manada de elefantes que me acogieron cuando perdí a mi familia! Todavía recuerdo lo suficiente del elefanto para hablar con ellos.»\n\nBangüe miró al pequeño cerdito y sus diminutas patitas... 🐆🐷",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐷:xlarge:50:55",
+          "😲:small:55:48",
+          "🐆:large:25:60",
+          "🐒:medium:75:40:float",
+          "🦅:medium:70:15:float",
+          "🐍:medium:80:70",
+          "🦍:large:10:50"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Cómo llevarán al cerdito?",
+          "target": "moral-choice-1",
+          "emoji": "🤔"
+        }
+      ]
+    },
+
+    "moral-choice-1": {
+      "type": "moral",
+      "title": "¿Cómo Viajará Celdi?",
+      "text": "Bangüe dijo: «Con esas patitas no puedes seguirme...» 🐆\n\nCeldi es demasiado pequeño para correr tan rápido como el jaguar. Necesitan encontrar una forma de llevarlo. ¿Qué deberían hacer?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐆:xlarge:40:50",
+          "🐷:large:65:65",
+          "😰:small:70:58",
+          "🐍:medium:80:55",
+          "🐒:medium:20:35:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Celdi sube a la espalda de Bangüe y Koolena les ata",
+          "target": "koolena-helps",
+          "emoji": "🐍",
+          "moralValue": "teamwork",
+          "points": 2
+        },
+        {
+          "text": "Celdi va corriendo como pueda, ¡es un valiente!",
+          "target": "celdi-runs",
+          "emoji": "🏃",
+          "moralValue": "independence",
+          "points": 0
+        },
+        {
+          "text": "Los monos llevan a Celdi saltando de rama en rama",
+          "target": "monos-carry",
+          "emoji": "🐒",
+          "moralValue": "creativity",
+          "points": 1
+        }
+      ]
+    },
+
+    "koolena-helps": {
+      "type": "narrative",
+      "title": "¡Koolena al Rescate!",
+      "speaker": "koolena",
+      "text": "«¡Dejadme a mí!» dijo Koolena la pitón 🐍.\n\nAntes de que pudieran darse cuenta, Koolena pasó entre las patas del jaguar y se enrolló entre el cuerpo de Bangüe y el cerdito, apretando justo para que no se cayera.\n\n«¡Vámonosssshhhh!» gritó entusiasmada 🐍💨\n\nBangüe y Celdi se miraron con cara de asombro, ¡pero no había tiempo que perder!\n\nY así fue como el grupo se lanzó a la búsqueda: Lulo y Lula volando en el cielo 🦅, Manu y sus amigos monos saltando entre las copas 🐒, y la curiosa estampa de Bangüe el jaguar, con un cerdito y una pitón enroscados en su espalda 🐆🐷🐍",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐆:xlarge:45:55",
+          "🐷:medium:48:42",
+          "🐍:large:43:50",
+          "🦅:medium:30:15:float",
+          "🦅:medium:55:10:float",
+          "🐒:medium:75:30:float",
+          "🐒:small:85:35:float",
+          "✨:small:50:35:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡A la aventura!",
+          "target": "journey-start",
+          "emoji": "🏃"
+        }
+      ]
+    },
+
+    "celdi-runs": {
+      "type": "narrative",
+      "title": "Celdi Intenta Correr",
+      "text": "El valiente cerdito intentó seguir al jaguar con sus diminutas patitas... 🐷💨\n\nPero al cabo de unos minutos, Celdi ya estaba agotado y muy rezagado. Sus patitas eran demasiado cortas. 😥\n\n«¡No puedo más!» jadeó Celdi.\n\nBangüe tuvo que volver a por él. Habían perdido un tiempo precioso... y el fuego seguía avanzando. 🔥\n\n«Quizá deberíamos haberte subido a mi espalda desde el principio...» dijo el jaguar con un suspiro.\n\nKoolena, que les seguía, se enrolló rápidamente entre ambos para sujetar al cerdito. «¡Assssí mejor!» 🐍",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐷:large:50:60",
+          "😥:medium:55:52",
+          "🐆:large:25:50",
+          "💨:small:60:65",
+          "🔥:medium:85:40:sparkle",
+          "🐍:medium:70:65"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Seguir adelante",
+          "target": "journey-start",
+          "emoji": "🏃"
+        }
+      ]
+    },
+
+    "monos-carry": {
+      "type": "narrative",
+      "title": "Los Monos al Rescate",
+      "text": "Manu y dos amigos monos agarraron a Celdi y empezaron a saltar de rama en rama con él. 🐒🐷\n\n«¡¡¡Aaaaahhh!!!» gritaba Celdi con los ojos como platos mientras volaba por los aires.\n\nPero los monos, aunque fuertes, se cansaban rápido cargando con el cerdito. Y las ramas estaban muy secas... ¡CRACK! Una rama se rompió y Celdi casi se cae. 😱\n\n«Mejor que vaya en la espalda de Bangüe», decidió Manu. «Nosotros necesitamos las manos libres para saltar.»\n\nKoolena la pitón se ofreció a atar a Celdi al jaguar. «¡Assssí es más seguro!» 🐍",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐒:large:40:30:float",
+          "🐷:medium:45:35",
+          "😱:small:50:30",
+          "🐒:medium:60:25:float",
+          "🐆:large:30:70",
+          "🐍:medium:55:65",
+          "🌳:large:75:50"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡En marcha!",
+          "target": "journey-start",
+          "emoji": "🏃"
+        }
+      ]
+    },
+
+    "journey-start": {
+      "type": "narrative",
+      "title": "La Gran Búsqueda",
+      "text": "El grupo avanzaba a toda velocidad por la jungla. 💨\n\nLos monos saltaban sin descanso entre las copas de los árboles mientras seguían a las águilas, que volaban en grandes círculos en el cielo. 🦅🐒\n\nAbajo, Bangüe el jaguar corría dando saltos, con Celdi dando tumbos en su espalda, sujeto por Koolena la pitón. 🐆🐷🐍\n\nLlevaban ya un buen rato buscando cuando Manu vio, desde la rama más alta de un gran árbol, cómo Lula y Lulo les hacían señales mientras bajaban.\n\n«¡Allí está la manada de elefantes!» dijo Lula 🦅. «Pasado el gran río, justo al comienzo de la llanura.»",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🦅:large:30:10:float",
+          "🦅:medium:55:15:float",
+          "🐒:medium:65:30:float",
+          "🐆:large:40:65",
+          "🐷:small:43:55",
+          "🐍:medium:38:60",
+          "🌳:large:10:50",
+          "🌳:large:85:45"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Al gran río!",
+          "target": "river-approach",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+
+    "river-approach": {
+      "type": "narrative",
+      "title": "El Gran Río",
+      "text": "El río bajaba con fuerza. La corriente era muy fuerte. 🌊\n\nKoolena, la pitón, dijo que ella mejor se quedaba en este lado. «Con el mareo que llevo no quiero arriesgarme a acabar ahogada.» 🐍😵‍💫\n\nBangüe se puso a buscar el mejor sitio para cruzar cuando... ¡pegó un tremendo salto hacia atrás! 😱\n\n¡Un grupo de cocodrilos había emergido del agua! 🐊🐊🐊\n\n«¡El río es nuestro territorio!» dijo el jefe cocodrilo, sin ocultar su extrañeza ante un jaguar con un cerdito a la espalda. «Nadie lo cruza sin nuestro permiso.»",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          { "type": "river", "bottom": 25 },
+          "🐆:large:55:45",
+          "🐷:small:58:38",
+          "🐊:large:25:60:float",
+          "🐊:medium:40:65:float",
+          "🐊:medium:70:62:float",
+          "🌊:medium:50:75:float",
+          "😱:small:60:38"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Hablar con los cocodrilos!",
+          "target": "moral-choice-2",
+          "emoji": "🐊"
+        }
+      ]
+    },
+
+    "moral-choice-2": {
+      "type": "moral",
+      "title": "¿Cómo Convencer a los Cocodrilos?",
+      "speaker": "cocodrilo",
+      "text": "Los cocodrilos no se fían. Hablan bajito entre ellos, barajando si la historia del incendio es cierta. 🐊🤔\n\nBangüe necesita cruzar el río, pero los cocodrilos bloquean el paso. ¿Qué deberían hacer?",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐊:xlarge:50:40",
+          "🐆:large:75:55",
+          "🐷:medium:78:48",
+          "🐊:medium:25:55:float",
+          "🐊:medium:65:50:float",
+          "🌊:medium:50:70:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Explicar que el fuego les afectará a todos, incluso a ellos",
+          "target": "convince-crocodiles",
+          "emoji": "💚",
+          "moralValue": "empathy",
+          "points": 2
+        },
+        {
+          "text": "Bangüe les amenaza con sus garras de jaguar",
+          "target": "threaten-crocodiles",
+          "emoji": "😠",
+          "moralValue": "aggression",
+          "points": 0
+        },
+        {
+          "text": "Buscar otro camino para cruzar el río",
+          "target": "find-another-way",
+          "emoji": "🔍",
+          "moralValue": "avoidance",
+          "points": 1
+        }
+      ]
+    },
+
+    "convince-crocodiles": {
+      "type": "narrative",
+      "title": "Celdi Habla con el Corazón",
+      "speaker": "celdi",
+      "text": "Celdi se incorporó en la espalda de Bangüe y dijo con su voz atropellada: 🐷\n\n«¡No hay tiempo que perder! Pensad que si se quema toda la jungla, no quedará ningún animal, ¡y vosotros también moriréis, pero de hambre!»\n\nEl viejo cocodrilo pareció entrar en razón. 🐊\n\n«¡De acuerdo! Os ayudaremos. Además, construiremos un puente con nuestros cuerpos. La corriente es muy fuerte y dudo que un cerdo de tu tamaño pueda cruzarla.»\n\n¡Y con una rapidez asombrosa, todos los cocodrilos se pusieron en fila, formando un largo puente! 🐊🐊🐊🐊🐊",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐷:large:50:30",
+          "🐊:medium:15:60",
+          "🐊:medium:30:62",
+          "🐊:medium:45:60",
+          "🐊:medium:60:62",
+          "🐊:medium:75:60",
+          "🐆:large:85:50",
+          "✨:small:50:50:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Cruzar el puente de cocodrilos!",
+          "target": "cross-river",
+          "emoji": "🐊"
+        }
+      ]
+    },
+
+    "threaten-crocodiles": {
+      "type": "narrative",
+      "title": "¡Mala Idea!",
+      "text": "Bangüe enseñó sus garras y gruñó... pero los cocodrilos no se asustaron. ¡Son más fuertes en el agua! 🐊💢\n\n«¡Aquí mandamos nosotros!» rugió el jefe cocodrilo. Los demás cocodrilos rodearon al jaguar con cara de pocos amigos.\n\nCeldi, con su vocecita, intentó calmar la situación: 🐷\n\n«¡Perdón, perdón! Mi amigo está nervioso por el fuego. ¡No quería ofenderos! Si se quema la jungla, vosotros también sufriréis... ¿Podéis ayudarnos, por favor?»\n\nEl jefe cocodrilo aceptó a regañadientes, pero sin mucho entusiasmo. «Pasad rápido y no volváis...» 😤",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐆:large:50:45",
+          "😠:medium:55:38",
+          "🐊:large:25:55",
+          "🐊:large:70:55",
+          "💢:small:30:47",
+          "🐷:medium:53:35",
+          "🌊:medium:50:75:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Cruzar el río rápidamente",
+          "target": "cross-river",
+          "emoji": "💨"
+        }
+      ]
+    },
+
+    "find-another-way": {
+      "type": "narrative",
+      "title": "Buscando Otro Camino",
+      "text": "Bangüe corrió río arriba buscando otro sitio para cruzar. Pero la corriente era igual de fuerte en todas partes. 🌊😩\n\nPerdieron mucho tiempo buscando... y el fuego seguía avanzando en la jungla. 🔥\n\nFinalmente, Celdi gritó desde la espalda del jaguar:\n\n«¡Tenemos que volver a hablar con los cocodrilos! ¡No hay otra forma! Si les explicamos bien, seguro que nos ayudan.» 🐷\n\nVolvieron al mismo punto y Celdi convenció a los cocodrilos explicándoles que el fuego les afectaría a todos.\n\nEl jefe aceptó. «Pero os habéis retrasado mucho...» 🐊",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐆:large:40:55",
+          "🐷:medium:43:47",
+          "🌊:xlarge:50:70:float",
+          "🔥:medium:80:20:sparkle",
+          "⏳:medium:20:30:sparkle",
+          "🐊:medium:65:60:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Cruzar sin perder más tiempo!",
+          "target": "cross-river",
+          "emoji": "🏃"
+        }
+      ]
+    },
+
+    "cross-river": {
+      "type": "narrative",
+      "title": "¡Cruzando el Río!",
+      "text": "Bangüe empezó a cruzar andando sobre la rugosa y gruesa piel del primer cocodrilo, con Celdi en su espalda. 🐆🐷\n\nEl miedo rápidamente dio paso a la urgencia y el jaguar empezó a correr sobre los cuerpos de los cocodrilos. ¡Y los cocodrilos cumplieron su palabra! 🐊✅\n\nDe nuevo en tierra firme, el jaguar aceleró el paso y enseguida dieron con la enorme manada de elefantes. 🐘🐘🐘\n\nLos elefantes jóvenes se asustaron al ver un jaguar con un cerdito corriendo entre ellos. Pero Celdi buscaba a alguien especial...",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🐊:medium:20:55",
+          "🐊:medium:35:57",
+          "🐊:medium:50:55",
+          "🐊:medium:65:57",
+          "🐆:large:55:42",
+          "🐷:small:58:35",
+          "🐘:medium:85:40",
+          "🐘:medium:90:50",
+          "🌊:medium:40:70:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿A quién busca Celdi?",
+          "target": "find-elia",
+          "emoji": "🐘"
+        }
+      ]
+    },
+
+    "find-elia": {
+      "type": "narrative",
+      "title": "¡Elia!",
+      "speaker": "elia",
+      "text": "Cuando llegaron hasta la líder de la manada, Celdi se incorporó y saludó en «elefanto». 🐷🗣️\n\nLa enorme elefanta bajó la cabeza para mirar de dónde venía esa vocecita... ¡y su corazón dio un respingo!\n\n«¡CELDI!» dijo emocionada 🐘❤️\n\nElia era quien le había acogido como un hijo cuando lo encontró perdido en una charca. Celdi corrió hacia ella y Elia lo aupó con su trompa hasta la altura de sus ojos.\n\n«¡Estás estupendo! ¡Y cómo has crecido!» 🐘🐷\n\nBangüe no entendía nada de lo que hablaban, ¡pero se notaba que había mucho amor entre ellos!",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🐘:xlarge:40:45",
+          "🐷:large:45:25",
+          "❤️:medium:42:15:sparkle",
+          "🐆:large:75:65",
+          "✨:small:35:10:sparkle",
+          "✨:small:50:20:sparkle",
+          "🐘:medium:15:65",
+          "🐘:medium:85:55"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Hay que explicar la urgencia!",
+          "target": "jungle-memory",
+          "emoji": "🔥"
+        }
+      ]
+    },
+
+    "jungle-memory": {
+      "type": "puzzle",
+      "title": "Los Amigos de la Jungla",
+      "text": "Mientras Celdi explica la urgencia a Elia, ¡vamos a recordar a todos los personajes de esta aventura! ¿Puedes emparejar a cada animal? 🧠",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧠:xlarge:50:30:sparkle",
+          "🐘:medium:20:65",
+          "🐆:medium:40:70",
+          "🐷:medium:60:65",
+          "🐍:medium:80:70"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Empareja los animales de la jungla! 🧠🌿",
+        "columns": 3,
+        "pairs": ["🦍", "🦜", "🐍", "🐆", "🐒", "🐷"],
+        "successTarget": "elia-orders",
+        "successText": "¡¡Muy bien!! 🎉 ¡Conoces a todos los animales de la jungla!"
+      }
+    },
+
+    "elia-orders": {
+      "type": "narrative",
+      "title": "¡Elia Toma el Mando!",
+      "speaker": "elia",
+      "text": "En apenas un minuto, Celdi le explicó todo a Elia. 🐷🐘\n\nElia ordenó rápidamente: dejó a 1 madre y 2 jóvenes machos cuidando a los bebés elefantes, y al resto de la manada — ¡más de 25 enormes elefantes! — les ordenó seguirla hacia el río. 🐘🐘🐘\n\nAdemás, mandó al joven más rápido a pedir ayuda a otras 5 manadas de la zona.\n\n«¡El incendio nos afecta a todos! ¡Estoy segura de que todas las manadas colaborarán!» 🐘💪\n\nY así, más de 100 elefantes se dirigieron al río para llenar sus trompas de agua. ¡Era un espectáculo impresionante!",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🐘:xlarge:40:40",
+          "🐘:large:15:55",
+          "🐘:large:65:50",
+          "🐘:medium:80:60",
+          "🐘:medium:25:65",
+          "🐘:small:50:70",
+          "🐷:medium:45:30",
+          "💪:medium:50:20:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Contar cuántos elefantes hay!",
+          "target": "count-elephants",
+          "emoji": "🔢"
+        }
+      ]
+    },
+
+    "count-elephants": {
+      "type": "puzzle",
+      "title": "¿Cuántos Elefantes Van al Rescate?",
+      "text": "¡Los elefantes llegan de todas partes! Hay tantos que es difícil contarlos. ¿Puedes contar solo los elefantes? 🐘",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🐘:medium:20:35:float",
+          "🐘:medium:50:40:float",
+          "🐘:medium:75:30:float",
+          "🐘:small:35:55:float",
+          "🐘:small:60:60:float",
+          "🐘:small:85:55:float",
+          "🌳:medium:10:70",
+          "🌳:medium:90:65",
+          "🐒:small:15:25:float",
+          "🦜:small:80:20:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¡Cuenta los elefantes 🐘 que van al rescate! Ignora los otros animales.",
+        "targetEmoji": "🐘",
+        "targetCount": 6,
+        "distractorEmoji": "🐒",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "5", "label": "5 elefantes", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 elefantes", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 elefantes", "emoji": "7️⃣" },
+          { "value": "8", "label": "8 elefantes", "emoji": "8️⃣" }
+        ],
+        "correctAnswer": "6",
+        "successTarget": "elephants-arrive",
+        "successText": "¡¡Correcto!! 🎉 ¡6 elefantes van de camino! ¡Y llegan muchos más detrás!",
+        "failText": "Hmm, cuenta otra vez con cuidado... ¡Solo los elefantes 🐘, no los monos ni los pájaros! 🤔"
+      }
+    },
+
+    "elephants-arrive": {
+      "type": "narrative",
+      "title": "¡Llegan los Elefantes!",
+      "text": "Tras llenarse las trompas y la boca con toda el agua que pudieron, más de 100 elefantes llegaron al incendio. 🐘💧🔥\n\nMientras tanto, Roco el gorila y los demás animales habían hecho un buen trabajo construyendo un cortafuegos. 🦍💪\n\n¡Los elefantes concentraron la puntería en el frente más grande del fuego! Y como si lloviera con fuerza, el fuego perdió fuerza. 🌧️\n\nPero necesitaron hacer varios viajes más al río para ir apagando las llamas...",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐘:xlarge:30:45",
+          "💧:large:35:25:sparkle",
+          "💧:medium:25:30:sparkle",
+          "🐘:large:60:50",
+          "💧:medium:65:30:sparkle",
+          "🔥:large:80:45:sparkle",
+          "🔥:medium:90:55:sparkle",
+          "🦍:medium:15:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Cuántos viajes necesitan?",
+          "target": "math-puzzle-1",
+          "emoji": "🔢"
+        }
+      ]
+    },
+
+    "math-puzzle-1": {
+      "type": "puzzle",
+      "title": "Los Viajes al Río",
+      "speaker": "elia",
+      "text": "Elia la elefanta necesita calcular cuántos viajes hacen falta. 🐘\n\n«¡Cada viaje es importante! ¡Contemos bien!»",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐘:xlarge:50:35",
+          "💧:medium:30:55:sparkle",
+          "💧:medium:50:50:sparkle",
+          "💧:medium:70:55:sparkle",
+          "🔥:medium:80:35:sparkle",
+          { "type": "glow", "x": 50, "y": 45, "color": "#3498db", "size": 70 }
+        ]
+      },
+      "puzzle": {
+        "question": "Elia pregunta:\n\n«En el primer viaje apagamos 1 parte del fuego. 💧\nEn el segundo viaje apagamos 2 partes. 💧💧\nEn el tercer viaje apagamos 1 parte más. 💧\n\n¿Cuántas partes del fuego hemos apagado en total?»",
+        "inputType": "choices",
+        "options": [
+          { "value": "3", "label": "3 partes", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 partes", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 partes", "emoji": "5️⃣" }
+        ],
+        "correctAnswer": "4",
+        "successTarget": "fire-scene",
+        "failTarget": "math-hint-1",
+        "successText": "¡¡Correcto!! 🎉 1 + 2 + 1 = 4 partes apagadas. ¡Los elefantes son increíbles!  🐘💧",
+        "failText": "Piénsalo otra vez: 1 del primer viaje + 2 del segundo + 1 del tercero... 🤔"
+      }
+    },
+
+    "math-hint-1": {
+      "type": "narrative",
+      "title": "Elia Te Ayuda",
+      "speaker": "elia",
+      "text": "«Vamos a contarlo con calma» dice Elia con su voz tranquila. 🐘\n\n«Primer viaje: apagamos 1 parte ☝️\nSegundo viaje: apagamos 2 partes más ✌️\n\nEso ya son 1 + 2 = 3 partes.\n\n¿Y si le sumamos 1 parte más del tercer viaje? 3 + 1 = ...\n\n¡Tú puedes! Cuenta con los dedos si quieres.» 🖐️",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐘:xlarge:50:40:float",
+          "☝️:large:25:65",
+          "➕:medium:37:65",
+          "✌️:large:50:65",
+          "➕:medium:62:65",
+          "☝️:large:75:65"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Intentar otra vez!",
+          "target": "math-puzzle-1",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "fire-scene": {
+      "type": "narrative",
+      "title": "La Jungla Antes y Después",
+      "text": "Mientras los elefantes hacen el último viaje, observa lo que el fuego ha hecho a la jungla. 😢\n\nAlgunas zonas se han quemado, pero entre todos han conseguido salvar la mayor parte. ¡Fíjate bien en las diferencias! 🔍",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐘:large:50:70",
+          "💧:medium:55:55:sparkle",
+          "🔥:small:80:45",
+          "🌿:medium:20:60",
+          "🌳:large:10:50"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Buscar las diferencias",
+          "target": "fire-diferencias",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "fire-diferencias": {
+      "type": "puzzle",
+      "title": "La Jungla: Antes y Después del Fuego",
+      "text": "¡Mira cómo era la jungla ANTES del fuego y cómo está AHORA! Encuentra las diferencias: ¿qué se ha quemado? 🔥🌿",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🔍:xlarge:50:30:sparkle",
+          "🌳:large:25:60",
+          "🔥:medium:75:55:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Encuentra las 4 diferencias! ¿Qué ha cambiado tras el fuego? 🔥🔍",
+        "columns": 4,
+        "original": [
+          "🌳", "🌸", "🦋", "🌳",
+          "🐦", "🌻", "🍄", "🐝",
+          "🌺", "🐛", "🌿", "🌼",
+          "🐞", "🍀", "🦜", "🐌"
+        ],
+        "modified": [
+          "🌳", "🌸", "🦋", "🪵",
+          "🐦", "🥀", "🍄", "🐝",
+          "🌺", "🐛", "🌿", "🌼",
+          "🐞", "🍂", "🦜", "💨"
+        ],
+        "differences": [3, 5, 13, 15],
+        "successTarget": "night-falls",
+        "successText": "¡¡Bien hecho!! 🎉 Has encontrado lo que el fuego dañó: un árbol quemado 🪵, una flor marchita 🥀, hojas secas 🍂 y un animalito que huyó 💨. ¡Pero la mayor parte de la jungla se ha salvado! 🌿"
+      }
+    },
+
+    "night-falls": {
+      "type": "narrative",
+      "title": "Cae la Noche",
+      "text": "Al llegar la noche, ya solo se veían los restos humeantes de lo que había sido el fuego más peligroso que nadie recordaba. 🌙💨\n\nLos elefantes habían hecho 4 viajes al río. ¡Y entre todos lo habían conseguido!\n\nTodos los animales se felicitaban. Roco el gorila, que nunca hablaba, ahora sonreía de oreja a oreja. 🦍😊\n\nLos cocodrilos habían resultado ser buenos aliados. Koolena la pitón había sido valiente. Y Celdi, el cerdito más pequeño de todos, había sido la pieza más importante del rompecabezas. 🐷✨\n\nPero la jungla estaba herida. ¿Qué pasaría ahora?",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🌙:xlarge:80:10:sparkle",
+          { "type": "stars", "count": 12, "dim": false },
+          "🦍:large:20:60",
+          "🐘:large:50:55",
+          "🐆:medium:70:65",
+          "🐷:medium:75:58",
+          "🐍:medium:35:70",
+          "💨:small:40:40:float",
+          "💨:small:60:35:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Se recuperará la jungla?",
+          "target": "simon-animals",
+          "emoji": "🌱"
+        }
+      ]
+    },
+
+    "simon-animals": {
+      "type": "puzzle",
+      "title": "La Canción de la Jungla",
+      "speaker": "nora",
+      "text": "Nora la guacamaya propone cantar juntos la canción de la jungla para celebrar. 🦜🎵\n\n«¡Cada animal hace su sonido en un orden especial! ¡Repite la secuencia!»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🦜:xlarge:50:35:float",
+          "🎵:medium:30:20:sparkle",
+          "🎵:medium:70:25:sparkle",
+          "🦍:medium:15:70",
+          "🐘:medium:40:75",
+          "🐆:medium:65:70",
+          "🐷:medium:85:75"
+        ]
+      },
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Repite la canción de los animales! Escucha el orden de los sonidos. 🎵🌿",
+        "sequence": [1, 3, 0, 2],
+        "colors": ["#2d3436", "#f39c12", "#fd79a8", "#636e72"],
+        "labels": ["🦍 Gorila", "🐆 Jaguar", "🐷 Cerdito", "🐘 Elefanta"],
+        "playbackSpeed": 750,
+        "successTarget": "moral-choice-3",
+        "successText": "¡¡Perfecto!! 🎉 ¡La canción de la jungla suena maravillosa! 🎵🌿",
+        "failText": "¡Escucha otra vez el orden! 🎵"
+      }
+    },
+
+    "moral-choice-3": {
+      "type": "moral",
+      "title": "El Futuro de la Jungla",
+      "speaker": "roco",
+      "text": "Roco el gorila habla ante todos los animales: 🦍\n\n«Hoy hemos salvado la jungla trabajando juntos. Pero, ¿qué hacemos a partir de ahora? ¿Volvemos cada uno a lo nuestro... o intentamos ser una familia?»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🦍:xlarge:50:40",
+          "🐘:medium:15:65",
+          "🐆:medium:30:70",
+          "🐷:medium:45:72",
+          "🦜:medium:60:30:float",
+          "🐍:medium:70:68",
+          "🐊:medium:85:65",
+          "🌙:large:80:10:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Quedarnos juntos y cuidar la jungla entre todos!",
+          "target": "stay-together",
+          "emoji": "🤝",
+          "moralValue": "community",
+          "points": 2
+        },
+        {
+          "text": "Volver cada uno a su territorio, pero ayudarnos si hay peligro",
+          "target": "help-when-needed",
+          "emoji": "🏡",
+          "moralValue": "independence",
+          "points": 1
+        }
+      ]
+    },
+
+    "stay-together": {
+      "type": "narrative",
+      "title": "Una Gran Familia",
+      "text": "Todos los animales aplaudieron, rugieron, graznaron y barritaron de alegría. 🎉\n\n¡La jungla entera se convirtió en una gran familia!\n\nRoco el gorila fue elegido líder del consejo de animales. 🦍👑\nNora la guacamaya se encargó de las comunicaciones. 🦜📣\nLos cocodrilos protegían el río. 🐊\nLas águilas vigilaban desde el cielo. 🦅\nY Celdi... ¡Celdi fue nombrado embajador oficial! Su capacidad de hablar «elefanto» había salvado a todos. 🐷🌟\n\nA las pocas semanas, volvieron las lluvias... 🌧️",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🦍:large:30:50",
+          "👑:small:32:40",
+          "🐘:large:60:45",
+          "🐆:medium:15:65",
+          "🐷:medium:45:60",
+          "🦜:medium:50:20:float",
+          "🐍:medium:75:65",
+          "🐊:medium:85:60",
+          "🎉:medium:20:15:sparkle",
+          "🎉:medium:80:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ver cómo renace la jungla",
+          "target": "spell-puzzle",
+          "emoji": "🌱"
+        }
+      ]
+    },
+
+    "help-when-needed": {
+      "type": "narrative",
+      "title": "Buenos Vecinos",
+      "text": "Los animales decidieron volver a sus territorios, pero con una promesa: si alguien necesitaba ayuda, todos acudirían. 🤝\n\n«No hace falta vivir juntos para cuidarnos», dijo Nora la guacamaya sabiamente. 🦜\n\nRoco asintió: «Pero recordemos esta lección. Solos no podríamos haber apagado el fuego.» 🦍\n\nCeldi prometió visitar a Elia cada semana. Y las águilas se ofrecieron a vigilar la jungla desde el cielo.\n\nA las pocas semanas, volvieron las lluvias... 🌧️",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🦍:large:20:55",
+          "🐘:large:80:50",
+          "🐆:medium:40:65",
+          "🐷:medium:55:68",
+          "🦜:medium:50:25:float",
+          "🤝:xlarge:50:40:sparkle",
+          "🌙:large:80:10:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ver cómo renace la jungla",
+          "target": "spell-puzzle",
+          "emoji": "🌱"
+        }
+      ]
+    },
+
+    "spell-puzzle": {
+      "type": "puzzle",
+      "title": "La Palabra Mágica de la Jungla",
+      "text": "Mientras la lluvia devuelve la vida a la jungla, ¡ordena las letras para descubrir qué es lo más importante que aprendieron los animales! 🌧️🌿",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🌧️:medium:20:10:float",
+          "🌧️:medium:50:5:float",
+          "🌧️:medium:80:10:float",
+          "🌱:medium:30:70:sparkle",
+          "🌱:medium:50:75:sparkle",
+          "🌱:medium:70:70:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras para formar la palabra secreta! 🔤✨",
+        "word": "EQUIPO",
+        "hint": "Trabajar en ___ es la clave",
+        "successTarget": "jungle-reborn",
+        "successText": "¡¡EQUIPO!! 🎉 ¡Esa es la palabra! Trabajar en equipo es lo que salvó la jungla. 🌿🤝"
+      }
+    },
+
+    "jungle-reborn": {
+      "type": "narrative",
+      "title": "La Jungla Renace",
+      "text": "Una vez que volvieron las lluvias, la naturaleza empezó a brotar de nuevo con fuerza allí donde antes solo quedaban cenizas. 🌱🌿🌺\n\nBrotes verdes salían de la tierra quemada. Flores nuevas se abrían al sol. ¡La jungla volvía a la vida! 🌸☀️\n\nEn apenas un año, nadie que no hubiera estado allí habría dicho que había ocurrido aquel gran incendio que consiguió unir a tantos animales en una gran familia. 💚",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          { "type": "trees", "positions": [{"x": 10, "scale": 1.2}, {"x": 30, "scale": 1.0}, {"x": 70, "scale": 1.1}, {"x": 90, "scale": 0.9}] },
+          "🌱:medium:20:75:sparkle",
+          "🌸:medium:40:70:sparkle",
+          "🌺:medium:60:72:sparkle",
+          "🌼:medium:80:75:sparkle",
+          "☀️:xlarge:50:10:sparkle",
+          "🦋:small:35:30:float",
+          "🦋:small:65:25:float",
+          "🌈:large:50:18"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¿Y qué aprendieron todos?",
+          "target": "ending-best",
+          "emoji": "💚",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 4
+        }
+      ]
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡La Jungla Unida!",
+      "text": "Todos los animales aprendieron algo muy importante ese día. 🌿💚\n\n🌟 Que trabajar en equipo, por muy diferentes que seamos, es lo más importante de la vida.\n\n🌟 Que los que parecen pequeñitos o insignificantes, como Celdi el cerdito, pueden ser tan importantes o más que los más grandes y fuertes. 🐷✨\n\n🌟 Que los que a veces parecen peligrosos, como los cocodrilos o la pitón Koolena, también tienen buen corazón y no son tan malos como pensamos. 🐊🐍💚\n\n🌟 Y que cada uno tiene un talento especial que puede ayudar a los demás: las águilas ven lejos, los monos saltan alto, el jaguar corre rápido, los elefantes son fuertes... ¡y un cerdito puede hablar elefanto! 🐷🐘\n\nLa jungla floreció más bonita que nunca, y sus habitantes se convirtieron en la familia más unida del mundo. 🌺🦍🐘🐆🐷🦜🐍🐊🐒\n\n¡FIN! 💚🌿",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🦍:medium:15:55",
+          "🐘:medium:30:50",
+          "🐆:medium:45:57",
+          "🐷:medium:55:55",
+          "🦜:medium:40:25:float",
+          "🐍:medium:65:60",
+          "🐊:medium:75:57",
+          "🐒:medium:85:50",
+          "🌈:large:50:10",
+          "💚:xlarge:50:30:sparkle",
+          "🎉:medium:20:15",
+          "🎊:medium:80:15"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "La Jungla se Recupera",
+      "text": "El fuego se apagó y la jungla empezó a recuperarse poco a poco. 🌿\n\nLos animales volvieron a sus rutinas, pero algo había cambiado. Ya no eran tan desconocidos entre ellos. Cuando se cruzaban, se saludaban. 👋\n\nCeldi visitaba a Elia de vez en cuando, pero echaba de menos la época en que todos trabajaron juntos. 🐷💭\n\n«Ojalá no haga falta otro incendio para que volvamos a unirnos», pensó el cerdito.\n\nLa jungla se recuperó, pero todos sabían que habría sido mejor si hubieran tomado decisiones más valientes... 🌱\n\n¡FIN!\n\n(¿Quieres intentarlo de nuevo? ¡Las decisiones que tomes cambian la historia!)",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐷:large:40:55",
+          "💭:medium:45:40:float",
+          "🐘:medium:75:50",
+          "🌱:medium:20:70:sparkle",
+          "🌱:medium:60:75:sparkle",
+          "🌅:large:50:15"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Intentarlo de nuevo!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    }
+  }
+}
