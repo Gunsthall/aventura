@@ -21,7 +21,7 @@
 
   "pages": {
     "intro": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Amanece en la Jungla",
       "text": "Amanecía en la jungla. 🌿☀️\n\nRepleta de plantas, árboles gigantes, insectos, animales grandes y pequeños, pájaros de intensos colores y grandes aves de inmensas alas... ¡La sinfonía de colores y sonidos era maravillosa!\n\nAunque todos los animales vivían allí y eran vecinos, rara vez hablaban entre ellos. Algunos incluso se alimentaban de otros, como el oso hormiguero, que metía su laaaaaargo hocico en los hormigueros. ¡¡Puagggg, qué asco!! 🐜\n\nPero en los últimos años, cada vez llovía menos y hacía más calor. Muchas plantas y árboles se habían secado, lo que entristecía a todos. 😢",
       "illustration": {
@@ -36,17 +36,18 @@
           "🌿:medium:60:70"
         ]
       },
-      "choices": [
-        {
-          "text": "Un día de tormenta...",
-          "target": "storm",
-          "emoji": "⛈️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras para descubrir dónde viven todos estos animales! 🌿🔤",
+        "word": "JUNGLA",
+        "hint": "Viven en la ______",
+        "successTarget": "storm",
+        "successText": "¡¡JUNGLA!! 🎉 ¡Así es! Todos estos animales viven en la jungla. 🌿"
+      }
     },
 
     "storm": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Tormenta de Rayos!",
       "text": "Un día de verano amaneció muy oscuro y nublado. ⛈️\n\nMuchos animales pensaron aliviados que llovería. ¡Pero para su sorpresa, empezó una gran tormenta de rayos! ¡Ni una gota de agua! Solo grandes y luminosos rayos surcando el cielo. ⚡⚡\n\nDe repente, uno de los rayos bajó rasgando el cielo y golpeó con un tremendo estruendo un gran árbol seco.\n\n¡El árbol se incendió! Y como todo estaba muy seco, las llamas comenzaron a extenderse rápidamente. 🔥🔥🔥\n\nLos insectos, pájaros, conejos, monos y ardillas empezaron a huir aterrorizados...",
       "illustration": {
@@ -63,17 +64,28 @@
           "🐇:small:20:80"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Quién puede salvar la jungla?",
-          "target": "roco-speaks",
-          "emoji": "🦍"
-        }
-      ]
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¡La tormenta es terrible! ¿Cuántos rayos ⚡ ves cayendo del cielo?",
+        "targetEmoji": "⚡",
+        "targetCount": 2,
+        "distractorEmoji": "🔥",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "1", "label": "1 rayo", "emoji": "1️⃣" },
+          { "value": "2", "label": "2 rayos", "emoji": "2️⃣" },
+          { "value": "3", "label": "3 rayos", "emoji": "3️⃣" }
+        ],
+        "correctAnswer": "2",
+        "successTarget": "roco-speaks",
+        "successText": "¡¡Correcto!! 🎉 ¡2 rayos enormes! Y uno de ellos ha incendiado un árbol... 😱🔥",
+        "failText": "¡Cuidado! Cuenta solo los rayos ⚡, no las llamas 🔥. 🤔"
+      }
     },
 
     "roco-speaks": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡La Voz de Roco!",
       "speaker": "roco",
       "text": "De repente, entre las expresiones de miedo, se oyó una fuerte voz:\n\n«¡DETENÉOS, NO HUYÁIS!» 🦍💪\n\nEra Roco, el gran gorila negro, un animal enorme y hermoso que raramente hablaba. Su voz y presencia eran tan impresionantes que todos los animales se detuvieron a escucharle.\n\n«¡El fuego va a destruir la jungla si no hacemos algo! ¡Hay que detenerlo!»\n\nNora, la preciosa guacamaya de casi 50 años, supo que Roco tenía razón. ¡Algo había que hacer!",
@@ -90,17 +102,18 @@
           "🦋:small:40:20:float"
         ]
       },
-      "choices": [
-        {
-          "text": "Escuchar el plan",
-          "target": "plan",
-          "emoji": "🗣️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras para descubrir qué amenaza la jungla! 🔥🔤",
+        "word": "FUEGO",
+        "hint": "El _____ amenaza la jungla",
+        "successTarget": "plan",
+        "successText": "¡¡FUEGO!! 🎉 ¡Exacto! El fuego amenaza la jungla y hay que detenerlo. 🔥🌿"
+      }
     },
 
     "plan": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Un Plan para Salvar la Jungla!",
       "speaker": "koolena",
       "text": "«¿Cómo podemos pararlo?» preguntó Nora 🦜. «He visto apagarse fuegos por la lluvia, pero ¿cómo podemos hacer lluvia nosotros?»\n\n«Creo que sssshhséee quién podría ayudarnosssss» siseó Koolena, la larguísima serpiente pitón 🐍. «Vi hace años una mamá elefante bañando a su bebé. ¡Llenaba la trompa con agua y la usaba como una manguera!»\n\n«¡Claro, los elefantes!» dijo Roco. «Pero hace mucho que no he visto ninguno. ¿Dónde podrían estar?» 🤔\n\nEntonces Lula, una inteligente águila de casi 2 metros de envergadura, golpeó a su compañero Lulo con el ala...",
@@ -116,17 +129,23 @@
           "🔥:medium:5:40:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "Escuchar a las águilas",
-          "target": "eagles-offer",
-          "emoji": "🦅"
-        }
-      ]
+      "puzzle": {
+        "question": "Koolena recuerda que un animal puede lanzar agua con su trompa. ¿Qué animal es? 🤔💧",
+        "inputType": "choices",
+        "options": [
+          { "value": "elefante", "label": "El elefante 🐘", "emoji": "🐘" },
+          { "value": "cocodrilo", "label": "El cocodrilo 🐊", "emoji": "🐊" },
+          { "value": "serpiente", "label": "La serpiente 🐍", "emoji": "🐍" }
+        ],
+        "correctAnswer": "elefante",
+        "successTarget": "eagles-offer",
+        "successText": "¡¡Correcto!! 🎉 ¡Los elefantes llenan su trompa de agua y la lanzan como una manguera! 🐘💧",
+        "failText": "Piensa en un animal con una trompa muuuuy larga... 🤔"
+      }
     },
 
     "eagles-offer": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Plan de Búsqueda",
       "text": "Lulo, el águila, se elevó para que todos le vieran y dijo: 🦅\n\n«Las águilas podemos volar grandes distancias y ver fenomenal desde lo alto. ¡Nos dirigiremos hacia el sur de la jungla a buscar a los elefantes! Pero NO nos acercaremos a ellos...» añadió enfadado. «¡La última vez tuvimos una gran pelea!»\n\n«¡Yo os seguiré!» anunció Bangüe, el precioso jaguar negro 🐆. «Soy el animal más rápido de la jungla.»\n\n«¡Y nosotros saltaremos por las copas de los árboles!» intervino Manu el mono 🐒. «Así podremos ver a las águilas y guiar al jaguar.»\n\n«¡En marcha!» ordenó Roco 🦍.\n\nPero entonces se oyó un agudo gritito desde el suelo...",
       "illustration": {
@@ -141,17 +160,29 @@
           "🔥:small:90:50:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Quién ha gritado?",
-          "target": "celdi-speaks",
-          "emoji": "❓"
-        }
-      ]
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¿Cuántos animales van en la expedición? ¡Cuenta las águilas 🦅, el jaguar 🐆 y los monos 🐒!",
+        "targetEmoji": "🦅",
+        "targetCount": 4,
+        "distractorEmoji": "🔥",
+        "distractorCount": 2,
+        "areaHeight": 220,
+        "options": [
+          { "value": "3", "label": "3 animales", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 animales", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 animales", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 animales", "emoji": "6️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "celdi-speaks",
+        "successText": "¡¡Correcto!! 🎉 ¡5 animales van a buscar a los elefantes: 2 águilas, 1 jaguar y 2 monos! 🦅🦅🐆🐒🐒",
+        "failText": "Cuenta con cuidado: las águilas, el jaguar y los monos. ¿Cuántos son en total? 🤔"
+      }
     },
 
     "celdi-speaks": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Un Momento!",
       "speaker": "celdi",
       "text": "«¡Un momento!» Era Celdi, el cerdito vietnamita 🐷. Un diminuto puerco, dicharachero y bonachón.\n\n«¿Alguno sabéis hablar elefanto, el idioma de los elefantes? ¡Porque ellos no entienden nuestro idioma de la jungla!»\n\nTodos se quedaron anonadados. ¡Nadie había caído en eso! 😲\n\n«Veo que no...» continuó Celdi. «Pues tendré que ir con vosotros. ¡Yo me crié de pequeñito con una manada de elefantes que me acogieron cuando perdí a mi familia! Todavía recuerdo lo suficiente del elefanto para hablar con ellos.»\n\nBangüe miró al pequeño cerdito y sus diminutas patitas... 🐆🐷",
@@ -167,13 +198,14 @@
           "🦍:large:10:50"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Cómo llevarán al cerdito?",
-          "target": "moral-choice-1",
-          "emoji": "🤔"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Celdi habla el idioma de los elefantes! ¿Cómo se llama ese idioma? 🐘🗣️",
+        "word": "ELEFANTO",
+        "hint": "El idioma se llama ________",
+        "successTarget": "moral-choice-1",
+        "successText": "¡¡ELEFANTO!! 🎉 ¡Celdi habla elefanto porque se crió con una manada de elefantes! 🐷🐘"
+      }
     },
 
     "moral-choice-1": {
@@ -216,7 +248,7 @@
     },
 
     "koolena-helps": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Koolena al Rescate!",
       "speaker": "koolena",
       "text": "«¡Dejadme a mí!» dijo Koolena la pitón 🐍.\n\nAntes de que pudieran darse cuenta, Koolena pasó entre las patas del jaguar y se enrolló entre el cuerpo de Bangüe y el cerdito, apretando justo para que no se cayera.\n\n«¡Vámonosssshhhh!» gritó entusiasmada 🐍💨\n\nBangüe y Celdi se miraron con cara de asombro, ¡pero no había tiempo que perder!\n\nY así fue como el grupo se lanzó a la búsqueda: Lulo y Lula volando en el cielo 🦅, Manu y sus amigos monos saltando entre las copas 🐒, y la curiosa estampa de Bangüe el jaguar, con un cerdito y una pitón enroscados en su espalda 🐆🐷🐍",
@@ -233,17 +265,23 @@
           "✨:small:50:35:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡A la aventura!",
-          "target": "journey-start",
-          "emoji": "🏃"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Cuántos animales van montados en la espalda de Bangüe? 🐆",
+        "inputType": "choices",
+        "options": [
+          { "value": "1", "label": "1 animal", "emoji": "1️⃣" },
+          { "value": "2", "label": "2 animales", "emoji": "2️⃣" },
+          { "value": "3", "label": "3 animales", "emoji": "3️⃣" }
+        ],
+        "correctAnswer": "2",
+        "successTarget": "journey-start",
+        "successText": "¡¡Correcto!! 🎉 ¡Celdi el cerdito 🐷 y Koolena la pitón 🐍 van en la espalda de Bangüe!",
+        "failText": "Recuerda: Celdi va montado y Koolena les enrolla para sujetarle... 🤔"
+      }
     },
 
     "celdi-runs": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Celdi Intenta Correr",
       "text": "El valiente cerdito intentó seguir al jaguar con sus diminutas patitas... 🐷💨\n\nPero al cabo de unos minutos, Celdi ya estaba agotado y muy rezagado. Sus patitas eran demasiado cortas. 😥\n\n«¡No puedo más!» jadeó Celdi.\n\nBangüe tuvo que volver a por él. Habían perdido un tiempo precioso... y el fuego seguía avanzando. 🔥\n\n«Quizá deberíamos haberte subido a mi espalda desde el principio...» dijo el jaguar con un suspiro.\n\nKoolena, que les seguía, se enrolló rápidamente entre ambos para sujetar al cerdito. «¡Assssí mejor!» 🐍",
       "illustration": {
@@ -257,17 +295,23 @@
           "🐍:medium:70:65"
         ]
       },
-      "choices": [
-        {
-          "text": "Seguir adelante",
-          "target": "journey-start",
-          "emoji": "🏃"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Por qué Celdi no puede seguir al jaguar corriendo? 🐷😥",
+        "inputType": "choices",
+        "options": [
+          { "value": "patitas", "label": "Sus patitas son muy cortas", "emoji": "🐾" },
+          { "value": "miedo", "label": "Tiene miedo del fuego", "emoji": "😨" },
+          { "value": "hambre", "label": "Tiene mucha hambre", "emoji": "🍽️" }
+        ],
+        "correctAnswer": "patitas",
+        "successTarget": "journey-start",
+        "successText": "¡¡Correcto!! 🎉 Las patitas de Celdi son demasiado cortas para correr tan rápido como un jaguar. 🐷🐾",
+        "failText": "Lee otra vez la historia... ¿Qué dice sobre las patitas de Celdi? 🤔"
+      }
     },
 
     "monos-carry": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Los Monos al Rescate",
       "text": "Manu y dos amigos monos agarraron a Celdi y empezaron a saltar de rama en rama con él. 🐒🐷\n\n«¡¡¡Aaaaahhh!!!» gritaba Celdi con los ojos como platos mientras volaba por los aires.\n\nPero los monos, aunque fuertes, se cansaban rápido cargando con el cerdito. Y las ramas estaban muy secas... ¡CRACK! Una rama se rompió y Celdi casi se cae. 😱\n\n«Mejor que vaya en la espalda de Bangüe», decidió Manu. «Nosotros necesitamos las manos libres para saltar.»\n\nKoolena la pitón se ofreció a atar a Celdi al jaguar. «¡Assssí es más seguro!» 🐍",
       "illustration": {
@@ -282,17 +326,23 @@
           "🌳:large:75:50"
         ]
       },
-      "choices": [
-        {
-          "text": "¡En marcha!",
-          "target": "journey-start",
-          "emoji": "🏃"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Qué pasó cuando los monos llevaban a Celdi saltando? 🐒💥",
+        "inputType": "choices",
+        "options": [
+          { "value": "rama", "label": "Una rama se rompió", "emoji": "🌳" },
+          { "value": "mono", "label": "Un mono se cayó", "emoji": "🐒" },
+          { "value": "celdi", "label": "Celdi se durmió", "emoji": "😴" }
+        ],
+        "correctAnswer": "rama",
+        "successTarget": "journey-start",
+        "successText": "¡¡Correcto!! 🎉 ¡CRACK! Las ramas estaban secas y una se rompió. ¡Menos mal que no se cayó Celdi! 😱",
+        "failText": "Las ramas estaban muy secas por la falta de lluvia... ¿Qué pasó? 🤔"
+      }
     },
 
     "journey-start": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Gran Búsqueda",
       "text": "El grupo avanzaba a toda velocidad por la jungla. 💨\n\nLos monos saltaban sin descanso entre las copas de los árboles mientras seguían a las águilas, que volaban en grandes círculos en el cielo. 🦅🐒\n\nAbajo, Bangüe el jaguar corría dando saltos, con Celdi dando tumbos en su espalda, sujeto por Koolena la pitón. 🐆🐷🐍\n\nLlevaban ya un buen rato buscando cuando Manu vio, desde la rama más alta de un gran árbol, cómo Lula y Lulo les hacían señales mientras bajaban.\n\n«¡Allí está la manada de elefantes!» dijo Lula 🦅. «Pasado el gran río, justo al comienzo de la llanura.»",
       "illustration": {
@@ -308,17 +358,18 @@
           "🌳:large:85:45"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Al gran río!",
-          "target": "river-approach",
-          "emoji": "🏞️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Empareja cada animal con su pareja! ¿Recuerdas quién va en la expedición? 🌿🧠",
+        "columns": 2,
+        "pairs": ["🦅", "🐆", "🐒", "🐷"],
+        "successTarget": "river-approach",
+        "successText": "¡¡Muy bien!! 🎉 ¡Los recuerdas a todos! Águilas, jaguar, monos y Celdi. ¡En marcha al río! 🏞️"
+      }
     },
 
     "river-approach": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Gran Río",
       "text": "El río bajaba con fuerza. La corriente era muy fuerte. 🌊\n\nKoolena, la pitón, dijo que ella mejor se quedaba en este lado. «Con el mareo que llevo no quiero arriesgarme a acabar ahogada.» 🐍😵‍💫\n\nBangüe se puso a buscar el mejor sitio para cruzar cuando... ¡pegó un tremendo salto hacia atrás! 😱\n\n¡Un grupo de cocodrilos había emergido del agua! 🐊🐊🐊\n\n«¡El río es nuestro territorio!» dijo el jefe cocodrilo, sin ocultar su extrañeza ante un jaguar con un cerdito a la espalda. «Nadie lo cruza sin nuestro permiso.»",
       "illustration": {
@@ -334,13 +385,24 @@
           "😱:small:60:38"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Hablar con los cocodrilos!",
-          "target": "moral-choice-2",
-          "emoji": "🐊"
-        }
-      ]
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¡Oh no, cocodrilos! 🐊 ¿Cuántos cocodrilos han salido del agua?",
+        "targetEmoji": "🐊",
+        "targetCount": 3,
+        "distractorEmoji": "🌊",
+        "distractorCount": 2,
+        "areaHeight": 220,
+        "options": [
+          { "value": "2", "label": "2 cocodrilos", "emoji": "2️⃣" },
+          { "value": "3", "label": "3 cocodrilos", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 cocodrilos", "emoji": "4️⃣" }
+        ],
+        "correctAnswer": "3",
+        "successTarget": "moral-choice-2",
+        "successText": "¡¡Correcto!! 🎉 ¡3 cocodrilos bloquean el paso! Hay que encontrar la forma de cruzar... 🐊🐊🐊",
+        "failText": "Cuenta solo los cocodrilos 🐊, no las olas 🌊. 🤔"
+      }
     },
 
     "moral-choice-2": {
@@ -385,7 +447,7 @@
     },
 
     "convince-crocodiles": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Celdi Habla con el Corazón",
       "speaker": "celdi",
       "text": "Celdi se incorporó en la espalda de Bangüe y dijo con su voz atropellada: 🐷\n\n«¡No hay tiempo que perder! Pensad que si se quema toda la jungla, no quedará ningún animal, ¡y vosotros también moriréis, pero de hambre!»\n\nEl viejo cocodrilo pareció entrar en razón. 🐊\n\n«¡De acuerdo! Os ayudaremos. Además, construiremos un puente con nuestros cuerpos. La corriente es muy fuerte y dudo que un cerdo de tu tamaño pueda cruzarla.»\n\n¡Y con una rapidez asombrosa, todos los cocodrilos se pusieron en fila, formando un largo puente! 🐊🐊🐊🐊🐊",
@@ -402,17 +464,23 @@
           "✨:small:50:50:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Cruzar el puente de cocodrilos!",
-          "target": "cross-river",
-          "emoji": "🐊"
-        }
-      ]
+      "puzzle": {
+        "question": "Los cocodrilos forman un puente con sus cuerpos. Si hay 5 cocodrilos y cada uno mide 2 metros, ¿cuánto mide el puente? 🐊📏",
+        "inputType": "choices",
+        "options": [
+          { "value": "8", "label": "8 metros", "emoji": "8️⃣" },
+          { "value": "10", "label": "10 metros", "emoji": "🔟" },
+          { "value": "12", "label": "12 metros", "emoji": "🔢" }
+        ],
+        "correctAnswer": "10",
+        "successTarget": "cross-river",
+        "successText": "¡¡Correcto!! 🎉 5 × 2 = 10 metros de puente. ¡Los cocodrilos son geniales! 🐊🐊🐊🐊🐊",
+        "failText": "Cada cocodrilo mide 2 metros y hay 5... ¿Cuánto es 5 × 2? 🤔"
+      }
     },
 
     "threaten-crocodiles": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Mala Idea!",
       "text": "Bangüe enseñó sus garras y gruñó... pero los cocodrilos no se asustaron. ¡Son más fuertes en el agua! 🐊💢\n\n«¡Aquí mandamos nosotros!» rugió el jefe cocodrilo. Los demás cocodrilos rodearon al jaguar con cara de pocos amigos.\n\nCeldi, con su vocecita, intentó calmar la situación: 🐷\n\n«¡Perdón, perdón! Mi amigo está nervioso por el fuego. ¡No quería ofenderos! Si se quema la jungla, vosotros también sufriréis... ¿Podéis ayudarnos, por favor?»\n\nEl jefe cocodrilo aceptó a regañadientes, pero sin mucho entusiasmo. «Pasad rápido y no volváis...» 😤",
       "illustration": {
@@ -427,17 +495,18 @@
           "🌊:medium:50:75:float"
         ]
       },
-      "choices": [
-        {
-          "text": "Cruzar el río rápidamente",
-          "target": "cross-river",
-          "emoji": "💨"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "Celdi tuvo que pedir disculpas. ¡Ordena las letras para formar la palabra! 🐷🙏",
+        "word": "PERDÓN",
+        "hint": "¡_____, _____! Mi amigo está nervioso...",
+        "successTarget": "cross-river",
+        "successText": "¡¡PERDÓN!! 🎉 Celdi salvó la situación pidiendo perdón. Amenazar no era buena idea... 🐷🙏"
+      }
     },
 
     "find-another-way": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Buscando Otro Camino",
       "text": "Bangüe corrió río arriba buscando otro sitio para cruzar. Pero la corriente era igual de fuerte en todas partes. 🌊😩\n\nPerdieron mucho tiempo buscando... y el fuego seguía avanzando en la jungla. 🔥\n\nFinalmente, Celdi gritó desde la espalda del jaguar:\n\n«¡Tenemos que volver a hablar con los cocodrilos! ¡No hay otra forma! Si les explicamos bien, seguro que nos ayudan.» 🐷\n\nVolvieron al mismo punto y Celdi convenció a los cocodrilos explicándoles que el fuego les afectaría a todos.\n\nEl jefe aceptó. «Pero os habéis retrasado mucho...» 🐊",
       "illustration": {
@@ -451,17 +520,23 @@
           "🐊:medium:65:60:float"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Cruzar sin perder más tiempo!",
-          "target": "cross-river",
-          "emoji": "🏃"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Qué perdieron Bangüe y Celdi buscando otro camino? ⏳",
+        "inputType": "choices",
+        "options": [
+          { "value": "tiempo", "label": "Mucho tiempo ⏳", "emoji": "⏳" },
+          { "value": "mochila", "label": "Su mochila 🎒", "emoji": "🎒" },
+          { "value": "amigos", "label": "A sus amigos 👋", "emoji": "👋" }
+        ],
+        "correctAnswer": "tiempo",
+        "successTarget": "cross-river",
+        "successText": "¡¡Correcto!! 🎉 Perdieron mucho tiempo precioso... ¡y el fuego seguía avanzando! ⏳🔥",
+        "failText": "Mientras buscaban otro camino, el fuego seguía avanzando. ¿Qué es lo más valioso que perdieron? 🤔"
+      }
     },
 
     "cross-river": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Cruzando el Río!",
       "text": "Bangüe empezó a cruzar andando sobre la rugosa y gruesa piel del primer cocodrilo, con Celdi en su espalda. 🐆🐷\n\nEl miedo rápidamente dio paso a la urgencia y el jaguar empezó a correr sobre los cuerpos de los cocodrilos. ¡Y los cocodrilos cumplieron su palabra! 🐊✅\n\nDe nuevo en tierra firme, el jaguar aceleró el paso y enseguida dieron con la enorme manada de elefantes. 🐘🐘🐘\n\nLos elefantes jóvenes se asustaron al ver un jaguar con un cerdito corriendo entre ellos. Pero Celdi buscaba a alguien especial...",
       "illustration": {
@@ -478,17 +553,21 @@
           "🌊:medium:40:70:float"
         ]
       },
-      "choices": [
-        {
-          "text": "¿A quién busca Celdi?",
-          "target": "find-elia",
-          "emoji": "🐘"
-        }
-      ]
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Bangüe cruza saltando sobre los cocodrilos! ¡Repite el orden de los saltos! 🐆💨",
+        "sequence": [0, 1, 2, 3],
+        "colors": ["#00b894", "#00a884", "#009874", "#008864"],
+        "labels": ["🐊 Croc 1", "🐊 Croc 2", "🐊 Croc 3", "🐊 Croc 4"],
+        "playbackSpeed": 600,
+        "successTarget": "find-elia",
+        "successText": "¡¡Perfecto!! 🎉 ¡Bangüe cruzó saltando sobre todos los cocodrilos! ¡Ya están al otro lado! 🐆✅",
+        "failText": "¡Salta sobre los cocodrilos en orden, de uno en uno! 🐊🐊🐊🐊"
+      }
     },
 
     "find-elia": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Elia!",
       "speaker": "elia",
       "text": "Cuando llegaron hasta la líder de la manada, Celdi se incorporó y saludó en «elefanto». 🐷🗣️\n\nLa enorme elefanta bajó la cabeza para mirar de dónde venía esa vocecita... ¡y su corazón dio un respingo!\n\n«¡CELDI!» dijo emocionada 🐘❤️\n\nElia era quien le había acogido como un hijo cuando lo encontró perdido en una charca. Celdi corrió hacia ella y Elia lo aupó con su trompa hasta la altura de sus ojos.\n\n«¡Estás estupendo! ¡Y cómo has crecido!» 🐘🐷\n\nBangüe no entendía nada de lo que hablaban, ¡pero se notaba que había mucho amor entre ellos!",
@@ -505,13 +584,14 @@
           "🐘:medium:85:55"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Hay que explicar la urgencia!",
-          "target": "jungle-memory",
-          "emoji": "🔥"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "Elia cuidó a Celdi como si fuera su hijo. ¿Qué era Elia para Celdi? 🐘❤️🐷",
+        "word": "MAMÁ",
+        "hint": "Elia era como su ____",
+        "successTarget": "jungle-memory",
+        "successText": "¡¡MAMÁ!! 🎉 ¡Elia fue como una mamá para Celdi! ¡Qué reencuentro tan bonito! 🐘❤️🐷"
+      }
     },
 
     "jungle-memory": {
@@ -539,7 +619,7 @@
     },
 
     "elia-orders": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Elia Toma el Mando!",
       "speaker": "elia",
       "text": "En apenas un minuto, Celdi le explicó todo a Elia. 🐷🐘\n\nElia ordenó rápidamente: dejó a 1 madre y 2 jóvenes machos cuidando a los bebés elefantes, y al resto de la manada — ¡más de 25 enormes elefantes! — les ordenó seguirla hacia el río. 🐘🐘🐘\n\nAdemás, mandó al joven más rápido a pedir ayuda a otras 5 manadas de la zona.\n\n«¡El incendio nos afecta a todos! ¡Estoy segura de que todas las manadas colaborarán!» 🐘💪\n\nY así, más de 100 elefantes se dirigieron al río para llenar sus trompas de agua. ¡Era un espectáculo impresionante!",
@@ -556,13 +636,19 @@
           "💪:medium:50:20:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Contar cuántos elefantes hay!",
-          "target": "count-elephants",
-          "emoji": "🔢"
-        }
-      ]
+      "puzzle": {
+        "question": "Elia dejó a 1 madre y 2 jóvenes cuidando bebés. Si la manada tiene 28 elefantes, ¿cuántos van al rescate? 🐘🔢",
+        "inputType": "choices",
+        "options": [
+          { "value": "23", "label": "23 elefantes", "emoji": "2️⃣" },
+          { "value": "25", "label": "25 elefantes", "emoji": "🐘" },
+          { "value": "27", "label": "27 elefantes", "emoji": "🔢" }
+        ],
+        "correctAnswer": "25",
+        "successTarget": "count-elephants",
+        "successText": "¡¡Correcto!! 🎉 28 - 1 - 2 = 25 elefantes van al rescate. ¡Y vienen más manadas! 🐘💪",
+        "failText": "Si hay 28 y se quedan 1 madre + 2 jóvenes = 3... ¿Cuántos quedan? 28 - 3 = ... 🤔"
+      }
     },
 
     "count-elephants": {
@@ -606,7 +692,7 @@
     },
 
     "elephants-arrive": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Llegan los Elefantes!",
       "text": "Tras llenarse las trompas y la boca con toda el agua que pudieron, más de 100 elefantes llegaron al incendio. 🐘💧🔥\n\nMientras tanto, Roco el gorila y los demás animales habían hecho un buen trabajo construyendo un cortafuegos. 🦍💪\n\n¡Los elefantes concentraron la puntería en el frente más grande del fuego! Y como si lloviera con fuerza, el fuego perdió fuerza. 🌧️\n\nPero necesitaron hacer varios viajes más al río para ir apagando las llamas...",
       "illustration": {
@@ -622,13 +708,26 @@
           "🦍:medium:15:70"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Cuántos viajes necesitan?",
-          "target": "math-puzzle-1",
-          "emoji": "🔢"
-        }
-      ]
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Los elefantes están apagando el fuego! ¿Ves qué ha cambiado entre ANTES y DESPUÉS? 🐘💧🔥",
+        "columns": 4,
+        "original": [
+          "🔥", "🔥", "🔥", "🔥",
+          "🌳", "🔥", "🌳", "🔥",
+          "🐘", "🌳", "🐘", "🌳",
+          "💧", "🐘", "💧", "🐘"
+        ],
+        "modified": [
+          "💨", "🔥", "💨", "🔥",
+          "🌳", "💨", "🌳", "🔥",
+          "🐘", "🌳", "🐘", "🌳",
+          "💧", "🐘", "💧", "🐘"
+        ],
+        "differences": [0, 2, 5],
+        "successTarget": "math-puzzle-1",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Los elefantes han apagado 3 focos de fuego con agua! Pero aún queda trabajo... 🐘💧"
+      }
     },
 
     "math-puzzle-1": {
@@ -689,7 +788,7 @@
     },
 
     "fire-scene": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Jungla Antes y Después",
       "text": "Mientras los elefantes hacen el último viaje, observa lo que el fuego ha hecho a la jungla. 😢\n\nAlgunas zonas se han quemado, pero entre todos han conseguido salvar la mayor parte. ¡Fíjate bien en las diferencias! 🔍",
       "illustration": {
@@ -702,13 +801,19 @@
           "🌳:large:10:50"
         ]
       },
-      "choices": [
-        {
-          "text": "Buscar las diferencias",
-          "target": "fire-diferencias",
-          "emoji": "🔍"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Con qué apagan el fuego los elefantes? 🐘💧",
+        "inputType": "choices",
+        "options": [
+          { "value": "agua", "label": "Con agua de su trompa 💧", "emoji": "💧" },
+          { "value": "arena", "label": "Con arena del suelo 🏖️", "emoji": "🏖️" },
+          { "value": "viento", "label": "Soplando fuerte 💨", "emoji": "💨" }
+        ],
+        "correctAnswer": "agua",
+        "successTarget": "fire-diferencias",
+        "successText": "¡¡Correcto!! 🎉 ¡Los elefantes llenan sus trompas en el río y lanzan agua como mangueras! 🐘💧",
+        "failText": "Recuerda lo que dijo Koolena al principio: los elefantes usan su trompa como... 🤔"
+      }
     },
 
     "fire-diferencias": {
@@ -746,7 +851,7 @@
     },
 
     "night-falls": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Cae la Noche",
       "text": "Al llegar la noche, ya solo se veían los restos humeantes de lo que había sido el fuego más peligroso que nadie recordaba. 🌙💨\n\nLos elefantes habían hecho 4 viajes al río. ¡Y entre todos lo habían conseguido!\n\nTodos los animales se felicitaban. Roco el gorila, que nunca hablaba, ahora sonreía de oreja a oreja. 🦍😊\n\nLos cocodrilos habían resultado ser buenos aliados. Koolena la pitón había sido valiente. Y Celdi, el cerdito más pequeño de todos, había sido la pieza más importante del rompecabezas. 🐷✨\n\nPero la jungla estaba herida. ¿Qué pasaría ahora?",
       "illustration": {
@@ -763,13 +868,14 @@
           "💨:small:60:35:float"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Se recuperará la jungla?",
-          "target": "simon-animals",
-          "emoji": "🌱"
-        }
-      ]
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡La noche de celebración! ¿Recuerdas a los héroes? ¡Empareja los animales! 🌙🧠",
+        "columns": 3,
+        "pairs": ["🦍", "🐘", "🐆", "🐷", "🐍", "🐊"],
+        "successTarget": "simon-animals",
+        "successText": "¡¡Perfecto!! 🎉 ¡Todos son héroes! Cada uno aportó algo especial para salvar la jungla. 🌙✨"
+      }
     },
 
     "simon-animals": {
@@ -839,7 +945,7 @@
     },
 
     "stay-together": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Una Gran Familia",
       "text": "Todos los animales aplaudieron, rugieron, graznaron y barritaron de alegría. 🎉\n\n¡La jungla entera se convirtió en una gran familia!\n\nRoco el gorila fue elegido líder del consejo de animales. 🦍👑\nNora la guacamaya se encargó de las comunicaciones. 🦜📣\nLos cocodrilos protegían el río. 🐊\nLas águilas vigilaban desde el cielo. 🦅\nY Celdi... ¡Celdi fue nombrado embajador oficial! Su capacidad de hablar «elefanto» había salvado a todos. 🐷🌟\n\nA las pocas semanas, volvieron las lluvias... 🌧️",
       "illustration": {
@@ -857,17 +963,28 @@
           "🎉:medium:80:15:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "Ver cómo renace la jungla",
-          "target": "spell-puzzle",
-          "emoji": "🌱"
-        }
-      ]
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¡Gran celebración! 🎉 ¿Cuántas especies diferentes de animales ves celebrando?",
+        "targetEmoji": "🎉",
+        "targetCount": 5,
+        "distractorEmoji": "✨",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "5", "label": "5 especies", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 especies", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 especies", "emoji": "7️⃣" }
+        ],
+        "correctAnswer": "7",
+        "successTarget": "spell-puzzle",
+        "successText": "¡¡Correcto!! 🎉 ¡7 especies celebran juntas: gorila, elefante, jaguar, cerdito, guacamaya, pitón y cocodrilo! 🌿🤝",
+        "failText": "Cuenta todas las especies diferentes: 🦍🐘🐆🐷🦜🐍🐊... 🤔"
+      }
     },
 
     "help-when-needed": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Buenos Vecinos",
       "text": "Los animales decidieron volver a sus territorios, pero con una promesa: si alguien necesitaba ayuda, todos acudirían. 🤝\n\n«No hace falta vivir juntos para cuidarnos», dijo Nora la guacamaya sabiamente. 🦜\n\nRoco asintió: «Pero recordemos esta lección. Solos no podríamos haber apagado el fuego.» 🦍\n\nCeldi prometió visitar a Elia cada semana. Y las águilas se ofrecieron a vigilar la jungla desde el cielo.\n\nA las pocas semanas, volvieron las lluvias... 🌧️",
       "illustration": {
@@ -882,13 +999,19 @@
           "🌙:large:80:10:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "Ver cómo renace la jungla",
-          "target": "spell-puzzle",
-          "emoji": "🌱"
-        }
-      ]
+      "puzzle": {
+        "question": "¿Qué prometieron los animales antes de volver a sus territorios? 🤝",
+        "inputType": "choices",
+        "options": [
+          { "value": "ayudar", "label": "Ayudarse si hay peligro", "emoji": "🤝" },
+          { "value": "olvidar", "label": "Olvidar lo que pasó", "emoji": "🙈" },
+          { "value": "pelear", "label": "No volver a hablarse", "emoji": "😤" }
+        ],
+        "correctAnswer": "ayudar",
+        "successTarget": "spell-puzzle",
+        "successText": "¡¡Correcto!! 🎉 ¡Prometieron ayudarse siempre que alguien lo necesitara! Eso es ser buenos vecinos. 🤝🌿",
+        "failText": "Recuerda: si alguien necesitaba ayuda, todos... 🤔"
+      }
     },
 
     "spell-puzzle": {
@@ -917,7 +1040,7 @@
     },
 
     "jungle-reborn": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Jungla Renace",
       "text": "Una vez que volvieron las lluvias, la naturaleza empezó a brotar de nuevo con fuerza allí donde antes solo quedaban cenizas. 🌱🌿🌺\n\nBrotes verdes salían de la tierra quemada. Flores nuevas se abrían al sol. ¡La jungla volvía a la vida! 🌸☀️\n\nEn apenas un año, nadie que no hubiera estado allí habría dicho que había ocurrido aquel gran incendio que consiguió unir a tantos animales en una gran familia. 💚",
       "illustration": {
@@ -934,9 +1057,34 @@
           "🌈:large:50:18"
         ]
       },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "Los animales se convirtieron en una gran... ¡Ordena las letras! 💚🔤",
+        "word": "FAMILIA",
+        "hint": "Se convirtieron en una gran _______",
+        "successTarget": "ending-check",
+        "successText": "¡¡FAMILIA!! 🎉 ¡Todos los animales de la jungla se convirtieron en una gran familia! 💚🌿"
+      }
+    },
+
+    "ending-check": {
+      "type": "narrative",
+      "title": "El Final de la Historia",
+      "text": "Y así termina nuestra aventura en la jungla. Pero, ¿qué tipo de final has conseguido? ¡Depende de las decisiones que tomaste! 🌟",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🌟:xlarge:50:35:sparkle",
+          "🦍:medium:15:65",
+          "🐘:medium:35:60",
+          "🐆:medium:55:65",
+          "🐷:medium:75:60",
+          "🌈:large:50:15"
+        ]
+      },
       "choices": [
         {
-          "text": "¿Y qué aprendieron todos?",
+          "text": "¡Ver mi final!",
           "target": "ending-best",
           "emoji": "💚",
           "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
