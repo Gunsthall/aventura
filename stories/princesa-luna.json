@@ -18,7 +18,7 @@
 
   "pages": {
     "intro": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Reino de los Números Mágicos",
       "text": "En un reino muy, muy lejano, más allá de las nubes y más arriba que el arcoíris, existía un lugar mágico llamado el Reino de los Números.\n\nEn este reino, cada estrella del cielo tenía un número especial que mantenía todo en armonía. Los ríos fluían al ritmo del número 3, las flores crecían con la fuerza del 7, y el sol brillaba con la energía del 10.\n\nPero una noche, algo terrible estaba a punto de ocurrir... ⭐🌙",
       "illustration": {
@@ -29,17 +29,21 @@
           "🌙:xlarge:82:15:float"
         ]
       },
-      "choices": [
-        {
-          "text": "Conocer a la Princesa Luna",
-          "target": "wake-up",
-          "emoji": "👸"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Las estrellas del reino brillan con ritmo! ¡Toca las estrellas cuando lleguen a la zona! ⭐🎵",
+        "emojis": ["⭐", "🌙", "⭐", "✨", "⭐", "🌙"],
+        "speed": 3500,
+        "lanes": 3,
+        "minScore": 4,
+        "scoreLabel": "¡Estrellas mágicas!",
+        "successTarget": "wake-up",
+        "successText": "¡¡Bravo!! 🎉 ¡Has tocado las estrellas mágicas! Pero algo raro pasa en el cielo... 🌙"
+      }
     },
 
     "wake-up": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Princesa Luna Despierta",
       "text": "La Princesa Luna 👸 abrió sus grandes ojos violetas. Algo no estaba bien.\n\nDesde su cama con dosel de terciopelo morado, podía ver la ventana de su torre. El brillo de las estrellas que siempre la acompañaba por las noches... ¡estaba desapareciendo!\n\nLuna se levantó de un salto y corrió hacia la ventana con su camisón de estrellas plateadas.",
       "illustration": {
@@ -53,17 +57,20 @@
           "✨:small:82:35:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "Mirar por la ventana",
-          "target": "discover-problem",
-          "emoji": "🪟"
-        }
-      ]
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "Luna mira por la ventana. ¿Cuál de estas estrellas ha perdido su brillo? 🌟",
+        "items": ["⭐", "⭐", "⭐", "❌"],
+        "intrusoIndex": 3,
+        "reason": "¡Esa estrella ha perdido su número y su brillo! Las demás aún brillan.",
+        "successTarget": "discover-problem",
+        "successText": "¡¡Sí!! 🎉 ¡Una estrella ha perdido su luz! Algo terrible está pasando... ⭐❌",
+        "failText": "Busca la estrella que es diferente a las demás... 🤔"
+      }
     },
 
     "discover-problem": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Las Estrellas Sin Números!",
       "text": "¡Oh, no! Luna vio algo terrible: las estrellas estaban perdiendo sus números mágicos. ⭐❌\n\nUno a uno, los números se desprendían de las estrellas y caían como lágrimas de luz. El cielo se iba oscureciendo.\n\n«Sin los números», pensó Luna asustada, «los ríos dejarán de fluir, las flores se marchitarán y el sol no sabrá cuándo salir.»\n\nTenía que hacer algo. ¡Y rápido! 💪",
       "illustration": {
@@ -75,17 +82,20 @@
           "😰:medium:55:62"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Buscar ayuda!",
-          "target": "owl-meeting",
-          "emoji": "🆘"
-        }
-      ]
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "¡Los números se caen de las estrellas! Mira el patrón: ⭐1, ⭐2, ⭐3... ¿Qué número sigue? 🔢",
+        "pattern": ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"],
+        "options": ["6️⃣", "7️⃣", "8️⃣", "3️⃣"],
+        "correctAnswer": "6️⃣",
+        "successTarget": "owl-meeting",
+        "successText": "¡¡Correcto!! 🎉 ¡El 6 es el siguiente! Pero los números siguen cayendo... ¡Hay que hacer algo! ⭐",
+        "failText": "Mira la secuencia: 1, 2, 3, 4, 5... ¿Qué número viene después? 🤔"
+      }
     },
 
     "owl-meeting": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Búho Sabio Aparece",
       "speaker": "buho",
       "text": "«¡Princesa Luna!» dijo una voz grave y sabia desde la rama del gran roble del jardín.\n\nEra el Búho Sabio 🦉, el consejero más antiguo del reino. Sus enormes ojos dorados brillaban en la oscuridad.\n\n«La Sombra del Olvido ha robado los números de las estrellas. Es una criatura que se alimenta del caos y la confusión. Solo alguien con un corazón valiente y una mente lista puede recuperarlos.»\n\n«Tendrás que viajar por tres regiones del reino: el Bosque Encantado, las Montañas de Cristal y el Castillo de la Sombra. ¿Estás preparada?»",
@@ -101,17 +111,22 @@
           "👸:large:50:80"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Acepto el desafío!",
-          "target": "forest-entrance",
-          "emoji": "⚔️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "El Búho explica el plan. ¡Pon las etapas del viaje en orden! 🦉🗺️",
+        "scenes": [
+          { "emoji": "🌲", "text": "Cruzar el Bosque Encantado" },
+          { "emoji": "💎", "text": "Escalar las Montañas de Cristal" },
+          { "emoji": "🏰", "text": "Entrar al Castillo de la Sombra" }
+        ],
+        "successTarget": "forest-entrance",
+        "successText": "¡¡Perfecto!! 🎉 ¡Bosque, Montañas y Castillo! Ese es el camino. ¡En marcha! 🗺️✨",
+        "failText": "El Búho dijo primero el Bosque, luego las Montañas, y por último el Castillo... 🤔"
+      }
     },
 
     "forest-entrance": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Entrada al Bosque Encantado",
       "text": "El Bosque Encantado se abría ante Luna como una puerta a otro mundo. 🌲✨\n\nLos árboles enormes susurraban números olvidados entre sus hojas. Las setas brillaban con una luz tenue, y las mariposas nocturnas dejaban estelas de polvo dorado.\n\nUn camino de piedras luminosas llevaba hasta un antiguo puente que cruzaba un río de estrellas líquidas.\n\nPero el puente tenía una cerradura mágica... 🔒",
       "illustration": {
@@ -126,13 +141,23 @@
           "👸:large:50:70"
         ]
       },
-      "choices": [
-        {
-          "text": "Acercarse al puente mágico",
-          "target": "math-puzzle-1",
-          "emoji": "🌉"
-        }
-      ]
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Ayuda a Luna 👸 a encontrar el camino al puente mágico 🌉 a través del bosque! Toca las casillas vecinas.",
+        "grid": [
+          [2, 0, 1, 0, 0],
+          [1, 0, 1, 0, 1],
+          [0, 0, 0, 1, 0],
+          [1, 0, 1, 0, 0],
+          [1, 0, 0, 0, 3]
+        ],
+        "playerEmoji": "👸",
+        "goalEmoji": "🌉",
+        "wallEmoji": "🌳",
+        "pathEmoji": "🍄",
+        "successTarget": "math-puzzle-1",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Luna encontró el camino al puente mágico! 👸🌉"
+      }
     },
 
     "math-puzzle-1": {
@@ -195,7 +220,7 @@
     },
 
     "bridge-crossed": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Al Otro Lado del Puente!",
       "text": "¡Luna cruzó el puente mágico! 🎉\n\nLas estrellas del puente bailaron de alegría, y una lluvia de chispas doradas cayó a su alrededor. Los números 5 y 3 se unieron en el cielo formando un hermoso 8 brillante.\n\nPero al llegar al otro lado, Luna encontró un viejo cofre mágico entre las raíces de un árbol gigante. Tenía grabado: «Solo quien tenga buena memoria podrá abrirme.» 🧠✨",
       "illustration": {
@@ -210,13 +235,25 @@
           "🧰:large:85:70"
         ]
       },
-      "choices": [
-        {
-          "text": "Abrir el cofre mágico",
-          "target": "memory-puzzle",
-          "emoji": "🧠"
-        }
-      ]
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡El cofre tiene palabras mágicas grabadas! ¡Encuéntralas! 🔤✨",
+        "columns": 5,
+        "grid": [
+          "M","A","G","I","A",
+          "L","U","N","A","R",
+          "X","P","Z","W","K",
+          "E","S","T","A","R",
+          "H","B","R","I","O"
+        ],
+        "words": [
+          { "word": "MAGIA", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "LUNAR", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "ESTAR", "row": 3, "col": 0, "direction": "horizontal" }
+        ],
+        "successTarget": "memory-puzzle",
+        "successText": "¡¡Genial!! 🎉 ¡MAGIA, LUNAR, ESTAR! Las palabras mágicas abren el cofre. ✨"
+      }
     },
 
     "memory-puzzle": {
@@ -245,7 +282,7 @@
     },
 
     "memory-reward": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡El Tesoro del Cofre!",
       "text": "¡Las cartas brillan con fuerza y el cofre se abre del todo! 🎉✨\n\nDentro hay un mapa mágico que muestra el camino a través del bosque. Y también una nota:\n\n«Quien tiene buena memoria, nunca pierde el camino.»\n\nPero de pronto, Luna escuchó algo extraño...\n\nAlguien estaba... ¿llorando? 😢\n\nUn sonido triste venía de entre los árboles.",
       "illustration": {
@@ -259,13 +296,16 @@
           "😢:medium:90:55"
         ]
       },
-      "choices": [
-        {
-          "text": "Investigar el sonido triste",
-          "target": "moral-choice-1",
-          "emoji": "🔍"
-        }
-      ]
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "El mapa muestra un patrón mágico de símbolos. ¿Cuál sigue? 🗺️✨",
+        "pattern": ["🌲", "💎", "🌲", "💎", "🌲"],
+        "options": ["💎", "🌲", "⭐", "🏰"],
+        "correctAnswer": "💎",
+        "successTarget": "moral-choice-1",
+        "successText": "¡¡Correcto!! 🎉 ¡Bosque-Cristal-Bosque-Cristal! El mapa muestra el camino. 🗺️",
+        "failText": "Mira el patrón: 🌲💎 se alterna... ¿Qué sigue después de 🌲? 🤔"
+      }
     },
 
     "moral-choice-1": {
@@ -311,7 +351,7 @@
     },
 
     "help-dragon": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Ayudando a Draco",
       "text": "Luna se arrodilló junto a Draco y le dijo con una sonrisa: «No llores, amigo. Te ayudaré a encontrar tus números. ¡Juntos somos más fuertes!» 🤝\n\nBuscaron entre las hojas y las piedras del bosque. Luna encontró el 7️⃣ escondido detrás de una seta gigante, y Draco descubrió el 3️⃣ dentro de una flor azul.\n\n«¡¡GRACIAS!!» rugió Draco con alegría. Sus llamas volvieron, pero ahora eran de todos los colores del arcoíris. 🌈🔥\n\n«¡Eres la mejor amiga del mundo! ¡Nunca te olvidaré!»",
       "illustration": {
@@ -326,13 +366,16 @@
           "🔥:medium:70:70:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Seguir juntos la aventura!",
-          "target": "forest-mural",
-          "emoji": "🐉"
-        }
-      ]
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "Luna busca los números de Draco entre las setas mágicas. ¿Cuál esconde un número? 🍄🔢",
+        "items": ["🍄", "🍄", "🍄", "7️⃣"],
+        "intrusoIndex": 3,
+        "reason": "¡El número 7️⃣ estaba escondido detrás de una seta! Es uno de los números de Draco.",
+        "successTarget": "forest-mural",
+        "successText": "¡¡Lo encontraste!! 🎉 ¡El 7 estaba detrás de una seta gigante! Draco está feliz. 🐉7️⃣",
+        "failText": "Busca algo diferente entre las setas... 🍄🤔"
+      }
     },
 
     "forest-mural": {
@@ -441,7 +484,7 @@
     },
 
     "dragon-joins": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Draco se Une a la Aventura!",
       "text": "«¡Sube a mi espalda!» dijo Draco emocionado, extendiendo sus alas brillantes. 🐉✨\n\n¡Luna se subió al lomo del dragón y volaron juntos por encima de los árboles! El viento acariciaba su pelo mientras las estrellas (las que aún tenían números) les guiñaban desde arriba.\n\n«¡Esto es increíble!» gritó Luna riendo.\n\n«¡Soy tu amigo para siempre!» rugió Draco con alegría, lanzando chispas arcoíris al cielo. 🌈",
       "illustration": {
@@ -457,13 +500,17 @@
           "✨:medium:70:40:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Volar hacia las Montañas de Cristal!",
-          "target": "mountain-entrance",
-          "emoji": "✈️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Luna y Draco vuelan por el cielo! ¡Toca las nubes y estrellas al ritmo! ☁️⭐",
+        "emojis": ["☁️", "⭐", "☁️", "✨", "⭐", "☁️", "✨"],
+        "speed": 3000,
+        "lanes": 3,
+        "minScore": 4,
+        "scoreLabel": "¡Volando alto!",
+        "successTarget": "mountain-entrance",
+        "successText": "¡¡Vuelo perfecto!! 🎉 ¡Luna y Draco llegan a las Montañas de Cristal! 🐉✨"
+      }
     },
 
     "dragon-joins-reluctant": {
@@ -514,7 +561,7 @@
     },
 
     "mountain-entrance": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Las Montañas de Cristal",
       "text": "¡Las Montañas de Cristal eran aún más hermosas de lo que Luna había imaginado! 💎✨\n\nCada roca brillaba con mil colores, como un arcoíris atrapado en piedra. El suelo reflejaba la luz creando patrones mágicos que cambiaban con cada paso.\n\nEn el corazón de la montaña, Luna encontró una gran puerta de cristal cerrada con un patrón misterioso...\n\n«Para abrir esta puerta, necesitarás descubrir el secreto de los números», susurró el viento entre los cristales. 🔮",
       "illustration": {
@@ -529,13 +576,23 @@
           "✨:medium:65:45:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "Examinar el patrón de la puerta",
-          "target": "math-puzzle-2",
-          "emoji": "🔍"
-        }
-      ]
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Ayuda a Luna 👸 a llegar a la puerta de cristal 💎 entre los cristales! Toca las casillas vecinas.",
+        "grid": [
+          [2, 0, 1, 1, 0],
+          [1, 0, 0, 1, 0],
+          [0, 0, 1, 0, 0],
+          [0, 1, 0, 0, 1],
+          [0, 0, 0, 1, 3]
+        ],
+        "playerEmoji": "👸",
+        "goalEmoji": "💎",
+        "wallEmoji": "🪨",
+        "pathEmoji": "✨",
+        "successTarget": "math-puzzle-2",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Luna encontró el camino a la puerta de cristal! 👸💎"
+      }
     },
 
     "math-puzzle-2": {
@@ -683,7 +740,7 @@
     },
 
     "share-magic": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡La Magia Compartida Crece!",
       "text": "Luna levantó la varita hacia el cielo y gritó con toda su fuerza:\n\n«¡LA MAGIA ES DE TODOS!» ✨💫🌟\n\nUna luz hermosa y cálida envolvió a Luna, a Draco, al Búho y al Hada. Cada uno recibió un poquito de poder mágico de la varita.\n\nPero algo increíble ocurrió: ¡la magia no se dividió, sino que se MULTIPLICÓ! La varita brillaba ahora diez veces más que antes.\n\n«¿Veis?», sonrió el Hada. «Cuando compartes de verdad, la magia crece.» 🌈\n\nJuntos, el equipo era invencible. ¡Era hora de enfrentarse a la Sombra! 💪",
       "illustration": {
@@ -700,13 +757,19 @@
           "🌟:medium:50:15:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Ir al Castillo de la Sombra!",
-          "target": "math-puzzle-3",
-          "emoji": "🏰"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Pon en orden cómo Luna consiguió sus aliados! 👸🤝",
+        "scenes": [
+          { "emoji": "🐉", "text": "Ayudó a Draco a encontrar sus números" },
+          { "emoji": "🧠", "text": "Resolvió los acertijos del Bosque" },
+          { "emoji": "🪄", "text": "Recibió la Varita del Hada Estrella" },
+          { "emoji": "💝", "text": "Compartió la magia con todos" }
+        ],
+        "successTarget": "math-puzzle-3",
+        "successText": "¡¡Perfecto!! 🎉 ¡Así fue el viaje de Luna: ayudar, aprender, recibir y compartir! ✨",
+        "failText": "Piensa en qué pasó primero en la aventura... 🤔"
+      }
     },
 
     "keep-magic": {

@@ -245,6 +245,24 @@ class StoryEngine {
       case 'diferencias':
         window.puzzleDiferencias?.render(this, page, alreadySolved);
         break;
+      case 'intruso':
+        window.puzzleIntruso?.render(this, page, alreadySolved);
+        break;
+      case 'secuencia':
+        window.puzzleSecuencia?.render(this, page, alreadySolved);
+        break;
+      case 'ordenarHistoria':
+        window.puzzleOrdenarHistoria?.render(this, page, alreadySolved);
+        break;
+      case 'sopaLetras':
+        window.puzzleSopaLetras?.render(this, page, alreadySolved);
+        break;
+      case 'laberinto':
+        window.puzzleLaberinto?.render(this, page, alreadySolved);
+        break;
+      case 'ritmo':
+        window.puzzleRitmo?.render(this, page, alreadySolved);
+        break;
       default:
         this._renderChoicesPuzzle(page, alreadySolved);
         break;

@@ -130,17 +130,14 @@
         ]
       },
       "puzzle": {
-        "question": "Koolena recuerda que un animal puede lanzar agua con su trompa. ¿Qué animal es? 🤔💧",
-        "inputType": "choices",
-        "options": [
-          { "value": "elefante", "label": "El elefante 🐘", "emoji": "🐘" },
-          { "value": "cocodrilo", "label": "El cocodrilo 🐊", "emoji": "🐊" },
-          { "value": "serpiente", "label": "La serpiente 🐍", "emoji": "🐍" }
-        ],
-        "correctAnswer": "elefante",
+        "inputType": "intruso",
+        "question": "Uno de estos animales puede lanzar agua con su trompa. ¿Cuál NO tiene trompa? 🤔",
+        "items": ["🐘", "🐘", "🐘", "🐊"],
+        "intrusoIndex": 3,
+        "reason": "¡El cocodrilo 🐊 no tiene trompa! Los elefantes 🐘 sí usan su trompa como manguera.",
         "successTarget": "eagles-offer",
-        "successText": "¡¡Correcto!! 🎉 ¡Los elefantes llenan su trompa de agua y la lanzan como una manguera! 🐘💧",
-        "failText": "Piensa en un animal con una trompa muuuuy larga... 🤔"
+        "successText": "¡¡Correcto!! 🎉 ¡El cocodrilo no tiene trompa! Los elefantes la usan como manguera. 🐘💧",
+        "failText": "Fíjate bien... ¿Cuál de estos animales es diferente a los demás? 🤔"
       }
     },
 
@@ -296,17 +293,14 @@
         ]
       },
       "puzzle": {
-        "question": "¿Por qué Celdi no puede seguir al jaguar corriendo? 🐷😥",
-        "inputType": "choices",
-        "options": [
-          { "value": "patitas", "label": "Sus patitas son muy cortas", "emoji": "🐾" },
-          { "value": "miedo", "label": "Tiene miedo del fuego", "emoji": "😨" },
-          { "value": "hambre", "label": "Tiene mucha hambre", "emoji": "🍽️" }
-        ],
-        "correctAnswer": "patitas",
+        "inputType": "secuencia",
+        "question": "¡Celdi intenta correr! Mira el patrón de sus pasos: paso-paso-descanso, paso-paso-descanso... ¿Qué sigue? 🐷",
+        "pattern": ["🐾", "🐾", "😮‍💨", "🐾", "🐾", "😮‍💨", "🐾", "🐾"],
+        "options": ["🐾", "😮‍💨", "💨", "🐷"],
+        "correctAnswer": "😮‍💨",
         "successTarget": "journey-start",
-        "successText": "¡¡Correcto!! 🎉 Las patitas de Celdi son demasiado cortas para correr tan rápido como un jaguar. 🐷🐾",
-        "failText": "Lee otra vez la historia... ¿Qué dice sobre las patitas de Celdi? 🤔"
+        "successText": "¡¡Correcto!! 🎉 ¡Paso-paso-descanso! Celdi no puede seguir al jaguar con sus patitas cortas. 🐷😮‍💨",
+        "failText": "Mira el patrón: 🐾🐾😮‍💨 se repite... ¿Qué viene después de 🐾🐾? 🤔"
       }
     },
 
@@ -327,17 +321,14 @@
         ]
       },
       "puzzle": {
-        "question": "¿Qué pasó cuando los monos llevaban a Celdi saltando? 🐒💥",
-        "inputType": "choices",
-        "options": [
-          { "value": "rama", "label": "Una rama se rompió", "emoji": "🌳" },
-          { "value": "mono", "label": "Un mono se cayó", "emoji": "🐒" },
-          { "value": "celdi", "label": "Celdi se durmió", "emoji": "😴" }
-        ],
-        "correctAnswer": "rama",
+        "inputType": "intruso",
+        "question": "Los monos saltan de rama en rama. ¿Cuál de estas ramas es diferente? 🌳",
+        "items": ["🌿", "🌿", "🪵", "🌿"],
+        "intrusoIndex": 2,
+        "reason": "¡La rama seca 🪵 se rompió! Las ramas verdes 🌿 aguantan bien.",
         "successTarget": "journey-start",
-        "successText": "¡¡Correcto!! 🎉 ¡CRACK! Las ramas estaban secas y una se rompió. ¡Menos mal que no se cayó Celdi! 😱",
-        "failText": "Las ramas estaban muy secas por la falta de lluvia... ¿Qué pasó? 🤔"
+        "successText": "¡¡Correcto!! 🎉 ¡CRACK! La rama seca se rompió y Celdi casi se cae. 🪵💥",
+        "failText": "Busca la rama que es diferente... una está seca y las demás verdes 🤔"
       }
     },
 
@@ -585,12 +576,17 @@
         ]
       },
       "puzzle": {
-        "inputType": "ordenarLetras",
-        "question": "Elia cuidó a Celdi como si fuera su hijo. ¿Qué era Elia para Celdi? 🐘❤️🐷",
-        "word": "MAMÁ",
-        "hint": "Elia era como su ____",
+        "inputType": "ordenarHistoria",
+        "question": "¡Pon en orden la historia de cómo Celdi y Elia se conocieron! 🐷🐘",
+        "scenes": [
+          { "emoji": "🐷", "text": "Celdi se perdió de pequeñito" },
+          { "emoji": "🐘", "text": "Elia le encontró en una charca" },
+          { "emoji": "❤️", "text": "Elia le cuidó como a un hijo" },
+          { "emoji": "🗣️", "text": "Celdi aprendió a hablar elefanto" }
+        ],
         "successTarget": "jungle-memory",
-        "successText": "¡¡MAMÁ!! 🎉 ¡Elia fue como una mamá para Celdi! ¡Qué reencuentro tan bonito! 🐘❤️🐷"
+        "successText": "¡¡Perfecto!! 🎉 ¡Así fue cómo Celdi y Elia se conocieron! Una historia preciosa. 🐷❤️🐘",
+        "failText": "Piensa qué pasó primero, luego qué pasó después... 🤔"
       }
     },
 
@@ -802,17 +798,21 @@
         ]
       },
       "puzzle": {
-        "question": "¿Con qué apagan el fuego los elefantes? 🐘💧",
-        "inputType": "choices",
-        "options": [
-          { "value": "agua", "label": "Con agua de su trompa 💧", "emoji": "💧" },
-          { "value": "arena", "label": "Con arena del suelo 🏖️", "emoji": "🏖️" },
-          { "value": "viento", "label": "Soplando fuerte 💨", "emoji": "💨" }
+        "inputType": "laberinto",
+        "question": "¡Ayuda al elefante 🐘 a llegar al río 💧 para recoger agua! Toca las casillas vecinas para moverte.",
+        "grid": [
+          [2, 0, 1, 0, 0],
+          [1, 0, 1, 0, 1],
+          [0, 0, 0, 0, 1],
+          [0, 1, 1, 0, 0],
+          [0, 0, 1, 0, 3]
         ],
-        "correctAnswer": "agua",
+        "playerEmoji": "🐘",
+        "goalEmoji": "💧",
+        "wallEmoji": "🔥",
+        "pathEmoji": "🌿",
         "successTarget": "fire-diferencias",
-        "successText": "¡¡Correcto!! 🎉 ¡Los elefantes llenan sus trompas en el río y lanzan agua como mangueras! 🐘💧",
-        "failText": "Recuerda lo que dijo Koolena al principio: los elefantes usan su trompa como... 🤔"
+        "successText": "¡¡Bien hecho!! 🎉 ¡El elefante llegó al río! Ahora puede llenar su trompa de agua. 🐘💧"
       }
     },
 
@@ -964,22 +964,14 @@
         ]
       },
       "puzzle": {
-        "inputType": "contarObjetos",
-        "question": "¡Gran celebración! 🎉 ¿Cuántas especies diferentes de animales ves celebrando?",
-        "targetEmoji": "🎉",
-        "targetCount": 5,
-        "distractorEmoji": "✨",
-        "distractorCount": 3,
-        "areaHeight": 220,
-        "options": [
-          { "value": "5", "label": "5 especies", "emoji": "5️⃣" },
-          { "value": "6", "label": "6 especies", "emoji": "6️⃣" },
-          { "value": "7", "label": "7 especies", "emoji": "7️⃣" }
-        ],
-        "correctAnswer": "7",
+        "inputType": "secuencia",
+        "question": "¡Los animales desfilan celebrando! Mira el patrón del desfile: 🦍🐘🐆🐷, 🦍🐘🐆🐷, 🦍🐘🐆... ¿Quién sigue?",
+        "pattern": ["🦍", "🐘", "🐆", "🐷", "🦍", "🐘", "🐆", "🐷", "🦍", "🐘", "🐆"],
+        "options": ["🐷", "🦍", "🐘", "🦜"],
+        "correctAnswer": "🐷",
         "successTarget": "spell-puzzle",
-        "successText": "¡¡Correcto!! 🎉 ¡7 especies celebran juntas: gorila, elefante, jaguar, cerdito, guacamaya, pitón y cocodrilo! 🌿🤝",
-        "failText": "Cuenta todas las especies diferentes: 🦍🐘🐆🐷🦜🐍🐊... 🤔"
+        "successText": "¡¡Correcto!! 🎉 ¡Celdi el cerdito 🐷 cierra el desfile! ¡Todos celebran juntos! 🌿🤝",
+        "failText": "Mira el patrón: 🦍🐘🐆🐷 se repite... ¿Quién falta al final? 🤔"
       }
     },
 
@@ -1000,17 +992,23 @@
         ]
       },
       "puzzle": {
-        "question": "¿Qué prometieron los animales antes de volver a sus territorios? 🤝",
-        "inputType": "choices",
-        "options": [
-          { "value": "ayudar", "label": "Ayudarse si hay peligro", "emoji": "🤝" },
-          { "value": "olvidar", "label": "Olvidar lo que pasó", "emoji": "🙈" },
-          { "value": "pelear", "label": "No volver a hablarse", "emoji": "😤" }
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra las promesas que hicieron los animales! 🔤🤝",
+        "columns": 5,
+        "grid": [
+          "A","Y","U","D","A",
+          "P","R","Q","X","M",
+          "U","N","I","O","N",
+          "Z","K","L","W","J",
+          "A","M","O","R","T"
         ],
-        "correctAnswer": "ayudar",
+        "words": [
+          { "word": "AYUDA", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "UNION", "row": 2, "col": 0, "direction": "horizontal" },
+          { "word": "AMOR", "row": 4, "col": 0, "direction": "horizontal" }
+        ],
         "successTarget": "spell-puzzle",
-        "successText": "¡¡Correcto!! 🎉 ¡Prometieron ayudarse siempre que alguien lo necesitara! Eso es ser buenos vecinos. 🤝🌿",
-        "failText": "Recuerda: si alguien necesitaba ayuda, todos... 🤔"
+        "successText": "¡¡Genial!! 🎉 AYUDA, UNIÓN, AMOR... ¡Esas son las promesas de los buenos vecinos! 🤝🌿"
       }
     },
 
@@ -1030,12 +1028,23 @@
         ]
       },
       "puzzle": {
-        "inputType": "ordenarLetras",
-        "question": "¡Ordena las letras para formar la palabra secreta! 🔤✨",
-        "word": "EQUIPO",
-        "hint": "Trabajar en ___ es la clave",
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra las palabras escondidas sobre el trabajo en equipo! 🔤🌿",
+        "columns": 6,
+        "grid": [
+          "E","Q","U","I","P","O",
+          "A","M","I","G","O","S",
+          "Y","W","H","Z","K","E",
+          "U","N","I","D","O","S",
+          "X","P","L","Q","R","T"
+        ],
+        "words": [
+          { "word": "EQUIPO", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "AMIGOS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "UNIDOS", "row": 3, "col": 0, "direction": "horizontal" }
+        ],
         "successTarget": "jungle-reborn",
-        "successText": "¡¡EQUIPO!! 🎉 ¡Esa es la palabra! Trabajar en equipo es lo que salvó la jungla. 🌿🤝"
+        "successText": "¡¡Genial!! 🎉 EQUIPO, AMIGOS, UNIDOS... ¡Esas son las claves que salvaron la jungla! 🌿🤝"
       }
     },
 
@@ -1058,12 +1067,15 @@
         ]
       },
       "puzzle": {
-        "inputType": "ordenarLetras",
-        "question": "Los animales se convirtieron en una gran... ¡Ordena las letras! 💚🔤",
-        "word": "FAMILIA",
-        "hint": "Se convirtieron en una gran _______",
+        "inputType": "ritmo",
+        "question": "¡La jungla celebra con música! ¡Toca los emojis cuando lleguen a la zona verde! 🎵🌿",
+        "emojis": ["🦍", "🐘", "🐆", "🐷", "🦜", "🐍", "🐊", "🐒"],
+        "speed": 3500,
+        "lanes": 3,
+        "minScore": 5,
+        "scoreLabel": "¡Fiesta en la jungla!",
         "successTarget": "ending-check",
-        "successText": "¡¡FAMILIA!! 🎉 ¡Todos los animales de la jungla se convirtieron en una gran familia! 💚🌿"
+        "successText": "¡¡Ritmo perfecto!! 🎉 ¡Todos los animales celebran juntos como una gran familia! 💚🌿"
       }
     },
 

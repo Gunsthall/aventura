@@ -369,6 +369,433 @@
   animation: shake 0.4s ease;
 }
 
+/* === INTRUSO (odd one out) === */
+.intruso-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 0 auto 16px;
+  max-width: 400px;
+}
+
+.intruso-item {
+  width: 72px;
+  height: 72px;
+  font-size: 2.2rem;
+  border: 3px solid var(--color-surface-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceIn 0.4s ease backwards;
+}
+
+.intruso-item:hover:not(.disabled) {
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+  background: rgba(243, 156, 18, 0.1);
+}
+
+.intruso-item:active:not(.disabled) {
+  transform: scale(0.95);
+}
+
+.intruso-item.intruso-found {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.2);
+  animation: pulse 0.5s ease;
+}
+
+.intruso-item.intruso-wrong {
+  border-color: var(--color-error);
+  animation: shake 0.4s ease;
+}
+
+.intruso-item.disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.intruso-reason {
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* === SECUENCIA (pattern sequence) === */
+.secuencia-pattern {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.secuencia-cell {
+  width: 52px;
+  height: 52px;
+  font-size: 1.8rem;
+  border: 2px solid var(--color-surface-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounceIn 0.3s ease backwards;
+}
+
+.secuencia-cell.secuencia-question {
+  border-style: dashed;
+  border-color: var(--color-accent);
+  animation: pulse 1.5s ease infinite;
+}
+
+.secuencia-cell.secuencia-correct {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.15);
+}
+
+.secuencia-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.secuencia-option {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+  border: 3px solid var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secuencia-option:hover:not(.disabled) {
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.secuencia-option.secuencia-correct {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.3);
+}
+
+.secuencia-option.secuencia-wrong {
+  border-color: var(--color-error);
+  animation: shake 0.4s ease;
+}
+
+.secuencia-option.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* === ORDENAR HISTORIA (story ordering) === */
+.historia-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.historia-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 2px dashed var(--color-surface-light);
+  border-radius: var(--radius-md);
+  background: rgba(0,0,0,0.15);
+  min-height: 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.historia-slot.historia-filled {
+  border-style: solid;
+  border-color: var(--color-secondary);
+  background: var(--color-surface);
+}
+
+.historia-slot.historia-correct {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.15);
+}
+
+.historia-slot.historia-incorrect {
+  border-color: var(--color-error);
+  animation: shake 0.4s ease;
+}
+
+.historia-number {
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  min-width: 24px;
+}
+
+.historia-slot-content {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.historia-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.historia-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.historia-card:hover:not(.historia-used) {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+.historia-card.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px var(--color-accent);
+}
+
+.historia-card.historia-used {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.historia-card-emoji {
+  font-size: 1.5rem;
+}
+
+.historia-card-text {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* === SOPA DE LETRAS (word search) === */
+.sopa-wordlist {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.sopa-word {
+  padding: 4px 10px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.sopa-word.sopa-word-found {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.2);
+  text-decoration: line-through;
+}
+
+.sopa-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--sopa-columns, 6), 1fr);
+  gap: 4px;
+  max-width: 320px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 2px solid var(--color-surface-light);
+  border-radius: var(--radius-md);
+  padding: 8px;
+}
+
+.sopa-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.sopa-cell:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.sopa-cell.sopa-selected {
+  border-color: var(--color-accent);
+  background: rgba(243, 156, 18, 0.2);
+  transform: scale(1.1);
+}
+
+.sopa-cell.sopa-found {
+  border-color: var(--color-success);
+  background: rgba(39, 174, 96, 0.2);
+  pointer-events: none;
+}
+
+.sopa-cell.sopa-wrong {
+  border-color: var(--color-error);
+  animation: shake 0.4s ease;
+}
+
+/* === LABERINTO (maze) === */
+.laberinto-status {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.laberinto-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--lab-columns, 5), 1fr);
+  gap: 3px;
+  max-width: 320px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 2px solid var(--color-surface-light);
+  border-radius: var(--radius-md);
+  padding: 6px;
+}
+
+.laberinto-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  min-height: 40px;
+}
+
+.laberinto-cell.laberinto-wall {
+  background: rgba(0,0,0,0.4);
+  cursor: default;
+  opacity: 0.8;
+}
+
+.laberinto-cell.laberinto-player {
+  border-color: var(--color-accent);
+  background: rgba(243, 156, 18, 0.2);
+  animation: pulse 1s ease infinite;
+}
+
+.laberinto-cell.laberinto-goal {
+  animation: sparkle 2s ease infinite;
+}
+
+.laberinto-cell.laberinto-visited {
+  background: rgba(142, 68, 173, 0.15);
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.laberinto-cell:hover:not(.laberinto-wall):not(.laberinto-player) {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* === RITMO (rhythm tapping) === */
+.ritmo-score {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.ritmo-arena {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-surface-light);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.ritmo-lane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.ritmo-target {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: rgba(39, 174, 96, 0.1);
+  border-top: 2px dashed var(--color-success);
+}
+
+.ritmo-emoji {
+  position: absolute;
+  top: -50px;
+  font-size: 2.2rem;
+  transform: translateX(-50%);
+  cursor: pointer;
+  user-select: none;
+  animation: ritmoFall linear forwards;
+  z-index: 10;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.ritmo-emoji.ritmo-hit {
+  animation: none;
+  opacity: 0;
+  transform: translateX(-50%) scale(2);
+}
+
+.ritmo-emoji.ritmo-early {
+  opacity: 0.3;
+}
+
+@keyframes ritmoFall {
+  from { top: -50px; }
+  to { top: calc(100% + 50px); }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
   .simon-grid {

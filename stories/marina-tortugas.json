@@ -19,7 +19,7 @@
 
   "pages": {
     "intro": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "La Playa de las Estrellas",
       "text": "En un pueblecito junto al mar vivía Marina 👧, una niña de pelo rizado y ojos del color del océano.\n\nMarina amaba el mar más que a nada en el mundo. Cada mañana corría a la playa a ver las olas, escuchar las gaviotas y buscar conchas bonitas.\n\nPero últimamente, algo estaba cambiando. En vez de conchas, Marina encontraba botellas de plástico, bolsas y tapones entre la arena. 😟\n\nUna mañana, mientras paseaba por la orilla, escuchó un sonido que le rompió el corazón...",
       "illustration": {
@@ -35,17 +35,20 @@
           "🌅:large:50:20"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Investigar el sonido!",
-          "target": "find-turtle",
-          "emoji": "🔍"
-        }
-      ]
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "Marina camina por la playa y encuentra cosas en la arena. Mira el patrón: 🐚🧴🐚🧴🐚... ¿Qué sigue?",
+        "pattern": ["🐚", "🧴", "🐚", "🧴", "🐚"],
+        "options": ["🧴", "🐚", "🥤", "🏖️"],
+        "correctAnswer": "🧴",
+        "successTarget": "find-turtle",
+        "successText": "¡¡Correcto!! 🎉 Por cada concha bonita, hay un plástico sucio... ¡El mar necesita ayuda! 🐚🧴",
+        "failText": "Mira el patrón: concha-plástico se alterna... ¿Qué sigue después de concha? 🤔"
+      }
     },
 
     "find-turtle": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Una Tortuga en Peligro!",
       "text": "Entre las rocas, Marina encontró algo terrible: ¡una pequeña tortuga marina atrapada en una red de plástico! 🐢😢\n\nLa tortuga se retorcía intentando liberarse, pero cuanto más se movía, más se enredaba. Sus ojitos brillaban pidiendo ayuda.\n\n«¡Tranquila, pequeña!» susurró Marina arrodillándose junto a ella. Con mucho cuidado, empezó a quitar los hilos de plástico.\n\nCuando por fin la liberó, la tortuga la miró fijamente y... ¡habló!\n\n«Gracias, niña valiente. Me llamo Tiko. Pero mi familia sigue atrapada... Hay cientos de plásticos en el fondo del mar. Necesitamos ayuda.» 🐢💬",
       "illustration": {
@@ -61,17 +64,20 @@
         ]
       },
       "speaker": "tiko",
-      "choices": [
-        {
-          "text": "¡Te prometo que os ayudaré!",
-          "target": "promise",
-          "emoji": "🤝"
-        }
-      ]
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "¡Marina encuentra cosas entre las rocas! ¿Cuál NO debería estar en el mar? 🌊",
+        "items": ["🐚", "🪨", "🌊", "🥤"],
+        "intrusoIndex": 3,
+        "reason": "¡El vaso de plástico 🥤 no pertenece al mar! Los demás son naturales.",
+        "successTarget": "promise",
+        "successText": "¡¡Correcto!! 🎉 ¡El plástico no pertenece al mar! Las tortugas se enredan en él. 🐢😢",
+        "failText": "Busca algo que los humanos hayan dejado y no pertenezca al mar... 🤔"
+      }
     },
 
     "promise": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Una Misión Importante",
       "speaker": "tiko",
       "text": "«Para salvar a mi familia necesitamos hacer tres cosas», explicó Tiko:\n\n🥇 «Primero: limpiar la playa para que no llegue más plástico al mar.»\n\n🥈 «Segundo: bajar al fondo del mar a liberar a las tortugas atrapadas.»\n\n🥉 «Tercero: encontrar al Gran Remolino de Plástico y destruirlo para siempre.»\n\n«Pero es demasiado trabajo para una sola persona... ¿Conoces a alguien que pueda ayudarnos?»\n\nMarina pensó en sus amigos del pueblo. ¡Claro que sí! 💪",
@@ -86,17 +92,22 @@
           "🌊:large:50:80:float"
         ]
       },
-      "choices": [
-        {
-          "text": "Ir a buscar a mis amigos",
-          "target": "find-friends",
-          "emoji": "🏃"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Pon en orden el plan de Tiko para salvar a las tortugas! 🐢📋",
+        "scenes": [
+          { "emoji": "🏖️", "text": "Limpiar la playa" },
+          { "emoji": "🤿", "text": "Bajar al fondo del mar" },
+          { "emoji": "🌀", "text": "Destruir el Gran Remolino de Plástico" }
+        ],
+        "successTarget": "find-friends",
+        "successText": "¡¡Perfecto!! 🎉 ¡Primero limpiar, luego rescatar, y por último destruir el Remolino! 🐢📋",
+        "failText": "Recuerda: primero la playa, luego bajo el mar, y al final el Remolino... 🤔"
+      }
     },
 
     "find-friends": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Equipo de Rescate",
       "text": "Marina corrió al pueblo y encontró a sus dos mejores amigos:\n\n👦 Leo, que era el más fuerte y siempre cargaba las cajas de su padre pescador.\n\n👩 Sofía, que era la más lista de la clase y sabía todo sobre los animales marinos.\n\n«¡Chicos, las tortugas necesitan nuestra ayuda!» les gritó Marina sin aliento.\n\nLeo y Sofía se miraron.",
       "illustration": {
@@ -110,13 +121,17 @@
           "💪:medium:50:40:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¿Nos ayudáis? ¡Es muy urgente!",
-          "target": "moral-choice-1",
-          "emoji": "🙏"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Marina corre al pueblo a buscar a sus amigos! ¡Toca a cada amigo cuando aparezca! 🏃",
+        "emojis": ["👧", "👦", "👩", "👧", "👦", "👩"],
+        "speed": 3000,
+        "lanes": 3,
+        "minScore": 4,
+        "scoreLabel": "¡Busca amigos!",
+        "successTarget": "moral-choice-1",
+        "successText": "¡¡Genial!! 🎉 ¡Has encontrado a Marina, Leo y Sofía! ¡El equipo está listo! 👧👦👩"
+      }
     },
 
     "moral-choice-1": {
@@ -161,7 +176,7 @@
     },
 
     "convince-explain": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Poder de la Empatía",
       "text": "Marina tomó aire y habló desde el corazón:\n\n«Imaginad que alguien tirase basura en vuestra casa y no pudierais salir. Eso es lo que les pasa a las tortugas. El mar es su hogar, y nosotros lo estamos llenando de plástico.»\n\n«Si no hacemos algo, Tiko y su familia podrían...» A Marina se le quebró la voz.\n\nLeo apretó los puños: «¡El fútbol puede esperar! ¡Vamos a salvar esas tortugas!» ⚡\n\nSofía cerró el libro: «Olvida los deberes. ¡Esto es más importante!» 📖\n\n¡El equipo estaba listo! Los tres chocaron las manos. 🙌",
       "illustration": {
@@ -176,17 +191,20 @@
           "🐢:medium:50:75:float"
         ]
       },
-      "choices": [
-        {
-          "text": "¡A limpiar la playa!",
-          "target": "beach-cleanup",
-          "emoji": "🏖️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "Los amigos están motivados. ¿Cuál de estos NO es una razón para salvar el mar? 🌊",
+        "items": ["🐢", "🐠", "🪸", "💰"],
+        "intrusoIndex": 3,
+        "reason": "¡El dinero 💰 no es una razón! Salvamos el mar por los animales 🐢, los peces 🐠 y los corales 🪸.",
+        "successTarget": "beach-cleanup",
+        "successText": "¡¡Correcto!! 🎉 ¡Salvamos el mar por amor a la naturaleza, no por dinero! 🌊💚",
+        "failText": "Piensa cuál de estos motivos no tiene que ver con el medio ambiente... 🤔"
+      }
     },
 
     "convince-bargain": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Un Trato Justo",
       "text": "«Os propongo un trato», dijo Marina. «Me ayudáis un par de horas y después vamos todos a jugar al fútbol y hacemos los deberes juntos.»\n\nLeo se rascó la cabeza: «Bueno... supongo que puede estar bien.»\n\nSofía asintió: «Vale, pero solo un rato.»\n\nNo estaban muy entusiasmados, pero al menos venían. Marina esperaba que cuando vieran a las tortugas, les importase tanto como a ella... 🤞",
       "illustration": {
@@ -200,13 +218,16 @@
           "😐:small:68:48"
         ]
       },
-      "choices": [
-        {
-          "text": "Ir a la playa juntos",
-          "target": "beach-cleanup",
-          "emoji": "🏖️"
-        }
-      ]
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "Los amigos hacen un trato: primero ayudar, luego jugar. Mira: 🧹⚽🧹⚽🧹... ¿Qué sigue?",
+        "pattern": ["🧹", "⚽", "🧹", "⚽", "🧹"],
+        "options": ["⚽", "🧹", "📚", "🏖️"],
+        "correctAnswer": "⚽",
+        "successTarget": "beach-cleanup",
+        "successText": "¡¡Correcto!! 🎉 ¡Después de limpiar, toca jugar! Ese fue el trato. 🧹⚽",
+        "failText": "Mira el patrón: limpiar-jugar se alterna... ¿Qué sigue después de limpiar? 🤔"
+      }
     },
 
     "go-alone": {
@@ -261,7 +282,7 @@
     },
 
     "beach-cleanup": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Operación Playa Limpia!",
       "text": "Los tres amigos se pusieron manos a la obra. Cada uno llevaba una bolsa grande. 🗑️\n\nMarina recogía los plásticos de la orilla.\nLeo, con su fuerza, sacaba las redes atrapadas entre las rocas.\nSofía separaba todo por tipos: plástico, cristal y metal.\n\n«¡Así podemos reciclarlo después!» explicó Sofía. ♻️\n\nTrabajaron durante una hora y... ¡llenaron 6 bolsas enormes! Pero antes de llevarlas al punto de reciclaje, la Abuela Rosa apareció con una pregunta...",
       "illustration": {
@@ -277,13 +298,23 @@
           "🌊:medium:50:85:float"
         ]
       },
-      "choices": [
-        {
-          "text": "Escuchar a la Abuela Rosa",
-          "target": "math-puzzle-1",
-          "emoji": "👵"
-        }
-      ]
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Ayuda a Marina 👧 a llegar al punto de reciclaje ♻️ recogiendo plásticos por el camino!",
+        "grid": [
+          [2, 0, 0, 1, 0],
+          [1, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0],
+          [0, 1, 1, 1, 0],
+          [0, 0, 0, 0, 3]
+        ],
+        "playerEmoji": "👧",
+        "goalEmoji": "♻️",
+        "wallEmoji": "🧴",
+        "pathEmoji": "🏖️",
+        "successTarget": "math-puzzle-1",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Marina llegó al punto de reciclaje! 👧♻️"
+      }
     },
 
     "math-puzzle-1": {
@@ -346,7 +377,7 @@
     },
 
     "abuela-reward": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Regalo de la Abuela",
       "speaker": "abuela",
       "text": "«¡6 bolsas! ¡Sois unos campeones!» exclamó la Abuela Rosa. 👵🎉\n\n«Como recompensa por cuidar el medio ambiente, os voy a dar algo especial.»\n\nDe su bolsillo sacó tres pulseras hechas con cuerda de colores del mar.\n\n«Estas pulseras están hechas con redes de pesca recicladas. Mientras las llevéis, podréis respirar bajo el agua. Las hizo mi abuela, que era una sirena.» 😉✨\n\n¡Los tres amigos se miraron con los ojos como platos!",
@@ -364,17 +395,29 @@
           "✨:small:60:30:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Ponerse las pulseras y saltar al mar!",
-          "target": "dive-in",
-          "emoji": "🌊"
-        }
-      ]
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡La Abuela Rosa ha grabado palabras mágicas en las pulseras! ¡Encuéntralas! 📿🔤",
+        "columns": 5,
+        "grid": [
+          "O","C","E","A","N",
+          "M","A","R","E","A",
+          "X","Z","W","K","D",
+          "A","G","U","A","S",
+          "P","L","Q","R","T"
+        ],
+        "words": [
+          { "word": "OCEAN", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "MAREA", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "AGUAS", "row": 3, "col": 0, "direction": "horizontal" }
+        ],
+        "successTarget": "dive-in",
+        "successText": "¡¡Genial!! 🎉 ¡OCEAN, MAREA, AGUAS! Las pulseras brillan con magia marina. 📿✨"
+      }
     },
 
     "dive-in": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "¡Bajo el Mar!",
       "text": "Los tres amigos corrieron al agua y... ¡las pulseras funcionaban! 🌊✨\n\nPodían respirar bajo el mar como si fueran peces. Todo era increíble: peces de colores nadaban a su alrededor, corales brillantes crecían en las rocas, y medusas transparentes flotaban como lámparas.\n\nPero también había cosas horribles: bolsas de plástico que parecían medusas falsas, botellas hundidas en la arena, y redes enredadas por todas partes.\n\nY entonces lo vieron: un grupo de tortugas atrapadas entre una montaña de plásticos... 😢🐢",
       "illustration": {
@@ -394,13 +437,16 @@
           "🛍️:small:52:75"
         ]
       },
-      "choices": [
-        {
-          "text": "Observar el arrecife de cerca",
-          "target": "reef-diferencias",
-          "emoji": "🔍"
-        }
-      ]
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "¡Bajo el mar ven animales increíbles! Mira el patrón: 🐠🐟🐙, 🐠🐟🐙, 🐠🐟... ¿Quién sigue?",
+        "pattern": ["🐠", "🐟", "🐙", "🐠", "🐟", "🐙", "🐠", "🐟"],
+        "options": ["🐙", "🐠", "🐟", "🐢"],
+        "correctAnswer": "🐙",
+        "successTarget": "reef-diferencias",
+        "successText": "¡¡Correcto!! 🎉 ¡Pez tropical-pez-pulpo se repite! El fondo del mar es increíble. 🐠🐟🐙",
+        "failText": "Mira el patrón: 🐠🐟🐙 se repite... ¿Qué falta? 🤔"
+      }
     },
 
     "reef-diferencias": {
@@ -440,7 +486,7 @@
     },
 
     "rescue-turtles": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Rescate Submarino",
       "text": "Los tres amigos nadaron hasta las tortugas atrapadas. Había cinco tortugas envueltas en plásticos. 🐢🐢🐢🐢🐢\n\n«¡Trabajemos en equipo!» dijo Marina.\n\nCada uno liberó tortugas con cuidado:\n- Marina desenredó las redes con paciencia 👧\n- Leo usó su fuerza para romper los plásticos duros 👦\n- Sofía indicaba cómo hacerlo sin hacer daño a las tortugas 👩\n\nUna a una, las tortugas fueron quedando libres. ¡Cada vez que liberaban una, la tortuga daba una vueltecita de alegría! 🐢💃\n\nPero entonces apareció alguien...",
       "illustration": {
@@ -458,13 +504,17 @@
           "✨:small:65:52:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Contar las tortugas libres!",
-          "target": "count-turtles",
-          "emoji": "🐢"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Libera a las tortugas quitando los plásticos! ¡Toca cada plástico cuando llegue a la zona! 🐢🧹",
+        "emojis": ["🥤", "🛍️", "🧴", "🥡", "🔋"],
+        "speed": 3500,
+        "lanes": 3,
+        "minScore": 3,
+        "scoreLabel": "¡Quita plásticos!",
+        "successTarget": "count-turtles",
+        "successText": "¡¡Genial!! 🎉 ¡Has quitado todos los plásticos! Las tortugas nadan libres. 🐢✨"
+      }
     },
 
     "count-turtles": {
@@ -509,7 +559,7 @@
     },
 
     "meet-octopus": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "Don Pulpo, el Sabio del Mar",
       "speaker": "pulpo",
       "text": "De detrás de un coral gigante salió Don Pulpo 🐙, el habitante más viejo y sabio del mar.\n\nTenía ocho tentáculos de color violeta y unas gafas redondas hechas con cristales de botellas recicladas.\n\n«¡Vaya, vaya! Humanos que limpian en vez de ensuciar. ¡Hace años que no veía eso!» dijo con voz profunda.\n\n«Habéis liberado a las tortugas, pero el problema de verdad está más abajo: el Gran Remolino de Plástico. Es una espiral enorme de basura que atrapa todo lo que se acerca.»\n\n«Para destruirlo, necesitaréis resolver su acertijo. ¿Estáis listos?»",
@@ -527,13 +577,18 @@
           "✨:small:60:28:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Estamos listos!",
-          "target": "math-puzzle-2",
-          "emoji": "💪"
-        }
-      ]
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "Don Pulpo explica lo que han hecho hasta ahora. ¡Pon los pasos en orden! 🐙📋",
+        "scenes": [
+          { "emoji": "🏖️", "text": "Limpiaron la playa de plásticos" },
+          { "emoji": "🤿", "text": "Bajaron al fondo del mar" },
+          { "emoji": "🐢", "text": "Liberaron a las tortugas atrapadas" }
+        ],
+        "successTarget": "math-puzzle-2",
+        "successText": "¡¡Perfecto!! 🎉 ¡Primero la playa, luego al mar, y las tortugas libres! Ahora falta el Remolino... 🌀",
+        "failText": "Piensa qué hicieron primero: ¿la playa, el mar o las tortugas? 🤔"
+      }
     },
 
     "math-puzzle-2": {
@@ -636,7 +691,7 @@
     },
 
     "coral-garden": {
-      "type": "narrative",
+      "type": "puzzle",
       "title": "El Jardín de Corales",
       "text": "Los tres amigos nadaron por el Jardín de Corales. Era un lugar mágico, lleno de colores y vida. 🪸🐠🦈\n\nMientras avanzaban, iban recogiendo cada plástico que encontraban. Una botella aquí, una bolsa allá.\n\n«¡Mira!» exclamó Sofía. «Cada vez que quitamos un plástico, los corales brillan más.» ✨\n\n¡Era verdad! Los corales agradecían que les quitasen la basura de encima. Peces que estaban escondidos empezaron a salir. Una familia de caballitos de mar les saludó.\n\nCuando llegaron al otro lado, llevaban 2 bolsas más de plásticos recogidos. El mar se veía más limpio. 💙",
       "illustration": {
@@ -655,13 +710,25 @@
           "✨:small:65:25:sparkle"
         ]
       },
-      "choices": [
-        {
-          "text": "¡Seguir hacia el Gran Remolino!",
-          "target": "simon-pulpo",
-          "emoji": "🌀"
-        }
-      ]
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡Mientras nadan por el jardín, encuentran palabras en los corales! 🪸🔤",
+        "columns": 5,
+        "grid": [
+          "C","O","R","A","L",
+          "A","L","G","A","S",
+          "P","E","Z","Q","X",
+          "V","I","D","A","K",
+          "W","M","N","R","T"
+        ],
+        "words": [
+          { "word": "CORAL", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "ALGAS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "VIDA", "row": 3, "col": 0, "direction": "horizontal" }
+        ],
+        "successTarget": "simon-pulpo",
+        "successText": "¡¡Genial!! 🎉 ¡CORAL, ALGAS, VIDA! El jardín submarino está lleno de vida. 🪸✨"
+      }
     },
 
     "simon-pulpo": {
