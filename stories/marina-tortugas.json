@@ -125,9 +125,9 @@
         "inputType": "ritmo",
         "question": "¡Marina corre al pueblo a buscar a sus amigos! ¡Toca a cada amigo cuando aparezca! 🏃",
         "emojis": ["👧", "👦", "👩", "👧", "👦", "👩"],
-        "speed": 3000,
+        "speed": 5000,
         "lanes": 3,
-        "minScore": 4,
+        "minScore": 3,
         "scoreLabel": "¡Busca amigos!",
         "successTarget": "moral-choice-1",
         "successText": "¡¡Genial!! 🎉 ¡Has encontrado a Marina, Leo y Sofía! ¡El equipo está listo! 👧👦👩"
@@ -508,9 +508,9 @@
         "inputType": "ritmo",
         "question": "¡Libera a las tortugas quitando los plásticos! ¡Toca cada plástico cuando llegue a la zona! 🐢🧹",
         "emojis": ["🥤", "🛍️", "🧴", "🥡", "🔋"],
-        "speed": 3500,
+        "speed": 5000,
         "lanes": 3,
-        "minScore": 3,
+        "minScore": 2,
         "scoreLabel": "¡Quita plásticos!",
         "successTarget": "count-turtles",
         "successText": "¡¡Genial!! 🎉 ¡Has quitado todos los plásticos! Las tortugas nadan libres. 🐢✨"

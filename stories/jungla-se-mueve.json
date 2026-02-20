@@ -1070,9 +1070,9 @@
         "inputType": "ritmo",
         "question": "¡La jungla celebra con música! ¡Toca los emojis cuando lleguen a la zona verde! 🎵🌿",
         "emojis": ["🦍", "🐘", "🐆", "🐷", "🦜", "🐍", "🐊", "🐒"],
-        "speed": 3500,
+        "speed": 5000,
         "lanes": 3,
-        "minScore": 5,
+        "minScore": 4,
         "scoreLabel": "¡Fiesta en la jungla!",
         "successTarget": "ending-check",
         "successText": "¡¡Ritmo perfecto!! 🎉 ¡Todos los animales celebran juntos como una gran familia! 💚🌿"
