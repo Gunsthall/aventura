@@ -8,6 +8,7 @@ class StoryEngine {
     this.currentPageId = null;
     this.moralPoints = 0;
     this.visitedPages = [];
+    this.pageHistory = [];
     this.puzzleResults = {};
     this.illustrationRenderer = null;
 
@@ -28,6 +29,7 @@ class StoryEngine {
       endingOverlay: document.getElementById('ending-overlay'),
       endingContent: document.getElementById('ending-content'),
       storyTitle: document.getElementById('game-story-title'),
+      btnBack: document.getElementById('btn-back-page'),
       scrollArrow: document.getElementById('scroll-arrow'),
       scrollArrowBtn: document.getElementById('scroll-arrow-btn'),
       storyPanel: document.querySelector('.story-panel'),
@@ -49,6 +51,11 @@ class StoryEngine {
       this.els.storyPanel.addEventListener('scroll', () => this._updateScrollArrow());
     }
 
+    // Back button
+    if (this.els.btnBack) {
+      this.els.btnBack.addEventListener('click', () => this.goBack());
+    }
+
     // Callbacks
     this.onNavigate = null; // Called when user makes a choice (for sync)
     this.onPuzzleAttempt = null;
@@ -62,6 +69,7 @@ class StoryEngine {
       this.currentPageId = this.story.meta.startPage;
       this.moralPoints = 0;
       this.visitedPages = [];
+      this.pageHistory = [];
       this.puzzleResults = {};
 
       this.els.storyTitle.textContent = this.story.meta.title;
@@ -75,10 +83,15 @@ class StoryEngine {
     }
   }
 
-  goToPage(pageId) {
+  goToPage(pageId, { skipHistory = false } = {}) {
     if (!this.story || !this.story.pages[pageId]) {
       console.error('Page not found:', pageId);
       return;
+    }
+
+    // Push current page to history before navigating (unless going back or first page)
+    if (!skipHistory && this.currentPageId && this.currentPageId !== pageId) {
+      this.pageHistory.push(this.currentPageId);
     }
 
     this.currentPageId = pageId;
@@ -87,6 +100,9 @@ class StoryEngine {
     }
 
     const page = this.story.pages[pageId];
+
+    // Update back button visibility
+    this._updateBackButton();
 
     // Scroll story panel to top before rendering new page
     if (this.els.storyPanel) {
@@ -100,6 +116,23 @@ class StoryEngine {
 
     // Check if scroll arrow needed after DOM settles
     setTimeout(() => this._updateScrollArrow(), 100);
+  }
+
+  goBack() {
+    if (this.pageHistory.length === 0) return;
+    const previousPage = this.pageHistory.pop();
+    this.onNavigate?.('__back__', -1);
+    this.goToPage(previousPage, { skipHistory: true });
+  }
+
+  _updateBackButton() {
+    if (this.els.btnBack) {
+      if (this.pageHistory.length > 0) {
+        this.els.btnBack.classList.remove('hidden');
+      } else {
+        this.els.btnBack.classList.add('hidden');
+      }
+    }
   }
 
   _renderPage(page) {
@@ -198,10 +231,11 @@ class StoryEngine {
     }
     if (target === '__restart__') {
       this.onNavigate?.('__restart__', index);
-      this.goToPage(this.story.meta.startPage);
       this.moralPoints = 0;
       this.visitedPages = [];
+      this.pageHistory = [];
       this.puzzleResults = {};
+      this.goToPage(this.story.meta.startPage);
       return;
     }
 
@@ -473,6 +507,7 @@ class StoryEngine {
       currentPage: this.currentPageId,
       moralPoints: this.moralPoints,
       visitedPages: [...this.visitedPages],
+      pageHistory: [...this.pageHistory],
       puzzleResults: { ...this.puzzleResults },
     };
   }
@@ -481,6 +516,7 @@ class StoryEngine {
     if (!state) return;
     this.moralPoints = state.moralPoints || 0;
     this.visitedPages = state.visitedPages || [];
+    this.pageHistory = state.pageHistory || [];
     this.puzzleResults = state.puzzleResults || {};
     if (state.currentPage && this.story) {
       this.goToPage(state.currentPage);

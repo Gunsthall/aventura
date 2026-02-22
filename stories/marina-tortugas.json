@@ -302,11 +302,13 @@
         "inputType": "laberinto",
         "question": "¡Ayuda a Marina 👧 a llegar al punto de reciclaje ♻️ recogiendo plásticos por el camino!",
         "grid": [
-          [2, 0, 0, 1, 0],
-          [1, 1, 0, 1, 0],
-          [0, 0, 0, 0, 0],
-          [0, 1, 1, 1, 0],
-          [0, 0, 0, 0, 3]
+          [2, 0, 0, 1, 0, 0, 0],
+          [1, 1, 0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0, 1, 0],
+          [0, 1, 1, 1, 0, 0, 0],
+          [0, 0, 0, 1, 1, 0, 1],
+          [1, 1, 0, 0, 0, 0, 1],
+          [0, 0, 0, 1, 0, 0, 3]
         ],
         "playerEmoji": "👧",
         "goalEmoji": "♻️",
@@ -398,21 +400,25 @@
       "puzzle": {
         "inputType": "sopaLetras",
         "question": "¡La Abuela Rosa ha grabado palabras mágicas en las pulseras! ¡Encuéntralas! 📿🔤",
-        "columns": 5,
+        "columns": 7,
         "grid": [
-          "O","C","E","A","N",
-          "M","A","R","E","A",
-          "X","Z","W","K","D",
-          "A","G","U","A","S",
-          "P","L","Q","R","T"
+          "O","C","E","A","N","O","P",
+          "M","A","R","E","A","T","L",
+          "X","Z","W","K","D","V","A",
+          "A","G","U","A","S","H","Y",
+          "R","T","O","F","B","J","A",
+          "B","U","C","E","A","R","N",
+          "I","F","J","G","M","S","L"
         ],
         "words": [
-          { "word": "OCEAN", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "OCEANO", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "MAREA", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "AGUAS", "row": 3, "col": 0, "direction": "horizontal" }
+          { "word": "AGUAS", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "BUCEAR", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "PLAYA", "row": 0, "col": 6, "direction": "vertical" }
         ],
         "successTarget": "dive-in",
-        "successText": "¡¡Genial!! 🎉 ¡OCEAN, MAREA, AGUAS! Las pulseras brillan con magia marina. 📿✨"
+        "successText": "¡¡Genial!! 🎉 ¡OCÉANO, MAREA, AGUAS, BUCEAR, PLAYA! Las pulseras brillan con magia marina. 📿✨"
       }
     },
 
@@ -465,21 +471,23 @@
       },
       "puzzle": {
         "inputType": "diferencias",
-        "question": "¡Encuentra las 5 diferencias! ¿Qué ha cambiado en el arrecife? 🔍🌊",
-        "columns": 4,
+        "question": "¡Encuentra las 6 diferencias! ¿Qué basura ha aparecido en el arrecife? 🔍🌊",
+        "columns": 5,
         "original": [
-          "🪸", "🐠", "🐙", "🪸",
-          "🐟", "🐚", "🦀", "🐡",
-          "🌿", "⭐", "🐠", "🪸",
-          "🐚", "🦐", "🌊", "🐟"
+          "🪸", "🐠", "🐙", "🪸", "🐟",
+          "🐟", "🐚", "🦀", "🐡", "🌿",
+          "🌿", "⭐", "🐠", "🪸", "🐙",
+          "🐚", "🦐", "🌊", "🐟", "🪸",
+          "🐡", "🌊", "🐚", "🦀", "🐠"
         ],
         "modified": [
-          "🪸", "🐠", "🛍️", "🪸",
-          "🐟", "🥤", "🦀", "🐡",
-          "🌿", "⭐", "🐠", "🧴",
-          "🐚", "🦐", "🥡", "🔋"
+          "🪸", "🐠", "🛍️", "🪸", "🐟",
+          "🐟", "🥤", "🦀", "🐡", "🌿",
+          "🌿", "⭐", "🐠", "🧴", "🐙",
+          "🐚", "🦐", "🥡", "🔋", "🪸",
+          "🐡", "🌊", "🐚", "🦀", "🧻"
         ],
-        "differences": [2, 5, 11, 14, 15],
+        "differences": [2, 6, 13, 17, 18, 24],
         "successTarget": "rescue-turtles",
         "successText": "¡¡Muy bien!! 🎉 ¡Has encontrado todos los plásticos que contaminan el arrecife! Ahora sabemos dónde limpiar. 🧹🌊"
       }
@@ -713,21 +721,25 @@
       "puzzle": {
         "inputType": "sopaLetras",
         "question": "¡Mientras nadan por el jardín, encuentran palabras en los corales! 🪸🔤",
-        "columns": 5,
+        "columns": 7,
         "grid": [
-          "C","O","R","A","L",
-          "A","L","G","A","S",
-          "P","E","Z","Q","X",
-          "V","I","D","A","K",
-          "W","M","N","R","T"
+          "C","O","R","A","L","T","P",
+          "A","L","G","A","S","O","E",
+          "P","E","Z","Q","X","R","C",
+          "V","I","D","A","K","T","E",
+          "W","M","N","R","T","U","S",
+          "C","O","N","C","H","A","B",
+          "L","F","J","G","D","S","I"
         ],
         "words": [
           { "word": "CORAL", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "ALGAS", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "VIDA", "row": 3, "col": 0, "direction": "horizontal" }
+          { "word": "VIDA", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "CONCHA", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "PECES", "row": 0, "col": 6, "direction": "vertical" }
         ],
         "successTarget": "simon-pulpo",
-        "successText": "¡¡Genial!! 🎉 ¡CORAL, ALGAS, VIDA! El jardín submarino está lleno de vida. 🪸✨"
+        "successText": "¡¡Genial!! 🎉 ¡CORAL, ALGAS, VIDA, CONCHA, PECES! El jardín submarino está lleno de vida. 🪸✨"
       }
     },
 

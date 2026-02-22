@@ -12,21 +12,27 @@ class PuzzleContarObjetos {
     arena.className = 'contar-arena';
     arena.style.height = (puzzle.areaHeight || 200) + 'px';
 
-    const targetEmoji = puzzle.targetEmoji || '🦋';
-    const targetCount = puzzle.targetCount || 5;
-    const distractorEmoji = puzzle.distractorEmoji || '';
-    const distractorCount = puzzle.distractorCount || 0;
+    // Support multiple target types via 'targets' array or legacy single targetEmoji
+    const targets = puzzle.targets || [{ emoji: puzzle.targetEmoji || '🦋', count: puzzle.targetCount || 5 }];
+    const distractors = puzzle.distractors || (puzzle.distractorEmoji ? [{ emoji: puzzle.distractorEmoji, count: puzzle.distractorCount || 0 }] : []);
+
+    const totalTargets = targets.reduce((sum, t) => sum + t.count, 0);
+    const totalDistractors = distractors.reduce((sum, d) => sum + d.count, 0);
+    const totalObjects = totalTargets + totalDistractors;
 
     // Spawn target objects
-    for (let i = 0; i < targetCount; i++) {
-      const obj = this._createObject(targetEmoji, 'contar-target', i, targetCount + distractorCount);
-      arena.appendChild(obj);
+    let idx = 0;
+    for (const t of targets) {
+      for (let i = 0; i < t.count; i++) {
+        const obj = this._createObject(t.emoji, 'contar-target', idx++, totalObjects);
+        arena.appendChild(obj);
+      }
     }
 
     // Spawn distractors
-    if (distractorEmoji) {
-      for (let i = 0; i < distractorCount; i++) {
-        const obj = this._createObject(distractorEmoji, 'contar-distractor', targetCount + i, targetCount + distractorCount);
+    for (const d of distractors) {
+      for (let i = 0; i < d.count; i++) {
+        const obj = this._createObject(d.emoji, 'contar-distractor', idx++, totalObjects);
         arena.appendChild(obj);
       }
     }

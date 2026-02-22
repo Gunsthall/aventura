@@ -160,10 +160,14 @@
       "puzzle": {
         "inputType": "contarObjetos",
         "question": "¿Cuántos animales van en la expedición? ¡Cuenta las águilas 🦅, el jaguar 🐆 y los monos 🐒!",
-        "targetEmoji": "🦅",
-        "targetCount": 4,
-        "distractorEmoji": "🔥",
-        "distractorCount": 2,
+        "targets": [
+          { "emoji": "🦅", "count": 2 },
+          { "emoji": "🐆", "count": 1 },
+          { "emoji": "🐒", "count": 2 }
+        ],
+        "distractors": [
+          { "emoji": "🔥", "count": 2 }
+        ],
         "areaHeight": 220,
         "options": [
           { "value": "3", "label": "3 animales", "emoji": "3️⃣" },
@@ -706,23 +710,25 @@
       },
       "puzzle": {
         "inputType": "diferencias",
-        "question": "¡Los elefantes están apagando el fuego! ¿Ves qué ha cambiado entre ANTES y DESPUÉS? 🐘💧🔥",
-        "columns": 4,
+        "question": "¡Los elefantes están apagando el fuego! ¿Ves las 5 cosas que han cambiado entre ANTES y DESPUÉS? 🐘💧🔥",
+        "columns": 5,
         "original": [
-          "🔥", "🔥", "🔥", "🔥",
-          "🌳", "🔥", "🌳", "🔥",
-          "🐘", "🌳", "🐘", "🌳",
-          "💧", "🐘", "💧", "🐘"
+          "🔥", "🔥", "🌳", "🔥", "🔥",
+          "🌳", "🔥", "🐘", "🔥", "🌳",
+          "🐘", "🌳", "💧", "🌳", "🐘",
+          "💧", "🐘", "🌳", "🐘", "💧",
+          "🌳", "💧", "🐘", "💧", "🌳"
         ],
         "modified": [
-          "💨", "🔥", "💨", "🔥",
-          "🌳", "💨", "🌳", "🔥",
-          "🐘", "🌳", "🐘", "🌳",
-          "💧", "🐘", "💧", "🐘"
+          "💨", "🔥", "🌳", "💨", "🔥",
+          "🌳", "💨", "🐘", "🔥", "🌳",
+          "🐘", "🌳", "💧", "🌳", "🐘",
+          "💧", "🐘", "🌱", "🐘", "💧",
+          "🌳", "💧", "🐘", "💧", "🌱"
         ],
-        "differences": [0, 2, 5],
+        "differences": [0, 3, 6, 17, 24],
         "successTarget": "math-puzzle-1",
-        "successText": "¡¡Bien hecho!! 🎉 ¡Los elefantes han apagado 3 focos de fuego con agua! Pero aún queda trabajo... 🐘💧"
+        "successText": "¡¡Bien hecho!! 🎉 ¡Los elefantes han apagado los focos de fuego con agua y la jungla empieza a recuperarse! 🐘💧🌱"
       }
     },
 
@@ -801,11 +807,13 @@
         "inputType": "laberinto",
         "question": "¡Ayuda al elefante 🐘 a llegar al río 💧 para recoger agua! Toca las casillas vecinas para moverte.",
         "grid": [
-          [2, 0, 1, 0, 0],
-          [1, 0, 1, 0, 1],
-          [0, 0, 0, 0, 1],
-          [0, 1, 1, 0, 0],
-          [0, 0, 1, 0, 3]
+          [2, 0, 1, 0, 0, 0, 1],
+          [1, 0, 1, 0, 1, 0, 0],
+          [0, 0, 0, 0, 1, 0, 1],
+          [0, 1, 1, 0, 0, 0, 0],
+          [0, 0, 1, 0, 1, 1, 0],
+          [1, 0, 0, 0, 0, 0, 0],
+          [1, 0, 1, 1, 0, 1, 3]
         ],
         "playerEmoji": "🐘",
         "goalEmoji": "💧",
@@ -830,21 +838,23 @@
       },
       "puzzle": {
         "inputType": "diferencias",
-        "question": "¡Encuentra las 4 diferencias! ¿Qué ha cambiado tras el fuego? 🔥🔍",
-        "columns": 4,
+        "question": "¡Encuentra las 5 diferencias! ¿Qué ha cambiado tras el fuego? 🔥🔍",
+        "columns": 5,
         "original": [
-          "🌳", "🌸", "🦋", "🌳",
-          "🐦", "🌻", "🍄", "🐝",
-          "🌺", "🐛", "🌿", "🌼",
-          "🐞", "🍀", "🦜", "🐌"
+          "🌳", "🌸", "🦋", "🌳", "🌺",
+          "🐦", "🌻", "🍄", "🐝", "🌿",
+          "🌺", "🐛", "🌿", "🌼", "🐦",
+          "🐞", "🍀", "🦜", "🐌", "🌳",
+          "🌻", "🐝", "🌸", "🍄", "🐞"
         ],
         "modified": [
-          "🌳", "🌸", "🦋", "🪵",
-          "🐦", "🥀", "🍄", "🐝",
-          "🌺", "🐛", "🌿", "🌼",
-          "🐞", "🍂", "🦜", "💨"
+          "🌳", "🌸", "🦋", "🪵", "🌺",
+          "🐦", "🥀", "🍄", "🐝", "🌿",
+          "🌺", "🐛", "🌿", "🌼", "💨",
+          "🐞", "🍂", "🦜", "💨", "🌳",
+          "🌻", "🐝", "🌸", "🍄", "🐞"
         ],
-        "differences": [3, 5, 13, 15],
+        "differences": [3, 6, 14, 16, 18],
         "successTarget": "night-falls",
         "successText": "¡¡Bien hecho!! 🎉 Has encontrado lo que el fuego dañó: un árbol quemado 🪵, una flor marchita 🥀, hojas secas 🍂 y un animalito que huyó 💨. ¡Pero la mayor parte de la jungla se ha salvado! 🌿"
       }
@@ -994,21 +1004,25 @@
       "puzzle": {
         "inputType": "sopaLetras",
         "question": "¡Encuentra las promesas que hicieron los animales! 🔤🤝",
-        "columns": 5,
+        "columns": 7,
         "grid": [
-          "A","Y","U","D","A",
-          "P","R","Q","X","M",
-          "U","N","I","O","N",
-          "Z","K","L","W","J",
-          "A","M","O","R","T"
+          "A","Y","U","D","A","R","F",
+          "P","R","Q","X","M","E","U",
+          "U","N","I","O","N","S","E",
+          "Z","K","L","W","J","P","R",
+          "A","M","O","R","T","E","Z",
+          "C","U","I","D","A","R","A",
+          "N","G","H","V","B","O","S"
         ],
         "words": [
-          { "word": "AYUDA", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "AYUDAR", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "UNION", "row": 2, "col": 0, "direction": "horizontal" },
-          { "word": "AMOR", "row": 4, "col": 0, "direction": "horizontal" }
+          { "word": "AMOR", "row": 4, "col": 0, "direction": "horizontal" },
+          { "word": "CUIDAR", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "FUERZA", "row": 0, "col": 6, "direction": "vertical" }
         ],
         "successTarget": "spell-puzzle",
-        "successText": "¡¡Genial!! 🎉 AYUDA, UNIÓN, AMOR... ¡Esas son las promesas de los buenos vecinos! 🤝🌿"
+        "successText": "¡¡Genial!! 🎉 AYUDAR, UNIÓN, AMOR, CUIDAR, FUERZA... ¡Esas son las promesas de los buenos vecinos! 🤝🌿"
       }
     },
 
@@ -1030,21 +1044,26 @@
       "puzzle": {
         "inputType": "sopaLetras",
         "question": "¡Encuentra las palabras escondidas sobre el trabajo en equipo! 🔤🌿",
-        "columns": 6,
+        "columns": 7,
         "grid": [
-          "E","Q","U","I","P","O",
-          "A","M","I","G","O","S",
-          "Y","W","H","Z","K","E",
-          "U","N","I","D","O","S",
-          "X","P","L","Q","R","T"
+          "E","Q","U","I","P","O","V",
+          "A","M","I","G","O","S","A",
+          "Y","W","H","Z","K","E","L",
+          "U","N","I","D","O","S","O",
+          "X","P","L","Q","R","T","R",
+          "F","A","M","I","L","I","A",
+          "J","U","N","T","O","S","B"
         ],
         "words": [
           { "word": "EQUIPO", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "AMIGOS", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "UNIDOS", "row": 3, "col": 0, "direction": "horizontal" }
+          { "word": "UNIDOS", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "FAMILIA", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "JUNTOS", "row": 6, "col": 0, "direction": "horizontal" },
+          { "word": "VALOR", "row": 0, "col": 6, "direction": "vertical" }
         ],
         "successTarget": "jungle-reborn",
-        "successText": "¡¡Genial!! 🎉 EQUIPO, AMIGOS, UNIDOS... ¡Esas son las claves que salvaron la jungla! 🌿🤝"
+        "successText": "¡¡Genial!! 🎉 EQUIPO, AMIGOS, UNIDOS, FAMILIA, JUNTOS, VALOR... ¡Esas son las claves que salvaron la jungla! 🌿🤝"
       }
     },
 

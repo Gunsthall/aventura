@@ -1,5 +1,6 @@
 /* =============================================
    PUZZLE: SOPA DE LETRAS (word search)
+   Supports horizontal, vertical, and diagonal words
    ============================================= */
 
 class PuzzleSopaLetras {
@@ -23,8 +24,9 @@ class PuzzleSopaLetras {
       let r = w.row, c = w.col;
       for (let i = 0; i < w.word.length; i++) {
         cells.push(r * cols + c);
-        if (w.direction === 'horizontal') c++;
-        else r++;
+        const dir = this._getDirection(w.direction);
+        r += dir.dr;
+        c += dir.dc;
       }
       wordCells[w.word] = cells;
     });
@@ -104,21 +106,38 @@ class PuzzleSopaLetras {
     });
   }
 
+  _getDirection(dir) {
+    switch (dir) {
+      case 'horizontal': return { dr: 0, dc: 1 };
+      case 'vertical': return { dr: 1, dc: 0 };
+      case 'diagonal-down': return { dr: 1, dc: 1 };
+      case 'diagonal-up': return { dr: -1, dc: 1 };
+      default: return { dr: 0, dc: 1 };
+    }
+  }
+
   _checkSelection(start, end, grid, cols, rows, words, foundWords) {
     const sr = Math.floor(start / cols), sc = start % cols;
     const er = Math.floor(end / cols), ec = end % cols;
 
-    // Must be same row or same column
-    if (sr !== er && sc !== ec) return null;
+    const dr = er - sr;
+    const dc = ec - sc;
+
+    // Must be in a straight line (horizontal, vertical, or diagonal)
+    const absDr = Math.abs(dr);
+    const absDc = Math.abs(dc);
+    if (!(absDr === 0 || absDc === 0 || absDr === absDc)) return null;
 
     // Get letters in selection
+    const steps = Math.max(absDr, absDc);
+    const stepR = steps === 0 ? 0 : dr / steps;
+    const stepC = steps === 0 ? 0 : dc / steps;
+
     let letters = '';
-    if (sr === er) {
-      const minC = Math.min(sc, ec), maxC = Math.max(sc, ec);
-      for (let c = minC; c <= maxC; c++) letters += grid[sr * cols + c];
-    } else {
-      const minR = Math.min(sr, er), maxR = Math.max(sr, er);
-      for (let r = minR; r <= maxR; r++) letters += grid[r * cols + sc];
+    for (let i = 0; i <= steps; i++) {
+      const r = sr + i * stepR;
+      const c = sc + i * stepC;
+      letters += grid[r * cols + c];
     }
 
     // Check forwards and backwards
@@ -136,8 +155,9 @@ class PuzzleSopaLetras {
       let r = w.row, c = w.col;
       for (let i = 0; i < w.word.length; i++) {
         wordCells.add(r * cols + c);
-        if (w.direction === 'horizontal') c++;
-        else r++;
+        const dir = this._getDirection(w.direction);
+        r += dir.dr;
+        c += dir.dc;
       }
     });
 

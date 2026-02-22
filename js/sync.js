@@ -53,10 +53,16 @@ class SyncManager {
           if (target === '__menu__') {
             this.onMenuRequested?.();
           } else if (target === '__restart__') {
-            this.engine.goToPage(this.engine.story.meta.startPage);
             this.engine.moralPoints = 0;
             this.engine.visitedPages = [];
+            this.engine.pageHistory = [];
             this.engine.puzzleResults = {};
+            this.engine.goToPage(this.engine.story.meta.startPage);
+          } else if (target === '__back__') {
+            if (this.engine.pageHistory.length > 0) {
+              const previousPage = this.engine.pageHistory.pop();
+              this.engine.goToPage(previousPage, { skipHistory: true });
+            }
           } else {
             // Apply moral points if provided
             if (msg.payload.moralPoints !== undefined) {

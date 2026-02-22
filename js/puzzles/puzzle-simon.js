@@ -33,18 +33,33 @@ class PuzzleSimon {
 
     container.appendChild(grid);
 
-    // Status text
+    // Controls row: status + replay button
+    const controlsRow = document.createElement('div');
+    controlsRow.className = 'simon-controls';
+
     const status = document.createElement('div');
     status.className = 'simon-status';
     status.textContent = '🎵 Escucha la secuencia...';
-    container.appendChild(status);
+    controlsRow.appendChild(status);
+
+    const replayBtn = document.createElement('button');
+    replayBtn.className = 'simon-replay-btn';
+    replayBtn.innerHTML = '🔊 Escuchar otra vez';
+    replayBtn.style.display = 'none';
+    controlsRow.appendChild(replayBtn);
+
+    container.appendChild(controlsRow);
 
     let playerInput = [];
     let inputEnabled = false;
+    let isPlaying = false;
 
     const playSequence = () => {
+      if (isPlaying) return;
+      isPlaying = true;
       inputEnabled = false;
       buttons.forEach(b => b.disabled = true);
+      replayBtn.style.display = 'none';
       status.textContent = '🎵 Escucha...';
 
       sequence.forEach((colorIdx, step) => {
@@ -54,12 +69,21 @@ class PuzzleSimon {
       });
 
       setTimeout(() => {
+        isPlaying = false;
         inputEnabled = true;
         playerInput = [];
         buttons.forEach(b => b.disabled = false);
         status.textContent = '👆 ¡Tu turno! Repite la secuencia';
+        replayBtn.style.display = '';
       }, sequence.length * speed + 400);
     };
+
+    replayBtn.addEventListener('click', () => {
+      if (!isPlaying) {
+        playerInput = [];
+        playSequence();
+      }
+    });
 
     // Handle button taps
     buttons.forEach((btn, i) => {

@@ -65,6 +65,30 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
+.simon-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.simon-replay-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.simon-replay-btn:hover {
+  background: var(--color-secondary);
+  transform: scale(1.05);
+}
+
 .simon-solved .simon-btn {
   opacity: 0.8;
 }
@@ -314,7 +338,7 @@
 
 .diferencias-panel {
   flex: 1;
-  max-width: 200px;
+  max-width: 280px;
 }
 
 .diferencias-label {
@@ -343,7 +367,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   transition: all 0.2s ease;
@@ -623,9 +647,9 @@
 
 .sopa-grid {
   display: grid;
-  grid-template-columns: repeat(var(--sopa-columns, 6), 1fr);
-  gap: 4px;
-  max-width: 320px;
+  grid-template-columns: repeat(var(--sopa-columns, 7), 1fr);
+  gap: 3px;
+  max-width: 380px;
   margin: 0 auto;
   background: var(--color-surface);
   border: 2px solid var(--color-surface-light);
@@ -681,9 +705,9 @@
 
 .laberinto-grid {
   display: grid;
-  grid-template-columns: repeat(var(--lab-columns, 5), 1fr);
+  grid-template-columns: repeat(var(--lab-columns, 7), 1fr);
   gap: 3px;
-  max-width: 320px;
+  max-width: 380px;
   margin: 0 auto;
   background: var(--color-surface);
   border: 2px solid var(--color-surface-light);
@@ -696,13 +720,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.15s ease;
   user-select: none;
-  min-height: 40px;
+  min-height: 32px;
 }
 
 .laberinto-cell.laberinto-wall {
@@ -837,7 +861,7 @@
   }
 
   .diferencias-panel {
-    max-width: 250px;
+    max-width: 280px;
     width: 100%;
   }
 
