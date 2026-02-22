@@ -23,6 +23,14 @@
       "coverEmoji": "🦍🔥🌿",
       "ageRange": "5-8",
       "tags": ["trabajo en equipo", "animales", "naturaleza", "valores"]
+    },
+    {
+      "id": "pip-dragon",
+      "title": "Pip y la Montaña del Dragón Dormido",
+      "description": "Pip, un pequeño gnomo, debe emprender un viaje peligroso para recuperar la Gema de Luz robada por un dragón. ¿Descubrirá que la amabilidad es más poderosa que la fuerza?",
+      "coverEmoji": "🧒🐉💎",
+      "ageRange": "5-8",
+      "tags": ["valentía", "amabilidad", "fantasía", "aventura"]
     }
   ]
 }

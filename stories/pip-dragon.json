@@ -1,0 +1,942 @@
+{
+  "meta": {
+    "id": "pip-dragon",
+    "title": "Pip y la Montaña del Dragón Dormido",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "pip": { "name": "Pip", "emoji": "🧒", "color": "#6c5ce7" },
+    "gandara": { "name": "Gandara", "emoji": "🧙‍♀️", "color": "#a29bfe" },
+    "lira": { "name": "Lira", "emoji": "🧝‍♀️", "color": "#00b894" },
+    "bruna": { "name": "Bruna", "emoji": "🐻", "color": "#e17055" },
+    "trol": { "name": "Trol", "emoji": "👹", "color": "#636e72" },
+    "fuego": { "name": "Fuego", "emoji": "🐉", "color": "#d63031" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "puzzle",
+      "title": "La Aldea de los Gnomos",
+      "text": "En lo más profundo de un valle verde y tranquilo, había una pequeña aldea de gnomos. 🏡🌿\n\nLas casitas tenían tejados de seta, ventanas redondas y chimeneas que siempre echaban un humito con olor a galletas. 🍪\n\nHoy era el Día de la Gran Fiesta, y todos los gnomos cantaban, bailaban y tocaban sus diminutos instrumentos. ¡La música llenaba el valle entero! 🎵🎶\n\nPip, el gnomo más joven de la aldea, observaba la fiesta desde su banco favorito. Le encantaba la música, pero era demasiado tímido para bailar con los demás. 🧒💭",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🏡:large:20:55",
+          "🏡:medium:40:60",
+          "🏡:small:60:58",
+          "🍄:medium:75:65",
+          "🧒:large:50:45",
+          "🎵:small:25:30:sparkle",
+          "🎶:small:45:25:sparkle",
+          "🎵:small:65:30:sparkle",
+          "🌿:medium:85:70",
+          "☀️:xlarge:80:10:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Toca los instrumentos al ritmo de la fiesta de los gnomos! 🎵🧒",
+        "emojis": ["🥁", "🎺", "🪈", "🎻", "🪗", "🔔"],
+        "speed": 5500,
+        "lanes": 3,
+        "minScore": 3,
+        "scoreLabel": "¡Fiesta gnoma!",
+        "successTarget": "gandara-arrives",
+        "successText": "¡¡Qué ritmo!! 🎉 ¡La fiesta de los gnomos es genial! Pero alguien se acerca a la aldea... 👀"
+      }
+    },
+
+    "gandara-arrives": {
+      "type": "puzzle",
+      "title": "Una Visita Inesperada",
+      "speaker": "gandara",
+      "text": "De repente, la música se detuvo. Una figura alta y misteriosa apareció en el camino. 🧙‍♀️\n\nLlevaba una capa morada, un sombrero puntiagudo y un bastón que brillaba con luz azul. ¡Era una maga! ✨\n\n«¡Gnomos de la aldea!» dijo con voz grave. «Me llamo Gandara. Traigo noticias terribles. ¡El Dragón Dormido ha despertado y ha robado la Gema de Luz!» 💎\n\nTodos los gnomos se miraron aterrados. Sin la Gema de Luz, la oscuridad eterna llegaría al valle. 😱\n\nPero algo en la aldea no encaja... ¡Encuentra al intruso!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🧙‍♀️:xlarge:50:40",
+          "✨:medium:55:25:sparkle",
+          "🧒:medium:25:65",
+          "🏡:medium:80:55",
+          "🏡:small:15:58",
+          "😱:small:30:60",
+          "💎:medium:50:15:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "Gandara ha llegado a la aldea. ¡Uno de estos personajes NO es un gnomo! ¿Cuál es el intruso? 🔍",
+        "items": ["🧒", "🧒", "🧒", "🧙‍♀️"],
+        "intrusoIndex": 3,
+        "reason": "¡La maga Gandara 🧙‍♀️ no es un gnomo! Es una visitante de tierras lejanas.",
+        "successTarget": "the-quest",
+        "successText": "¡¡Correcto!! 🎉 ¡Gandara la maga 🧙‍♀️ es la visitante! Ha venido a pedir ayuda. 🔮",
+        "failText": "Mira bien... ¿Quién es diferente a los gnomos? 🤔"
+      }
+    },
+
+    "the-quest": {
+      "type": "puzzle",
+      "title": "Las Tres Etapas del Viaje",
+      "speaker": "gandara",
+      "text": "Gandara desplegó un mapa antiguo sobre la mesa. 🗺️\n\n«Para recuperar la Gema de Luz, hay que completar tres etapas», explicó:\n\n🌲 Primero: Cruzar el Bosque Oscuro, lleno de telarañas gigantes y criaturas extrañas.\n\n🌉 Segundo: Pasar el Puente del Trol, donde vive un trol muy gruñón.\n\n🏔️ Tercero: Escalar la Montaña del Dragón Dormido y entrar en su cueva.\n\n«¡Necesito a alguien valiente!» dijo Gandara mirando a todos los gnomos. Ninguno se movió... excepto Pip, que tragó saliva. 🧒😰",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🧙‍♀️:large:20:45",
+          "🗺️:xlarge:55:35",
+          "🌲:medium:40:15",
+          "🌉:medium:55:15",
+          "🏔️:medium:70:15",
+          "🧒:medium:80:60",
+          "😰:small:85:55"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Pon en orden las 3 etapas del viaje de Pip! 🗺️",
+        "scenes": [
+          { "emoji": "🌲", "text": "Cruzar el Bosque Oscuro" },
+          { "emoji": "🌉", "text": "Pasar el Puente del Trol" },
+          { "emoji": "🏔️", "text": "Escalar la Montaña del Dragón" }
+        ],
+        "successTarget": "moral-choice-1",
+        "successText": "¡¡Perfecto!! 🎉 Bosque, Puente y Montaña. ¡Un viaje largo y peligroso! ¿Se atreverá Pip? 😬",
+        "failText": "Recuerda: primero el bosque, luego el puente, y al final la montaña... 🤔"
+      }
+    },
+
+    "moral-choice-1": {
+      "type": "moral",
+      "title": "La Gran Decisión de Pip",
+      "speaker": "pip",
+      "text": "Pip miró a los demás gnomos. Todos tenían miedo. Él también lo tenía... pero alguien tenía que ir. 🧒💭\n\nGandara le miró directamente a los ojos: «Pip, veo algo especial en ti. ¿Qué decides?» 🧙‍♀️\n\n¿Qué debería hacer Pip?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧒:xlarge:40:45",
+          "💭:medium:45:30:float",
+          "🧙‍♀️:large:70:40",
+          "🧒:small:15:65",
+          "🧒:small:25:68",
+          "🧒:small:85:65",
+          "🌟:medium:55:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Acepto! ¡Iré a buscar la Gema de Luz!",
+          "target": "brave-accept",
+          "emoji": "⚔️",
+          "moralValue": "courage",
+          "points": 2
+        },
+        {
+          "text": "Tengo miedo... pero si nadie más va, iré yo",
+          "target": "hesitant-accept",
+          "emoji": "😰",
+          "moralValue": "humility",
+          "points": 1
+        },
+        {
+          "text": "No puedo, soy demasiado pequeño...",
+          "target": "pushed-to-go",
+          "emoji": "😢",
+          "moralValue": "fear",
+          "points": 0
+        }
+      ]
+    },
+
+    "brave-accept": {
+      "type": "puzzle",
+      "title": "¡Un Gnomo Valiente!",
+      "speaker": "pip",
+      "text": "«¡IRÉ YO!» gritó Pip con una voz que le sorprendió hasta a él mismo. 🧒💪\n\nTodos los gnomos aplaudieron emocionados. ¡El pequeño Pip era más valiente de lo que nadie pensaba!\n\nGandara sonrió: «Sabía que lo harías. Tienes el corazón de un héroe, Pip.» 🧙‍♀️✨\n\n¡Ordena las letras para descubrir lo que Pip está a punto de vivir!",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🧒:xlarge:50:40",
+          "💪:medium:58:32",
+          "🧙‍♀️:large:25:50",
+          "🎉:medium:70:20:sparkle",
+          "🎉:medium:30:15:sparkle",
+          "✨:small:55:15:sparkle",
+          "🧒:small:75:65",
+          "🧒:small:85:68"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Pip se lanza a la...! ¡Ordena las letras! ⚔️🔤",
+        "word": "AVENTURA",
+        "hint": "Pip se lanza a la ________",
+        "successTarget": "leave-home",
+        "successText": "¡¡AVENTURA!! 🎉 ¡Pip se lanza a la aventura! ¡Qué valiente! ⚔️✨"
+      }
+    },
+
+    "hesitant-accept": {
+      "type": "puzzle",
+      "title": "Un Paso a la Vez",
+      "speaker": "pip",
+      "text": "«Yo... tengo mucho miedo», confesó Pip con voz temblorosa. «Pero si nadie más puede ir... lo intentaré.» 🧒😰\n\nGandara puso su mano en el hombro de Pip: «El verdadero valor no es no tener miedo, Pip. Es hacer lo correcto AUNQUE tengas miedo.» 🧙‍♀️💜\n\nPip dio un paso adelante. Luego otro. Y otro más. Cada paso costaba, pero cada paso le hacía más fuerte.\n\n¡Sigue el patrón de sus pasos!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧒:large:40:50",
+          "😰:small:45:43",
+          "🧙‍♀️:large:65:45",
+          "💜:medium:55:30:sparkle",
+          "👣:small:30:70",
+          "👣:small:35:68",
+          "👣:small:40:66"
+        ]
+      },
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "Pip camina con miedo: paso-paso-respira, paso-paso-respira... ¿Qué sigue? 🧒👣",
+        "pattern": ["👣", "👣", "💨", "👣", "👣", "💨", "👣", "👣"],
+        "options": ["👣", "💨", "🏃", "😰"],
+        "correctAnswer": "💨",
+        "successTarget": "leave-home",
+        "successText": "¡¡Correcto!! 🎉 Paso-paso-respira. Pip avanza con miedo pero sin detenerse. ¡Eso es verdadera valentía! 💜",
+        "failText": "Mira el patrón: 👣👣💨 se repite... ¿Qué viene después de 👣👣? 🤔"
+      }
+    },
+
+    "pushed-to-go": {
+      "type": "puzzle",
+      "title": "Gandara Anima a Pip",
+      "speaker": "gandara",
+      "text": "«Soy demasiado pequeño...» murmuró Pip mirando al suelo. 🧒😢\n\nGandara se arrodilló frente a él: «Pip, los más grandes héroes de la historia fueron los más pequeños. ¿Sabes por qué?» 🧙‍♀️\n\nPip negó con la cabeza.\n\n«Porque los pequeños saben escuchar, saben ser amables, y saben pedir ayuda. Y eso, querido Pip, es más poderoso que cualquier espada.» ⚔️✨\n\nPip levantó la mirada. Quizá Gandara tenía razón...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧙‍♀️:xlarge:55:40",
+          "🧒:large:35:55",
+          "😢:small:40:48",
+          "✨:medium:45:20:sparkle",
+          "💜:small:50:30:sparkle",
+          "🌟:small:60:25:sparkle"
+        ]
+      },
+      "puzzle": {
+        "question": "Gandara dice que los pequeños tienen poderes especiales. ¿Cuál es el MÁS importante? 🧙‍♀️",
+        "inputType": "choices",
+        "options": [
+          { "value": "amable", "label": "Ser amable 💚", "emoji": "💚" },
+          { "value": "fuerte", "label": "Ser el más fuerte 💪", "emoji": "💪" },
+          { "value": "rapido", "label": "Ser el más rápido 🏃", "emoji": "🏃" }
+        ],
+        "correctAnswer": "amable",
+        "successTarget": "leave-home",
+        "successText": "¡¡Correcto!! 🎉 ¡Ser amable es el mayor poder! Pip se levanta y acepta la aventura. 🧒💚",
+        "failText": "Recuerda lo que dijo Gandara: saber escuchar, ser amable, pedir ayuda... 🤔"
+      }
+    },
+
+    "leave-home": {
+      "type": "puzzle",
+      "title": "Preparando la Mochila",
+      "speaker": "pip",
+      "text": "¡Es hora de preparar la mochila! Pip necesita llevar provisiones para el largo viaje. 🎒\n\nSu abuela le ayudó a empacar: bocadillos de mermelada, una cantimplora de agua, galletas de miel, una manta pequeña y una linterna mágica. 🥪💧🍪🛏️🔦\n\n«¡No olvides nada, Pip!» dijo la abuela. «El viaje será largo.» 👵\n\n¿Cuántos objetos lleva Pip en la mochila?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧒:large:45:50",
+          "🎒:medium:50:45",
+          "🥪:small:20:30",
+          "💧:small:30:25",
+          "🍪:small:40:20",
+          "🛏️:small:60:25",
+          "🔦:small:70:30",
+          "👵:medium:80:55"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¿Cuántos objetos lleva Pip en su mochila? ¡Cuenta las provisiones! 🎒",
+        "targetEmoji": "🥪",
+        "targetCount": 5,
+        "distractorEmoji": "🌿",
+        "distractorCount": 2,
+        "areaHeight": 220,
+        "options": [
+          { "value": "3", "label": "3 objetos", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 objetos", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 objetos", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 objetos", "emoji": "6️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "dark-forest",
+        "successText": "¡¡Correcto!! 🎉 ¡5 objetos! Bocadillos, agua, galletas, manta y linterna. ¡Pip está listo! 🎒✨",
+        "failText": "Cuenta otra vez: 🥪 bocadillos, 💧 agua, 🍪 galletas, 🛏️ manta, 🔦 linterna... 🤔"
+      }
+    },
+
+    "dark-forest": {
+      "type": "puzzle",
+      "title": "El Bosque Oscuro",
+      "text": "Pip se adentró en el Bosque Oscuro. Los árboles eran tan altos que tapaban el sol. 🌲🌑\n\nSombras extrañas se movían entre los troncos. Sonidos misteriosos llegaban de todas partes: crujidos, susurros, aullidos lejanos... 🦉\n\nPip encendió su linterna mágica, pero el camino se dividía en muchas direcciones. ¡Tenía que encontrar la salida! 🔦\n\n«No te pierdas, Pip...» se dijo a sí mismo. 😰",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          { "type": "trees", "positions": [{"x": 5, "scale": 1.4}, {"x": 15, "scale": 1.2}, {"x": 85, "scale": 1.3}, {"x": 95, "scale": 1.1}] },
+          "🧒:medium:10:70",
+          "🔦:small:15:65:sparkle",
+          "🦉:medium:70:25:float",
+          "👀:small:40:40",
+          "👀:small:60:35",
+          "🕸️:medium:50:20"
+        ]
+      },
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Ayuda a Pip 🧒 a cruzar el Bosque Oscuro hasta la salida 🌟! Evita las sombras.",
+        "grid": [
+          [2, 0, 1, 0, 0, 1, 0],
+          [0, 0, 1, 0, 0, 0, 0],
+          [1, 0, 0, 0, 1, 0, 1],
+          [0, 1, 0, 1, 0, 0, 0],
+          [0, 0, 0, 1, 0, 1, 0],
+          [0, 1, 0, 0, 0, 1, 0],
+          [1, 0, 0, 1, 0, 0, 3]
+        ],
+        "playerEmoji": "🧒",
+        "goalEmoji": "🌟",
+        "wallEmoji": "👻",
+        "pathEmoji": "🌿",
+        "successTarget": "meet-lira",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Pip ha cruzado el Bosque Oscuro! Pero espera... ¿Quién anda ahí? 👀"
+      }
+    },
+
+    "meet-lira": {
+      "type": "puzzle",
+      "title": "Una Amiga en el Bosque",
+      "speaker": "lira",
+      "text": "De detrás de un árbol enorme apareció una elfa con pelo verde y ojos brillantes. 🧝‍♀️✨\n\n«¡Alto! ¿Quién eres tú, pequeño gnomo?» dijo con voz musical.\n\n«Soy Pip... voy a la Montaña del Dragón a recuperar la Gema de Luz.» 🧒\n\nLa elfa abrió los ojos como platos: «¿TÚ? ¿Solo? Eso es... ¡muy valiente! Me llamo Lira, y conozco cada rincón de este bosque. ¡Te acompañaré!» 🧝‍♀️💚\n\n¡Encuentra las palabras del bosque escondidas!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧝‍♀️:xlarge:55:40",
+          "✨:small:60:25:sparkle",
+          "🧒:large:30:55",
+          "🌳:large:80:50",
+          "🌳:large:10:45",
+          "🦋:small:45:20:float",
+          "🌿:medium:70:70"
+        ]
+      },
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra las palabras mágicas del bosque de Lira! 🔤🌿",
+        "columns": 7,
+        "grid": [
+          "E","L","F","O","S","N","M",
+          "H","O","J","A","S","A","A",
+          "P","R","Q","X","E","T","G",
+          "A","R","B","O","L","U","I",
+          "L","U","Z","W","V","R","A",
+          "F","L","O","R","E","S","Q",
+          "B","G","K","D","J","H","F"
+        ],
+        "words": [
+          { "word": "ELFOS", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "HOJAS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "ARBOL", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "FLORES", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "MAGIA", "row": 0, "col": 6, "direction": "vertical" },
+          { "word": "LUZ", "row": 4, "col": 0, "direction": "horizontal" }
+        ],
+        "successTarget": "spider-web",
+        "successText": "¡¡Genial!! 🎉 ELFOS, HOJAS, ÁRBOL, FLORES, MAGIA... ¡El bosque de Lira es mágico! Ahora viajan juntos. 🧒🧝‍♀️"
+      }
+    },
+
+    "spider-web": {
+      "type": "puzzle",
+      "title": "¡Telarañas Gigantes!",
+      "text": "Pip y Lira avanzaban por el bosque cuando de repente... ¡se encontraron con telarañas enormes que bloqueaban el camino! 🕸️😱\n\n«¡Son las Arañas Tejedoras!» susurró Lira. «Son inofensivas, pero sus telas son muy pegajosas. ¡Si nos quedamos atrapados, no podremos movernos!» 🧝‍♀️\n\nPip miró con atención. Las dos telarañas parecían iguales, pero no lo eran...\n\n«¡Si encontramos las diferencias, sabremos por dónde pasar!» dijo Pip. 🧒🔍",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🕸️:xlarge:50:30",
+          "🕷️:medium:55:25",
+          "🧒:medium:20:65",
+          "🧝‍♀️:medium:35:60",
+          "🕸️:large:75:40",
+          "😱:small:25:58"
+        ]
+      },
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Las dos telarañas parecen iguales pero NO lo son! ¡Encuentra las 5 diferencias! 🕸️🔍",
+        "columns": 5,
+        "original": [
+          "🕸️", "🕷️", "🕸️", "🍃", "🕸️",
+          "🍃", "🕸️", "🍃", "🕸️", "🍃",
+          "🕸️", "🍃", "🕷️", "🍃", "🕸️",
+          "🍃", "🕸️", "🍃", "🕸️", "🍃",
+          "🕸️", "🍃", "🕸️", "🍃", "🕸️"
+        ],
+        "modified": [
+          "🕸️", "🕷️", "🕸️", "🍃", "🕸️",
+          "🍃", "🕸️", "🦋", "🕸️", "🍃",
+          "🕸️", "🍃", "🍃", "🍃", "🕸️",
+          "🍃", "🕸️", "🍃", "🌿", "🍃",
+          "🕸️", "🐛", "🕸️", "🍃", "🌿"
+        ],
+        "differences": [7, 12, 18, 21, 24],
+        "successTarget": "troll-bridge",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Has encontrado el camino seguro entre las telarañas! 🕸️✨"
+      }
+    },
+
+    "troll-bridge": {
+      "type": "puzzle",
+      "title": "El Puente del Trol",
+      "text": "Después de cruzar el bosque, Pip y Lira llegaron a un puente de piedra sobre un río profundo. 🌉\n\n«¡ALTO AHÍ!» rugió una voz enorme. ¡Un trol gigante salió de debajo del puente! 👹\n\nTenía la piel verde, una nariz enorme y un garrote de madera. Pero sus ojos... parecían más tristes que enfadados. 😢\n\n«¡NADIE CRUZA MI PUENTE! ¡NADIE!» gritó el trol, golpeando el suelo. 💥\n\nPip contó las piedras del puente nerviosamente...",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          { "type": "river", "bottom": 25 },
+          "👹:xlarge:50:40",
+          "🧒:medium:20:55",
+          "🧝‍♀️:medium:30:50",
+          "🌉:large:50:65",
+          "💥:medium:55:55:sparkle",
+          "😢:small:55:33"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "Pip cuenta las piedras del puente para calmarse. ¿Cuántas piedras 🪨 ves?",
+        "targetEmoji": "🪨",
+        "targetCount": 4,
+        "distractorEmoji": "🌊",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "3", "label": "3 piedras", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 piedras", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 piedras", "emoji": "5️⃣" }
+        ],
+        "correctAnswer": "4",
+        "successTarget": "moral-choice-2",
+        "successText": "¡¡Correcto!! 🎉 ¡4 piedras! Pero el trol sigue bloqueando el paso... ¿Qué hacemos? 😬",
+        "failText": "Cuenta solo las piedras 🪨, no las olas 🌊. 🤔"
+      }
+    },
+
+    "moral-choice-2": {
+      "type": "moral",
+      "title": "¿Cómo Tratar al Trol?",
+      "speaker": "pip",
+      "text": "El trol bloquea el puente y parece furioso. Pero Pip nota algo: tiene los ojos tristes y el estómago le ruge. ¡Quizá tenga hambre! 👹😢\n\nLira susurra: «Los troles son peligrosos, Pip. Ten cuidado.» 🧝‍♀️\n\n¿Qué debería hacer Pip?",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👹:xlarge:50:40",
+          "😢:small:55:33",
+          "🧒:large:25:55",
+          "🧝‍♀️:large:15:50",
+          "❓:medium:40:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Compartir la comida de la mochila con el trol",
+          "target": "share-food",
+          "emoji": "🥪",
+          "moralValue": "generosity",
+          "points": 2
+        },
+        {
+          "text": "Intentar engañar al trol con una adivinanza",
+          "target": "trick-troll",
+          "emoji": "🧠",
+          "moralValue": "cleverness",
+          "points": 1
+        },
+        {
+          "text": "Intentar pasar a la fuerza empujando al trol",
+          "target": "fight-troll",
+          "emoji": "💪",
+          "moralValue": "aggression",
+          "points": 0
+        }
+      ]
+    },
+
+    "share-food": {
+      "type": "puzzle",
+      "title": "¡Compartir es Ganar!",
+      "speaker": "pip",
+      "text": "Pip abrió su mochila y sacó los bocadillos de mermelada y las galletas de miel. 🥪🍪\n\n«¿Tienes hambre? ¡Toma, puedes comer lo que quieras!» dijo Pip con una sonrisa. 🧒😊\n\nEl trol miró la comida con los ojos enormes. Nadie JAMÁS le había ofrecido nada. 👹😲\n\nCon cuidado, tomó un bocadillo y lo mordió... ¡y una lágrima cayó por su mejilla!\n\n«Gracias, pequeño gnomo... Hace mucho tiempo que nadie es amable conmigo. Me llamo Grunk.» 👹💧\n\n¡Empareja los alimentos que Pip compartió!",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👹:xlarge:55:40",
+          "💧:small:60:35:sparkle",
+          "🧒:large:30:55",
+          "🥪:medium:40:38",
+          "🍪:medium:50:30",
+          "🧝‍♀️:medium:15:50",
+          "❤️:medium:45:15:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Pip comparte su comida! ¡Empareja los alimentos! 🥪🍪🧠",
+        "columns": 2,
+        "pairs": ["🥪", "🍪", "💧", "🍎"],
+        "successTarget": "mountain-base",
+        "successText": "¡¡Perfecto!! 🎉 ¡Grunk el trol está tan agradecido que les deja pasar y les indica el camino! 👹💚"
+      }
+    },
+
+    "trick-troll": {
+      "type": "puzzle",
+      "title": "La Adivinanza del Gnomo",
+      "speaker": "pip",
+      "text": "«¡Espera, trol!» dijo Pip con voz temblorosa pero decidida. «¡Te propongo un trato! Si resuelvo una adivinanza, nos dejas pasar.» 🧒🧠\n\nEl trol se rascó la cabeza: «¿Una adivinanza? ¡A Grunk le gustan las adivinanzas! Pero si pierdes... ¡NO PASÁIS!» 👹\n\nPip pensó rápidamente: «¿Qué cosa es que cuanto más le quitas, más grande se hace?»\n\nEl trol pensó y pensó... «¿Un... un pastel?» 👹🤔\n\n«¡No! ¡Un agujero!» rio Pip. 🧒😄\n\nGrunk se quedó pensando... y empezó a reír. «¡Ja ja ja! ¡Es verdad! ¡Pasad, pasad!» 👹😂",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🧒:large:35:55",
+          "🧠:medium:40:40:sparkle",
+          "👹:xlarge:60:40",
+          "🤔:small:65:33",
+          "🧝‍♀️:medium:15:50",
+          "❓:medium:50:15:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡La respuesta a la adivinanza de Pip! ¿Qué se hace más grande cuanto más le quitas? 🤔🔤",
+        "word": "AGUJERO",
+        "hint": "Un _______",
+        "successTarget": "mountain-base",
+        "successText": "¡¡AGUJERO!! 🎉 ¡Pip es muy listo! El trol se ríe y les deja pasar. 👹😂"
+      }
+    },
+
+    "fight-troll": {
+      "type": "puzzle",
+      "title": "¡Mala Idea!",
+      "text": "Pip intentó empujar al trol, pero... ¡el trol era 10 veces más grande que él! 🧒💥👹\n\n¡PLAF! Pip rebotó y cayó al suelo. El trol ni se movió.\n\n«¡JA JA JA!» rio el trol. «¿Un gnomo intentando empujar a Grunk? ¡Qué gracioso!» 👹😂\n\nLira ayudó a Pip a levantarse. «Quizás deberíamos intentar otra cosa...» 🧝‍♀️\n\nPip se dio cuenta de que la fuerza no era la solución. Se disculpó y le ofreció un bocadillo al trol, que al final les dejó pasar... pero sin mucho entusiasmo. 😐",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "👹:xlarge:55:35",
+          "😂:small:60:28",
+          "🧒:medium:35:65",
+          "⭐:small:30:60:sparkle",
+          "⭐:small:40:58:sparkle",
+          "🧝‍♀️:medium:20:55"
+        ]
+      },
+      "puzzle": {
+        "question": "Pip aprendió algo importante. ¿Qué funciona mejor que la fuerza? 🤔",
+        "inputType": "choices",
+        "options": [
+          { "value": "amabilidad", "label": "La amabilidad 💚", "emoji": "💚" },
+          { "value": "mas-fuerza", "label": "Más fuerza 💪", "emoji": "💪" },
+          { "value": "correr", "label": "Salir corriendo 🏃", "emoji": "🏃" }
+        ],
+        "correctAnswer": "amabilidad",
+        "successTarget": "mountain-base",
+        "successText": "¡¡Correcto!! 🎉 ¡La amabilidad es más poderosa que la fuerza! Pip lo recordará. 💚",
+        "failText": "Piensa... empujar no funcionó. ¿Qué habría funcionado mejor? 🤔"
+      }
+    },
+
+    "mountain-base": {
+      "type": "puzzle",
+      "title": "La Base de la Montaña",
+      "text": "Después de cruzar el puente, Pip y Lira llegaron a la base de una montaña inmensa. ¡La Montaña del Dragón Dormido! 🏔️\n\nLas rocas eran oscuras y el aire olía a azufre. De vez en cuando, un temblor sacudía el suelo. 💨\n\n«El dragón está ahí arriba, en la cueva de la cima», susurró Lira. 🧝‍♀️\n\nDe repente, escucharon un gruñido entre las rocas. ¡Algo grande se movía!\n\n¡Repite la secuencia de pasos para escalar!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🏔️:xlarge:50:15",
+          "🧒:medium:30:70",
+          "🧝‍♀️:medium:45:65",
+          "🪨:medium:65:60",
+          "🪨:large:80:55",
+          "💨:small:55:25:float",
+          "❓:medium:70:50:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Repite la secuencia para escalar las rocas! 🧗‍♂️🏔️",
+        "sequence": [0, 2, 1, 3],
+        "colors": ["#636e72", "#2d3436", "#b2bec3", "#dfe6e9"],
+        "labels": ["🪨 Roca 1", "🪨 Roca 2", "🪨 Roca 3", "🪨 Roca 4"],
+        "playbackSpeed": 700,
+        "successTarget": "meet-bruna",
+        "successText": "¡¡Perfecto!! 🎉 ¡Pip escala las primeras rocas! Pero ese gruñido... ¿qué será? 🤔",
+        "failText": "¡Recuerda el orden de las rocas! 🪨🪨🪨🪨"
+      }
+    },
+
+    "meet-bruna": {
+      "type": "puzzle",
+      "title": "¡Una Osa Enorme!",
+      "speaker": "bruna",
+      "text": "De detrás de una roca apareció... ¡una osa enorme y peluda! 🐻\n\nPip y Lira se abrazaron del susto. ¡Era gigantesca!\n\nPero la osa se sentó tranquilamente y les miró con ojos amables.\n\n«No tengáis miedo. Me llamo Bruna. Llevo años viviendo en esta montaña.» 🐻💚\n\n«¿Vais a ver al dragón? Yo también quiero ayudar. Desde que despertó, la montaña tiembla cada noche y mis cachorros no pueden dormir.» 🐻🐻\n\n¡Pero algo no encaja en este grupo!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐻:xlarge:50:40",
+          "💚:small:55:30:sparkle",
+          "🧒:medium:25:60",
+          "🧝‍♀️:medium:35:55",
+          "🐻:small:65:65",
+          "🐻:small:75:68",
+          "🏔️:large:85:20"
+        ]
+      },
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "Bruna y sus cachorros viven en la montaña. ¿Quién NO es un oso? 🐻🔍",
+        "items": ["🐻", "🐻", "🧝‍♀️", "🐻"],
+        "intrusoIndex": 2,
+        "reason": "¡Lira la elfa 🧝‍♀️ no es un oso! Es una compañera de viaje.",
+        "successTarget": "climb-mountain",
+        "successText": "¡¡Correcto!! 🎉 ¡Lira es la elfa, no una osa! Ahora Pip tiene dos compañeras: Lira y Bruna. 🧒🧝‍♀️🐻",
+        "failText": "Mira bien... ¿Quién es diferente a los osos? 🤔"
+      }
+    },
+
+    "climb-mountain": {
+      "type": "puzzle",
+      "title": "¡Escalando la Montaña!",
+      "text": "Pip, Lira y Bruna empezaron a escalar la montaña. ¡El camino era empinado y resbaladizo! 🏔️\n\nBruna iba delante, abriendo camino con sus garras fuertes. 🐻💪\nLira saltaba ágilmente de roca en roca. 🧝‍♀️\nPip iba detrás, concentrado y valiente. 🧒\n\n«¡Arriba, arriba, arriba!» cantaban juntos para darse ánimos. ¡Necesitan ritmo para seguir escalando! 🎵",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🏔️:xlarge:50:10",
+          "🐻:large:40:45",
+          "🧝‍♀️:medium:55:55",
+          "🧒:medium:65:65",
+          "🪨:medium:25:60",
+          "🪨:small:75:50",
+          "⬆️:small:45:25:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Escala la montaña al ritmo! ¡Toca cuando los emojis lleguen a la zona verde! 🏔️🎵",
+        "emojis": ["🐻", "🧝‍♀️", "🧒", "🪨", "⬆️", "🏔️"],
+        "speed": 5000,
+        "lanes": 3,
+        "minScore": 3,
+        "scoreLabel": "¡Escalando!",
+        "successTarget": "cave-entrance",
+        "successText": "¡¡Qué ritmo!! 🎉 ¡El equipo escala la montaña! Ya casi llegan a la cueva... 🏔️✨"
+      }
+    },
+
+    "cave-entrance": {
+      "type": "puzzle",
+      "title": "La Entrada de la Cueva",
+      "text": "¡Lo lograron! Después de horas escalando, llegaron a una cueva enorme en la cima de la montaña. 🕳️\n\nLa entrada estaba decorada con símbolos antiguos y cristales brillantes. Un calor intenso salía del interior. 🔥\n\n«Aquí vive el dragón...» susurró Lira con los ojos muy abiertos. 🧝‍♀️\n\n«Puedo oler el humo», dijo Bruna olfateando. 🐻👃\n\nPip tragó saliva. ¡Era el momento de la verdad! 🧒😤\n\n¡Encuentra las palabras escondidas antes de entrar!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🕳️:xlarge:50:35",
+          "🔥:medium:45:25:sparkle",
+          "🔥:small:55:28:sparkle",
+          "💎:small:30:30:sparkle",
+          "💎:small:70:32:sparkle",
+          "🧒:medium:35:65",
+          "🧝‍♀️:medium:50:60",
+          "🐻:medium:65:55"
+        ]
+      },
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra las palabras escondidas en la cueva del dragón! 🔤🐉",
+        "columns": 7,
+        "grid": [
+          "D","R","A","G","O","N","E",
+          "C","U","E","V","A","S","S",
+          "R","X","T","Z","K","L","C",
+          "F","U","E","G","O","P","A",
+          "G","E","M","A","Q","W","M",
+          "T","E","S","O","R","O","A",
+          "V","B","H","D","J","N","S"
+        ],
+        "words": [
+          { "word": "DRAGON", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "CUEVAS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "FUEGO", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "GEMA", "row": 4, "col": 0, "direction": "horizontal" },
+          { "word": "TESORO", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "ESCAMA", "row": 0, "col": 6, "direction": "vertical" }
+        ],
+        "successTarget": "dragon-sleeps",
+        "successText": "¡¡Genial!! 🎉 DRAGÓN, CUEVAS, FUEGO, GEMA, TESORO, ESCAMA... ¡Todo lo que espera dentro! ¡Adelante, Pip! 🐉"
+      }
+    },
+
+    "dragon-sleeps": {
+      "type": "puzzle",
+      "title": "El Dragón Dormido",
+      "text": "Pip entró en la cueva con mucho cuidado. Y allí estaba... ¡el dragón! 🐉\n\n¡Era ENORME! Tenía escamas rojas y doradas, alas como velas de barco y una cola larguísima. Y entre sus garras... ¡la Gema de Luz brillaba! 💎✨\n\nEl dragón dormitaba inquieto. Gruñía, se movía, echaba humo por la nariz... No parecía tener un sueño tranquilo. 😰\n\nPip tenía que acercarse sin despertarlo... ¡o hablar con él!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐉:xlarge:55:35",
+          "💎:large:50:50:sparkle",
+          "🔥:small:60:25:sparkle",
+          "💨:small:65:20:float",
+          "🧒:medium:15:65",
+          "🧝‍♀️:small:10:60",
+          "🐻:small:5:55"
+        ]
+      },
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Ayuda a Pip 🧒 a acercarse al dragón 🐉 sin tocar los montones de humo! 💨",
+        "grid": [
+          [2, 0, 1, 0, 0, 0, 1],
+          [1, 0, 0, 0, 1, 0, 0],
+          [0, 0, 1, 0, 1, 0, 1],
+          [0, 1, 1, 0, 0, 0, 0],
+          [0, 0, 0, 1, 0, 1, 0],
+          [1, 0, 1, 0, 0, 0, 0],
+          [1, 0, 0, 0, 1, 0, 3]
+        ],
+        "playerEmoji": "🧒",
+        "goalEmoji": "🐉",
+        "wallEmoji": "💨",
+        "pathEmoji": "🪨",
+        "successTarget": "moral-choice-3",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Pip está frente al dragón! ¿Qué hará ahora? 🐉😬"
+      }
+    },
+
+    "moral-choice-3": {
+      "type": "moral",
+      "title": "Frente al Dragón",
+      "speaker": "pip",
+      "text": "Pip está frente al enorme dragón. La Gema de Luz brilla entre sus garras. 💎🐉\n\nPodría intentar cogerla mientras el dragón dormita... pero Pip nota algo: el dragón tiembla. Y de sus ojos cerrados caen... ¿lágrimas? 😢\n\n¿Qué debería hacer Pip?",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐉:xlarge:60:35",
+          "💎:large:55:50:sparkle",
+          "😢:small:65:28",
+          "🧒:large:25:55",
+          "❓:medium:40:15:sparkle",
+          { "type": "glow", "x": 55, "y": 50, "color": "#f1c40f", "size": 60 }
+        ]
+      },
+      "choices": [
+        {
+          "text": "Hablar con el dragón y preguntarle qué le pasa",
+          "target": "talk-dragon",
+          "emoji": "💬",
+          "moralValue": "compassion",
+          "points": 2
+        },
+        {
+          "text": "Coger la gema rápidamente mientras duerme",
+          "target": "steal-gem",
+          "emoji": "💎",
+          "moralValue": "impatience",
+          "points": 0
+        }
+      ]
+    },
+
+    "talk-dragon": {
+      "type": "puzzle",
+      "title": "La Historia de Fuego",
+      "speaker": "fuego",
+      "text": "«Hola... dragón», dijo Pip con voz suave. «¿Estás bien?» 🧒💚\n\nEl dragón abrió un ojo enorme. Pip tembló... pero no huyó.\n\n«¿No... no me tienes miedo?» preguntó el dragón con una voz sorprendentemente dulce. 🐉😲\n\n«Un poco... pero pareces triste», dijo Pip.\n\nEl dragón suspiró y una pequeña llama salió de su nariz:\n\n«Me llamo Fuego. Cogí la gema porque... tengo miedo de la oscuridad. Cuando era pequeño, me perdí en una cueva oscura durante días. Desde entonces, necesito luz cerca de mí.» 🐉😢💎\n\n¡Pon en orden la historia!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐉:xlarge:60:35",
+          "😢:small:65:28",
+          "🧒:large:25:55",
+          "💚:medium:40:30:sparkle",
+          "💎:medium:55:55:sparkle",
+          { "type": "glow", "x": 55, "y": 50, "color": "#f1c40f", "size": 50 }
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Pon en orden la historia de Fuego el dragón! 🐉📖",
+        "scenes": [
+          { "emoji": "🐉", "text": "De pequeño, Fuego se perdió en una cueva oscura" },
+          { "emoji": "😢", "text": "Pasó días solo en la oscuridad y tuvo mucho miedo" },
+          { "emoji": "💎", "text": "Encontró la Gema de Luz y se la llevó" },
+          { "emoji": "🌟", "text": "Con la gema, ya nunca más estaría a oscuras" }
+        ],
+        "successTarget": "ending-best",
+        "successText": "¡¡Perfecto!! 🎉 ¡Ahora Pip entiende! Fuego no es malvado... ¡solo tiene miedo! 🐉💚",
+        "failText": "Piensa qué pasó primero: Fuego se perdió, luego tuvo miedo, luego cogió la gema... 🤔"
+      }
+    },
+
+    "steal-gem": {
+      "type": "puzzle",
+      "title": "¡Intentando Robar la Gema!",
+      "text": "Pip se acercó de puntillas y extendió las manos hacia la Gema de Luz... 🧒💎\n\nCon muuuucho cuidado... un paso... otro paso... casi la toca...\n\n¡RRRRROAAAAARRRR! 🐉🔥\n\n¡El dragón despertó! ¡Y estaba FURIOSO! Echó una llamarada al techo de la cueva.\n\n«¡¡¡LADRÓN!!!» rugió el dragón. Pip cayó hacia atrás del susto. 😱\n\nPero entonces, mirando al dragón, Pip vio que tenía lágrimas en los ojos...\n\n«¡Espera! ¡No quiero hacerte daño!» gritó Pip. «¿Por qué lloras?» 🧒",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐉:xlarge:60:30",
+          "🔥:large:55:15:sparkle",
+          "🔥:medium:45:20:sparkle",
+          "🧒:medium:25:65",
+          "😱:small:30:58",
+          "💎:large:50:55:sparkle",
+          "😢:small:65:25"
+        ]
+      },
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "El dragón respira fuego en un patrón: 🔥🔥💨🔥🔥💨🔥🔥... ¿Qué sigue?",
+        "pattern": ["🔥", "🔥", "💨", "🔥", "🔥", "💨", "🔥", "🔥"],
+        "options": ["🔥", "💨", "🐉", "💎"],
+        "correctAnswer": "💨",
+        "successTarget": "ending-good",
+        "successText": "¡¡Correcto!! 🎉 El dragón se calma... y empieza a contar su historia. 🐉😢",
+        "failText": "Mira el patrón: 🔥🔥💨 se repite... ¿Qué viene después de 🔥🔥? 🤔"
+      }
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡Amigos para Siempre!",
+      "text": "Pip tuvo una idea brillante: 🧒💡\n\n«¡Fuego! ¿Y si vienes a vivir a nuestro valle? Los gnomos fabricamos faroles mágicos que brillan toda la noche. ¡Nunca más estarás a oscuras!» ✨🏮\n\nEl dragón abrió los ojos con esperanza: «¿De verdad? ¿No me tendrían miedo?» 🐉\n\n«¡Yo les explicaré todo!» dijo Pip. «Además, ¡puedes ayudarnos a encender los faroles con tu fuego!» 🔥🏮\n\nFuego devolvió la Gema de Luz con una sonrisa. El valle recuperó su brillo. 💎✨\n\nY así, el dragón más temido se convirtió en el mejor amigo de la aldea de los gnomos. Pip, el gnomo más pequeño, había conseguido lo que nadie más podía: no venció al dragón con fuerza, sino con amabilidad y comprensión. 💚\n\n🌟 Los grandes héroes no son los más fuertes, sino los más amables.\n🌟 Todo el mundo tiene miedo de algo, incluso los dragones.\n🌟 La mejor forma de resolver un problema es entender al otro.\n\n¡FIN! 💚🐉🧒",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🐉:large:55:40",
+          "🧒:large:35:55",
+          "🧝‍♀️:medium:15:60",
+          "🐻:medium:75:55",
+          "💎:large:45:15:sparkle",
+          "🏮:small:20:30:sparkle",
+          "🏮:small:70:25:sparkle",
+          "🏮:small:85:35:sparkle",
+          "🌈:large:50:8",
+          "💚:xlarge:45:30:sparkle",
+          "🎉:medium:10:15",
+          "🎊:medium:90:15"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "La Gema Recuperada",
+      "text": "El dragón, al verse descubierto, contó su historia entre lágrimas. Tenía miedo de la oscuridad desde pequeño. 🐉😢\n\nPip se sintió mal por haber intentado robarle. «Lo siento, Fuego. No sabía que tenías miedo.» 🧒\n\nAl final, Pip prometió que los gnomos le enviarían faroles mágicos para iluminar su cueva. Fuego devolvió la Gema de Luz, pero se quedó solo en la montaña. 💎\n\nEl valle recuperó su brillo. Pip fue recibido como un héroe. 🎉 Pero a veces, por las noches, miraba hacia la montaña y se preguntaba si Fuego estaría bien...\n\n«Ojalá hubiera sido más amable desde el principio», pensó Pip. 💭\n\n¡FIN!\n\n(¿Quieres intentarlo de nuevo? ¡Tus decisiones cambian la historia!)",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧒:large:35:55",
+          "💭:medium:40:40:float",
+          "🏔️:large:75:25",
+          "🐉:small:78:20",
+          "💎:medium:50:30:sparkle",
+          "🏮:small:80:35:sparkle",
+          "🌅:large:50:12"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Intentarlo de nuevo!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-neutral": {
+      "type": "ending",
+      "endingRank": "neutral",
+      "title": "Un Final Agridulce",
+      "text": "Pip logró recuperar la Gema de Luz, pero el viaje fue más difícil de lo necesario. 💎\n\nNo siempre tomó las mejores decisiones: a veces fue impaciente, otras veces no confió en la amabilidad. Pero aprendió mucho por el camino. 🧒💭\n\nEl valle recuperó la luz, y Pip volvió a su aldea. Era diferente: más sabio, pero también más triste.\n\n«La próxima vez», se prometió, «seré más amable y más valiente.» 💚\n\nEl dragón se quedó solo en la montaña. Nadie supo nunca por qué había cogido la gema...\n\n¡FIN!\n\n(¡Juega otra vez para descubrir todos los secretos de la historia!)",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🧒:large:40:55",
+          "💭:medium:45:40:float",
+          "🏔️:large:75:30",
+          "💎:medium:50:25:sparkle",
+          "🌙:large:80:10:sparkle",
+          { "type": "stars", "count": 8, "dim": true }
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Intentarlo de nuevo!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-check": {
+      "type": "narrative",
+      "title": "El Final de la Historia",
+      "text": "Y así termina la aventura de Pip. Pero, ¿qué tipo de final has conseguido? ¡Depende de las decisiones que tomaste! 🌟",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🌟:xlarge:50:35:sparkle",
+          "🧒:medium:25:65",
+          "🐉:medium:55:55",
+          "💎:medium:40:20:sparkle",
+          "🌈:large:50:10"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ver mi final!",
+          "target": "ending-best",
+          "emoji": "💚",
+          "conditionalTarget": { "high": "ending-best", "medium": "ending-good", "low": "ending-neutral" },
+          "conditionalThreshold": 4
+        }
+      ]
+    }
+  }
+}
