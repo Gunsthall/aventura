@@ -242,20 +242,20 @@
         "question": "¡El cofre tiene palabras mágicas grabadas! ¡Encuéntralas! 🔤✨",
         "columns": 7,
         "grid": [
-          "M","A","G","I","A","Q","L",
-          "L","U","N","A","R","P","U",
-          "X","P","S","Z","W","K","Z",
-          "V","A","R","I","T","A","J",
-          "H","B","R","E","I","N","O",
-          "R","E","I","N","A","D","F",
-          "J","D","F","C","G","M","E"
+          "H","L","M","A","G","I","A",
+          "P","Q","U","Z","W","K","B",
+          "R","E","I","N","A","S","D",
+          "X","F","J","T","A","O","C",
+          "G","B","K","P","D","R","L",
+          "V","A","R","I","T","A","U",
+          "N","W","H","Y","E","F","Z"
         ],
         "words": [
-          { "word": "MAGIA", "row": 0, "col": 0, "direction": "horizontal" },
-          { "word": "LUNAR", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "VARITA", "row": 3, "col": 0, "direction": "horizontal" },
-          { "word": "REINA", "row": 5, "col": 0, "direction": "horizontal" },
-          { "word": "LUZ", "row": 0, "col": 6, "direction": "vertical" }
+          { "word": "MAGIA", "row": 0, "col": 2, "direction": "horizontal" },
+          { "word": "LUNAR", "row": 0, "col": 1, "direction": "diagonal-down" },
+          { "word": "REINA", "row": 2, "col": 0, "direction": "horizontal" },
+          { "word": "VARITA", "row": 5, "col": 0, "direction": "horizontal" },
+          { "word": "LUZ", "row": 4, "col": 6, "direction": "vertical" }
         ],
         "successTarget": "memory-puzzle",
         "successText": "¡¡Genial!! 🎉 ¡MAGIA, LUNAR, VARITA, REINA, LUZ! Las palabras mágicas abren el cofre. ✨"
@@ -280,8 +280,8 @@
       "puzzle": {
         "inputType": "memory",
         "question": "¡Encuentra las parejas mágicas! Toca dos cartas para darles la vuelta. Si son iguales, ¡se quedan! 🧠",
-        "pairs": ["⭐", "🌙", "🔮", "🦋", "🌸", "💎"],
-        "columns": 3,
+        "pairs": ["⭐", "🌙", "🔮", "🦋", "🌸", "💎", "🪄", "👑"],
+        "columns": 4,
         "successTarget": "memory-reward",
         "successText": "¡Increíble memoria! 🎉 ¡Has encontrado todas las parejas!"
       }

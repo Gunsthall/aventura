@@ -356,8 +356,8 @@
       "puzzle": {
         "inputType": "memory",
         "question": "¡Empareja cada animal con su pareja! ¿Recuerdas quién va en la expedición? 🌿🧠",
-        "columns": 2,
-        "pairs": ["🦅", "🐆", "🐒", "🐷"],
+        "columns": 3,
+        "pairs": ["🦅", "🐆", "🐒", "🐷", "🐍", "🦍"],
         "successTarget": "river-approach",
         "successText": "¡¡Muy bien!! 🎉 ¡Los recuerdas a todos! Águilas, jaguar, monos y Celdi. ¡En marcha al río! 🏞️"
       }
@@ -611,8 +611,8 @@
       "puzzle": {
         "inputType": "memory",
         "question": "¡Empareja los animales de la jungla! 🧠🌿",
-        "columns": 3,
-        "pairs": ["🦍", "🦜", "🐍", "🐆", "🐒", "🐷"],
+        "columns": 4,
+        "pairs": ["🦍", "🦜", "🐍", "🐆", "🐒", "🐷", "🐘", "🐊"],
         "successTarget": "elia-orders",
         "successText": "¡¡Muy bien!! 🎉 ¡Conoces a todos los animales de la jungla!"
       }
@@ -881,8 +881,8 @@
       "puzzle": {
         "inputType": "memory",
         "question": "¡La noche de celebración! ¿Recuerdas a los héroes? ¡Empareja los animales! 🌙🧠",
-        "columns": 3,
-        "pairs": ["🦍", "🐘", "🐆", "🐷", "🐍", "🐊"],
+        "columns": 4,
+        "pairs": ["🦍", "🐘", "🐆", "🐷", "🐍", "🐊", "🦜", "🐒"],
         "successTarget": "simon-animals",
         "successText": "¡¡Perfecto!! 🎉 ¡Todos son héroes! Cada uno aportó algo especial para salvar la jungla. 🌙✨"
       }
@@ -1007,17 +1007,17 @@
         "columns": 7,
         "grid": [
           "A","Y","U","D","A","R","F",
-          "P","R","Q","X","M","E","U",
-          "U","N","I","O","N","S","E",
-          "Z","K","L","W","J","P","R",
-          "A","M","O","R","T","E","Z",
+          "P","M","Q","X","K","J","U",
+          "H","W","O","Z","B","L","E",
+          "G","D","S","R","T","V","R",
+          "U","N","I","O","N","E","Z",
           "C","U","I","D","A","R","A",
-          "N","G","H","V","B","O","S"
+          "L","G","H","V","B","O","S"
         ],
         "words": [
           { "word": "AYUDAR", "row": 0, "col": 0, "direction": "horizontal" },
-          { "word": "UNION", "row": 2, "col": 0, "direction": "horizontal" },
-          { "word": "AMOR", "row": 4, "col": 0, "direction": "horizontal" },
+          { "word": "AMOR", "row": 0, "col": 0, "direction": "diagonal-down" },
+          { "word": "UNION", "row": 4, "col": 0, "direction": "horizontal" },
           { "word": "CUIDAR", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "FUERZA", "row": 0, "col": 6, "direction": "vertical" }
         ],
@@ -1047,18 +1047,18 @@
         "columns": 7,
         "grid": [
           "E","Q","U","I","P","O","V",
-          "A","M","I","G","O","S","A",
-          "Y","W","H","Z","K","E","L",
+          "F","A","M","I","L","I","A",
+          "A","M","I","G","O","S","L",
           "U","N","I","D","O","S","O",
           "X","P","L","Q","R","T","R",
-          "F","A","M","I","L","I","A",
-          "J","U","N","T","O","S","B"
+          "H","B","W","C","K","E","D",
+          "J","U","N","T","O","S","F"
         ],
         "words": [
           { "word": "EQUIPO", "row": 0, "col": 0, "direction": "horizontal" },
-          { "word": "AMIGOS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "FAMILIA", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "AMIGOS", "row": 2, "col": 0, "direction": "horizontal" },
           { "word": "UNIDOS", "row": 3, "col": 0, "direction": "horizontal" },
-          { "word": "FAMILIA", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "JUNTOS", "row": 6, "col": 0, "direction": "horizontal" },
           { "word": "VALOR", "row": 0, "col": 6, "direction": "vertical" }
         ],

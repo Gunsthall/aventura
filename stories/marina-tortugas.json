@@ -404,16 +404,16 @@
         "grid": [
           "O","C","E","A","N","O","P",
           "M","A","R","E","A","T","L",
-          "X","Z","W","K","D","V","A",
-          "A","G","U","A","S","H","Y",
-          "R","T","O","F","B","J","A",
-          "B","U","C","E","A","R","N",
-          "I","F","J","G","M","S","L"
+          "X","A","Z","W","K","D","A",
+          "F","H","G","B","J","V","Y",
+          "I","Q","D","U","N","E","A",
+          "B","U","C","E","A","R","G",
+          "L","F","J","M","O","S","H"
         ],
         "words": [
           { "word": "OCEANO", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "MAREA", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "AGUAS", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "AGUAS", "row": 2, "col": 1, "direction": "diagonal-down" },
           { "word": "BUCEAR", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "PLAYA", "row": 0, "col": 6, "direction": "vertical" }
         ],
@@ -725,16 +725,16 @@
         "grid": [
           "C","O","R","A","L","T","P",
           "A","L","G","A","S","O","E",
-          "P","E","Z","Q","X","R","C",
-          "V","I","D","A","K","T","E",
-          "W","M","N","R","T","U","S",
+          "M","W","V","Z","K","D","C",
+          "F","H","B","I","J","R","E",
+          "G","Q","X","N","D","U","S",
           "C","O","N","C","H","A","B",
-          "L","F","J","G","D","S","I"
+          "L","F","J","G","M","S","I"
         ],
         "words": [
           { "word": "CORAL", "row": 0, "col": 0, "direction": "horizontal" },
           { "word": "ALGAS", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "VIDA", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "VIDA", "row": 2, "col": 2, "direction": "diagonal-down" },
           { "word": "CONCHA", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "PECES", "row": 0, "col": 6, "direction": "vertical" }
         ],

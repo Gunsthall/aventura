@@ -301,6 +301,22 @@ class StoryEngine {
         this._renderChoicesPuzzle(page, alreadySolved);
         break;
     }
+
+    // Add restart button (unless already solved)
+    if (!alreadySolved) {
+      const existing = this.els.puzzleContainer.querySelector('.puzzle-restart-btn');
+      if (existing) existing.remove();
+      const restartBtn = document.createElement('button');
+      restartBtn.className = 'puzzle-restart-btn';
+      restartBtn.innerHTML = '🔄 Reiniciar';
+      restartBtn.addEventListener('click', () => {
+        delete this.puzzleResults[this.currentPageId];
+        this.els.puzzleOptions.innerHTML = '';
+        this.els.puzzleFeedback.classList.add('hidden');
+        this._renderPuzzle(page);
+      });
+      this.els.puzzleContainer.appendChild(restartBtn);
+    }
   }
 
   _renderChoicesPuzzle(page, alreadySolved) {

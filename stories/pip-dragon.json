@@ -338,21 +338,21 @@
         "question": "¡Encuentra las palabras mágicas del bosque de Lira! 🔤🌿",
         "columns": 7,
         "grid": [
-          "E","L","F","O","S","N","M",
-          "H","O","J","A","S","A","A",
-          "P","R","Q","X","E","T","G",
-          "A","R","B","O","L","U","I",
-          "L","U","Z","W","V","R","A",
-          "F","L","O","R","E","S","Q",
-          "B","G","K","D","J","H","F"
+          "E","Q","N","D","P","T","K",
+          "X","L","H","O","J","A","S",
+          "W","R","F","B","V","Y","M",
+          "A","R","B","O","L","U","A",
+          "C","G","T","N","S","D","G",
+          "F","L","O","R","E","S","I",
+          "L","U","Z","H","W","Q","A"
         ],
         "words": [
-          { "word": "ELFOS", "row": 0, "col": 0, "direction": "horizontal" },
-          { "word": "HOJAS", "row": 1, "col": 0, "direction": "horizontal" },
+          { "word": "ELFOS", "row": 0, "col": 0, "direction": "diagonal-down" },
+          { "word": "HOJAS", "row": 1, "col": 2, "direction": "horizontal" },
           { "word": "ARBOL", "row": 3, "col": 0, "direction": "horizontal" },
           { "word": "FLORES", "row": 5, "col": 0, "direction": "horizontal" },
-          { "word": "MAGIA", "row": 0, "col": 6, "direction": "vertical" },
-          { "word": "LUZ", "row": 4, "col": 0, "direction": "horizontal" }
+          { "word": "MAGIA", "row": 2, "col": 6, "direction": "vertical" },
+          { "word": "LUZ", "row": 6, "col": 0, "direction": "horizontal" }
         ],
         "successTarget": "spider-web",
         "successText": "¡¡Genial!! 🎉 ELFOS, HOJAS, ÁRBOL, FLORES, MAGIA... ¡El bosque de Lira es mágico! Ahora viajan juntos. 🧒🧝‍♀️"
@@ -494,8 +494,8 @@
       "puzzle": {
         "inputType": "memory",
         "question": "¡Pip comparte su comida! ¡Empareja los alimentos! 🥪🍪🧠",
-        "columns": 2,
-        "pairs": ["🥪", "🍪", "💧", "🍎"],
+        "columns": 3,
+        "pairs": ["🥪", "🍪", "💧", "🍎", "🧀", "🍯"],
         "successTarget": "mountain-base",
         "successText": "¡¡Perfecto!! 🎉 ¡Grunk el trol está tan agradecido que les deja pasar y les indica el camino! 👹💚"
       }
@@ -667,18 +667,18 @@
         "columns": 7,
         "grid": [
           "D","R","A","G","O","N","E",
-          "C","U","E","V","A","S","S",
-          "R","X","T","Z","K","L","C",
-          "F","U","E","G","O","P","A",
-          "G","E","M","A","Q","W","M",
+          "H","X","Z","W","E","B","S",
+          "P","Q","T","K","J","M","C",
+          "C","U","E","V","A","S","A",
+          "F","U","E","G","O","P","M",
           "T","E","S","O","R","O","A",
-          "V","B","H","D","J","N","S"
+          "V","B","H","D","J","N","L"
         ],
         "words": [
           { "word": "DRAGON", "row": 0, "col": 0, "direction": "horizontal" },
-          { "word": "CUEVAS", "row": 1, "col": 0, "direction": "horizontal" },
-          { "word": "FUEGO", "row": 3, "col": 0, "direction": "horizontal" },
-          { "word": "GEMA", "row": 4, "col": 0, "direction": "horizontal" },
+          { "word": "GEMA", "row": 0, "col": 3, "direction": "diagonal-down" },
+          { "word": "CUEVAS", "row": 3, "col": 0, "direction": "horizontal" },
+          { "word": "FUEGO", "row": 4, "col": 0, "direction": "horizontal" },
           { "word": "TESORO", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "ESCAMA", "row": 0, "col": 6, "direction": "vertical" }
         ],
