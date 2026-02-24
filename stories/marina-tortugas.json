@@ -417,8 +417,37 @@
           { "word": "BUCEAR", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "PLAYA", "row": 0, "col": 6, "direction": "vertical" }
         ],
-        "successTarget": "dive-in",
+        "successTarget": "marina-stone-skip",
         "successText": "¡¡Genial!! 🎉 ¡OCÉANO, MAREA, AGUAS, BUCEAR, PLAYA! Las pulseras brillan con magia marina. 📿✨"
+      }
+    },
+
+    "marina-stone-skip": {
+      "type": "puzzle",
+      "title": "¡La Piedra Limpiadora!",
+      "speaker": "marina",
+      "text": "Antes de bucear, Marina vio una zona llena de basura flotando en el agua. ¡Había que limpiarla primero! 🗑️🌊\n\n«¡Tengo una idea!» dijo Marina. Ató una red de limpieza a una piedra especial. «¡Si lanzo la piedra hasta el cubo flotante, la red recogerá toda la basura!» 🪨🗑️\n\n¡Ayuda a Marina a lanzar la piedra con la red!",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👧:large:20:55",
+          "🪨:medium:25:45",
+          "🌊:xlarge:50:75",
+          "🗑️:medium:80:50:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza la piedra con la red hasta el cubo! 🪨💨",
+        "projectileEmoji": "🪨",
+        "targetEmoji": "🗑️",
+        "obstacleEmoji": "🌊",
+        "gapColor": "#0277BD",
+        "groundColor": "#F9A825",
+        "successTarget": "dive-in",
+        "successText": "¡¡PERFECTO!! 🎉 ¡La red recogió toda la basura! ¡El agua está mucho más limpia! 🪨🗑️✨",
+        "failTextShort": "¡La piedra cayó al agua! 🪨💦 ¡Inténtalo otra vez!",
+        "failTextLong": "¡La piedra pasó volando! 🪨💨 ¡Menos potencia!"
       }
     },
 

@@ -889,3 +889,214 @@
   border-color: var(--color-accent);
   color: var(--color-text);
 }
+
+/* === LANZAR (physics launch) === */
+.lanzar-arena {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-surface-light);
+  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  margin-bottom: 16px;
+}
+
+.lanzar-ground-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  border-radius: 0 8px 0 0;
+}
+
+.lanzar-ground-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 60px;
+  border-radius: 8px 0 0 0;
+}
+
+.lanzar-gap {
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+}
+
+.lanzar-gap-emojis {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+}
+
+.lanzar-target-zone {
+  position: absolute;
+  bottom: 60px;
+  height: 50px;
+  border: 2px dashed #4caf50;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(76, 175, 80, 0.1);
+  animation: pulse 2s ease infinite;
+}
+
+.lanzar-target-emoji {
+  font-size: 1.8rem;
+}
+
+.lanzar-projectile {
+  position: absolute;
+  font-size: 2.5rem;
+  z-index: 20;
+  line-height: 1;
+  transform: translateX(-50%);
+}
+
+.lanzar-preview-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  pointer-events: none;
+}
+
+.lanzar-trail-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 165, 0, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  pointer-events: none;
+}
+
+.lanzar-angle-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.lanzar-angle-btn {
+  padding: 10px 16px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lanzar-angle-btn:hover {
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.lanzar-angle-btn.selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px var(--color-accent);
+  background: rgba(243, 156, 18, 0.2);
+}
+
+.lanzar-power-section {
+  margin-bottom: 12px;
+}
+
+.lanzar-power-section.hidden {
+  display: none;
+}
+
+.lanzar-power-label {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.lanzar-power-bar-bg {
+  position: relative;
+  height: 24px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #e74c3c, #e74c3c 30%, #2ecc71 40%, #2ecc71 60%, #e67e22 70%, #e67e22);
+  border: 2px solid var(--color-surface-light);
+  overflow: hidden;
+}
+
+.lanzar-power-indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 0 8px white;
+}
+
+.lanzar-fire-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 3px solid #e74c3c;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  animation: pulse 1.5s ease infinite;
+}
+
+.lanzar-fire-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+}
+
+.lanzar-fire-btn.hidden {
+  display: none;
+}
+
+.lanzar-fire-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  animation: none;
+}
+
+.lanzar-solved-msg {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  padding: 8px;
+}
+
+@media (max-width: 600px) {
+  .lanzar-arena {
+    height: 220px;
+  }
+
+  .lanzar-projectile {
+    font-size: 1.8rem;
+  }
+
+  .lanzar-angle-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .lanzar-fire-btn {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .lanzar-target-emoji {
+    font-size: 1.4rem;
+  }
+}

@@ -524,9 +524,38 @@
           { "value": "amigos", "label": "A sus amigos 👋", "emoji": "👋" }
         ],
         "correctAnswer": "tiempo",
-        "successTarget": "cross-river",
+        "successTarget": "celdi-river-jump",
         "successText": "¡¡Correcto!! 🎉 Perdieron mucho tiempo precioso... ¡y el fuego seguía avanzando! ⏳🔥",
         "failText": "Mientras buscaban otro camino, el fuego seguía avanzando. ¿Qué es lo más valioso que perdieron? 🤔"
+      }
+    },
+
+    "celdi-river-jump": {
+      "type": "puzzle",
+      "title": "¡Celdi Salta el Río!",
+      "speaker": "celdi",
+      "text": "¡No había puente ni cocodrilos por aquí! Pero Celdi vio un punto estrecho del río. «¡Puedo saltar!» dijo el cerdito valiente. 🐷💪\n\nBangüe preparó a Celdi en la orilla. «¡Elige el ángulo y la fuerza! ¡Tú puedes, Celdi!» 🐆\n\n¡Lanza a Celdi al otro lado del río!",
+      "illustration": {
+        "background": "bg-river",
+        "elements": [
+          "🐷:large:20:55",
+          "🐆:medium:10:65",
+          "🌊:medium:50:80",
+          "🌿:medium:80:55:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza a Celdi al otro lado del río! 🐷💨",
+        "projectileEmoji": "🐷",
+        "targetEmoji": "🌿",
+        "obstacleEmoji": "🌊",
+        "gapColor": "#2196F3",
+        "groundColor": "#4a7c59",
+        "successTarget": "cross-river",
+        "successText": "¡¡GENIAL!! 🎉 ¡Celdi voló por los aires y aterrizó perfectamente! ¡Qué cerdito tan valiente! 🐷✨",
+        "failTextShort": "¡Celdi cayó al agua! 🐷💦 ¡Inténtalo otra vez!",
+        "failTextLong": "¡Celdi voló demasiado lejos! 🐷💨 ¡Ajusta la potencia!"
       }
     },
 

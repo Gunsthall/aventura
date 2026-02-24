@@ -522,7 +522,7 @@
         "question": "¡La respuesta a la adivinanza de Pip! ¿Qué se hace más grande cuanto más le quitas? 🤔🔤",
         "word": "AGUJERO",
         "hint": "Un _______",
-        "successTarget": "mountain-base",
+        "successTarget": "pip-crevice-jump",
         "successText": "¡¡AGUJERO!! 🎉 ¡Pip es muy listo! El trol se ríe y les deja pasar. 👹😂"
       }
     },
@@ -551,9 +551,38 @@
           { "value": "correr", "label": "Salir corriendo 🏃", "emoji": "🏃" }
         ],
         "correctAnswer": "amabilidad",
-        "successTarget": "mountain-base",
+        "successTarget": "pip-crevice-jump",
         "successText": "¡¡Correcto!! 🎉 ¡La amabilidad es más poderosa que la fuerza! Pip lo recordará. 💚",
         "failText": "Piensa... empujar no funcionó. ¿Qué habría funcionado mejor? 🤔"
+      }
+    },
+
+    "pip-crevice-jump": {
+      "type": "puzzle",
+      "title": "¡La Grieta de la Montaña!",
+      "speaker": "pip",
+      "text": "Después de pasar al trol, Pip y Lira llegaron a una enorme grieta en el camino. ¡El puente se había derrumbado! 😱\n\n«¡No hay forma de rodearla!» dijo Lira mirando el abismo. 🧝‍♀️\n\nPip miró al otro lado. No estaba tan lejos... «¡Puedo saltar!» dijo con determinación. 🧒💪\n\n¡Ayuda a Pip a saltar la grieta!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🧒:large:20:55",
+          "🧝‍♀️:medium:10:60",
+          "🕳️:xlarge:50:75",
+          "🪨:medium:80:55:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza a Pip al otro lado de la grieta! 🧒💨",
+        "projectileEmoji": "🧒",
+        "targetEmoji": "🪨",
+        "obstacleEmoji": "🕳️",
+        "gapColor": "#37474F",
+        "groundColor": "#5D4037",
+        "successTarget": "mountain-base",
+        "successText": "¡¡INCREÍBLE!! 🎉 ¡Pip saltó como un campeón! Lira le siguió con un salto elegante. 🧒🧝‍♀️✨",
+        "failTextShort": "¡Pip no llegó al otro lado! 🧒😰 ¡Inténtalo otra vez!",
+        "failTextLong": "¡Pip saltó demasiado lejos! 🧒💨 ¡Menos fuerza!"
       }
     },
 

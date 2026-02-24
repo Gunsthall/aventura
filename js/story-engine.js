@@ -297,6 +297,9 @@ class StoryEngine {
       case 'ritmo':
         window.puzzleRitmo?.render(this, page, alreadySolved);
         break;
+      case 'lanzar':
+        window.puzzleLanzar?.render(this, page, alreadySolved);
+        break;
       default:
         this._renderChoicesPuzzle(page, alreadySolved);
         break;

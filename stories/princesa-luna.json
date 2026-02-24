@@ -257,8 +257,37 @@
           { "word": "VARITA", "row": 5, "col": 0, "direction": "horizontal" },
           { "word": "LUZ", "row": 4, "col": 6, "direction": "vertical" }
         ],
-        "successTarget": "memory-puzzle",
+        "successTarget": "luna-star-launch",
         "successText": "¡¡Genial!! 🎉 ¡MAGIA, LUNAR, VARITA, REINA, LUZ! Las palabras mágicas abren el cofre. ✨"
+      }
+    },
+
+    "luna-star-launch": {
+      "type": "puzzle",
+      "title": "¡La Estrella Mágica!",
+      "speaker": "luna",
+      "text": "El cofre reveló una estrella mágica brillante. ¡Pero delante había un abismo de oscuridad! 🌑\n\n«¡La estrella puede iluminar el camino!» dijo Luna. «¡Necesito lanzarla al otro lado para crear un puente de luz!» ⭐✨\n\nLuna agarró la estrella con fuerza. ¡Había que lanzarla con precisión al templo del otro lado!",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👸:large:20:55",
+          "⭐:medium:25:40:sparkle",
+          "🌑:xlarge:50:50",
+          "🏛️:medium:80:50:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza la estrella mágica al templo! ⭐💫",
+        "projectileEmoji": "⭐",
+        "targetEmoji": "🏛️",
+        "obstacleEmoji": "🌑",
+        "gapColor": "#1a1a2e",
+        "groundColor": "#4a148c",
+        "successTarget": "memory-puzzle",
+        "successText": "¡¡BRILLANTE!! 🎉 ¡La estrella creó un puente de luz! Luna cruzó sobre un arcoíris de destellos. ⭐🌈✨",
+        "failTextShort": "¡La estrella cayó en la oscuridad! ⭐🌑 ¡Inténtalo otra vez!",
+        "failTextLong": "¡La estrella pasó volando de largo! ⭐💨 ¡Menos fuerza!"
       }
     },
 
