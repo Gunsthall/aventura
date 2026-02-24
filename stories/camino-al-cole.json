@@ -1,0 +1,778 @@
+{
+  "meta": {
+    "id": "camino-al-cole",
+    "title": "¡Camino al Cole!",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+  "characters": {
+    "hugo": { "name": "Hugo", "emoji": "🧒", "color": "#3498db" },
+    "sofia": { "name": "Sofía", "emoji": "👧", "color": "#e84393" },
+    "rafa": { "name": "Rafa", "emoji": "😎", "color": "#e17055" },
+    "tito": { "name": "Tito", "emoji": "🧢", "color": "#fdcb6e" },
+    "nana": { "name": "Nana", "emoji": "🎀", "color": "#a29bfe" }
+  },
+  "pages": {
+    "intro": {
+      "type": "puzzle",
+      "title": "¡Buenos días, Hugo!",
+      "speaker": "hugo",
+      "text": "¡RING RING! Suena el despertador. Hugo se levanta de un salto — ¡hoy van a hacer un experimento de volcanes en clase!\n\n¡Ayuda a Hugo a prepararse! Toca los objetos al ritmo para completar su rutina matutina.",
+      "illustration": {
+        "background": "bg-bedroom",
+        "elements": [
+          "🧒:large:50:55",
+          "⏰:medium:78:20:float",
+          "🎒:medium:25:65",
+          "📚:small:30:70",
+          "✏️:small:72:68"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ritmo",
+        "question": "¡Toca los objetos cuando lleguen a la zona! ⏰🥣🎒",
+        "emojis": ["⏰", "🥣", "🎒", "📚", "✏️", "🌟"],
+        "speed": 5500,
+        "lanes": 3,
+        "minScore": 3,
+        "scoreLabel": "¡Preparativos!",
+        "successTarget": "meet-sofia",
+        "successText": "¡¡Genial!! 🎉 ¡Hugo está listo para ir al cole!"
+      }
+    },
+
+    "meet-sofia": {
+      "type": "puzzle",
+      "title": "¡Sofía espera abajo!",
+      "speaker": "sofia",
+      "text": "Hugo baja corriendo las escaleras. En la puerta le espera su mejor amiga, Sofía, con su mochila llena de colores y su cuaderno de dibujo.\n\n«¡Buenos días, Hugo! ¿Listo para ir a la...?» Sofía señala un cartel pero las letras están desordenadas.",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:35:55",
+          "👧:large:60:55",
+          "🏠:medium:15:30",
+          "🌅:medium:80:15:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras para formar la palabra! 🔤",
+        "word": "ESCUELA",
+        "hint": "Hugo y Sofía van a la _______",
+        "successTarget": "walk-together",
+        "successText": "¡¡ESCUELA!! 🏫 ¡Eso es, van al colegio!",
+        "failText": "Pista: es el lugar donde se aprende y se hacen amigos..."
+      }
+    },
+
+    "walk-together": {
+      "type": "narrative",
+      "title": "Camino al colegio",
+      "speaker": "hugo",
+      "text": "Hugo y Sofía caminan juntos por la acera, charlando sin parar.\n\n«¡Hoy vamos a hacer un volcán con bicarbonato!» dice Hugo emocionado.\n\n«¡Y yo voy a pintar un mural del sistema solar!» responde Sofía dando saltitos.\n\nLos dos amigos están tan contentos que no se dan cuenta de que alguien les espera más adelante...",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:35:55",
+          "👧:large:55:55",
+          "🏫:medium:80:25",
+          "🌳:medium:10:40",
+          "☀️:medium:85:10:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir caminando!",
+          "target": "first-encounter",
+          "emoji": "👟"
+        }
+      ]
+    },
+
+    "first-encounter": {
+      "type": "narrative",
+      "title": "¡Rafa y su pandilla!",
+      "speaker": "rafa",
+      "text": "De repente, tres niños aparecen bloqueando el camino. El del medio lleva gafas de sol y una sonrisa burlona.\n\n«¡Eh, empollones! ¿A dónde vais tan contentos?» dice Rafa cruzándose de brazos. Detrás de él, Tito se ríe nervioso y Nana mira al suelo.\n\n«¡El cole es un rollo! ¡Nosotros nos vamos al parque a jugar!» añade Rafa.\n\nHugo y Sofía se miran. ¿Qué deberían hacer?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:20:55",
+          "👧:large:35:55",
+          "😎:large:65:50",
+          "🧢:medium:78:55",
+          "🎀:medium:85:55"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir adelante!",
+          "target": "moral-choice-1",
+          "emoji": "💪"
+        }
+      ]
+    },
+
+    "moral-choice-1": {
+      "type": "moral",
+      "title": "¿Cómo responder a Rafa?",
+      "speaker": "hugo",
+      "text": "Rafa se burla de Hugo y Sofía por querer ir al colegio. ¿Qué deberían hacer?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:40:55",
+          "😎:large:70:50",
+          "❓:medium:50:20:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Sonreír y explicar por qué les gusta el cole",
+          "target": "kind-response",
+          "emoji": "😊",
+          "moralValue": "kindness",
+          "points": 2
+        },
+        {
+          "text": "Ignorar a Rafa y buscar otro camino",
+          "target": "avoid-response",
+          "emoji": "🏃",
+          "moralValue": "avoidance",
+          "points": 1
+        },
+        {
+          "text": "Decirle a Rafa que él es el tonto",
+          "target": "rude-response",
+          "emoji": "😠",
+          "moralValue": "aggression",
+          "points": 0
+        }
+      ]
+    },
+
+    "kind-response": {
+      "type": "puzzle",
+      "title": "Explicar con amabilidad",
+      "speaker": "sofia",
+      "text": "Sofía sonríe y dice: «¡El cole mola mucho, Rafa! Hoy vamos a hacer cosas increíbles.»\n\nHugo asiente: «¡Sí! ¿Quieres que te contemos?»\n\nRafa parece sorprendido. Nadie le había respondido así antes.\n\n¡Pon en orden lo que hacen Hugo y Sofía!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:30:55",
+          "🧒:large:50:55",
+          "😎:large:75:55",
+          "💛:small:52:25:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Ordena las acciones de Hugo y Sofía! 📖",
+        "scenes": [
+          { "emoji": "😊", "text": "Sonreír a Rafa con amabilidad" },
+          { "emoji": "📚", "text": "Explicar las cosas divertidas del cole" },
+          { "emoji": "🤝", "text": "Invitar a Rafa a caminar juntos" }
+        ],
+        "successTarget": "park-shortcut",
+        "successText": "¡¡Perfecto!! 🎉 Primero sonreír, luego explicar, y después invitar. ¡Así se hace!",
+        "failText": "Piensa: primero hay que ser amable, luego explicar, y al final invitar..."
+      }
+    },
+
+    "avoid-response": {
+      "type": "puzzle",
+      "title": "¡Buscar otro camino!",
+      "speaker": "hugo",
+      "text": "Hugo toma a Sofía de la mano y dice: «¡Vamos, conozco un atajo!»\n\nLos dos se alejan rápidamente mientras Rafa se queda confundido.\n\n¡Ayúdales a escapar! ¿Qué viene después en el patrón de sus pasos?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:30:55",
+          "👧:large:50:55",
+          "👟:small:40:75",
+          "👟:small:55:75",
+          "🏃:small:65:70"
+        ]
+      },
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "¿Qué viene después? 👟👟🏃👟👟🏃👟👟...",
+        "pattern": ["👟", "👟", "🏃", "👟", "👟", "🏃", "👟", "👟"],
+        "options": ["👟", "🏃", "🎒", "⭐"],
+        "correctAnswer": "🏃",
+        "successTarget": "park-shortcut",
+        "successText": "¡¡Correcto!! 🎉 ¡Correr! ¡Hugo y Sofía escapan a toda velocidad!",
+        "failText": "Mira el patrón: paso, paso, correr, paso, paso, correr... ¿qué toca ahora?"
+      }
+    },
+
+    "rude-response": {
+      "type": "puzzle",
+      "title": "Eso no salió bien...",
+      "speaker": "hugo",
+      "text": "Hugo le grita a Rafa: «¡Tú sí que eres tonto!»\n\nRafa se enfada mucho y empieza a gritar también. Todo se vuelve un lío de gritos y nadie gana nada.\n\nSofía le susurra a Hugo: «Eso no ha funcionado...»\n\nPiensa: ¿qué funciona mejor?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:30:55",
+          "😎:large:65:50",
+          "😤:small:48:30:float",
+          "💢:small:55:25:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "choices",
+        "question": "¿Qué funciona mejor que los insultos?",
+        "options": [
+          { "value": "amabilidad", "label": "La amabilidad 😊", "emoji": "💛" },
+          { "value": "gritar", "label": "Gritar más fuerte 😤", "emoji": "📢" },
+          { "value": "esconderse", "label": "Esconderse 🙈", "emoji": "🫣" }
+        ],
+        "correctAnswer": "amabilidad",
+        "successTarget": "park-shortcut",
+        "successText": "¡¡Exacto!! 🎉 La amabilidad siempre funciona mejor que los gritos.",
+        "failText": "Piensa... ¿qué hace sentir bien a todo el mundo?"
+      }
+    },
+
+    "park-shortcut": {
+      "type": "narrative",
+      "title": "El atajo por el parque",
+      "speaker": "sofia",
+      "text": "Hugo y Sofía deciden tomar un atajo por el parque para no llegar tarde.\n\n«¡Mira qué bonito está todo!» dice Sofía señalando los árboles llenos de flores. «¡Si corremos un poco llegaremos a tiempo!»\n\nPero el parque es grande y hay muchos caminos. ¡Necesitan encontrar la ruta correcta!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🧒:large:30:55",
+          "👧:large:50:55",
+          "🌳:medium:10:35",
+          "🌸:small:15:30:float",
+          "🌳:medium:85:35",
+          "🦋:small:75:25:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Buscar el camino!",
+          "target": "park-maze",
+          "emoji": "🗺️"
+        }
+      ]
+    },
+
+    "park-maze": {
+      "type": "puzzle",
+      "title": "¡A través del parque!",
+      "speaker": "hugo",
+      "text": "¡Ayuda a Hugo a encontrar el camino hasta el colegio a través del parque!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🌳:medium:10:25",
+          "🌳:medium:88:25",
+          "🦋:small:50:15:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Guía a Hugo 🧒 hasta el colegio 🏫! Toca las casillas vecinas.",
+        "grid": [
+          [2, 0, 1, 0, 0, 1, 0],
+          [1, 0, 1, 0, 0, 0, 0],
+          [0, 0, 0, 0, 1, 0, 1],
+          [0, 1, 0, 1, 0, 0, 0],
+          [0, 1, 0, 0, 0, 1, 0],
+          [0, 0, 0, 1, 0, 0, 0],
+          [1, 0, 1, 0, 0, 0, 3]
+        ],
+        "playerEmoji": "🧒",
+        "goalEmoji": "🏫",
+        "wallEmoji": "🌳",
+        "pathEmoji": "👟",
+        "successTarget": "prank-sign",
+        "successText": "¡¡Bien hecho!! 🎉 ¡Hugo y Sofía cruzan el parque!"
+      }
+    },
+
+    "prank-sign": {
+      "type": "narrative",
+      "title": "¿Colegio cerrado?",
+      "speaker": "sofia",
+      "text": "Al salir del parque, Hugo y Sofía ven un cartel enorme pegado en una farola:\n\n📋 «ATENCIÓN: COLEGIO CERRADO HOY POR INVASIÓN DE MARCIANOS» 👽\n\n«¡Oh no!» dice Hugo preocupado.\n\nPero Sofía entrecierra los ojos. «Espera... Esto tiene mala pinta. ¡Las letras están torcidas y hay faltas de ortografía! Creo que es una broma de Rafa...»\n\nDesde detrás de un arbusto se oyen risitas. ¿Qué hacemos?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:45:55",
+          "📋:large:70:35",
+          "👽:small:75:25:float",
+          "🌳:medium:85:50"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Investigar el cartel!",
+          "target": "moral-choice-2",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "moral-choice-2": {
+      "type": "moral",
+      "title": "¿Qué hacer con el cartel falso?",
+      "speaker": "sofia",
+      "text": "El cartel dice que el colegio está cerrado, pero parece sospechoso. ¿Cómo reaccionan Hugo y Sofía?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:45:55",
+          "📋:large:70:35",
+          "🔍:medium:50:20:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Comparar el cartel con uno real — ¡seguro que hay diferencias!",
+          "target": "see-through",
+          "emoji": "👀",
+          "moralValue": "cleverness",
+          "points": 2
+        },
+        {
+          "text": "Contar los errores del cartel para demostrar que es falso",
+          "target": "verify-sign",
+          "emoji": "🔢",
+          "moralValue": "verification",
+          "points": 1
+        },
+        {
+          "text": "Casi creerlo... quizá sea verdad",
+          "target": "almost-fooled",
+          "emoji": "😰",
+          "moralValue": "gullibility",
+          "points": 0
+        }
+      ]
+    },
+
+    "see-through": {
+      "type": "puzzle",
+      "title": "¡Encuentra las diferencias!",
+      "speaker": "sofia",
+      "text": "Sofía saca su móvil y busca una foto del cartel real del colegio. «¡Vamos a comparar!»\n\n¡Encuentra las 4 diferencias entre el cartel real y el falso!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:50:55",
+          "🔍:medium:60:30:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "diferencias",
+        "question": "¡Toca las 4 diferencias en el cartel de la derecha! 👀",
+        "columns": 5,
+        "original": [
+          "🏫", "📝", "✏️", "📚", "🎒",
+          "👩‍🏫", "🔔", "📖", "⏰", "✅",
+          "📐", "🎓", "📏", "🌟", "😊",
+          "🖊️", "📚", "🗓️", "✏️", "🎒"
+        ],
+        "modified": [
+          "🏫", "📝", "✏️", "📚", "🎒",
+          "👩‍🏫", "🔕", "📖", "⏰", "❌",
+          "📐", "🎓", "📏", "🌧️", "😊",
+          "🖊️", "📚", "🗓️", "✏️", "💀"
+        ],
+        "differences": [6, 9, 13, 19],
+        "successTarget": "bridge-crossing",
+        "successText": "¡¡Increíble!! 🎉 ¡El cartel es FALSO! ¡Sofía lo ha demostrado!"
+      }
+    },
+
+    "verify-sign": {
+      "type": "puzzle",
+      "title": "¡Cuenta los errores!",
+      "speaker": "hugo",
+      "text": "Hugo mira el cartel con atención. «¡Este cartel está lleno de errores! Vamos a contarlos para demostrar que es falso.»\n\n¡Cuenta todas las cruces rojas ❌ que hay en el cartel!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:50:55",
+          "📋:large:70:35",
+          "❌:small:65:25:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¿Cuántas cruces ❌ hay en el cartel falso?",
+        "targetEmoji": "❌",
+        "targetCount": 5,
+        "distractorEmoji": "✅",
+        "distractorCount": 3,
+        "areaHeight": 220,
+        "options": [
+          { "value": "3", "label": "3 cruces", "emoji": "3️⃣" },
+          { "value": "4", "label": "4 cruces", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 cruces", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 cruces", "emoji": "6️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "bridge-crossing",
+        "successText": "¡¡Correcto!! 🎉 ¡5 errores! ¡El cartel es claramente falso!",
+        "failText": "Cuenta solo las ❌ rojas, no las ✅ verdes..."
+      }
+    },
+
+    "almost-fooled": {
+      "type": "puzzle",
+      "title": "¡No te dejes engañar!",
+      "speaker": "sofia",
+      "text": "Hugo casi se lo cree, pero Sofía le agarra del brazo.\n\n«¡Espera! Mira bien estas cosas del cartel. ¿Cuál de estas NO es material escolar de verdad?»",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:40:55",
+          "🧒:large:60:55",
+          "📋:large:75:30"
+        ]
+      },
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "¿Cuál NO pertenece al colegio? 🔍",
+        "items": ["📚", "✏️", "📐", "🧸"],
+        "intrusoIndex": 3,
+        "reason": "¡El peluche 🧸 no es material escolar! El cartel falso tiene cosas que no pegan.",
+        "successTarget": "bridge-crossing",
+        "successText": "¡¡Bien visto!! 🎉 ¡El cartel es falso! Tiene cosas que no son del cole.",
+        "failText": "Piensa: ¿qué usas en clase y qué NO usas?"
+      }
+    },
+
+    "bridge-crossing": {
+      "type": "puzzle",
+      "title": "¡El puente del arroyo!",
+      "speaker": "hugo",
+      "text": "Hugo y Sofía llegan a un pequeño arroyo. ¡El puente está roto!\n\n«¡Tenemos que saltar al otro lado!» dice Hugo. «¡Lanza mi mochila primero para que no pese!»\n\n¡Lanza la mochila hasta donde están los libros al otro lado!",
+      "illustration": {
+        "background": "bg-bridge",
+        "elements": [
+          "🧒:large:20:55",
+          "👧:large:35:55",
+          "🌊:medium:50:70",
+          "📚:medium:80:60"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza la mochila 🎒 hasta los libros 📚!",
+        "projectileEmoji": "🎒",
+        "targetEmoji": "📚",
+        "obstacleEmoji": "🌊",
+        "gapColor": "#5dade2",
+        "groundColor": "#8B7355",
+        "successTarget": "final-stretch",
+        "successText": "¡¡GENIAL!! 🎉 ¡La mochila llega al otro lado!",
+        "failTextShort": "¡La mochila cayó al agua! 🎒🌊 ¡Más fuerza!",
+        "failTextLong": "¡La mochila pasó de largo! 🎒💨 ¡Menos fuerza!"
+      }
+    },
+
+    "final-stretch": {
+      "type": "narrative",
+      "title": "¡Ya casi llegan!",
+      "speaker": "sofia",
+      "text": "¡Lo han conseguido! Hugo y Sofía cruzan el arroyo y ya pueden ver el colegio al final de la calle.\n\n«¡Mira, se ven las ventanas!» dice Sofía emocionada. «¡Vamos a llegar a tiempo!»\n\nPero justo cuando están a punto de llegar... ¡Rafa aparece una última vez! Esta vez parece diferente — está solo, sin Tito ni Nana.",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:30:55",
+          "👧:large:50:55",
+          "🏫:large:80:30",
+          "☀️:medium:15:10:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Hablar con Rafa",
+          "target": "rafa-challenge",
+          "emoji": "💬"
+        }
+      ]
+    },
+
+    "rafa-challenge": {
+      "type": "narrative",
+      "title": "Rafa solo",
+      "speaker": "rafa",
+      "text": "Rafa está sentado en un banco, sin sus gafas de sol. Parece... ¿triste?\n\n«Oye...» dice en voz baja. «Tito y Nana se han ido al cole sin mí. Dicen que ya no quieren hacer el vago.»\n\nRafa mira al suelo. «Yo... es que las mates se me dan fatal. Por eso digo que el cole es aburrido. Pero en realidad...»\n\nNo termina la frase. ¿Qué hacen Hugo y Sofía?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "😎:large:50:50",
+          "🧒:large:20:55",
+          "👧:large:80:55",
+          "😢:small:55:35:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Responder a Rafa",
+          "target": "moral-choice-3",
+          "emoji": "💭"
+        }
+      ]
+    },
+
+    "moral-choice-3": {
+      "type": "moral",
+      "title": "¿Qué hacer con Rafa?",
+      "speaker": "hugo",
+      "text": "Rafa está triste y solo. Resulta que no le va bien en mates y por eso dice que el cole es aburrido. ¿Qué deberían hacer Hugo y Sofía?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:45:55",
+          "😎:large:70:55",
+          "❤️:small:48:20:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Enseñarle algo divertido para que vea que aprender mola",
+          "target": "teach-rafa",
+          "emoji": "📚",
+          "moralValue": "inclusion",
+          "points": 2
+        },
+        {
+          "text": "Decirle que se apure, ¡que llegan tarde!",
+          "target": "rush-past",
+          "emoji": "⏰",
+          "moralValue": "impatience",
+          "points": 1
+        },
+        {
+          "text": "Burlarse de él como él hizo antes",
+          "target": "mock-rafa",
+          "emoji": "😏",
+          "moralValue": "revenge",
+          "points": 0
+        }
+      ]
+    },
+
+    "teach-rafa": {
+      "type": "puzzle",
+      "title": "¡Aprender es divertido!",
+      "speaker": "sofia",
+      "text": "Sofía se sienta al lado de Rafa y saca unas tarjetas de su mochila.\n\n«¡Mira, Rafa! Aprender es como un juego. Cada cosa tiene su pareja. ¿Quieres probar?»\n\nRafa asiente tímidamente. ¡Encuentra las parejas de objetos del cole!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:30:55",
+          "😎:large:55:55",
+          "🧒:large:75:55",
+          "💡:small:45:25:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Encuentra las parejas de material escolar! 🧠",
+        "pairs": ["🔬", "📐", "🎨", "🌍"],
+        "columns": 4,
+        "successTarget": "school-gate",
+        "successText": "¡¡Genial!! 🎉 ¡Rafa ha encontrado todas las parejas! «¡Esto mola!» dice sonriendo."
+      }
+    },
+
+    "rush-past": {
+      "type": "puzzle",
+      "title": "¡Deprisa, deprisa!",
+      "speaker": "hugo",
+      "text": "«¡Venga Rafa, no hay tiempo! ¡Síguenos si quieres, pero corre!» dice Hugo.\n\nRafa duda un momento pero se levanta y empieza a seguirles.\n\n¡Repite la secuencia de pasos para llegar corriendo al cole!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:45:55",
+          "😎:large:65:55",
+          "🏫:medium:85:25"
+        ]
+      },
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Repite la secuencia para correr al cole! 🏃",
+        "sequence": [0, 2, 1, 3],
+        "colors": ["#e74c3c", "#3498db", "#2ecc71", "#f39c12"],
+        "labels": ["⬆️ Arriba", "⬇️ Abajo", "⬅️ Izquierda", "➡️ Derecha"],
+        "playbackSpeed": 700,
+        "successTarget": "school-gate",
+        "successText": "¡¡Perfecto!! 🎉 ¡Corren los tres juntos hacia el cole!",
+        "failText": "¡Recuerda el orden! Mira bien la secuencia..."
+      }
+    },
+
+    "mock-rafa": {
+      "type": "puzzle",
+      "title": "Eso no estuvo bien...",
+      "speaker": "sofia",
+      "text": "Hugo se ríe de Rafa: «¡Ja! ¡Ahora eres tú el que está solo!»\n\nRafa baja la mirada y se aleja despacio. Sofía mira a Hugo con tristeza.\n\n«Hugo... eso no ha estado bien. Él se sentía mal.»\n\nHugo se arrepiente. Piensa: ¿qué habría sido mejor?",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🧒:large:35:55",
+          "👧:large:55:55",
+          "😎:medium:80:60",
+          "😢:small:82:50"
+        ]
+      },
+      "puzzle": {
+        "inputType": "choices",
+        "question": "¿Qué habría sido mejor hacer?",
+        "options": [
+          { "value": "ensenar", "label": "Enseñarle algo divertido 📚", "emoji": "💡" },
+          { "value": "reirse", "label": "Reírse más fuerte 😂", "emoji": "🤣" },
+          { "value": "irse", "label": "Irse sin decir nada 🚶", "emoji": "👋" }
+        ],
+        "correctAnswer": "ensenar",
+        "successTarget": "school-gate",
+        "successText": "¡¡Exacto!! 🎉 Enseñar y compartir siempre es mejor que burlarse.",
+        "failText": "Piensa en cómo te sentirías tú si alguien se burlara..."
+      }
+    },
+
+    "school-gate": {
+      "type": "puzzle",
+      "title": "¡La puerta del colegio!",
+      "speaker": "hugo",
+      "text": "¡Hugo y Sofía llegan a la puerta del colegio justo a tiempo! Suena la campana.\n\nEn la puerta hay un mural con palabras escondidas sobre todas las cosas que van a aprender hoy. ¡Encuéntralas!",
+      "illustration": {
+        "background": "bg-crystal",
+        "elements": [
+          "🏫:large:50:25",
+          "🧒:large:30:60",
+          "👧:large:65:60",
+          "🔔:medium:50:10:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra las palabras del cole! 🔤🏫",
+        "columns": 7,
+        "grid": [
+          "C", "I", "E", "N", "C", "I", "A",
+          "B", "P", "I", "N", "T", "A", "R",
+          "S", "U", "M", "A", "R", "F", "D",
+          "L", "A", "M", "I", "G", "O", "S",
+          "E", "H", "J", "K", "Q", "V", "W",
+          "E", "T", "X", "Y", "Z", "B", "N",
+          "R", "G", "P", "U", "O", "D", "F"
+        ],
+        "words": [
+          { "word": "CIENCIA", "row": 0, "col": 0, "direction": "horizontal" },
+          { "word": "PINTAR", "row": 1, "col": 1, "direction": "horizontal" },
+          { "word": "SUMAR", "row": 2, "col": 0, "direction": "horizontal" },
+          { "word": "AMIGOS", "row": 3, "col": 1, "direction": "horizontal" },
+          { "word": "LEER", "row": 3, "col": 0, "direction": "vertical" }
+        ],
+        "successTarget": "ending-check",
+        "successText": "¡¡Genial!! 🎉 ¡CIENCIA, PINTAR, SUMAR, AMIGOS y LEER! ¡El cole es increíble!"
+      }
+    },
+
+    "ending-check": {
+      "type": "narrative",
+      "title": "¡Entramos al cole!",
+      "speaker": "hugo",
+      "text": "La campana suena y las puertas del colegio se abren. Hugo y Sofía se miran con una gran sonrisa.\n\n¡Lo han conseguido! Han llegado a tiempo a pesar de todas las travesuras de Rafa.\n\nPero... ¿qué pasará con Rafa?",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🏫:large:50:20",
+          "🧒:large:30:55",
+          "👧:large:60:55",
+          "🔔:medium:50:8:float",
+          "✨:small:40:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ver el final!",
+          "target": "ending-best",
+          "emoji": "🌟",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 4
+        }
+      ]
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡Todos juntos en clase!",
+      "text": "¡SORPRESA! Justo antes de que se cierre la puerta... ¡Rafa entra corriendo!\n\n«¡Esperad!» grita. «Yo... yo también quiero aprender. Hugo y Sofía me han enseñado que el cole puede ser divertido.»\n\nLa profesora sonríe. «¡Bienvenido, Rafa! Siéntate con Hugo y Sofía.»\n\nRafa se sienta entre ellos, nervioso pero sonriente. Ese día descubre que las mates pueden ser un juego, que dibujar es genial, y que los amigos de verdad te ayudan a crecer.\n\nTito y Nana, que ya estaban en clase, le saludan con la mano. «¡Te guardamos sitio!»\n\n🌟 Hugo y Sofía aprendieron algo importante: la amabilidad puede cambiar a cualquiera. Y Rafa aprendió que nunca es tarde para empezar a aprender. 🌟\n\n¡FIN! 🎉🎊✨",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🧒:large:25:55",
+          "👧:large:45:55",
+          "😎:large:65:55",
+          "🧢:medium:80:55",
+          "🎀:medium:15:55",
+          "🏫:large:50:15",
+          "🎉:medium:35:20:float",
+          "🎊:medium:65:20:float",
+          "✨:small:50:25:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez desde el principio!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "¡Llegaron a tiempo!",
+      "text": "Hugo y Sofía entran al colegio justo cuando suena la última campana. ¡Lo han conseguido!\n\n«¡Uf, por poco!» dice Hugo sentándose en su silla.\n\n«¡Ha sido toda una aventura!» se ríe Sofía.\n\nMientras la profesora empieza la clase, Hugo mira por la ventana. Ahí fuera, apoyado en la verja, está Rafa. Observa la clase con curiosidad, como si quisiera entrar pero no se atreviera.\n\nHugo le saluda con la mano. Rafa duda... y le devuelve el saludo, muy despacio.\n\n✨ Quizá mañana, Rafa se atreva a entrar. ✨\n\n¡FIN! 🌟",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🧒:large:30:55",
+          "👧:large:55:55",
+          "🏫:large:50:15",
+          "😎:medium:85:60",
+          "✨:small:50:25:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez desde el principio!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    }
+  }
+}

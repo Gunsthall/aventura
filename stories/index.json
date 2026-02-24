@@ -31,6 +31,14 @@
       "coverEmoji": "🧒🐉💎",
       "ageRange": "5-8",
       "tags": ["valentía", "amabilidad", "fantasía", "aventura"]
+    },
+    {
+      "id": "camino-al-cole",
+      "title": "¡Camino al Cole!",
+      "description": "Hugo y Sofía quieren llegar al colegio, pero unos niños traviesos intentan retrasarles. ¡Ayúdales!",
+      "coverEmoji": "🧒👧🏫",
+      "ageRange": "5-8",
+      "tags": ["educación", "amistad", "valentía", "aprender"]
     }
   ]
 }
