@@ -7,7 +7,7 @@
 const PEER_SERVER = {
   host: 'aventura-peer-server.onrender.com',
   port: 443,
-  path: '/',
+  path: '/peerjs',
   secure: true,
 };
 
