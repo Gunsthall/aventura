@@ -2,6 +2,29 @@
    CONNECTION - PeerJS WebRTC Manager
    ============================================= */
 
+const ICE_SERVERS = [
+  { urls: 'stun:stun.l.google.com:19302' },
+  { urls: 'stun:stun1.l.google.com:19302' },
+  // Free TURN servers for NAT traversal
+  {
+    urls: 'turn:openrelay.metered.ca:80',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:443',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:443?transport=tcp',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  }
+];
+
+const JOIN_TIMEOUT_MS = 15000;
+
 class ConnectionManager {
   constructor() {
     this.peer = null;
@@ -51,12 +74,7 @@ class ConnectionManager {
       this.isHost = true;
 
       this.peer = new Peer(peerId, {
-        config: {
-          iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' },
-            { urls: 'stun:stun1.l.google.com:19302' }
-          ]
-        }
+        config: { iceServers: ICE_SERVERS }
       });
 
       this.peer.on('open', () => {
@@ -110,14 +128,22 @@ class ConnectionManager {
       this.roomCode = code.toUpperCase().trim();
       const targetId = 'AVENTURA-' + this.roomCode;
       this.isHost = false;
+      let settled = false;
+
+      const timeout = setTimeout(() => {
+        if (!settled) {
+          settled = true;
+          const err = new Error('No se pudo conectar a la sala. Verifica el codigo e intenta de nuevo.');
+          this.onError?.(err);
+          reject(err);
+          if (this.peer && !this.peer.destroyed) {
+            this.peer.destroy();
+          }
+        }
+      }, JOIN_TIMEOUT_MS);
 
       this.peer = new Peer(undefined, {
-        config: {
-          iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' },
-            { urls: 'stun:stun1.l.google.com:19302' }
-          ]
-        }
+        config: { iceServers: ICE_SERVERS }
       });
 
       this.peer.on('open', () => {
@@ -137,17 +163,41 @@ class ConnectionManager {
         const conn = this.peer.connect(targetId, { reliable: true });
         if (conn) {
           this.dataConnection = conn;
-          this._setupDataConnection(conn);
-          resolve(this.roomCode);
+          this._setupDataConnection(conn, () => {
+            // Resolve only when data connection is actually open
+            if (!settled) {
+              settled = true;
+              clearTimeout(timeout);
+              resolve(this.roomCode);
+            }
+          });
         } else {
-          reject(new Error('Error al establecer conexión de datos'));
+          if (!settled) {
+            settled = true;
+            clearTimeout(timeout);
+            reject(new Error('Error al establecer conexion de datos'));
+          }
         }
       });
 
       this.peer.on('error', (err) => {
         console.error('PeerJS error:', err);
-        this.onError?.(err);
-        reject(err);
+        if (!settled) {
+          settled = true;
+          clearTimeout(timeout);
+          // Translate common PeerJS errors to user-friendly messages
+          let message = err.message || 'Error de conexion';
+          if (err.type === 'peer-unavailable') {
+            message = 'Sala no encontrada. Verifica que el codigo sea correcto y que el otro jugador este esperando.';
+          } else if (err.type === 'network') {
+            message = 'Error de red. Verifica tu conexion a internet.';
+          } else if (err.type === 'server-error') {
+            message = 'Error del servidor de señalizacion. Intenta de nuevo en unos segundos.';
+          }
+          const userErr = new Error(message);
+          this.onError?.(userErr);
+          reject(userErr);
+        }
       });
 
       this.peer.on('disconnected', () => {
@@ -159,9 +209,10 @@ class ConnectionManager {
     });
   }
 
-  _setupDataConnection(conn) {
+  _setupDataConnection(conn, onOpen) {
     conn.on('open', () => {
       this.connected = true;
+      onOpen?.();
       this.onConnectionReady?.();
     });
 

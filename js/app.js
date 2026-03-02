@@ -269,7 +269,7 @@
 
       try {
         await connectionManager.joinRoom(code);
-        showJoinStatus('¡Conectado! Estableciendo canal de datos...', 'success');
+        showJoinStatus('¡Conectado!', 'success');
       } catch (err) {
         showJoinStatus(err.message || 'Error al conectar', 'error');
         els.btnConnect.disabled = false;
