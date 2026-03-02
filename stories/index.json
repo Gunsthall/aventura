@@ -39,6 +39,14 @@
       "coverEmoji": "🧒👧🏫",
       "ageRange": "5-8",
       "tags": ["educación", "amistad", "valentía", "aprender"]
+    },
+    {
+      "id": "atletismo-secreto",
+      "title": "¡Atletismo Secreto!",
+      "description": "Leo y Marta se cuelan en una competición de atletismo y tienen que participar en pruebas increíbles: carreras, saltos, lanzamientos... ¡sin que nadie descubra su secreto!",
+      "coverEmoji": "🏃🏟️🥇",
+      "ageRange": "5-8",
+      "tags": ["deporte", "atletismo", "amistad", "honestidad", "deportividad"]
     }
   ]
 }
