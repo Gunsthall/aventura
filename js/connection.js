@@ -2,6 +2,15 @@
    CONNECTION - PeerJS WebRTC Manager
    ============================================= */
 
+// Self-hosted PeerJS signaling server (Render free tier)
+// Fallback: default PeerJS cloud (0.peerjs.com)
+const PEER_SERVER = {
+  host: 'aventura-peer-server.onrender.com',
+  port: 443,
+  path: '/',
+  secure: true,
+};
+
 const ICE_SERVERS = [
   { urls: 'stun:stun.l.google.com:19302' },
   { urls: 'stun:stun1.l.google.com:19302' },
@@ -43,6 +52,17 @@ class ConnectionManager {
     this.onError = null;
   }
 
+  _peerOptions() {
+    return {
+      host: PEER_SERVER.host,
+      port: PEER_SERVER.port,
+      path: PEER_SERVER.path,
+      secure: PEER_SERVER.secure,
+      config: { iceServers: ICE_SERVERS },
+      debug: 1,
+    };
+  }
+
   async initMedia() {
     try {
       this.localStream = await navigator.mediaDevices.getUserMedia({
@@ -73,15 +93,15 @@ class ConnectionManager {
       const peerId = 'AVENTURA-' + this.roomCode;
       this.isHost = true;
 
-      this.peer = new Peer(peerId, {
-        config: { iceServers: ICE_SERVERS }
-      });
+      this.peer = new Peer(peerId, this._peerOptions());
 
       this.peer.on('open', () => {
+        console.log('[Host] Connected to signaling server, room:', this.roomCode);
         resolve(this.roomCode);
       });
 
       this.peer.on('call', (call) => {
+        console.log('[Host] Incoming media call');
         call.answer(this.localStream);
         call.on('stream', (remoteStream) => {
           this.onRemoteStream?.(remoteStream);
@@ -91,6 +111,7 @@ class ConnectionManager {
       });
 
       this.peer.on('connection', (conn) => {
+        console.log('[Host] Incoming data connection');
         this.dataConnection = conn;
         this._setupDataConnection(conn);
       });
@@ -109,6 +130,7 @@ class ConnectionManager {
       });
 
       this.peer.on('disconnected', () => {
+        console.log('[Host] Disconnected from signaling server');
         if (this.connected) {
           this.connected = false;
           this.onConnectionLost?.();
@@ -142,11 +164,12 @@ class ConnectionManager {
         }
       }, JOIN_TIMEOUT_MS);
 
-      this.peer = new Peer(undefined, {
-        config: { iceServers: ICE_SERVERS }
-      });
+      this.peer = new Peer(undefined, this._peerOptions());
 
-      this.peer.on('open', () => {
+      this.peer.on('open', (id) => {
+        console.log('[Guest] Connected to signaling server as:', id);
+        console.log('[Guest] Connecting to room:', targetId);
+
         // Media call
         if (this.localStream) {
           const call = this.peer.call(targetId, this.localStream);
@@ -168,6 +191,7 @@ class ConnectionManager {
             if (!settled) {
               settled = true;
               clearTimeout(timeout);
+              console.log('[Guest] Data channel open!');
               resolve(this.roomCode);
             }
           });
