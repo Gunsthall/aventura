@@ -1,15 +1,17 @@
 /* =============================================
    CONNECTION - PeerJS WebRTC Manager
+   Wake-up, keep-alive, and reconnect engine
    ============================================= */
 
 // Self-hosted PeerJS signaling server (Render free tier)
-// Fallback: default PeerJS cloud (0.peerjs.com)
 const PEER_SERVER = {
   host: 'aventura-peer-server.onrender.com',
   port: 443,
-  path: '/',
+  path: '/peer',
   secure: true,
 };
+
+const HEALTH_URL = 'https://aventura-peer-server.onrender.com/health';
 
 const ICE_SERVERS = [
   { urls: 'stun:stun.l.google.com:19302' },
@@ -32,7 +34,10 @@ const ICE_SERVERS = [
   }
 ];
 
-const JOIN_TIMEOUT_MS = 15000;
+const JOIN_TIMEOUT_MS = 20000;
+const KEEPALIVE_INTERVAL_MS = 4 * 60 * 1000; // 4 minutes
+const RECONNECT_MAX_ATTEMPTS = 5;
+const RECONNECT_BASE_DELAY_MS = 2000;
 
 class ConnectionManager {
   constructor() {
@@ -43,6 +48,8 @@ class ConnectionManager {
     this.isHost = false;
     this.roomCode = null;
     this.connected = false;
+    this._keepAliveTimer = null;
+    this._reconnecting = false;
 
     // Callbacks
     this.onRemoteStream = null;
@@ -50,6 +57,10 @@ class ConnectionManager {
     this.onConnectionReady = null;
     this.onConnectionLost = null;
     this.onError = null;
+    // Reconnect callbacks
+    this.onReconnectAttempt = null;  // (attempt, maxAttempts)
+    this.onReconnected = null;
+    this.onReconnectFailed = null;
   }
 
   _peerOptions() {
@@ -63,6 +74,53 @@ class ConnectionManager {
     };
   }
 
+  // ---- Server Wake-up ----
+  // Render free tier spins down after 15min inactivity.
+  // Fetch /health to wake it before any Peer() connection.
+  static async wakeServer(timeoutMs = 35000) {
+    const start = Date.now();
+    const retryDelay = 2000;
+    while (Date.now() - start < timeoutMs) {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+        const resp = await fetch(HEALTH_URL, { signal: controller.signal });
+        clearTimeout(timer);
+        if (resp.ok) {
+          console.log('[Wake] Server is ready');
+          return true;
+        }
+      } catch (_) {
+        // Server still waking up
+      }
+      console.log('[Wake] Server not ready, retrying...');
+      await new Promise(r => setTimeout(r, retryDelay));
+    }
+    console.warn('[Wake] Server did not respond within timeout');
+    return false;
+  }
+
+  // ---- Keep-alive ----
+  // Ping /health every 4 minutes to prevent Render spin-down
+  _startKeepAlive() {
+    this._stopKeepAlive();
+    this._keepAliveTimer = setInterval(async () => {
+      try {
+        await fetch(HEALTH_URL, { method: 'GET' });
+      } catch (_) {
+        // Ignore - just a keep-alive
+      }
+    }, KEEPALIVE_INTERVAL_MS);
+  }
+
+  _stopKeepAlive() {
+    if (this._keepAliveTimer) {
+      clearInterval(this._keepAliveTimer);
+      this._keepAliveTimer = null;
+    }
+  }
+
+  // ---- Media ----
   async initMedia() {
     try {
       this.localStream = await navigator.mediaDevices.getUserMedia({
@@ -72,12 +130,12 @@ class ConnectionManager {
       return this.localStream;
     } catch (err) {
       console.warn('Camera/mic access denied:', err.message);
-      // Create a silent empty stream as fallback
       this.localStream = new MediaStream();
       return this.localStream;
     }
   }
 
+  // ---- Room Code ----
   _generateCode() {
     const chars = 'ABCDFGHJKLMNPQRSTVWXYZ';
     const nums = '23456789';
@@ -87,7 +145,11 @@ class ConnectionManager {
     return code;
   }
 
-  createRoom() {
+  // ---- Create Room (Host) ----
+  async createRoom() {
+    // Wake server first
+    await ConnectionManager.wakeServer();
+
     return new Promise((resolve, reject) => {
       this.roomCode = this._generateCode();
       const peerId = 'AVENTURA-' + this.roomCode;
@@ -97,11 +159,16 @@ class ConnectionManager {
 
       this.peer.on('open', () => {
         console.log('[Host] Connected to signaling server, room:', this.roomCode);
+        this._startKeepAlive();
         resolve(this.roomCode);
       });
 
       this.peer.on('call', (call) => {
         console.log('[Host] Incoming media call');
+        // Close old media connection if guest is reconnecting
+        if (this.mediaConnection) {
+          try { this.mediaConnection.close(); } catch (_) {}
+        }
         call.answer(this.localStream);
         call.on('stream', (remoteStream) => {
           this.onRemoteStream?.(remoteStream);
@@ -112,6 +179,10 @@ class ConnectionManager {
 
       this.peer.on('connection', (conn) => {
         console.log('[Host] Incoming data connection');
+        // Close old data connection if guest is reconnecting
+        if (this.dataConnection && this.dataConnection.open) {
+          try { this.dataConnection.close(); } catch (_) {}
+        }
         this.dataConnection = conn;
         this._setupDataConnection(conn);
       });
@@ -119,7 +190,6 @@ class ConnectionManager {
       this.peer.on('error', (err) => {
         console.error('PeerJS error:', err);
         if (err.type === 'unavailable-id') {
-          // Code collision - try a new code
           this.peer.destroy();
           this.roomCode = this._generateCode();
           this.createRoom().then(resolve).catch(reject);
@@ -131,21 +201,25 @@ class ConnectionManager {
 
       this.peer.on('disconnected', () => {
         console.log('[Host] Disconnected from signaling server');
-        if (this.connected) {
-          this.connected = false;
-          this.onConnectionLost?.();
-          // Try to reconnect
+        // Try to reconnect to signaling server (not the same as data reconnect)
+        if (this.peer && !this.peer.destroyed) {
           setTimeout(() => {
-            if (this.peer && !this.peer.destroyed) {
-              this.peer.reconnect();
-            }
+            try { this.peer.reconnect(); } catch (_) {}
           }, 2000);
         }
       });
     });
   }
 
-  joinRoom(code) {
+  // ---- Join Room (Guest) ----
+  async joinRoom(code) {
+    // Wake server first
+    await ConnectionManager.wakeServer();
+
+    return this._connectToHost(code);
+  }
+
+  _connectToHost(code) {
     return new Promise((resolve, reject) => {
       this.roomCode = code.toUpperCase().trim();
       const targetId = 'AVENTURA-' + this.roomCode;
@@ -187,11 +261,11 @@ class ConnectionManager {
         if (conn) {
           this.dataConnection = conn;
           this._setupDataConnection(conn, () => {
-            // Resolve only when data connection is actually open
             if (!settled) {
               settled = true;
               clearTimeout(timeout);
               console.log('[Guest] Data channel open!');
+              this._startKeepAlive();
               resolve(this.roomCode);
             }
           });
@@ -209,14 +283,13 @@ class ConnectionManager {
         if (!settled) {
           settled = true;
           clearTimeout(timeout);
-          // Translate common PeerJS errors to user-friendly messages
           let message = err.message || 'Error de conexion';
           if (err.type === 'peer-unavailable') {
             message = 'Sala no encontrada. Verifica que el codigo sea correcto y que el otro jugador este esperando.';
           } else if (err.type === 'network') {
             message = 'Error de red. Verifica tu conexion a internet.';
           } else if (err.type === 'server-error') {
-            message = 'Error del servidor de señalizacion. Intenta de nuevo en unos segundos.';
+            message = 'Error del servidor. Intenta de nuevo en unos segundos.';
           }
           const userErr = new Error(message);
           this.onError?.(userErr);
@@ -225,17 +298,18 @@ class ConnectionManager {
       });
 
       this.peer.on('disconnected', () => {
-        if (this.connected) {
-          this.connected = false;
-          this.onConnectionLost?.();
-        }
+        // Don't trigger overlay here — let SyncManager's pong timeout
+        // confirm the connection is truly dead before acting
+        console.log('[Guest] Disconnected from signaling server');
       });
     });
   }
 
+  // ---- Data Connection Setup ----
   _setupDataConnection(conn, onOpen) {
     conn.on('open', () => {
       this.connected = true;
+      this._reconnecting = false;
       onOpen?.();
       this.onConnectionReady?.();
     });
@@ -245,8 +319,11 @@ class ConnectionManager {
     });
 
     conn.on('close', () => {
+      console.log('[Connection] Data channel closed');
       this.connected = false;
-      this.onConnectionLost?.();
+      // Don't call onConnectionLost immediately — let SyncManager's
+      // pong timeout (15s) confirm the connection is truly dead.
+      // SyncManager will call triggerReconnect() or show UI as needed.
     });
 
     conn.on('error', (err) => {
@@ -254,12 +331,74 @@ class ConnectionManager {
     });
   }
 
+  // ---- Guest Reconnect Engine ----
+  // Called by SyncManager when pong timeout confirms dead connection.
+  async reconnect() {
+    if (this.isHost || this._reconnecting) return;
+    if (!this.roomCode) return;
+
+    this._reconnecting = true;
+    const code = this.roomCode;
+
+    for (let attempt = 1; attempt <= RECONNECT_MAX_ATTEMPTS; attempt++) {
+      this.onReconnectAttempt?.(attempt, RECONNECT_MAX_ATTEMPTS);
+      console.log(`[Reconnect] Attempt ${attempt}/${RECONNECT_MAX_ATTEMPTS}`);
+
+      // Cleanup old peer
+      this._cleanupPeer();
+
+      // Wait with exponential backoff: 2s, 3s, 4.5s, 6.75s, 10s
+      const delay = Math.min(RECONNECT_BASE_DELAY_MS * Math.pow(1.5, attempt - 1), 10000);
+      await new Promise(r => setTimeout(r, delay));
+
+      // Wake server (Render may have spun down)
+      const awake = await ConnectionManager.wakeServer(15000);
+      if (!awake) {
+        console.log('[Reconnect] Server not reachable, will retry');
+        continue;
+      }
+
+      // Try to connect
+      try {
+        await this._connectToHost(code);
+        console.log('[Reconnect] Success!');
+        this._reconnecting = false;
+        this.onReconnected?.();
+        return;
+      } catch (err) {
+        console.log(`[Reconnect] Attempt ${attempt} failed:`, err.message);
+      }
+    }
+
+    // All attempts failed
+    this._reconnecting = false;
+    this.onReconnectFailed?.();
+  }
+
+  _cleanupPeer() {
+    try {
+      if (this.mediaConnection) this.mediaConnection.close();
+    } catch (_) {}
+    try {
+      if (this.dataConnection) this.dataConnection.close();
+    } catch (_) {}
+    try {
+      if (this.peer && !this.peer.destroyed) this.peer.destroy();
+    } catch (_) {}
+    this.mediaConnection = null;
+    this.dataConnection = null;
+    this.peer = null;
+    this.connected = false;
+  }
+
+  // ---- Send Data ----
   sendData(message) {
     if (this.dataConnection && this.dataConnection.open) {
       this.dataConnection.send(message);
     }
   }
 
+  // ---- Media Controls ----
   toggleMic() {
     if (!this.localStream) return false;
     const audioTracks = this.localStream.getAudioTracks();
@@ -278,14 +417,14 @@ class ConnectionManager {
     return enabled;
   }
 
+  // ---- Destroy ----
   destroy() {
-    if (this.mediaConnection) this.mediaConnection.close();
-    if (this.dataConnection) this.dataConnection.close();
-    if (this.peer) this.peer.destroy();
+    this._stopKeepAlive();
+    this._reconnecting = false;
+    this._cleanupPeer();
     if (this.localStream) {
       this.localStream.getTracks().forEach(t => t.stop());
     }
-    this.connected = false;
   }
 }
 

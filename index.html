@@ -202,8 +202,13 @@
   <!-- ============================================ -->
   <div id="overlay-reconnecting" class="overlay hidden">
     <div class="overlay-content">
-      <div class="spinner large"></div>
-      <p>Reconectando...</p>
+      <div id="reconnect-spinner" class="spinner large"></div>
+      <p id="reconnect-status">Reconectando...</p>
+      <p id="reconnect-attempt" class="reconnect-attempt"></p>
+      <div id="reconnect-buttons" class="reconnect-buttons hidden">
+        <button id="btn-reconnect-retry" class="btn btn-primary">Reintentar</button>
+        <button id="btn-reconnect-quit" class="btn btn-secondary">Volver al inicio</button>
+      </div>
     </div>
   </div>
 

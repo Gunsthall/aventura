@@ -58,6 +58,14 @@
     // Overlays
     overlayReconnecting: document.getElementById('overlay-reconnecting'),
     overlayLoading: document.getElementById('overlay-loading'),
+
+    // Reconnect overlay elements
+    reconnectSpinner: document.getElementById('reconnect-spinner'),
+    reconnectStatus: document.getElementById('reconnect-status'),
+    reconnectAttempt: document.getElementById('reconnect-attempt'),
+    reconnectButtons: document.getElementById('reconnect-buttons'),
+    btnReconnectRetry: document.getElementById('btn-reconnect-retry'),
+    btnReconnectQuit: document.getElementById('btn-reconnect-quit'),
   };
 
   // ---- Screen Management ----
@@ -86,6 +94,7 @@
     // Setup event listeners
     setupConnectEvents();
     setupGameEvents();
+    setupReconnectEvents();
 
     // Load story catalog
     await loadStoryCatalog();
@@ -107,7 +116,7 @@
     els.menuRoomCode.textContent = connectionManager.roomCode || '';
 
     if (!storyCatalog || storyCatalog.stories.length === 0) {
-      els.storyGrid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center">No hay aventuras disponibles todavía.</p>';
+      els.storyGrid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center">No hay aventuras disponibles todavia.</p>';
       return;
     }
 
@@ -131,7 +140,6 @@
   let _selectingStory = false; // guard against re-entrant calls
 
   async function selectStory(storyId, fromRemote = false) {
-    // Prevent infinite loop: if already selecting, bail out
     if (_selectingStory) return;
     _selectingStory = true;
 
@@ -157,7 +165,7 @@
       };
       syncManager.onStorySelected = (id) => selectStory(id, true);
 
-      // Only broadcast to remote if WE initiated the selection (not if remote told us)
+      // Only broadcast to remote if WE initiated the selection
       if (!fromRemote) {
         syncManager.broadcastStorySelect(storyId);
         setTimeout(() => syncManager.sendFullState(), 500);
@@ -173,6 +181,103 @@
     } finally {
       _selectingStory = false;
     }
+  }
+
+  // ---- Wire Reconnect Callbacks ----
+  function wireReconnectCallbacks() {
+    connectionManager.onReconnectAttempt = (attempt, max) => {
+      showReconnectOverlay(attempt, max);
+    };
+
+    connectionManager.onReconnected = () => {
+      hideReconnectOverlay();
+      // Re-wire sync after reconnect (new data connection)
+      if (syncManager) {
+        syncManager.rewire();
+        syncManager.requestState();
+      }
+      // Update status indicator
+      els.connectionStatus.classList.remove('disconnected');
+    };
+
+    connectionManager.onReconnectFailed = () => {
+      showReconnectFailed();
+    };
+
+    connectionManager.onRemoteStream = (stream) => {
+      els.remoteVideo.srcObject = stream;
+      els.remotePlaceholder.classList.add('hidden');
+    };
+
+    connectionManager.onConnectionLost = () => {
+      // Host only — shows overlay when guest disconnects
+      els.overlayReconnecting.classList.remove('hidden');
+      els.reconnectStatus.textContent = 'El otro jugador se desconecto...';
+      els.reconnectAttempt.textContent = 'Esperando reconexion...';
+      els.reconnectSpinner.classList.remove('hidden');
+      els.reconnectButtons.classList.add('hidden');
+      els.connectionStatus.classList.add('disconnected');
+    };
+
+    connectionManager.onConnectionReady = () => {
+      // Host: guest reconnected successfully
+      hideReconnectOverlay();
+      els.connectionStatus.classList.remove('disconnected');
+      window.audioManager?.connected();
+      // Send current state to reconnected guest
+      if (syncManager) {
+        setTimeout(() => syncManager.sendFullState(), 500);
+      }
+    };
+  }
+
+  function showReconnectOverlay(attempt, max) {
+    els.overlayReconnecting.classList.remove('hidden');
+    els.reconnectStatus.textContent = 'Reconectando...';
+    els.reconnectAttempt.textContent = `Intento ${attempt} de ${max}`;
+    els.reconnectSpinner.classList.remove('hidden');
+    els.reconnectButtons.classList.add('hidden');
+  }
+
+  function showReconnectFailed() {
+    els.reconnectStatus.textContent = 'No se pudo reconectar';
+    els.reconnectAttempt.textContent = '';
+    els.reconnectSpinner.classList.add('hidden');
+    els.reconnectButtons.classList.remove('hidden');
+  }
+
+  function hideReconnectOverlay() {
+    els.overlayReconnecting.classList.add('hidden');
+  }
+
+  // ---- Reconnect Button Events ----
+  function setupReconnectEvents() {
+    els.btnReconnectRetry.addEventListener('click', () => {
+      // Retry reconnection
+      connectionManager.reconnect();
+    });
+
+    els.btnReconnectQuit.addEventListener('click', () => {
+      // Destroy connection and return to connect screen
+      hideReconnectOverlay();
+      if (syncManager) {
+        syncManager.destroy();
+        syncManager = null;
+      }
+      connectionManager.destroy();
+      connectionManager = new ConnectionManager();
+      connectionManager.initMedia().then(stream => {
+        if (stream && stream.getVideoTracks().length > 0) {
+          els.localPreview.srcObject = stream;
+          els.cameraPlaceholder.classList.add('hidden');
+        }
+      });
+      showScreen('connect');
+      els.panelCreate.classList.add('hidden');
+      els.panelJoin.classList.add('hidden');
+      els.connectError.classList.add('hidden');
+      els.connectChoice.classList.remove('hidden');
+    });
   }
 
   // ---- Connection Events ----
@@ -199,11 +304,15 @@
 
         connectionManager.onConnectionLost = () => {
           els.overlayReconnecting.classList.remove('hidden');
+          els.reconnectStatus.textContent = 'El otro jugador se desconecto...';
+          els.reconnectAttempt.textContent = 'Esperando reconexion...';
+          els.reconnectSpinner.classList.remove('hidden');
+          els.reconnectButtons.classList.add('hidden');
           els.connectionStatus.classList.add('disconnected');
         };
 
         connectionManager.onError = (err) => {
-          showConnectError(err.message || 'Error de conexión');
+          showConnectError(err.message || 'Error de conexion');
         };
       } catch (err) {
         showConnectError(err.message || 'Error al crear la sala');
@@ -240,7 +349,7 @@
     async function doJoinRoom() {
       const code = els.inputRoomCode.value.trim();
       if (code.length < 4) {
-        showJoinStatus('Introduce un código de sala válido', 'error');
+        showJoinStatus('Introduce un codigo de sala valido', 'error');
         return;
       }
 
@@ -257,19 +366,14 @@
         goToMenu();
       };
 
-      connectionManager.onConnectionLost = () => {
-        els.overlayReconnecting.classList.remove('hidden');
-        els.connectionStatus.classList.add('disconnected');
-      };
-
       connectionManager.onError = (err) => {
-        showJoinStatus(err.message || 'Error de conexión', 'error');
+        showJoinStatus(err.message || 'Error de conexion', 'error');
         els.btnConnect.disabled = false;
       };
 
       try {
         await connectionManager.joinRoom(code);
-        showJoinStatus('¡Conectado!', 'success');
+        showJoinStatus('Conectado!', 'success');
       } catch (err) {
         showJoinStatus(err.message || 'Error al conectar', 'error');
         els.btnConnect.disabled = false;
@@ -320,12 +424,14 @@
   }
 
   function goToMenu() {
-    els.overlayReconnecting.classList.add('hidden');
+    hideReconnectOverlay();
     showScreen('menu');
     renderStoryMenu();
 
+    // Wire reconnect callbacks now that we're in a connected session
+    wireReconnectCallbacks();
+
     // Listen for STORY_SELECT from remote while on the menu screen
-    // (syncManager doesn't exist yet at this point)
     connectionManager.onDataReceived = (msg) => {
       if (msg?.type === 'STORY_SELECT' && msg.payload?.storyId) {
         selectStory(msg.payload.storyId, true);
@@ -364,7 +470,6 @@
   }
 
   // ---- Solo Mode (for testing without connection) ----
-  // Allow playing without a peer connection - just skip to menu
   window.addEventListener('keydown', (e) => {
     // Ctrl+Shift+S = Solo mode (skip connection)
     if (e.ctrlKey && e.shiftKey && e.key === 'S') {

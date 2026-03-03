@@ -1,9 +1,18 @@
-const { PeerServer } = require("peer");
+const express = require("express");
+const { ExpressPeerServer } = require("peer");
+const http = require("http");
 
 const port = process.env.PORT || 9000;
 
-const server = PeerServer({
-  port,
+const app = express();
+const server = http.createServer(app);
+
+// Health endpoint — used by client wake-up pings and Render health check
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok", timestamp: Date.now() });
+});
+
+const peerServer = ExpressPeerServer(server, {
   path: "/",
   allow_discovery: false,
   alive_timeout: 60000,
@@ -11,12 +20,16 @@ const server = PeerServer({
   corsOptions: { origin: "*" },
 });
 
-server.on("connection", (client) => {
+app.use("/peer", peerServer);
+
+peerServer.on("connection", (client) => {
   console.log(`Peer connected: ${client.getId()}`);
 });
 
-server.on("disconnect", (client) => {
+peerServer.on("disconnect", (client) => {
   console.log(`Peer disconnected: ${client.getId()}`);
 });
 
-console.log(`PeerJS server running on port ${port}`);
+server.listen(port, () => {
+  console.log(`PeerJS server running on port ${port}`);
+});

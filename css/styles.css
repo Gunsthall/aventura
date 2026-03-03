@@ -981,6 +981,21 @@ body {
   font-size: 1.1rem;
 }
 
+.reconnect-attempt {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.reconnect-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.reconnect-buttons.hidden {
+  display: none;
+}
+
 /* =============================================
    CONFETTI
    ============================================= */
