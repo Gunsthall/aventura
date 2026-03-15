@@ -170,19 +170,29 @@ class PuzzleLanzar {
       sweepRAF = requestAnimationFrame(sweep);
     };
 
+    // === Physics scale factor ===
+    // Physics values (maxPower, gravity) were authored for a ~400px arena.
+    // Scale them so the projectile covers the same *fraction* of the arena
+    // regardless of screen size.  range ∝ speed²/gravity; scaling both by
+    // the same factor makes range ∝ arenaW.
+    const REF_WIDTH = 400;
+    const getScale = function() { return arena.offsetWidth / REF_WIDTH; };
+
     // === Preview Arc ===
     const drawPreviewArc = function(angleDeg) {
       arena.querySelectorAll('.lanzar-preview-dot').forEach(function(d) { d.remove(); });
       const arenaW = arena.offsetWidth;
+      const scale = getScale();
       const angleRad = angleDeg * Math.PI / 180;
-      const speed = cfg.maxPower * 0.6;
+      const speed = cfg.maxPower * scale * 0.6;
       const vx = speed * Math.cos(angleRad);
       const vy = speed * Math.sin(angleRad);
+      const g = cfg.gravity * scale;
       const startX = arenaW * startLeftPct / 100;
 
       for (let t = 0.05; t < 2; t += 0.08) {
         const x = startX + vx * t;
-        const y = vy * t - 0.5 * cfg.gravity * t * t;
+        const y = vy * t - 0.5 * g * t * t;
         if (y < -10) break;
         if (x > arenaW) break;
         const dot = document.createElement('div');
@@ -211,8 +221,9 @@ class PuzzleLanzar {
     // === Launch ===
     const doLaunch = function() {
       const arenaW = arena.offsetWidth;
+      const scale = getScale();
       const angleRad = selectedAngle * Math.PI / 180;
-      const speed = cfg.maxPower * (power / 100);
+      const speed = cfg.maxPower * scale * (power / 100);
       let vx = speed * Math.cos(angleRad);
       let vy = speed * Math.sin(angleRad);
       const startX = arenaW * startLeftPct / 100;
@@ -232,7 +243,7 @@ class PuzzleLanzar {
 
         x += vx * dt;
         y += vy * dt;
-        vy -= cfg.gravity * dt;
+        vy -= cfg.gravity * scale * dt;
 
         const px = startX + x;
         const py = groundH + y;
