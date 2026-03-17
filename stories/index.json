@@ -47,6 +47,14 @@
       "coverEmoji": "🏃🏟️🥇",
       "ageRange": "5-8",
       "tags": ["deporte", "atletismo", "amistad", "honestidad", "deportividad"]
+    },
+    {
+      "id": "campamento-salvaje",
+      "title": "¡Campamento Salvaje!",
+      "description": "Lucía, Noa y Valentina se van de acampada a la montaña. Cruzarán ríos, explorarán cuevas, verán estrellas y descubrirán que cuidar la naturaleza y a los amigos es la mejor aventura.",
+      "coverEmoji": "🏕️🌲🦌",
+      "ageRange": "5-8",
+      "tags": ["naturaleza", "amistad", "animales", "aventura", "medio ambiente"]
     }
   ]
 }

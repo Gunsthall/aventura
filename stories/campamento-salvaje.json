@@ -1,0 +1,795 @@
+{
+  "meta": {
+    "id": "campamento-salvaje",
+    "title": "¡Campamento Salvaje!",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "lucia": { "name": "Lucía", "emoji": "👧", "color": "#e74c3c" },
+    "noa": { "name": "Noa", "emoji": "👩‍🦱", "color": "#27ae60" },
+    "valentina": { "name": "Valentina", "emoji": "👱‍♀️", "color": "#3498db" },
+    "narradora": { "name": "Narradora", "emoji": "📖", "color": "#8e44ad" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "narrative",
+      "title": "¡Nos vamos de acampada!",
+      "speaker": "lucia",
+      "text": "Lucía, Noa y Valentina son tres amigas inseparables. 👧👩‍🦱👱‍♀️\n\nHoy es un día MUY especial: ¡su primera acampada SOLAS en la montaña! Sin padres, sin profes... ¡solo ellas tres y la naturaleza! 🏕️🌲\n\n«¡He estudiado todas las plantas del bosque!» dice Noa, enseñando su cuaderno de dibujos. 📓\n\n«¡Y yo he inventado canciones para el camino!» ríe Valentina. 🎵\n\n«¡Pues venga, equipo!» dice Lucía, ajustándose la mochila. «¡Primero hay que preparar bien las mochilas!»",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "🏕️:xlarge:50:20",
+          "🌲:medium:10:35",
+          "🌲:medium:90:35",
+          "☀️:medium:50:8:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Preparar las mochilas!",
+          "target": "preparar-mochila",
+          "emoji": "🎒"
+        }
+      ]
+    },
+
+    "preparar-mochila": {
+      "type": "puzzle",
+      "title": "¡Preparar la mochila!",
+      "speaker": "noa",
+      "text": "«¡Esperad!» dice Noa. «No podemos meter todo de cualquier manera. Hay un ORDEN para preparar la mochila de acampada.» 🎒\n\n«Si ponemos las cosas pesadas arriba, nos dolerá la espalda. Y si la cantimplora queda al fondo, ¡no podremos beber agua!»\n\n¡Ordena los pasos para preparar la mochila correctamente!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👩‍🦱:large:30:55",
+          "🎒:xlarge:65:40",
+          "🧥:small:50:65",
+          "🥪:small:75:65",
+          "🔦:small:85:55:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarHistoria",
+        "question": "¡Ordena los pasos para preparar la mochila! 🎒",
+        "scenes": [
+          { "emoji": "🧥", "text": "Poner el saco de dormir abajo del todo (lo más grande)" },
+          { "emoji": "👕", "text": "Encima la ropa y las cosas pesadas (cerca de la espalda)" },
+          { "emoji": "🥪", "text": "La comida y el botiquín en el medio" },
+          { "emoji": "💧", "text": "La cantimplora en el bolsillo lateral (fácil de coger)" },
+          { "emoji": "🔦", "text": "La linterna y el mapa arriba del todo (por si los necesitas rápido)" }
+        ],
+        "successTarget": "camino-bosque",
+        "successText": "¡¡Perfecto!! 🎉 ¡Las mochilas están listas! ¡Vamos allá! 🎒✨",
+        "failText": "Pista: piensa en qué necesitas coger primero y qué puede ir al fondo..."
+      }
+    },
+
+    "camino-bosque": {
+      "type": "narrative",
+      "title": "El camino del bosque",
+      "speaker": "narradora",
+      "text": "Las tres amigas caminan por un sendero rodeado de árboles enormes. 🌲🌳\n\nEl sol se filtra entre las hojas creando lunares de luz en el suelo. Se oyen pájaros cantando y un arroyo lejano. 🎵💧\n\n«¡Mirad!» susurra Noa señalando. «¡Huellas de ciervo!» 🦌\n\n«¡Y ahí hay setas!» dice Valentina. «¡Pero no las toquéis! Pueden ser venenosas.» 🍄\n\nDe repente, Lucía se para. «¡Ssshh! ¿Oís eso?» Un pequeño pío-pío viene de entre los arbustos... 🐦",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:20:55",
+          "👩‍🦱:large:45:55",
+          "👱‍♀️:large:70:55",
+          "🌲:xlarge:5:25",
+          "🌳:xlarge:90:25",
+          "🍄:small:60:70",
+          "🦌:small:85:45:float",
+          "🐦:small:35:35:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Investigar el sonido",
+          "target": "moral-pajaro",
+          "emoji": "🐦"
+        }
+      ]
+    },
+
+    "moral-pajaro": {
+      "type": "moral",
+      "title": "El pajarito herido",
+      "speaker": "noa",
+      "text": "Entre los arbustos encuentran un pequeño pájaro con el ala doblada. Pía asustado. 🐦😢\n\n«¡Pobrecito!» dice Noa agachándose. «Tiene el ala rota. No puede volar.»\n\n«Pero si paramos a ayudarle, llegaremos tarde al campamento» dice Valentina mirando el cielo. «Y no quiero montar la tienda de noche...» 🌙\n\nLucía mira al pajarito y luego a sus amigas. ¿Qué hacemos?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐦:large:50:50:sparkle",
+          "👧:large:25:55",
+          "👩‍🦱:large:45:60",
+          "👱‍♀️:large:70:55",
+          "🌿:medium:50:65",
+          "💔:small:55:40"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Ayudar al pajarito: vendamos su ala con un pañuelo y dejémoslo en un lugar seguro",
+          "target": "pajaro-ayudado",
+          "emoji": "💚",
+          "moralValue": "compasión",
+          "points": 2
+        },
+        {
+          "text": "Dejarlo: la naturaleza es así, seguro que se cura solo",
+          "target": "pajaro-ignorado",
+          "emoji": "🚶",
+          "moralValue": "indiferencia",
+          "points": 0
+        }
+      ]
+    },
+
+    "pajaro-ayudado": {
+      "type": "narrative",
+      "title": "¡Pequeño rescate!",
+      "speaker": "noa",
+      "text": "Noa coge al pajarito con mucho cuidado. Valentina saca un pañuelo de su mochila y entre las tres le vendan el ala con delicadeza. 🐦🩹\n\n«¡Ya está, pequeñín!» dice Noa dejándolo en un hueco seguro del árbol. «Aquí estarás protegido.»\n\nEl pajarito pía suavemente, como diciendo «gracias». 🎵\n\n«¡Venga, no hemos perdido tanto tiempo!» dice Lucía. «¡Y mola saber que hemos ayudado!» 💚",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐦:medium:50:35:sparkle",
+          "👩‍🦱:large:40:55",
+          "🩹:small:55:32",
+          "🌳:xlarge:70:20",
+          "💚:small:50:20:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir caminando!",
+          "target": "encuentro-ardillas",
+          "emoji": "🚶"
+        }
+      ]
+    },
+
+    "pajaro-ignorado": {
+      "type": "narrative",
+      "title": "Seguimos adelante",
+      "speaker": "valentina",
+      "text": "«Venga, no podemos parar por cada animal que encontremos» dice Valentina. «¡Tenemos que llegar al campamento!»\n\nLas tres siguen caminando, pero Noa no deja de mirar atrás. «Espero que esté bien...» murmura. 😔\n\nLucía le pasa el brazo por el hombro. «Seguro que sí. Los pájaros son fuertes.»\n\nPero en el fondo, las tres sienten un cosquilleo de culpa...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "🐦:small:85:65",
+          "😔:small:53:42"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Seguir caminando!",
+          "target": "encuentro-ardillas",
+          "emoji": "🚶"
+        }
+      ]
+    },
+
+    "encuentro-ardillas": {
+      "type": "puzzle",
+      "title": "¡Ardillas escondidas!",
+      "speaker": "valentina",
+      "text": "«¡MIRAD!» grita Valentina señalando los árboles. «¡Ardillas! ¡Están por todas partes!» 🐿️🌳\n\nLas ardillas saltan de rama en rama, escondiéndose entre las hojas. Son rapidísimas y difíciles de ver. 🍃\n\n«¡A ver quién cuenta más!» propone Lucía. «Noa dice que en este bosque viven muchas familias de ardillas.»\n\n¡Cuenta bien todas las ardillas escondidas en los árboles!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🌳:xlarge:20:20",
+          "🌳:xlarge:50:20",
+          "🌳:xlarge:80:20",
+          "🐿️:small:15:30",
+          "🐿️:small:35:25",
+          "🐿️:small:55:30",
+          "🐿️:small:70:25",
+          "🐿️:small:85:30",
+          "🐿️:small:25:35",
+          "🐿️:small:65:35",
+          "👧:medium:25:65",
+          "👩‍🦱:medium:50:65",
+          "👱‍♀️:medium:75:65"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¿Cuántas ardillas hay escondidas en los árboles? 🐿️🌳",
+        "targetEmoji": "🐿️",
+        "grid": [
+          "🌳", "🐿️", "🌿", "🌳", "🐿️",
+          "🌿", "🌳", "🐿️", "🌿", "🌳",
+          "🐿️", "🌿", "🌳", "🐿️", "🌿",
+          "🌳", "🌿", "🐿️", "🌳", "🐿️",
+          "🌿", "🌳", "🌿", "🌳", "🌿"
+        ],
+        "correctCount": 7,
+        "hint": "¡Mira bien entre los árboles y las hojas! 🔍",
+        "successTarget": "rio-caudaloso",
+        "successText": "¡¡Exacto!! 🎉 ¡7 ardillas! ¡Tenéis ojos de águila! 🐿️✨",
+        "failText": "¡Cuenta otra vez! Busca todas las 🐿️ entre los árboles y las hojas..."
+      }
+    },
+
+    "rio-caudaloso": {
+      "type": "narrative",
+      "title": "¡El río caudaloso!",
+      "speaker": "lucia",
+      "text": "Después de una hora caminando, llegan a un río. Pero NO es el arroyito tranquilo que esperaban. ¡Es un TORRENTE! 🌊💨\n\n«¡El puente está roto!» grita Noa señalando unos tablones sueltos. «Las lluvias de la semana pasada han debido romperlo.»\n\n«¡No podemos cruzar así!» dice Valentina preocupada. «¡El agua lleva mucha fuerza!»\n\nLucía mira alrededor y encuentra una cuerda larga en su mochila. «¡Tengo una idea! Si lanzo esta cuerda al árbol del otro lado, podemos cruzar agarradas.» 🌲🪢",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🌊:xlarge:50:55",
+          "👧:large:15:45",
+          "👩‍🦱:large:5:55",
+          "👱‍♀️:large:10:50",
+          "🌲:xlarge:85:25",
+          "🪢:medium:20:38:sparkle",
+          "🌉:medium:50:35"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Lanzar la cuerda!",
+          "target": "cruzar-rio",
+          "emoji": "🪢"
+        }
+      ]
+    },
+
+    "cruzar-rio": {
+      "type": "puzzle",
+      "title": "¡Lanzar la cuerda!",
+      "speaker": "lucia",
+      "text": "Lucía ata una piedra a la cuerda para darle peso. Tiene que lanzarla justo al árbol del otro lado del río. 🌲🎯\n\n«¡Si se queda corta, cae al agua! ¡Si pasa de largo, no se enganchará!» explica Noa.\n\n«¡Tú puedes, Lucía!» la anima Valentina. 💪\n\n¡Elige el ángulo y la fuerza del lanzamiento!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:15:50",
+          "🌊:xlarge:50:60",
+          "🌲:xlarge:85:25",
+          "🎯:medium:85:40:sparkle",
+          "🪨:small:20:55"
+        ]
+      },
+      "puzzle": {
+        "inputType": "lanzar",
+        "question": "¡Lanza la cuerda al árbol del otro lado! 🪢🌲",
+        "projectileEmoji": "🪨",
+        "targetEmoji": "🌲",
+        "obstacleEmoji": "🌊",
+        "gapColor": "#4A90D9",
+        "groundColor": "#5D4E37",
+        "gravity": 500,
+        "maxPower": 480,
+        "angles": { "low": 20, "mid": 40, "high": 60 },
+        "platformLeftWidth": 25,
+        "platformRightWidth": 25,
+        "targetZoneWidth": 20,
+        "failTextShort": "¡La cuerda cae al agua! ¡Más fuerza! 🌊😅",
+        "failTextLong": "¡Demasiado lejos! ¡La cuerda pasa de largo! 💨",
+        "successTarget": "moral-basura",
+        "successText": "¡¡ENGANCHADA!! 🎉 ¡La cuerda se enreda en el árbol! ¡Podemos cruzar! 🪢🌲✨"
+      }
+    },
+
+    "moral-basura": {
+      "type": "moral",
+      "title": "Basura en el camino",
+      "speaker": "noa",
+      "text": "Las tres cruzan el río agarradas a la cuerda. ¡EMPAPADAS pero a salvo! 💦😄\n\nAl otro lado, Noa se fija en algo. «¡Qué asco!» dice enfadada. Hay bolsas de plástico, latas y restos de comida tirados por el suelo. 🗑️😡\n\n«Algún campista dejó toda esta basura aquí» dice Lucía.\n\n«Podríamos recogerla... pero ya vamos retrasadas» dice Valentina mirando el cielo. «Y pesa mucho cargar con basura ajena.»",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:20:50",
+          "👩‍🦱:large:45:50",
+          "👱‍♀️:large:70:50",
+          "🗑️:medium:35:65",
+          "🥫:small:55:70",
+          "🧴:small:65:68",
+          "😡:small:48:38"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Recoger la basura: ¡No podemos dejar el bosque así! La metemos en una bolsa.",
+          "target": "basura-recogida",
+          "emoji": "♻️",
+          "moralValue": "responsabilidad",
+          "points": 2
+        },
+        {
+          "text": "Dejarla: No es nuestra basura. Ya la recogerá alguien.",
+          "target": "basura-dejada",
+          "emoji": "🚶",
+          "moralValue": "indiferencia",
+          "points": 0
+        }
+      ]
+    },
+
+    "basura-recogida": {
+      "type": "narrative",
+      "title": "¡Operación limpieza!",
+      "speaker": "valentina",
+      "text": "«¡Venga, trabajo en equipo!» dice Valentina sacando una bolsa de basura de su mochila. «¡Sabía que esto serviría!» 😄\n\nEntre las tres recogen toda la basura en cinco minutos. Latas, plásticos, envoltorios... ¡el suelo queda impecable! ✨\n\n«¡El bosque nos lo agradece!» dice Noa abrazando un árbol. 🌳💚\n\n«¡Y ahora a por la montaña!» grita Lucía señalando el pico que asoma entre los árboles. ⛰️",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:20:55",
+          "👩‍🦱:large:45:55",
+          "👱‍♀️:large:70:55",
+          "♻️:medium:50:30:sparkle",
+          "🌳:xlarge:90:25",
+          "💚:small:50:18:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Subir la montaña!",
+          "target": "subida-montana",
+          "emoji": "⛰️"
+        }
+      ]
+    },
+
+    "basura-dejada": {
+      "type": "narrative",
+      "title": "Alguien la recogerá...",
+      "speaker": "noa",
+      "text": "«Bueno... vamos» dice Noa, pero no deja de mirar atrás. «Me da mucha pena dejar el bosque así...» 😔\n\n«No es culpa nuestra» dice Valentina encogiéndose de hombros.\n\nLucía no dice nada, pero piensa: «Si todos dicen lo mismo, ¿quién limpia al final?» 🤔\n\nSiguen caminando hacia la montaña, pero el buen humor ha bajado un poco...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "🗑️:small:15:70",
+          "😔:small:53:42"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Subir la montaña!",
+          "target": "subida-montana",
+          "emoji": "⛰️"
+        }
+      ]
+    },
+
+    "subida-montana": {
+      "type": "puzzle",
+      "title": "¡El laberinto de la montaña!",
+      "speaker": "lucia",
+      "text": "¡La subida a la montaña es un LABERINTO de senderos! 🏔️\n\nHay caminos que llevan a precipicios, otros que dan vueltas en círculo, y solo UNO llega a la cima. 🧭\n\n«¡Tenemos que encontrar la ruta correcta!» dice Lucía consultando el mapa. «¡Si nos perdemos, no llegaremos antes de que oscurezca!» 🌙\n\n¡Encuentra el camino correcto hasta la cima de la montaña!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "⛰️:xlarge:50:15",
+          "👧:large:20:70",
+          "👩‍🦱:medium:30:70",
+          "👱‍♀️:medium:10:70",
+          "🧭:medium:25:55:sparkle",
+          "🌲:medium:70:50",
+          "🌲:medium:40:45"
+        ]
+      },
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Encuentra el camino hasta la cima! ⛰️🧭",
+        "grid": [
+          1, 1, 0, 0, 0, 0, 0,
+          0, 1, 0, 1, 1, 1, 0,
+          0, 1, 0, 1, 0, 1, 0,
+          0, 1, 1, 1, 0, 1, 0,
+          0, 0, 0, 1, 0, 1, 0,
+          0, 1, 1, 1, 0, 1, 0,
+          0, 0, 0, 0, 0, 1, 1
+        ],
+        "cols": 7,
+        "startPos": [0, 0],
+        "endPos": [6, 6],
+        "cellIcons": { "wall": "🌲", "path": "🟫", "end": "⛰️" },
+        "successTarget": "cueva-misteriosa",
+        "successText": "¡¡LO ENCONTRASTEIS!! 🎉 ¡El camino sube entre los árboles hasta la cima! ⛰️✨",
+        "failText": "¡Ese camino no lleva a la cima! ¡Prueba otra ruta! 🧭"
+      }
+    },
+
+    "cueva-misteriosa": {
+      "type": "narrative",
+      "title": "¡La cueva misteriosa!",
+      "speaker": "valentina",
+      "text": "A mitad de la subida, Valentina tropieza con algo. «¡AU! ¿Qué es es...?» Se fija mejor. «¡¡UNA CUEVA!!» 🕳️😱\n\nEntre las rocas hay una abertura oscura. Del interior sale un aire fresco que huele a tierra mojada.\n\n«¡Vamos a explorarla!» dice Lucía encendiendo su linterna. 🔦\n\n«¿Seguro que es buena idea?» pregunta Noa nerviosa. «¿Y si hay murciélagos?» 🦇\n\n«¡O un TESORO!» ríe Valentina entrando la primera. «¡Mirad las paredes! ¡Hay HUELLAS de animales por todas partes!»",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🕳️:xlarge:50:35",
+          "👧:large:30:60",
+          "👩‍🦱:large:50:60",
+          "👱‍♀️:large:70:55",
+          "🔦:medium:35:50:sparkle",
+          "🦇:small:60:20:float",
+          "🪨:medium:20:45"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Investigar las huellas!",
+          "target": "cueva-puzzle",
+          "emoji": "🔍"
+        }
+      ]
+    },
+
+    "cueva-puzzle": {
+      "type": "puzzle",
+      "title": "¡Huellas misteriosas!",
+      "speaker": "noa",
+      "text": "Las paredes de la cueva están llenas de marcas y huellas de animales. 🐾\n\n«¡Son huellas de verdad!» explica Noa emocionada. «¡Los animales usan esta cueva como refugio! Cada huella pertenece a un animal diferente.»\n\n«¡Es como un juego de memoria!» dice Valentina. «¡Cada animal deja dos huellas iguales!»\n\n¡Empareja cada animal con su huella correcta!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "🐾:medium:30:30:sparkle",
+          "🐾:medium:65:30:sparkle",
+          "👩‍🦱:large:50:65",
+          "🔦:small:55:55",
+          "🦇:small:80:15:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Empareja los animales con sus huellas! 🐾",
+        "cards": ["🐻", "🐻", "🦊", "🦊", "🐺", "🐺", "🦌", "🦌", "🐗", "🐗", "🦡", "🦡"],
+        "successTarget": "noche-campamento",
+        "successText": "¡¡TODAS EMPAREJADAS!! 🎉 ¡Oso, zorro, lobo, ciervo, jabalí y tejón! ¡Noa está encantada! 🐾✨",
+        "failText": "¡Casi! Recuerda dónde estaba cada animal... 🧠"
+      }
+    },
+
+    "noche-campamento": {
+      "type": "narrative",
+      "title": "La noche en el campamento",
+      "speaker": "narradora",
+      "text": "Salen de la cueva y siguen subiendo. Al llegar a un claro cerca de la cima, encuentran el lugar PERFECTO para acampar. 🏕️\n\nEntre las tres montan la tienda, hacen un círculo de piedras para la hoguera y preparan la cena: bocadillos, fruta y chocolate caliente. 🍫☕\n\nCuando el sol se pone, el bosque se transforma. Los sonidos cambian: grillos, búhos, el viento entre los árboles... 🌙🦉\n\nLa hoguera crepita y las llamas bailan. Las tres amigas se acurrucan juntas. Es mágico... pero también un poco inquietante. 🔥",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🏕️:xlarge:50:35",
+          "🔥:large:50:60:sparkle",
+          "👧:medium:35:55",
+          "👩‍🦱:medium:50:55",
+          "👱‍♀️:medium:65:55",
+          "🌙:medium:80:10:float",
+          "⭐:small:20:8:sparkle",
+          "⭐:small:40:5:sparkle",
+          "🦉:small:10:30"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Seguir junto al fuego",
+          "target": "moral-miedo",
+          "emoji": "🔥"
+        }
+      ]
+    },
+
+    "moral-miedo": {
+      "type": "moral",
+      "title": "Ruidos en la noche",
+      "speaker": "noa",
+      "text": "De repente: ¡CRACK! Una rama se rompe en la oscuridad. 😱\n\nNoa se agarra a Lucía, temblando. «¿Q-qué ha sido eso?» susurra con los ojos muy abiertos.\n\nOtro ruido: ¡FRUUUSH! Algo se mueve entre los arbustos.\n\nValentina se ríe: «¡Jaja, Noa tiene MIEDO! ¡La valiente exploradora tiene miedo de un ruidito!» 😂\n\nNoa baja la mirada, avergonzada. A Lucía no le hace gracia la broma...",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👩‍🦱:large:35:55",
+          "👧:large:50:55",
+          "👱‍♀️:large:70:55",
+          "🔥:medium:50:65:sparkle",
+          "😱:small:38:42",
+          "🌑:medium:15:20",
+          "🌿:medium:85:45"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Consolar a Noa: «¡Es normal tener miedo! Estamos juntas y no pasa nada»",
+          "target": "noa-consolada",
+          "emoji": "🤗",
+          "moralValue": "empatía",
+          "points": 2
+        },
+        {
+          "text": "Reírse con Valentina: «¡Es verdad, qué miedosa! ¡Solo son animales!»",
+          "target": "noa-burlada",
+          "emoji": "😂",
+          "moralValue": "burla",
+          "points": 0
+        }
+      ]
+    },
+
+    "noa-consolada": {
+      "type": "narrative",
+      "title": "Amigas de verdad",
+      "speaker": "lucia",
+      "text": "«¡Valentina, para!» dice Lucía con firmeza. «Tener miedo es NORMAL. ¿O tú nunca has tenido miedo de nada?»\n\nValentina se calla y baja la mirada. «Bueno... a mí me dan miedo las arañas» confiesa. 🕷️\n\n«¡¿Ves?!» dice Lucía abrazando a Noa. «¡Todos tenemos miedo de algo! Lo importante es que estamos JUNTAS.» 🤗\n\nNoa sonríe. «Gracias, Lucía.» Las tres se abrazan junto al fuego. 💛\n\nEntonces, el ruido se revela: ¡es un erizo que pasa tranquilamente! 🦔😄",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👧:large:30:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:70:55",
+          "🤗:medium:40:42:sparkle",
+          "🔥:medium:50:68",
+          "🦔:small:85:65",
+          "💛:small:50:30:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Mirar las estrellas!",
+          "target": "cielo-estrellas",
+          "emoji": "⭐"
+        }
+      ]
+    },
+
+    "noa-burlada": {
+      "type": "narrative",
+      "title": "Noa se enfada",
+      "speaker": "noa",
+      "text": "Noa se levanta con los ojos llorosos. «¡Pues vale! ¡Me meto en la tienda!» Y se va sola. 😢\n\nEl silencio se vuelve incómodo. Valentina deja de reírse.\n\n«Quizás no deberíamos habernos reído...» dice Lucía.\n\n«Ya...» susurra Valentina. «Mañana le pediré perdón.» 😔\n\nEl ruido resulta ser un erizo paseando tranquilamente. 🦔 Nada peligroso. Ojalá no se hubieran reído...",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "👩‍🦱:large:80:50",
+          "👧:large:30:60",
+          "👱‍♀️:large:55:60",
+          "🏕️:medium:85:35",
+          "😢:small:83:38",
+          "🔥:medium:40:68",
+          "🦔:small:15:65"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Mirar las estrellas!",
+          "target": "cielo-estrellas",
+          "emoji": "⭐"
+        }
+      ]
+    },
+
+    "cielo-estrellas": {
+      "type": "puzzle",
+      "title": "¡Constelaciones en el cielo!",
+      "speaker": "valentina",
+      "text": "Las tres amigas se tumban en la hierba mirando el cielo. ¡Es ESPECTACULAR! Miles de estrellas brillan como diamantes. 🌟✨\n\n«¡Mirad!» dice Valentina. «¡Puedo ver constelaciones! ¡Estrellas que forman figuras!»\n\n«¡La Osa Mayor!» señala Noa. «¡Parece un carro! Y si sigues esas estrellas, encuentras la Estrella Polar.» ⭐🧭\n\n«¡Hay un patrón!» dice Lucía. «¡Las estrellas siguen una secuencia!»",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "⭐:medium:20:15:sparkle",
+          "⭐:medium:30:10:sparkle",
+          "⭐:medium:40:12:sparkle",
+          "⭐:medium:50:8:sparkle",
+          "🌟:large:75:12:sparkle",
+          "👧:medium:30:70",
+          "👩‍🦱:medium:50:70",
+          "👱‍♀️:medium:70:70"
+        ]
+      },
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "¿Cuál es la siguiente estrella de la constelación? ⭐",
+        "pattern": ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "?"],
+        "options": ["⭐⭐⭐", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐⭐⭐", "⭐⭐"],
+        "correctAnswer": "⭐⭐⭐⭐⭐",
+        "successTarget": "encuentro-ciervo",
+        "successText": "¡¡CORRECTO!! 🎉 ¡Cada grupo tiene una estrella más! ¡La constelación está completa! ✨🌟",
+        "failText": "Pista: cuenta las estrellas de cada grupo... ¡cada vez hay una más! ⭐"
+      }
+    },
+
+    "encuentro-ciervo": {
+      "type": "narrative",
+      "title": "El ciervo mágico",
+      "speaker": "narradora",
+      "text": "Mientras miran las estrellas, algo increíble ocurre. Un ciervo enorme aparece en el claro. 🦌✨\n\nPero no es un ciervo normal. Su cornamenta parece BRILLAR bajo la luz de la luna. Camina despacio, majestuoso, sin miedo.\n\n«No... os... mováis...» susurra Noa casi sin respirar. 😍\n\nEl ciervo las mira directamente. Sus ojos son oscuros y profundos, como si pudiera ver dentro de ellas.\n\nDurante un momento mágico, las tres amigas y el ciervo se miran en silencio. Luego, con elegancia, el ciervo desaparece entre los árboles. 🌲🦌💫\n\n«Eso... ha sido... lo más bonito que he visto» susurra Valentina.",
+      "illustration": {
+        "background": "bg-night-sky",
+        "elements": [
+          "🦌:xlarge:50:35:sparkle",
+          "👧:medium:20:65",
+          "👩‍🦱:medium:40:65",
+          "👱‍♀️:medium:60:65",
+          "🌙:large:80:10:float",
+          "✨:small:45:20:sparkle",
+          "✨:small:55:25:sparkle",
+          "🌲:medium:90:40"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Dormir bajo las estrellas",
+          "target": "amanecer",
+          "emoji": "💤"
+        }
+      ]
+    },
+
+    "amanecer": {
+      "type": "narrative",
+      "title": "¡Amanecer en la montaña!",
+      "speaker": "lucia",
+      "text": "Las tres duermen profundamente en la tienda. 💤\n\nCuando Lucía abre los ojos, una luz naranja y rosa se cuela por la cremallera. Sale corriendo y...\n\n«¡¡CHICAS, DESPERTAD!! ¡¡MIRAD ESTO!!» 🌅\n\nEl amanecer desde la montaña es INCREÍBLE. El cielo arde en colores: naranja, rosa, dorado, violeta. Las nubes parecen de fuego. Abajo, el valle entero brilla con el rocío de la mañana. 💎\n\n«¡La cima está ahí arriba!» señala Noa. «¡Solo nos queda un poquito!» ⛰️\n\n«¡Pues vamos!» dice Valentina. «¡Quiero ver el mundo entero desde arriba!»",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "🌅:xlarge:50:20",
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "⛰️:xlarge:50:35",
+          "☁️:small:20:15:float",
+          "☁️:small:75:12:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡A la cima!",
+          "target": "cima-montana",
+          "emoji": "⛰️"
+        }
+      ]
+    },
+
+    "cima-montana": {
+      "type": "puzzle",
+      "title": "¡La cima de la montaña!",
+      "speaker": "narradora",
+      "text": "¡Las tres amigas llegan a la CIMA! 🏔️🎉\n\nDesde aquí se ve TODO: el bosque, el río que cruzaron, el valle entero, pueblos lejanos y ¡hasta el mar en el horizonte! 🌊\n\n«¡Es el mejor momento del viaje!» dice Noa sacando su cuaderno para dibujar. 🎨\n\n«¡Y el mejor momento para un último desafío!» ríe Valentina. «¡Busquemos palabras de la naturaleza en esta sopa de letras!»",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "⛰️:xlarge:50:25",
+          "👧:large:30:45",
+          "👩‍🦱:large:50:45",
+          "👱‍♀️:large:70:45",
+          "🌊:medium:85:60",
+          "🌲:medium:15:55",
+          "🦅:small:40:10:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "sopaLetras",
+        "question": "¡Encuentra 4 palabras de la naturaleza! 🌲🌊⛰️",
+        "grid": [
+          "B","O","S","Q","U","E",
+          "R","I","A","G","U","A",
+          "C","I","E","L","O","P",
+          "M","O","N","T","E","L",
+          "F","L","O","R","E","S",
+          "A","V","E","S","O","L"
+        ],
+        "cols": 6,
+        "words": [
+          { "word": "BOSQUE", "start": [0,0], "end": [5,0] },
+          { "word": "CIELO", "start": [0,2], "end": [4,2] },
+          { "word": "MONTE", "start": [0,3], "end": [4,3] },
+          { "word": "FLORES", "start": [0,4], "end": [5,4] }
+        ],
+        "successTarget": "pre-final",
+        "successText": "¡¡ENCONTRADAS!! 🎉 ¡BOSQUE, CIELO, MONTE y FLORES! ¡Sois unas campeonas! 🌲🌸✨",
+        "failText": "Pista: busca en horizontal, de izquierda a derecha... 🔍"
+      }
+    },
+
+    "pre-final": {
+      "type": "narrative",
+      "title": "El regreso",
+      "speaker": "narradora",
+      "text": "Ha llegado el momento de volver. Las tres amigas recogen el campamento, apagan bien la hoguera y se aseguran de no dejar NADA atrás. 🏕️✨\n\nMientras bajan por el sendero, cada una piensa en todo lo que han vivido: el pajarito, el río, la cueva, las estrellas, el ciervo mágico...\n\n«¿Sabéis qué?» dice Lucía. «Este ha sido el MEJOR fin de semana de mi vida.» 💛\n\n«¡El mío también!» dicen Noa y Valentina a la vez, y las tres se echan a reír. 😄",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "⛰️:xlarge:50:15",
+          "🌲:medium:10:35",
+          "🌲:medium:90:35",
+          "💛:medium:50:30:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ver el final!",
+          "target": "ending-best",
+          "emoji": "🌟",
+          "conditionalTarget": { "high": "ending-best", "low": "ending-good" },
+          "conditionalThreshold": 4
+        }
+      ]
+    },
+
+    "ending-best": {
+      "type": "ending",
+      "endingRank": "best",
+      "title": "¡La naturaleza os recompensa!",
+      "text": "Al llegar al final del sendero, algo MÁGICO ocurre. 🌟\n\nEl ciervo de la noche anterior aparece de nuevo. Pero esta vez no está solo: le acompañan ciervos pequeños, zorros, ardillas, pájaros... ¡Todos los animales del bosque! 🦌🦊🐿️🐦\n\nY entre ellos... ¡el pajarito del ala rota! ¡Ya puede volar! Revolotea alrededor de las tres amigas, cantando feliz. 🐦🎵\n\n«¡Nos están despidiendo!» dice Noa con lágrimas de emoción. 😭💛\n\nLos animales las acompañan hasta el borde del bosque. Es como si la naturaleza les dijera: «Gracias por cuidarme. Siempre seréis bienvenidas.» 🌳💚\n\n🌟 Lucía, Noa y Valentina aprendieron que cuando cuidas la naturaleza y a tus amigos, la vida te devuelve cosas maravillosas. ¡La mejor aventura es la que compartes con quienes quieres! 🌟\n\n¡FIN! 🏕️🌲💛✨",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:50",
+          "👩‍🦱:large:45:50",
+          "👱‍♀️:large:65:50",
+          "🦌:xlarge:50:20:sparkle",
+          "🐦:small:30:25:float",
+          "🐿️:small:75:35",
+          "🦊:small:85:45",
+          "🌲:medium:10:30",
+          "🌲:medium:90:30",
+          "💛:medium:50:8:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez desde el principio!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    },
+
+    "ending-good": {
+      "type": "ending",
+      "endingRank": "good",
+      "title": "¡Una aventura increíble!",
+      "text": "Las tres amigas llegan al final del sendero, cansadas pero contentas. 😊\n\nAntes de salir del bosque, Noa se detiene. «Chicas... ha sido un viaje genial. Pero creo que podríamos haberlo hecho mejor.» 🤔\n\n«¿Mejor cómo?» pregunta Valentina.\n\n«La naturaleza nos ha dado un montón de cosas bonitas: el bosque, los animales, las estrellas...» dice Noa. «Y nosotras no siempre hemos cuidado todo lo que podíamos.»\n\nLucía asiente. «Tienes razón. La próxima vez seremos MEJORES campistas. ¡Cuidaremos más el bosque, los animales y la una a la otra!» 💪\n\n«¡PROMETIDO!» dicen las tres a la vez. 🤝\n\n✨ A veces la mejor lección de una aventura no es llegar a la cima, sino aprender a ser mejores por el camino. ✨\n\n¡FIN! 🏕️🌲✨",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:55",
+          "👩‍🦱:large:50:55",
+          "👱‍♀️:large:75:55",
+          "🏕️:medium:50:20",
+          "🌲:medium:15:30",
+          "🌲:medium:85:30",
+          "🤝:medium:50:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al menú de aventuras",
+          "target": "__menu__",
+          "emoji": "📚"
+        },
+        {
+          "text": "¡Jugar otra vez desde el principio!",
+          "target": "__restart__",
+          "emoji": "🔄"
+        }
+      ]
+    }
+  }
+}
