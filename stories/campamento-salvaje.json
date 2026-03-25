@@ -209,15 +209,17 @@
         "inputType": "contarObjetos",
         "question": "¿Cuántas ardillas hay escondidas en los árboles? 🐿️🌳",
         "targetEmoji": "🐿️",
-        "grid": [
-          "🌳", "🐿️", "🌿", "🌳", "🐿️",
-          "🌿", "🌳", "🐿️", "🌿", "🌳",
-          "🐿️", "🌿", "🌳", "🐿️", "🌿",
-          "🌳", "🌿", "🐿️", "🌳", "🐿️",
-          "🌿", "🌳", "🌿", "🌳", "🌿"
+        "targetCount": 7,
+        "distractorEmoji": "🌿",
+        "distractorCount": 4,
+        "areaHeight": 220,
+        "options": [
+          { "emoji": "5️⃣", "label": "5 ardillas", "value": 5 },
+          { "emoji": "6️⃣", "label": "6 ardillas", "value": 6 },
+          { "emoji": "7️⃣", "label": "7 ardillas", "value": 7 },
+          { "emoji": "8️⃣", "label": "8 ardillas", "value": 8 }
         ],
-        "correctCount": 7,
-        "hint": "¡Mira bien entre los árboles y las hojas! 🔍",
+        "correctAnswer": 7,
         "successTarget": "rio-caudaloso",
         "successText": "¡¡Exacto!! 🎉 ¡7 ardillas! ¡Tenéis ojos de águila! 🐿️✨",
         "failText": "¡Cuenta otra vez! Busca todas las 🐿️ entre los árboles y las hojas..."
