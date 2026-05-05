@@ -16,8 +16,7 @@ app.get("/health", (_req, res) => {
 const peerServer = ExpressPeerServer(server, {
   path: "/",
   allow_discovery: false,
-  alive_timeout: 60000,
-  cleanup_out_msgs: 1000,
+  alive_timeout: 180000,
   corsOptions: { origin: "*" },
 });
 
