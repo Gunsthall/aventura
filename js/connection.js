@@ -3,15 +3,15 @@
    Wake-up, keep-alive, and reconnect engine
    ============================================= */
 
-// Self-hosted PeerJS signaling server (Render free tier)
+// Self-hosted PeerJS signaling server on Fly.io (always-on, no cold start)
 const PEER_SERVER = {
-  host: 'aventura-peer-server.onrender.com',
+  host: 'aventura.fly.dev',
   port: 443,
   path: '/peer',
   secure: true,
 };
 
-const HEALTH_URL = 'https://aventura-peer-server.onrender.com/health';
+const HEALTH_URL = 'https://aventura.fly.dev/health';
 
 const ICE_SERVERS = [
   { urls: 'stun:stun.l.google.com:19302' },
