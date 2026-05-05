@@ -161,7 +161,7 @@ class PuzzleLanzar {
         if (!lastSweepTime) lastSweepTime = timestamp;
         const dt = (timestamp - lastSweepTime) / 1000;
         lastSweepTime = timestamp;
-        power += sweepDir * 50 * dt;
+        power += sweepDir * 32 * dt;
         if (power >= 100) { power = 100; sweepDir = -1; }
         if (power <= 0) { power = 0; sweepDir = 1; }
         powerIndicator.style.left = power + '%';
