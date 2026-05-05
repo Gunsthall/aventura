@@ -7,8 +7,9 @@ const port = process.env.PORT || 9000;
 const app = express();
 const server = http.createServer(app);
 
-// Health endpoint — used by client wake-up pings and Render health check
+// Health endpoint — used by client wake-up pings and platform health checks
 app.get("/health", (_req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   res.json({ status: "ok", timestamp: Date.now() });
 });
 
