@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "id": "princesa-yedra",
+    "title": "La Princesa de Hojas y Ramas",
+    "author": "Aventura",
+    "language": "es",
+    "version": "1.0",
+    "startPage": "intro"
+  },
+
+  "characters": {
+    "lia": { "name": "Lía", "emoji": "👧", "color": "#27ae60" },
+    "saltarin": { "name": "Saltarín", "emoji": "🐸", "color": "#16a085" },
+    "castana": { "name": "Castaña", "emoji": "🐿️", "color": "#d35400" },
+    "chispa": { "name": "Chispa", "emoji": "✨", "color": "#f1c40f" },
+    "cornelio": { "name": "Cornelio", "emoji": "🦌", "color": "#a0522d" },
+    "yedra": { "name": "Princesa Yedra", "emoji": "🧚‍♀️", "color": "#8e44ad" },
+    "narradora": { "name": "Narradora", "emoji": "📖", "color": "#34495e" }
+  },
+
+  "pages": {
+    "intro": {
+      "type": "narrative",
+      "title": "El desván de la abuela",
+      "speaker": "narradora",
+      "text": "Hace muchos, muchos años, antes de que los abuelos de los abuelos hubieran nacido, en el reino de Verdebosque vivía una princesa hecha de cosas vivas. 🌿✨\n\nTenía el pelo de hojas de sauce, los ojos de dos bellotas brillantes, las manos de ramitas, el cuerpo trenzado con juncos y, en el pecho, un corazón hecho con una gota de agua de manantial. 💧\n\nUna tormenta envidiosa la deshizo en mil pedacitos y los esparció por todo el reino...\n\nUna tarde de primavera, una niña llamada Lía estaba ordenando el desván de su abuela cuando, debajo de una caja de botones, encontró un pergamino amarillento atado con un lazo verde. 📜",
+      "illustration": {
+        "background": "bg-bedroom",
+        "elements": [
+          "👧:large:35:55",
+          "📜:large:60:50:sparkle",
+          "🎀:small:65:60",
+          "📦:medium:15:60",
+          "🪟:medium:85:30"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Abrir el pergamino",
+          "target": "mapa-puzzle",
+          "emoji": "📜"
+        }
+      ]
+    },
+
+    "mapa-puzzle": {
+      "type": "puzzle",
+      "title": "Letras de tinta de moras",
+      "speaker": "lia",
+      "text": "Lía abre el pergamino con muchísimo cuidado. Las letras están escritas con tinta de moras y parecen bailar sobre el papel. 🫐\n\nArriba del todo, en grande, está el nombre de la princesa... pero las letras están desordenadas.\n\n«¿Cómo se llamaba?» susurra Lía.",
+      "illustration": {
+        "background": "bg-bedroom",
+        "elements": [
+          "👧:large:30:55",
+          "📜:xlarge:65:50",
+          "🫐:small:80:30",
+          "🪶:small:55:30:float"
+        ]
+      },
+      "puzzle": {
+        "inputType": "ordenarLetras",
+        "question": "¡Ordena las letras del nombre de la princesa! 🔤",
+        "word": "YEDRA",
+        "hint": "La Princesa de hojas y ramas se llama _____",
+        "successTarget": "salida",
+        "successText": "¡¡YEDRA!! 🎉 La Princesa Yedra... ¡así se llamaba! ✨",
+        "failText": "Pista: empieza por Y y termina en A..."
+      }
+    },
+
+    "salida": {
+      "type": "narrative",
+      "title": "Camino del bosque",
+      "speaker": "lia",
+      "text": "—¡La voy a encontrar! —susurra Lía, y se le ponen los ojos como platos. ✨\n\nA la mañana siguiente, con una merienda en la mochila 🥪 y el mapa en la mano 📜, sale por la puerta de atrás camino del bosque. 🌲🌳\n\nEl primer punto del mapa es el RÍO. 💧\n\nLía respira hondo. ¡Comienza la aventura!",
+      "illustration": {
+        "background": "bg-dawn",
+        "elements": [
+          "👧:large:30:55",
+          "🎒:medium:25:60",
+          "📜:small:45:55",
+          "🌲:large:75:35",
+          "🌳:large:10:35",
+          "☀️:medium:80:10:float"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Ir al río!",
+          "target": "rio-llegada",
+          "emoji": "💧"
+        }
+      ]
+    },
+
+    "rio-llegada": {
+      "type": "narrative",
+      "title": "El río",
+      "speaker": "saltarin",
+      "text": "Lía llega a la orilla del río. El agua corre cristalina entre piedras redondas. 💧\n\nY allí, atrapada entre dos juncos, ve flotar una hojita de sauce muy especial: brilla un poquitín, como si todavía guardara magia. 🍃✨\n\nPero está demasiado lejos para alcanzarla.\n\n—¡Croac! ¿Necesitas ayuda? —dice una voz.\n\nDe debajo de un nenúfar asoma una rana de ojos saltones.\n\n—Me llamo Saltarín. ¡Hace tiempo que no vivo una buena aventura! 🐸",
+      "illustration": {
+        "background": "bg-river",
+        "elements": [
+          "👧:large:20:55",
+          "🐸:medium:55:60",
+          "🍃:small:75:50:sparkle",
+          "🌊:medium:50:75",
+          "🪨:small:35:70"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Pedir ayuda a Saltarín",
+          "target": "rio-puzzle",
+          "emoji": "🐸"
+        }
+      ]
+    },
+
+    "rio-puzzle": {
+      "type": "puzzle",
+      "title": "Saltos de rana",
+      "speaker": "saltarin",
+      "text": "—Para llegar a la hoja, tengo que saltar por las piedras del río en el orden correcto —explica Saltarín—. ¡Si pisas mal, plof! ¡Al agua!\n\n—Mira las piedras. Cada una tiene un número. ¿Cuál es la siguiente del patrón?",
+      "illustration": {
+        "background": "bg-river",
+        "elements": [
+          "🐸:large:20:55",
+          "🪨:medium:40:60",
+          "🪨:medium:55:60",
+          "🪨:medium:70:60",
+          "🍃:small:85:55:sparkle",
+          "🌊:medium:50:75"
+        ]
+      },
+      "puzzle": {
+        "inputType": "secuencia",
+        "question": "¿Qué número va en la siguiente piedra? 🪨🐸",
+        "pattern": ["2", "4", "6", "8", "?"],
+        "options": ["9", "10", "12", "11"],
+        "correctAnswer": "10",
+        "successTarget": "rio-rescate",
+        "successText": "¡¡SALTO PERFECTO!! 🎉 Saltarín brinca de piedra en piedra y rescata la hoja con la lengua. ¡FLUP! 🐸🍃",
+        "failText": "Pista: ¡van de dos en dos! Es la tabla del 2..."
+      }
+    },
+
+    "rio-rescate": {
+      "type": "narrative",
+      "title": "Un nuevo amigo",
+      "speaker": "lia",
+      "text": "Saltarín vuelve dando un brinco elegantísimo y le entrega la hoja a Lía.\n\n—¡Es preciosa! —dice Lía—. Gracias, Saltarín. 🍃\n\n—¿Sigues necesitando un compañero? —pregunta la rana, esperanzado.\n\nLía sonríe y le abre el bolsillo de la chaqueta. Saltarín se acomoda dentro, tan tranquilo. 🐸💚\n\n—¡Siguiente parada del mapa: el ROBLE más alto del bosque! 🌳",
+      "illustration": {
+        "background": "bg-river",
+        "elements": [
+          "👧:large:35:55",
+          "🐸:small:32:48",
+          "🍃:small:55:50:sparkle",
+          "📜:small:65:55",
+          "🌲:medium:85:35"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Al roble!",
+          "target": "roble-llegada",
+          "emoji": "🌳"
+        }
+      ]
+    },
+
+    "roble-llegada": {
+      "type": "narrative",
+      "title": "El roble más alto",
+      "speaker": "castana",
+      "text": "El roble es ENORME. 🌳 Lía mira hacia arriba, hacia arriba, hacia arriba... y allí, en la rama más alta, ve brillar dos bellotas como dos ojitos chiquitos. ✨\n\n—Yo no sé trepar tan alto —murmura Lía, preocupada.\n\n—Pero yo sí —contesta una voz peluda.\n\nDe entre las hojas asoma una ardilla con cola de plumero, masticando una piña. 🐿️\n\n—Me llamo Castaña. ¿Es para algo bueno?\n\n—Es para devolverle la vida a una princesa.\n\nA Castaña le brillan los ojos.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "🐿️:medium:55:45",
+          "🌳:xlarge:65:30",
+          "🌰:small:75:15:sparkle",
+          "🌰:small:80:15:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Subir con Castaña",
+          "target": "roble-puzzle",
+          "emoji": "🐿️"
+        }
+      ]
+    },
+
+    "roble-puzzle": {
+      "type": "puzzle",
+      "title": "El laberinto de ramas",
+      "speaker": "castana",
+      "text": "—¡Sígueme! —chilla Castaña—. Pero ojo: hay ramas rotas y telarañas pegajosas. Tienes que encontrar el camino bueno hasta las bellotas.\n\nLía mira el roble entero. Las ramas se cruzan como un laberinto verde. 🌳",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐿️:medium:50:50",
+          "🌳:xlarge:50:50",
+          "🌰:small:80:20:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "laberinto",
+        "question": "¡Guía a Castaña 🐿️ hasta las bellotas 🌰! Esquiva las telarañas. 🕸️",
+        "grid": [
+          [2, 0, 1, 0, 0, 0, 0],
+          [1, 0, 1, 0, 1, 1, 0],
+          [0, 0, 0, 0, 0, 0, 0],
+          [0, 1, 1, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0, 1, 0],
+          [1, 1, 1, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0, 1, 3]
+        ],
+        "playerEmoji": "🐿️",
+        "goalEmoji": "🌰",
+        "wallEmoji": "🕸️",
+        "pathEmoji": "🍃",
+        "successTarget": "roble-bellotas",
+        "successText": "¡¡ARRIBA DEL TODO!! 🎉 Castaña baja con las dos bellotas en la boca. ¡Brillan como ojitos de princesa! 🌰✨"
+      }
+    },
+
+    "roble-bellotas": {
+      "type": "narrative",
+      "title": "Otra amiga al equipo",
+      "speaker": "lia",
+      "text": "Castaña baja en zigzag por el tronco con las bellotas en la boca. ¡Plop! Las deja en la mano de Lía. 🌰🌰\n\n—¿Te vienes con nosotras? —pregunta Lía—. Nos vamos a una cueva.\n\n—¡Ñam, ñam, AVENTURA! —dice Castaña, y de un salto se sube al hombro de Lía. 🐿️\n\nSiguiente parada del mapa: la CUEVA del viejo lobo. 🕳️\n\n«Tranquila —dice el mapa con una nota a un lado—, el lobo ya no vive allí.»",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:35:55",
+          "🐿️:small:38:42",
+          "🐸:small:32:48",
+          "🌰:small:55:55:sparkle",
+          "📜:small:65:55"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡A la cueva!",
+          "target": "cueva-llegada",
+          "emoji": "🕳️"
+        }
+      ]
+    },
+
+    "cueva-llegada": {
+      "type": "narrative",
+      "title": "La cueva oscura",
+      "speaker": "chispa",
+      "text": "La entrada de la cueva es un agujero negro entre las rocas. 🕳️\n\nLía da un paso dentro y... ¡no ve absolutamente nada! Todo está oscurísimo. Solo se oye el goteo de agua: plic, ploc, plic. 💧\n\n—Por aquí debe estar la ramita —susurra Lía—. Pero no veo nada.\n\nDe pronto, una vocecita diminuta:\n\n—¿Necesitas luz? ✨\n\nUna luciérnaga pequeñita revolotea delante de su nariz. Detrás de ella aparecen sus amigas. ¡Una, dos, tres... muchas!\n\n—Soy Chispa. ¡Encendemos cuando nos llamas en el orden correcto! 🌟",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "👧:large:30:55",
+          "✨:small:55:45:sparkle",
+          "✨:small:60:35:sparkle",
+          "✨:small:70:50:sparkle",
+          "✨:small:75:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Encender las luciérnagas",
+          "target": "cueva-puzzle",
+          "emoji": "✨"
+        }
+      ]
+    },
+
+    "cueva-puzzle": {
+      "type": "puzzle",
+      "title": "Patrón de luciérnagas",
+      "speaker": "chispa",
+      "text": "—Mira bien —dice Chispa—. Vamos a encendernos en orden. Cuando terminemos, repite tú el patrón pulsando cada luciérnaga. ¡Así iluminaremos toda la cueva!",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "✨:medium:25:50:sparkle",
+          "✨:medium:50:50:sparkle",
+          "✨:medium:75:50:sparkle",
+          "✨:medium:50:25:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "simon",
+        "question": "¡Repite el patrón de luces de las luciérnagas! ✨🐛",
+        "sequence": [0, 2, 1, 3, 0],
+        "colors": ["#f1c40f", "#f39c12", "#e67e22", "#fdcb6e"],
+        "labels": ["✨ Chispa", "✨ Bri", "✨ Lía", "✨ Tina"],
+        "playbackSpeed": 700,
+        "successTarget": "cueva-ramita",
+        "successText": "¡¡PERFECTO!! 🎉 Las luciérnagas encienden todas a la vez y la cueva se llena de estrellitas. ¡Allí está la ramita! 🌟",
+        "failText": "Pista: mira bien el orden de los parpadeos... ✨"
+      }
+    },
+
+    "cueva-ramita": {
+      "type": "narrative",
+      "title": "La ramita brillante",
+      "speaker": "lia",
+      "text": "Bajo la luz dorada de las luciérnagas, Lía ve la ramita: fina, delicada, apoyada sobre una piedra plana como si alguien la hubiera dejado allí con cuidado. 🪵✨\n\nLa recoge con dos dedos, despacito, despacito.\n\n—Gracias, gracias, gracias —les dice a Chispa y a sus amigas.\n\n—¡Te acompañamos! —dicen las luciérnagas, y se enredan alrededor del pelo de Lía como una corona de estrellitas. ✨👑\n\nSiguiente parada: el PRADO DE LOS CIERVOS. 🌼🦌",
+      "illustration": {
+        "background": "bg-cave",
+        "elements": [
+          "👧:large:35:55",
+          "🪵:small:55:50:sparkle",
+          "✨:small:30:35:sparkle",
+          "✨:small:40:30:sparkle",
+          "✨:small:50:30:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "¡Al prado!",
+          "target": "prado-llegada",
+          "emoji": "🌼"
+        }
+      ]
+    },
+
+    "prado-llegada": {
+      "type": "narrative",
+      "title": "El prado de margaritas",
+      "speaker": "cornelio",
+      "text": "El prado es un mar de margaritas blancas. 🌼🌼🌼 Lía pisa con cuidado para no aplastarlas.\n\nA lo lejos ve a un ciervo joven pastando. Y alrededor de su cuello... ¡los juncos trenzados de la princesa! 🦌\n\nEl ciervo se gira y la mira con sus grandes ojos castaños.\n\n—Hola pequeña. Me llamo Cornelio. Estos juncos los encontré una mañana enredados en mi cornamenta. Los llevo de collar de fiesta porque son muy bonitos.\n\nLía traga saliva.\n\n—Son preciosos... pero los necesito.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:25:55",
+          "🦌:large:65:55",
+          "🌼:small:40:75",
+          "🌼:small:55:75",
+          "🌼:small:75:75",
+          "🌿:small:80:50:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Explicarle a Cornelio para qué son",
+          "target": "prado-promesa",
+          "emoji": "🦌"
+        }
+      ]
+    },
+
+    "prado-promesa": {
+      "type": "moral",
+      "title": "La promesa del ciervo",
+      "speaker": "cornelio",
+      "text": "Cornelio escucha la historia entera, las orejas levantadas. Cuando Lía termina, el ciervo agacha la cabeza con elegancia. 🦌\n\n—Te los doy con gusto —dice—. Pero tengo una pregunta.\n\n¿Qué le promete Lía a Cornelio?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:30:55",
+          "🦌:large:65:55",
+          "🌿:small:80:50:sparkle",
+          "🌼:small:50:75"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Que la princesa vendrá a saludarte cuando despierte",
+          "target": "prado-puzzle",
+          "emoji": "🤝",
+          "moralValue": "honrar la palabra dada",
+          "points": 2
+        },
+        {
+          "text": "Que le traerá manzanas todos los días",
+          "target": "prado-puzzle",
+          "emoji": "🍎",
+          "moralValue": "amabilidad",
+          "points": 1
+        }
+      ]
+    },
+
+    "prado-puzzle": {
+      "type": "puzzle",
+      "title": "Desatar los juncos",
+      "speaker": "lia",
+      "text": "—Antes de desatar los juncos —dice Cornelio—, mira bien el collar. Para no romper ningún junco al deshacerlo, tienes que contar cuántos hay exactamente.",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🦌:large:50:50",
+          "🌿:small:50:35:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "contarObjetos",
+        "question": "¿Cuántos juncos 🌾 hay en el collar de Cornelio? (¡Ojo, también hay margaritas y hojas!)",
+        "targets": [
+          { "emoji": "🌾", "count": 5 }
+        ],
+        "distractors": [
+          { "emoji": "🌼", "count": 3 },
+          { "emoji": "🍃", "count": 2 }
+        ],
+        "areaHeight": 220,
+        "options": [
+          { "value": "4", "label": "4 juncos", "emoji": "4️⃣" },
+          { "value": "5", "label": "5 juncos", "emoji": "5️⃣" },
+          { "value": "6", "label": "6 juncos", "emoji": "6️⃣" },
+          { "value": "7", "label": "7 juncos", "emoji": "7️⃣" }
+        ],
+        "correctAnswer": "5",
+        "successTarget": "prado-juncos",
+        "successText": "¡¡5 JUNCOS!! 🎉 Lía los desata uno a uno con muchísimo cuidado. Cornelio agita las orejas, contento. 🦌🌾",
+        "failText": "Cuenta solo los juncos verdes alargados 🌾, no las margaritas ni las hojas..."
+      }
+    },
+
+    "prado-juncos": {
+      "type": "narrative",
+      "title": "Casi, casi...",
+      "speaker": "narradora",
+      "text": "Lía mira su mochila: la hoja de sauce 🍃, las dos bellotas 🌰🌰, la ramita brillante 🪵, los cinco juncos 🌾...\n\n¡Solo falta una cosa! La pieza más importante de todas: la GOTA DE MANANTIAL del corazón de la princesa. 💧❤️\n\n—Vamos a un claro tranquilo —dice Lía—, y armamos a la princesa allí.\n\nCornelio, Saltarín, Castaña y las luciérnagas la siguen en silencio. Todos saben que ese momento es muy especial. ✨",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:30:55",
+          "🦌:medium:55:55",
+          "🐿️:small:33:42",
+          "🐸:small:28:48",
+          "🌾:small:45:50:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Buscar un claro",
+          "target": "claro-armado",
+          "emoji": "🌳"
+        }
+      ]
+    },
+
+    "claro-armado": {
+      "type": "narrative",
+      "title": "Armar a la princesa",
+      "speaker": "lia",
+      "text": "En un claro del bosque, Lía coloca las piezas en el suelo, tal como dice el mapa: 📜\n\n🌾 los juncos para el cuerpo\n🪵 la ramita para las manos\n🌰🌰 las bellotas en los ojos\n🍃 la hoja de sauce para el pelo\n\nPero falta lo más importante: la gota de manantial del corazón. 💧\n\nLía mira a su alrededor, decidida a encontrar agua. ¿Dónde puede haber rocío, gotitas, manantiales escondidos?",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:35:55",
+          "🌾:small:55:65",
+          "🪵:small:60:60:sparkle",
+          "🌰:small:55:55",
+          "🌰:small:60:55",
+          "🍃:small:55:50:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Buscar la gota",
+          "target": "busqueda-puzzle",
+          "emoji": "💧"
+        }
+      ]
+    },
+
+    "busqueda-puzzle": {
+      "type": "puzzle",
+      "title": "¿Dónde NO hay gotas?",
+      "speaker": "saltarin",
+      "text": "—¡Yo conozco el agua mejor que nadie! —dice Saltarín—. Mira estos sitios. Tres de ellos suelen tener gotitas escondidas. Pero UNO no. ¡Encuentra el intruso!",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "🐸:medium:50:50"
+        ]
+      },
+      "puzzle": {
+        "inputType": "intruso",
+        "question": "¿En cuál de estos sitios NO esperarías encontrar gotitas de agua? 💧",
+        "items": ["🕸️", "🌸", "🍄", "🔥"],
+        "intrusoIndex": 3,
+        "reason": "¡El fuego 🔥 evapora el agua! En las telarañas 🕸️, en las flores 🌸 y bajo las setas 🍄 sí suele haber rocío.",
+        "successTarget": "busqueda-falla",
+        "successText": "¡¡Correcto!! 🎉 Donde hay fuego no queda agua. Saltarín asiente con sus ojos saltones. 🐸💧",
+        "failText": "Piensa: ¿qué cosa SECA el agua en lugar de guardarla?"
+      }
+    },
+
+    "busqueda-falla": {
+      "type": "narrative",
+      "title": "No hay gota",
+      "speaker": "narradora",
+      "text": "Lía busca y busca. Mira debajo de las piedras, dentro de las flores, en las telarañas con rocío... 🕸️🌸\n\nPero las gotas se han evaporado con el sol del mediodía. ☀️ Ni una sola le sirve.\n\nSe sienta en la hierba, cansada y un poquito triste. Tan cerca de conseguirlo... y la pieza más importante no aparece. 😢\n\nSaltarín croa flojito. Castaña le acaricia el pelo con la cola. Las luciérnagas se posan sobre sus rodillas. Cornelio agacha la cabeza junto a ella.\n\nY entonces, sin darse cuenta, una lágrima le rueda por la mejilla...",
+      "illustration": {
+        "background": "bg-forest",
+        "elements": [
+          "👧:large:40:55",
+          "🐸:small:35:60",
+          "🐿️:small:45:50",
+          "💧:small:42:48:sparkle",
+          "🦌:small:65:55",
+          "✨:small:50:40:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "La lágrima cae...",
+          "target": "lagrima-magica",
+          "emoji": "💧"
+        }
+      ]
+    },
+
+    "lagrima-magica": {
+      "type": "narrative",
+      "title": "¡Magia!",
+      "speaker": "yedra",
+      "text": "La lágrima cae justo en el pecho de la princesa. 💧✨\n\nEntonces ocurre algo mágico:\n\n🌿 Las hojas se mueven.\n👀 Las bellotas parpadean.\n🪵 Las ramitas se estiran.\n\nY la Princesa Yedra abre los ojos, sonríe, y dice con una voz suave como el viento entre los árboles:\n\n—Has traído algo aún mejor que la gota perdida: una lágrima nacida del cariño. Eso es lo único capaz de despertarme. 🧚‍♀️✨\n\nLía se queda sin palabras.",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:55",
+          "🧚‍♀️:large:60:50:sparkle",
+          "🐸:small:30:60",
+          "🐿️:small:35:48",
+          "🦌:small:80:55",
+          "✨:small:50:30:sparkle",
+          "✨:small:65:25:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Conocer a la Princesa Yedra",
+          "target": "yedra-puzzle",
+          "emoji": "🧚‍♀️"
+        }
+      ]
+    },
+
+    "yedra-puzzle": {
+      "type": "puzzle",
+      "title": "El cuerpo de Yedra",
+      "speaker": "yedra",
+      "text": "—Antes de irnos a celebrar —dice la princesa con una risita—, ¿te acuerdas de qué parte de mi cuerpo es cada cosa que has traído? ¡Empareja cada elemento con su pareja para fijar bien la magia! 🌿✨",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "🧚‍♀️:large:50:45:sparkle"
+        ]
+      },
+      "puzzle": {
+        "inputType": "memory",
+        "question": "¡Empareja las piezas mágicas de la princesa! 🧠✨",
+        "cards": ["🍃", "🍃", "🌰", "🌰", "🪵", "🪵", "🌾", "🌾", "💧", "💧", "🌸", "🌸"],
+        "successTarget": "fiesta",
+        "successText": "¡¡TODAS EMPAREJADAS!! 🎉 La princesa aplaude, encantada. Cada pareja brilla un poquito al unirse. ✨",
+        "failText": "¡Casi! Recuerda dónde estaba cada pieza... 🧠"
+      }
+    },
+
+    "fiesta": {
+      "type": "narrative",
+      "title": "Celebración del bosque",
+      "speaker": "yedra",
+      "text": "Saltarín croa de alegría. 🐸\nCastaña da un saltito enorme. 🐿️\nLas luciérnagas parpadean todas a la vez. ✨✨✨\nY a lo lejos, Cornelio levanta la cabeza con sus astas brillando bajo el sol. 🦌\n\n—Habéis sido valientes —dice la princesa—. Desde hoy, este reino vuelve a estar vivo. Y vosotros, mis amigos, podréis venir a verme siempre que queráis. 🌿💚\n\nLía, sin pensarlo, da un paso adelante y abraza a la princesa. Es como abrazar al bosque entero. 🤗",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:55",
+          "🧚‍♀️:large:50:50:sparkle",
+          "🦌:medium:80:55",
+          "🐸:small:30:62",
+          "🐿️:small:35:48",
+          "✨:small:60:25:sparkle",
+          "✨:small:70:30:sparkle",
+          "🌸:small:15:75",
+          "🌼:small:90:75"
+        ]
+      },
+      "choices": [
+        {
+          "text": "Volver al pueblo",
+          "target": "final",
+          "emoji": "🏡"
+        }
+      ]
+    },
+
+    "final": {
+      "type": "narrative",
+      "title": "El final que es también un comienzo",
+      "speaker": "narradora",
+      "text": "Dicen los abuelos que, si caminas por el bosque al atardecer, todavía puedes ver a una niña 👧 con una rana 🐸 en el bolsillo, una ardilla 🐿️ en el hombro y unas luciérnagas ✨ alrededor, paseando con una princesa de hojas y ramas 🧚‍♀️ que ríe entre las flores. 🌸\n\nY dicen también que, cada vez que alguien hace un amigo de verdad, una hoja nueva crece en el pelo de la Princesa Yedra. 🍃💚\n\n🌟 Aprendimos que la VALENTÍA no es no tener miedo, es seguir adelante con el corazón. Que la AMABILIDAD abre todas las puertas. Y que las LÁGRIMAS DE CARIÑO son la magia más poderosa del mundo. 🌟\n\n¡FIN! ✨🌳🧚‍♀️🎊",
+      "illustration": {
+        "background": "bg-celebration",
+        "elements": [
+          "👧:large:25:55",
+          "🧚‍♀️:large:55:50:sparkle",
+          "🐸:small:30:62",
+          "🐿️:small:35:48",
+          "🦌:medium:78:55",
+          "✨:small:50:25:sparkle",
+          "✨:small:65:20:sparkle",
+          "🌸:small:15:75",
+          "🌼:small:90:75",
+          "🍃:small:45:30:sparkle"
+        ]
+      },
+      "choices": [
+        {
+          "text": "🎉 ¡Fin!",
+          "target": "final",
+          "emoji": "✨"
+        }
+      ]
+    }
+  }
+}

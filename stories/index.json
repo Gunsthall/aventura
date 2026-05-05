@@ -55,6 +55,14 @@
       "coverEmoji": "🏕️🌲🦌",
       "ageRange": "5-8",
       "tags": ["naturaleza", "amistad", "animales", "aventura", "medio ambiente"]
+    },
+    {
+      "id": "princesa-yedra",
+      "title": "La Princesa de Hojas y Ramas",
+      "description": "Lía descubre un pergamino antiguo en el desván de su abuela. Con la ayuda de una rana, una ardilla, unas luciérnagas y un ciervo, recorre el bosque para devolverle la vida a la Princesa Yedra, hecha de cosas vivas.",
+      "coverEmoji": "🧚‍♀️🍃🌿",
+      "ageRange": "5-8",
+      "tags": ["fantasía", "naturaleza", "animales", "amistad", "valentía"]
     }
   ]
 }
